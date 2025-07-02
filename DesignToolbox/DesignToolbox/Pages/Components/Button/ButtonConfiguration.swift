@@ -25,6 +25,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var onColoredSurface: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var text: String
 
     @Published var layout: ButtonLayout {
@@ -43,6 +47,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     override init() {
         enabled = true
+        onColoredSurface = false
         text = String(localized: "app_components_button_label")
         layout = .textOnly
         hierarchy = .default
@@ -155,23 +160,23 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
 
 // MARK: - Button Configuration View
 
-struct ButtonConfigurationView: View {
-
-    @StateObject var configurationModel: ButtonConfigurationModel
+struct ButtonConfiguration: View {
 
     @Environment(\.theme) private var theme
+
+    @StateObject var model: ButtonConfigurationModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMd) {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                OUDSSwitchItem("app_common_enabled_label", isOn: $configurationModel.enabled)
-                    .disabled(configurationModel.style != .default)
+                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
+                    .disabled(model.style != .default)
 
-                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $configurationModel.onColoredSurface)
+                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
             }
 
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
-                                      selection: $configurationModel.hierarchy,
+                                      selection: $model.hierarchy,
                                       style: .segmented)
             {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
@@ -180,7 +185,7 @@ struct ButtonConfigurationView: View {
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_style_label",
-                                      selection: $configurationModel.style,
+                                      selection: $model.style,
                                       style: .segmented)
             {
                 ForEach(OUDSButton.Style.allCases, id: \.id) { style in
@@ -189,7 +194,7 @@ struct ButtonConfigurationView: View {
             }
 
             DesignToolboxChoicePicker(title: "app_components_common_layout_label",
-                                      selection: $configurationModel.layout,
+                                      selection: $model.layout,
                                       style: .segmented)
             {
                 ForEach(ButtonLayout.allCases, id: \.id) { layout in
@@ -197,9 +202,9 @@ struct ButtonConfigurationView: View {
                 }
             }
 
-            if configurationModel.layout == .iconAndText || configurationModel.layout == .textOnly {
+            if model.layout == .iconAndText || model.layout == .textOnly {
                 DesignToolboxEditContentDisclosure {
-                    DesignToolboxTextField(text: $configurationModel.text)
+                    DesignToolboxTextField(text: $model.text)
                 }
             }
         }
