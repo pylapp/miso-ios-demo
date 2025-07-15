@@ -15,45 +15,45 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: Button page
+// MARK: Chip page
 
-struct LinkPage: View {
+struct SuggestionChipPage: View {
 
-    @StateObject private var configurationModel: LinkConfigurationModel
+    @StateObject private var configurationModel: SuggestionChipConfigurationModel
 
     init() {
-        _configurationModel = StateObject(wrappedValue: LinkConfigurationModel())
+        _configurationModel = StateObject(wrappedValue: SuggestionChipConfigurationModel())
     }
 
     var body: some View {
         ComponentConfigurationView(configuration: configurationModel) {
-            LinkDemo(configurationModel: configurationModel)
+            SuggestionChipDemo(configurationModel: configurationModel)
         } configurationView: {
-            LinkConfiguration(configurationModel: configurationModel)
+            SuggestionChipConfigurationView(configurationModel: configurationModel)
         }
     }
 }
 
-// MARK: - Button Demo
+// MARK: - SuggestionChip Demo
 
-private struct LinkDemo: View {
+struct SuggestionChipDemo: View {
+
+    @StateObject var configurationModel: SuggestionChipConfigurationModel
 
     @Environment(\.theme) private var theme
-    @StateObject var configurationModel: LinkConfigurationModel
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
             switch configurationModel.layout {
+            case .iconOnly:
+                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"),
+                                   accessibilityLabel: "app_components_button_icon_a11y".localized()) {}
             case .textOnly:
-                OUDSLink(text: configurationModel.text, size: configurationModel.size) {}
+                OUDSSuggestionChip(text: configurationModel.text) {}
             case .textAndIcon:
-                OUDSLink(text: configurationModel.text, icon: Image(decorative: "ic_heart"), size: configurationModel.size) {}
-            case .indicatorBack:
-                OUDSLink(text: configurationModel.text, indicator: .back, size: configurationModel.size) {}
-            case .indicatorNext:
-                OUDSLink(text: configurationModel.text, indicator: .next, size: configurationModel.size) {}
+                OUDSSuggestionChip(icon: Image(decorative: "ic_heart"), text: configurationModel.text) {}
             }
 
             Spacer()
