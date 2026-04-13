@@ -14,15 +14,43 @@
 import OUDSSwiftUI
 import SwiftUI
 
-// MARK: - TextInput Configuration Model
+// MARK: - TextArea Helper Mode
 
-/// The model shared between `TextInputPageConfiguration` view and `TextInputPageComponent` view.
-final class TextInputConfigurationModel: ComponentConfiguration {
+/// Describes the three helper-text display modes available in the configuration panel.
+enum TextAreaHelperMode: CaseIterable, CustomStringConvertible, Hashable {
+    case none
+    case plain
+    case charactersMaxCount
+
+    var description: String {
+        switch self {
+        case .none:
+            String(localized: "app_components_common_none_tech")
+        case .plain:
+            String(localized: "app_components_common_helperText_tech")
+        case .charactersMaxCount:
+            String(localized: "app_components_textArea_charactersMaxCount_tech")
+        }
+    }
+
+    private var chipData: OUDSChipPickerData<Self> {
+        OUDSChipPickerData(tag: self, layout: .text(text: description))
+    }
+
+    static var chips: [OUDSChipPickerData<Self>] {
+        allCases.map(\.chipData)
+    }
+}
+
+// MARK: - TextArea Configuration Model
+
+/// The model shared between `TextAreaConfigurationView` and `TextAreaDemo`.
+final class TextAreaConfigurationModel: ComponentConfiguration {
 
     // MARK: Stored properties
 
     private let defaultLabel = String(localized: "app_components_common_label_label")
-    private let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
+    private let defaultErrorText = String(localized: "app_components_textArea_errorDescription_label")
 
     // MARK: Published properties
 
@@ -34,35 +62,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var prefixText: String {
-        didSet { updateCode() }
-    }
-
-    @Published var suffixText: String {
-        didSet { updateCode() }
-    }
-
-    @Published var leadingIcon: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var flipLeadingIcon: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var trailingAction: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var flipTrailingActionIcon: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var text: String {
         didSet { updateCode() }
     }
 
+    @Published var helperMode: TextAreaHelperMode {
+        didSet { updateCode() }
+    }
+
     @Published var helperText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var maxCharacters: Int {
         didSet { updateCode() }
     }
 
@@ -85,7 +97,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var status: OUDSTextInput.Status {
+    @Published var status: OUDSTextArea.Status {
         didSet { updateCode() }
     }
 
@@ -93,16 +105,12 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     override init() {
         label = defaultLabel
-        helperText = ""
-        errorText = defaultErrorText
         placeholderText = ""
-        prefixText = ""
-        suffixText = ""
-        leadingIcon = false
-        flipLeadingIcon = false
-        trailingAction = false
-        flipTrailingActionIcon = false
         text = ""
+        helperMode = .none
+        helperText = ""
+        maxCharacters = 180
+        errorText = defaultErrorText
         helperLinkText = ""
         isOutlined = false
         constrainedMaxWidth = false
@@ -112,15 +120,27 @@ final class TextInputConfigurationModel: ComponentConfiguration {
 
     deinit {}
 
+    // MARK: Computed helper
+
+    /// Returns the `OUDSTextArea.HelperText` value to pass to the component, derived from `helperMode`.
+    var computedHelperText: OUDSTextArea.HelperText? {
+        switch helperMode {
+        case .none:
+            nil
+        case .plain:
+            helperText.isEmpty ? nil : .plain(helperText)
+        case .charactersMaxCount:
+            .charactersMaxCount(UInt16(maxCharacters))
+        }
+    }
+
     // MARK: Code illustration
 
     override func updateCode() {
-        // swiftlint:disable line_length
         code =
             """
-            OUDSTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(flipLeadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            OUDSTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
             """
-        // swiftlint:enable line_length
     }
 
     private var labelPattern: String {
@@ -131,34 +151,19 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         ", text: $text"
     }
 
-    private var prefixPattern: String {
-        prefixText.isEmpty ? "" : ", prefix: \"\(prefixText)\""
-    }
-
-    private var suffixPattern: String {
-        suffixText.isEmpty ? "" : ", suffix: \"\(suffixText)\""
-    }
-
     private var placeholderPattern: String {
         placeholderText.isEmpty ? "" : ", placeholder: \"\(placeholderText)\""
     }
 
-    private var leadingIconPattern: String {
-        leadingIcon ? ", leadingIcon: \(Image.defaultImageSample())" : ""
-    }
-
-    private var flipLeadingIconPattern: String {
-        flipLeadingIcon ? ", flipLeadingIcon: true" : ""
-    }
-
-    private var trailingActionPattern: String {
-        let accessibilityLabel = "app_components_common_icon_a11y".localized()
-        let flipIconPattern = flipTrailingActionIcon ? ", flipIcon: true" : ""
-        return trailingAction ? ", trailingAction: .init(icon: \(Image.defaultImageSample())\(flipIconPattern), actionHint: \"\(accessibilityLabel)\") {}" : ""
-    }
-
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        switch helperMode {
+        case .none:
+            ""
+        case .plain:
+            helperText.isEmpty ? "" : ", helperText: .plain(\"\(helperText)\")"
+        case .charactersMaxCount:
+            ", helperText: .charactersMaxCount(\(maxCharacters))"
+        }
     }
 
     private var helperLinkPattern: String {
@@ -178,59 +183,72 @@ final class TextInputConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - TextInput Configuration View
+// MARK: - TextArea Configuration View
 
-struct TextInputConfigurationView: View {
+struct TextAreaConfigurationView: View {
 
-    @StateObject var configurationModel: TextInputConfigurationModel
+    @StateObject var configurationModel: TextAreaConfigurationModel
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
                 OUDSSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
                 OUDSSwitchItem("app_components_common_constrainedMaxWidth_tech", isOn: $configurationModel.constrainedMaxWidth)
 
-                OUDSSwitchItem("app_components_textInput_leadingIcon_tech", isOn: $configurationModel.leadingIcon)
-
-                OUDSSwitchItem("app_components_textInput_flipLeadingIcon_tech", isOn: $configurationModel.flipLeadingIcon)
-                    .disabled(!configurationModel.leadingIcon)
-
-                OUDSSwitchItem("app_components_textInput_trailingAction_tech", isOn: $configurationModel.trailingAction)
-
-                OUDSSwitchItem("app_components_textInput_flipTrailingActionIcon_tech", isOn: $configurationModel.flipTrailingActionIcon)
-                    .disabled(!configurationModel.trailingAction)
-
                 OUDSChipPicker(title: "app_components_common_status_tech",
                                selection: $configurationModel.status,
-                               chips: OUDSTextInput.Status.chips)
+                               chips: OUDSTextArea.Status.chips)
+
+                OUDSChipPicker(title: "app_components_common_helperText_tech",
+                               selection: $configurationModel.helperMode,
+                               chips: TextAreaHelperMode.chips)
 
                 DesignToolboxEditContentDisclosure {
                     DesignToolboxTextField(text: $configurationModel.label, label: "app_components_common_label_tech")
 
                     switch configurationModel.status {
                     case .error:
-                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_common_errorMessage_tech")
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_textArea_errorDescription_label")
                     default:
-                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
+                        switch configurationModel.helperMode {
+                        case .plain:
+                            DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
+                        case .charactersMaxCount:
+                            Stepper(value: $configurationModel.maxCharacters, in: 10 ... 500, step: 10) {
+                                HStack {
+                                    Text(LocalizedStringKey("app_components_textArea_maxCharacters_tech"))
+                                        .labelStrongMedium(theme)
+                                        .foregroundColor(theme.colors.contentDefault)
+                                    Spacer()
+                                    Text(String(configurationModel.maxCharacters))
+                                        .labelStrongMedium(theme)
+                                        .foregroundColor(theme.colors.contentDefault)
+                                }
+                            }
+                            .padding(.horizontal, theme.spaces.fixedMedium)
+                        case .none:
+                            EmptyView()
+                        }
                     }
 
                     DesignToolboxTextField(text: $configurationModel.placeholderText, label: "app_components_common_placeholder_tech")
-                    DesignToolboxTextField(text: $configurationModel.prefixText, label: "app_components_common_prefix_tech")
-                    DesignToolboxTextField(text: $configurationModel.suffixText, label: "app_components_textInput_suffix_tech")
-                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textInput_helperLink_tech")
+                    DesignToolboxTextField(text: $configurationModel.helperLinkText, label: "app_components_textArea_helperLink_tech")
                 }
             }
         }
     }
 }
 
-extension OUDSTextInput.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+// MARK: - OUDSTextArea.Status conformances
 
-    nonisolated(unsafe) public static var allCases: [OUDSTextInput.Status] =
-        [.enabled, .error(message: "app_components_textInput_errorDescription_label".localized()), .loading, .readOnly, .disabled]
+extension OUDSTextArea.Status: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Hashable {
+
+    public static let allCases: [OUDSTextArea.Status] =
+        [.enabled, .error(message: "app_components_textArea_errorDescription_label".localized()), .loading, .readOnly, .disabled]
 
     public var description: String {
         switch self {
