@@ -13,14 +13,12 @@
 
 import SwiftUI
 
-struct IndicatorsView: View {
+struct ProgressIndicatorsView: View {
 
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Badge", destination: BadgesView())
-                NavigationLink("Progress Indicators", destination: ProgressIndicatorsView())
-                NavigationLink("Tag", destination: TagsView())
+                NavigationLink("Circular Indicators", destination: CircularIndicatorsView())
             }
         }
     }
