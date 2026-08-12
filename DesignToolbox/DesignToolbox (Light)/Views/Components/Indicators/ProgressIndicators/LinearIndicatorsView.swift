@@ -14,12 +14,12 @@
 import OUDSSwiftUI
 import SwiftUI
 
-struct CircularIndicatorsView: View {
+struct LinearIndicatorsView: View {
 
     private static let allIndicatorStatus: [OUDSProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     var body: some View {
-        WatchScrollLayoutView(title: "Circular Indicators",
+        WatchScrollLayoutView(title: "Linear Indicators",
                               layout: { WatchVerticalLayout { watchOSLayout } })
     }
 
@@ -29,10 +29,10 @@ struct CircularIndicatorsView: View {
         ForEach(Self.allIndicatorStatus, id: \.self) { status in
             Text("Status \(String(describing: status))").font(.subheadline)
             VStack {
-                OUDSCircularProgressIndicator(status: status, track: true, gapSize: .default)
-                OUDSCircularProgressIndicator(status: status, track: true, gapSize: .small)
-                OUDSCircularProgressIndicator(status: status, track: false, gapSize: .default)
-                OUDSCircularProgressIndicator(status: status, track: false, gapSize: .small)
+                OUDSLinearProgressIndicator(status: status, track: true, gapSize: .default)
+                OUDSLinearProgressIndicator(status: status, track: true, gapSize: .small)
+                OUDSLinearProgressIndicator(status: status, track: false, gapSize: .default)
+                OUDSLinearProgressIndicator(status: status, track: false, gapSize: .small)
             }
         }
 
@@ -40,11 +40,17 @@ struct CircularIndicatorsView: View {
         ForEach(Self.allIndicatorStatus, id: \.self) { status in
             Text("Status \(String(describing: status))").font(.subheadline)
             VStack {
-                OUDSCircularProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .default)
-                OUDSCircularProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .small)
-                OUDSCircularProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .default)
-                OUDSCircularProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .small)
+                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .default)
+                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .small)
+                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .default)
+                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .small)
             }
         }
+
+        Text("Determinate with helper text & stop indicator").font(.headline)
+        OUDSLinearProgressIndicator(progress: 0.50,
+                                    status: .accent,
+                                    stopIndicator: true,
+                                    helperText: "Uploading…")
     }
 }
