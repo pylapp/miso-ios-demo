@@ -1,3 +1,13 @@
+Disclaimer
+==========
+
+> [!CAUTION]
+> ( ˶°ㅁ°) !! **This is a fork of [Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox)**
+> 
+> The aim of this project is to submit evolutions.
+> This is not the official repository of the app.
+> You should not submit bug reports, issues or pull requests to this fork.
+
 <p align="center">
 <img src="./images/logo-OUDS.png" alt="Logo of Orange Unified Design System" height="150" />
 </p>
