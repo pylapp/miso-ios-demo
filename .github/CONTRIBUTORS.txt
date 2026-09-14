@@ -19,7 +19,3 @@
 # same person.
 
 # Please keep the list sorted.
-
-Pierre-Yves LAPERSONNE <pierreyves.lapersonne@orange.com>
-Ludovic PINEL <ludovic.pinel@orange.com>
-Benoit SUZANNE <benoit.suzanne@orange.com>

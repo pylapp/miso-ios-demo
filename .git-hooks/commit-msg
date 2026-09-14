@@ -1,16 +1,6 @@
 #!/bin/bash
-#
-# Software Name: Orange Unified Design System
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 # SPDX-License-Identifier: MIT
-#
-# This software is distributed under the MIT license,
-# the text of which is available at https://opensource.org/license/MIT/
-# or see the "LICENSE" file for more details.
-#
-# Authors: See CONTRIBUTORS.txt
-# Software description: A SwiftUI components library with code examples for Orange Unified Design System
-#
 
 # Configuration
 # -------------
@@ -24,8 +14,8 @@ PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: 
 PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
 PATTERN_SECTION_FIXED="fix:"
 PATTERN_SECTION_SECURITY="fix\(security\):"
-PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(🤖\)!:"
-PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(🤖\):|ci:|docs:|style:|refactor:|perf:|test:"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(@pylapp\))!:"
+PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(@pylapp\):|ci:|docs:|style:|refactor:|refactor\(@pylapp\):|perf:|test:"
 
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"

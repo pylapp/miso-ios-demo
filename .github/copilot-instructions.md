@@ -1,11 +1,11 @@
-# OUDS iOS Design System Toolbox app - GitHub Copilot Instructions
+# MISO iOS Design System Toolbox app - GitHub Copilot Instructions
 
 This file provides guidance to GitHub Copilot when working on this repository.
 It covers contributor and maintainer guidelines: code formatting, architecture, build process, best practices, ecodesign, accessibility, development requirements, build commands and review guidelines.
 
 ## 1. Project Overview
 
-OUDS means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
+MISO means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
 It provides a Swift Package and a demo application (this repository) called Design System Tooblox which embeds the Swift Package to expose its public API.
 The project is open source under MIT license and hosted on GitHub in Orange-OpenSource organization.
 The products support iOS 15, iPadOS 15, macOS 15, visionOS 1, watchOS 11 and tvOS 16.
@@ -280,7 +280,7 @@ bundle exec fastlane update_build_number
 
 ### 12.7 Fonts
 
-- Prefer system fonts if possible, but in OUDS context use still the view modifiers and provided typography
+- Prefer system fonts if possible, but in MISO context use still the view modifiers and provided typography
 - use WOFF2 otherwise
 
 ### 12.8 Network connections

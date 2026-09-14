@@ -1,7 +1,7 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Embed the OUDS iOS library](#embed-the-ouds-ios-library)
+- [Embed the MISO iOS library](#embed-the-miso-ios-library)
   * [Use as dependency](#use-as-dependency)
   * [Use local reference](#use-local-reference)
 - [Build Design System Toolbox](#build-design-system-toolbox)
@@ -9,7 +9,7 @@
   * [Generation](#generation)
   * [Illustrations](#illustrations)
 - [Run tests](#run-tests)
-  * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [Unit tests for MISO Swift package](#unit-tests-for-miso-swift-package)
   * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
   * [Unit tests in demo app](#unit-tests-in-demo-app)
@@ -45,7 +45,7 @@
 
 > [!IMPORTANT]
 > We use a lot Fastlane for its automatic features and also to wrap to Shell command lines in order to have the same command to trigger
-> for both the design ssytem toolbox app and the OUDS Swift package.
+> for both the design ssytem toolbox app and the MISO Swift package.
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
@@ -131,21 +131,21 @@ We use also for our GitLab CI runners **Xcode 26.4**, we suggest you use this ve
 > [!IMPORTANT]
 > Xcode 26.4 and Swift 6.3 are used for this project. You should use this configuration.
 > Not retrocompatibility is planned yet.
-> If need you can contact us and open a discussion on GitHub Orange-OpenSource/ouds-ios
+> If need you can contact us and open a discussion on GitHub pylapp/miso-ios/
 
-## Embed the OUDS iOS library
+## Embed the MISO iOS library
 
 ### Use as dependency
 
-You can refer in your project to the OUDS iOS Swift Package by adding a package dependency.
-Use the GitHub project Orange-OpenSource/ouds-ios (e.g. from URL https://github.com/Orange-OpenSource/ouds-ios/).
-Then use the dependency rule you want (branch, versions, etc). If you want a specific release tag, [have a look on the releases list](https://github.com/Orange-OpenSource/ouds-ios/releases).
+You can refer in your project to the MISO iOS Swift Package by adding a package dependency.
+Use the GitHub project pylapp/miso-ios/ (e.g. from URL https://github.com/pylapp/miso-ios/).
+Then use the dependency rule you want (branch, versions, etc). If you want a specific release tag, [have a look on the releases list](https://github.com/pylapp/miso-ios/releases).
 Do not forget to add the package products in your target.
 
 ### Use local reference
 
 For debugging purposes, you can also use an Xcode local reference of the project.
-First, clone the OUDS iOS Swift Package repistory.
+First, clone the MISO iOS Swift Package repistory.
 Then, select your folder from *Finder* and move to the project in Xcode in your project pane, choosing *Reference files in place*.
 You will have then the project stored elsewhere reference in your project and which can be easily debugged.
 You should not add in your VCS tool the *{$PROJET}.xcworkspace/contents.xcworkspacedata* file containing the local references.
@@ -160,7 +160,7 @@ To build the demo application follow those steps:
 4. Build and run the Application on your device ou simulator
 
 > [!TIP]
-> You can also move the folder containing a clone of the [Swift package repository](https://github.com/Orange-OpenSource/ouds-ios) from the *Finder* to the design system toolbox Xcode project so as to have a local reference of the package in this demo app.
+> You can also move the folder containing a clone of the [Swift package repository](https://github.com/pylapp/miso-ios/) from the *Finder* to the design system toolbox Xcode project so as to have a local reference of the package in this demo app.
 
 > [!TIP]
 > For consistancy reasons, when you work on a dedicated branch on the Swift Package repository and need to have a dedicated branch in the design system toolbox app, you should create a branch from the issue in GitHub and (creating then a branch in the package repository) and create a branch with the same name in the design system toolbox app repositoy. Thus with two repositories we will be able to find easily the suitable branches because the names are the same. Because issues are disabled in the design system toolbox repository, there is no wories to have to refer to issues numbers in the branch names.
@@ -173,11 +173,11 @@ The documentation is based on the Swift documentation with [DocC](https://www.sw
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
 The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
-the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/pylapp/miso-ios/tree/gh-pages).
 
 ### Illustrations
 
-The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
+The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/pylapp/miso-ios/).
 They are made manually with iPhone 17 Pro, in english, portrait, light mode (combined with dark mode) without icreased size text.
 Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
@@ -194,10 +194,10 @@ For *App Store* illustrations, you need to make screenshots using simulators or 
 
 ## Run tests 
 
-### Unit tests for OUDS Swift package
+### Unit tests for MISO Swift package
 
-You can, from the design system toolbox project, if you referenced the OUDS package with a local repository reference before, run the unit tests of the OUDS package. Or you can run them from Xcode if you opened only the package?
-To do that, select the scheme *OUDS-Package* scheme, which is also the current package test plan, and in the tests navigator run the tests.
+You can, from the design system toolbox project, if you referenced the MISO package with a local repository reference before, run the unit tests of the MISO package. Or you can run them from Xcode if you opened only the package?
+To do that, select the scheme *MISO-Package* scheme, which is also the current package test plan, and in the tests navigator run the tests.
 
 ### Snapshots tests in demo app
 
@@ -231,15 +231,15 @@ Any interface modifications require regenerating the illustrations using the too
 1. Locate where are the reference images:
     - In the Package directory, you will find the reference screenshots for the Orange theme (Light/Dark), which will serve as comparison baselines.
     ```text
-    OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
+    MISO -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
     ```
 2. Navigate to the project :
-    - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
+    - Open your project in Xcode and go to a directory containing tests (e.g. here *MISOTokensOpacityUITests*):
     ```shell
-    DesignToolbox -> DesignToolboxSnapshotsTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
+    DesignToolbox -> DesignToolboxSnapshotsTests -> MISOTokensOpacityUITests -> MISOTokensOpacityUITests.swift
     ```
-3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
-    - Open the file `OUDSTokensOpacityUITests.swift`.
+3. Open a test file (e.g. here *MISOTokensOpacityUITests*):
+    - Open the file `MISOTokensOpacityUITests.swift`.
 4. Run the snapshot test (success):
     - Locate and execute some function like `testAllOpacitiesOrangeThemeLight()`.
 
@@ -383,11 +383,11 @@ If you want to get them, download them from the [Orange Brand website (authentic
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device. You may need to be part of our team if you want to build in debug mode.
-Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
+Note the bundle identifier here for local builds is **com.orange.miso.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.miso.demoapp** identifiers.
 
-However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
+However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.miso.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
 
-You can find more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/53-%E2%80%90-About-Apple-magic).
+You can find more details [in the wiki](https://github.com/pylapp/miso-ios/wiki/53-%E2%80%90-About-Apple-magic).
 
 ## Update dependencies with Renovate
 
@@ -465,25 +465,6 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 > Keep things clear and sorted. If people worked on your commits, mention them if relevant.
 > The lower is the people, the older is its contribution
 
-#### Integration of tokenator updates
-
-You should refer to the [dedicated page in the wiki for more details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens).
-
-Keep in mind the commit adding *tokenator* updates in the codebase must be formatted like
-
-```text
-chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
-``` 
-
-i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
-
-If you know what is the token library version, add it in the commit body, like:
-```text
-chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
-
-Tokens library v0.4.1
-``` 
-
 #### Verifying commits cryptographic signatures
 
 Some core maintainers in the project use GPG so cryptographically sign their commits.
@@ -524,7 +505,7 @@ In few words, if the commit was signed with the committer's verified signature, 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
-Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
+Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/pylapp/miso-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 To generate a release note:
 
@@ -644,7 +625,7 @@ You can also in Xcode run from the *Periphery* scheme so as to make a scan.
 > Use a real device and not a simulator. 
 
 > [!CAUTION]
-> In addition, do not use local reference of OUDS iOS Swift Package as many false-positive warnings can rise; use branch version instead.
+> In addition, do not use local reference of MISO iOS Swift Package as many false-positive warnings can rise; use branch version instead.
 
 > [!TIP]
 > periphery is not perfect, and false positive can occur.
@@ -701,13 +682,13 @@ We use *GitHub Actions* so as to define a workflow with some actions to build de
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
 
 Workflows are the following:
-- [build-and-test](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
-- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
-- [gitleaks](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
-- [scorecard](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
-- [snapshot](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/snapshot.yml) to move SNAPSHOT git tag to last develop version
-- [swiftlint](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
-- [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
+- [build-and-test](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
+- [dependency-review](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [gitleaks](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
+- [scorecard](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
+- [snapshot](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/snapshot.yml) to move SNAPSHOT git tag to last develop version
+- [swiftlint](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
+- [swiftpolyglot](https://github.com/pylapp/miso-ios/-design-system-toolbox/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
 We use also two GitHub apps making controls on pull requests and defining whether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
@@ -717,16 +698,6 @@ Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-ac
 > [!NOTE]
 > A workflow for dependency-review based on CodeQL existed but it was not posssible to have successful build for analyis
 > It has been withdrawn and will be added later.
-
-### GitLab CI (internal)
-
-We use *GitLab CI*,for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
-Our current plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
-However of course you will have to define all the variables, secrets and have the mandatory files.
-
-You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
-
-In few words, there is a pipeline containing some stages and HIRDjobs to build alpha, nightly/beta and production releases.
 
 ## Use of GenAI
 
@@ -775,7 +746,7 @@ The main things to note are the LLM in use and the products behind with, if rele
 Bots accounts can be used, e.g. to update dependencies with *Dependabot*, *Snyk* or *Renovate*, or also to provide new tokens with the [boosted-bot](https://github.com/boosted-bot).
 It could be interesting to keep traces of what they did, e.g. review pull requests or provide source code.
 The suitable field must be used and also the bot name and associated email.
-By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/Orange-OpenSource/ouds-ios/graphs/contributors).
+By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/pylapp/miso-ios/graphs/contributors).
 
 For example:
 ```text
