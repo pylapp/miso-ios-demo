@@ -1,25 +1,16 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 struct ButtonsView: View {
 
-    private static let kAllButtonAppaerances: [OUDSButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
-    private static let kAllButtonStyles: [OUDSButton.Style] = [.default, .loading()]
-    private static let kAllButtonSizes: [OUDSButton.Size] = [.default, .small]
+    private static let kAllButtonAppaerances: [MISOButton.Appearance] = [.default, .strong, .brand, .minimal, .negative]
+    private static let kAllButtonStyles: [MISOButton.Style] = [.default, .loading()]
+    private static let kAllButtonSizes: [MISOButton.Size] = [.default, .small]
 
     @Environment(\.theme) private var theme
 
@@ -39,9 +30,9 @@ struct ButtonsView: View {
                     Text("Size \(String(describing: size))").font(.subheadline)
                     ForEach(Self.kAllButtonAppaerances, id: \.self) { appearance in
                         Text("Appearance \(String(describing: appearance))").font(.body)
-                        OUDSButton(text: "Button", appearance: appearance, style: style, size: size) {}
-                        OUDSButton(text: "Button", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), appearance: appearance, style: style, size: size) {}
-                        OUDSButton(image: OUDSImage(asset: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button"), appearance: appearance, style: style, size: size) {}
+                        MISOButton(text: "Button", appearance: appearance, style: style, size: size) {}
+                        MISOButton(text: "Button", image: MISOImage(asset: Image(systemName: "sun.min.fill")), appearance: appearance, style: style, size: size) {}
+                        MISOButton(image: MISOImage(asset: Image(systemName: "sun.min.fill"), accessibilityLabel: "Button"), appearance: appearance, style: style, size: size) {}
                     }
                 }
             }
@@ -49,7 +40,7 @@ struct ButtonsView: View {
     }
 }
 
-extension OUDSButton.Style: @retroactive Hashable {
+extension MISOButton.Style: @retroactive Hashable {
     public func hash(into hasher: inout Hasher) {
         switch self {
         case .default:

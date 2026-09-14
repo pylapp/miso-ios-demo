@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct DesignToolboxCode: View {
@@ -32,7 +23,7 @@ struct DesignToolboxCode: View {
         DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
             codeSection()
         } label: {
-            OUDSBody(titleText, size: .large, weight: .strong)
+            MISOBody(titleText, size: .large, weight: .strong)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
         }
@@ -40,7 +31,7 @@ struct DesignToolboxCode: View {
 
     private func codeSection() -> some View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spaces.paddingBlockNone) {
-            OUDSCode(text: code)
+            MISOCode(text: code)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.paddingInlineSmall)
                 .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
@@ -48,7 +39,7 @@ struct DesignToolboxCode: View {
 
             Spacer(minLength: theme.spaces.paddingBlockMedium)
 
-            OUDSButton(image: OUDSImage(asset: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized()), appearance: .minimal) {
+            MISOButton(image: MISOImage(asset: Image("ic_copy"), accessibilityLabel: "app_common_copyCode_a11y".localized()), appearance: .minimal) {
                 OSUtilities.copy(content: code)
             }
         }

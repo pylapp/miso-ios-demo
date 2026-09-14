@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct DesignToolboxVariantElement: View {
@@ -22,7 +13,7 @@ struct DesignToolboxVariantElement: View {
     @Environment(\.layoutDirection) private var layoutDirection
 
     #if os(macOS)
-    @AppStorage("colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+    @AppStorage("info.pylapp.misso.demoAPp.colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
     @EnvironmentObject private var windowManager: WindowManager
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
@@ -42,7 +33,7 @@ struct DesignToolboxVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             #if os(iOS)
-            OUDSNavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
+            MISONavigationLink(LocalizedStringKey(element.name), hasBoldLabel: true, indicatorType: .next) {
                 element.pageDescription
             }
             #elseif os(visionOS)
@@ -57,7 +48,7 @@ struct DesignToolboxVariantElement: View {
             NavigationLink {
                 // The destination is a `DesignToolboxElementPage`, whose `tvOSHeader`
                 // already renders the title alongside the theme / color-scheme controls,
-                // and `oudsScreenTitle` posts the accessibility screen-changed
+                // and `misoScreenTitle` posts the accessibility screen-changed
                 // notification. Setting `.navigationTitle` here would render a second
                 // visible copy of the title (tvOS renders it as inline text, not chrome).
                 element.pageDescription
@@ -83,14 +74,14 @@ struct DesignToolboxVariantElement: View {
             }
             #endif
         }
-        .oudsListItemSize(.small)
+        .misoListItemSize(.small)
     }
 
     // MARK: - Helper
 
     private func rowView(for element: DesignToolboxElement) -> some View {
         HStack {
-            OUDSHeading(LocalizedStringKey(element.name), size: .medium)
+            MISOHeading(LocalizedStringKey(element.name), size: .medium)
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.fixedXsmall)

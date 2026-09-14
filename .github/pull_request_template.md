@@ -35,7 +35,7 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 
 #### Contribution
 
-- [ ] I have read the [contributing guidelines](https://github.com/pylapp/miso-ios-design-system-toolbox/blob/develop/.github/CONTRIBUTING.md)
+- [ ] I have read the [contributing guidelines](https://github.com/pylapp/miso-ios-demo/blob/develop/.github/CONTRIBUTING.md)
 
 #### Accessibility
 
@@ -43,9 +43,9 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 
 #### Development
 
-- [ ] My change follows the [developer guide](https://github.com/pylapp/miso-ios-design-system-toolbox/blob/develop/.github/DEVELOP.md)
+- [ ] My change follows the [developer guide](https://github.com/pylapp/miso-ios-demo/blob/develop/.github/DEVELOP.md)
 - [ ] I checked my changes do not add new SwiftLint warnings
-- [ ] I checked I am using the last version of OUDS iOS library
+- [ ] I checked I am using the last version of MISO iOS library
 - [ ] <!-- OPTIONAL --> I have added unit tests to cover my changes _(optional)_
 
 #### Documentation

@@ -1,21 +1,12 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To make UI tests on some checkbox picker from OUDS
+/// To make UI tests on some checkbox picker from MISO
 /// Tests the accessibility identifiers, labels or values of the items depending to their states and user actions.
 final class CheckboxPickerUITests: AppTestCase {
 

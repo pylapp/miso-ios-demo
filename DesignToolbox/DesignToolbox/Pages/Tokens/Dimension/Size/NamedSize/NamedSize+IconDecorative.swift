@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
@@ -25,7 +16,7 @@ extension NamedSize {
         case iconDecorativeXlarge
         case iconDecorative2xlarge
 
-        func token(from theme: OUDSTheme) -> SizeSemanticToken {
+        func token(from theme: MISOTheme) -> SizeSemanticToken {
             switch self {
             case .iconDecorative4xsmall:
                 theme.sizes.iconDecorative4xsmall

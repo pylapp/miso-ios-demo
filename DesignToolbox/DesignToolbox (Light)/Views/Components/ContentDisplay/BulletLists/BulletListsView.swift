@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable closure_body_length
@@ -30,19 +21,19 @@ struct BulletListsView: View {
             Text("Bare").font(.headline)
 
             Text("Body Large").font(.subheadline)
-            OUDSBulletList(type: .bare) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList(type: .bare) {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
-            OUDSBulletList(type: .bare, textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList(type: .bare, textStyle: .bodyMedium) {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }
@@ -50,19 +41,19 @@ struct BulletListsView: View {
             Text("Ordered").font(.headline)
 
             Text("Body Large").font(.subheadline)
-            OUDSBulletList(type: .ordered) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList(type: .ordered) {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
-            OUDSBulletList(type: .ordered, textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList(type: .ordered, textStyle: .bodyMedium) {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }
@@ -70,19 +61,19 @@ struct BulletListsView: View {
             Text("Unordered (bullet)").font(.headline)
 
             Text("Body Large").font(.subheadline)
-            OUDSBulletList {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
-            OUDSBulletList(textStyle: .bodyMedium) {
-                OUDSBulletList.Item("Label") {
-                    OUDSBulletList.Item("Label") {
-                        OUDSBulletList.Item("Label")
+            MISOBulletList(textStyle: .bodyMedium) {
+                MISOBulletList.Item("Label") {
+                    MISOBulletList.Item("Label") {
+                        MISOBulletList.Item("Label")
                     }
                 }
             }

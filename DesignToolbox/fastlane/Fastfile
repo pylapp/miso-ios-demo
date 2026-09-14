@@ -17,7 +17,7 @@ DEVELOPER_APP_IDENTIFIER = ENV["MISO_DEVELOPER_BUNDLE_IDENTIFIER"]
 GITHUB_ORG_LIB_REPO = "pylapp/miso-ios"
 
 # Repository of MISO iOS Design System Toolbox app
-GITHUB_ORG_APP_REPO = "pylapp/miso-ios-design-system-toolbox"
+GITHUB_ORG_APP_REPO = "pylapp/miso-ios-demo"
 
 # Fine grained personal access token with enough permissions for the suitable GitHub projects
 # Must be configured for both GITHUB_ORG_LIB_REPO and GITHUB_ORG_APP_REPO
@@ -65,6 +65,16 @@ lane :format do
 
     template = '\\nSPDX-FileCopyrightText: Copyright (c) Orange, Pierre-Yves Lapersonne\\nSPDX-License-Identifier: MIT'
     sh "cd .. && swiftformat . --header \"#{template}\""
+
+    puts "👉 Run Swift Format to format sources"
+
+    # Format sources of fork, copyrighted Orange, modified by Pierre-Yves Lapersonne
+    templateOUDSFork = 'Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)\\nSPDX-License-Identifier: MIT\\nSPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne'
+    sh "cd .. && swiftformat . --header \"#{templateOUDSFork}\" && cd .."
+
+    # Format sources of MISO, not related to the fork, copyrighted Pierre-Yves Lapersonne only
+    templateMISO = 'Software: MISO iOS (demo app)\\nSPDX-License-Identifier: MIT\\nSPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne'
+    sh "cd .. && swiftformat DesignToolbox/Pages/Components/MISO/ --header \"#{templateMISO}\" && cd .."
 
     puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
@@ -160,7 +170,7 @@ platform :ios do
         puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
     end
     
-    desc "Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package"
+    desc "Run snapshots tests in the demo app to look for visual regressions of components defined in MISO package"
     lane :test_snapshots do
         start_time = Time.now
         puts "👉 Run snapshots tests"
@@ -315,7 +325,7 @@ platform :mac do
             scheme: MISO_SCHEME_MACOS,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'misoDemoApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -359,7 +369,7 @@ platform :vision do
             scheme: MISO_SCHEME_VISIONOS,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'misoDemoApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -403,7 +413,7 @@ platform :watch do
             scheme: MISO_SCHEME_WATCHOS,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'misoDemoApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -447,7 +457,7 @@ platform :tv do
             scheme: MISO_SCHEME_TVOS,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'misoDemoApp',
             configuration: 'Debug',
             include_symbols: true,
             skip_archive: true,
@@ -485,22 +495,22 @@ end
     
     package_resolved_content = File.read("../#{MISO_PACKAGE_RESOLVED_PATH}")
     package_resolved_json_content = JSON.parse(package_resolved_content)
-    MISO_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
+    miso_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
         
-    return MISO_ios_obj.dig("state", "branch") == "develop"
+    return miso_ios_obj.dig("state", "branch") == "develop"
 
 end
 
- # Checks if the current version of the OUDS Swift Package is the expected one for stable builds of the app;
+ # Checks if the current version of the MISO Swift Package is the expected one for stable builds of the app;
  # i.e. points to a tag
 def check_package_version_for_stable_app()
     puts "👉 Check package version for MISO iOS Swift package (stable)"
 
     package_resolved_content = File.read("../#{MISO_PACKAGE_RESOLVED_PATH}")
     package_resolved_json_content = JSON.parse(package_resolved_content)
-    MISO_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
+    miso_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
         
-    return !MISO_ios_obj.dig("state", "version").nil?
+    return !miso_ios_obj.dig("state", "version").nil?
 end
 
 # Extract from Package.resolved details about the version in use of the MISO iOS Swift Package.
@@ -510,15 +520,15 @@ def MISO_swift_package_version()
 
     package_resolved_content = File.read("../#{MISO_PACKAGE_RESOLVED_PATH}")
     package_resolved_json_content = JSON.parse(package_resolved_content)
-    MISO_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
-    MISO_ios_branch = MISO_ios_obj.dig("state", "branch") # Git branch
-     MISO_ios_revision = MISO_ios_obj.dig("state", "revision") # Commit hash
-     MISO_ios_version = MISO_ios_obj.dig("state", "version") # Git tag
+    miso_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
+    miso_ios_branch = miso_ios_obj.dig("state", "branch") # Git branch
+    miso_ios_revision = miso_ios_obj.dig("state", "revision") # Commit hash
+    miso_ios_version = miso_ios_obj.dig("state", "version") # Git tag
 
-    if MISO_ios_branch && MISO_ios_revision
-        return "#{MISO_ios_branch} (#{MISO_ios_revision[0,7]})"
-    elsif MISO_ios_revision && MISO_ios_version
-        return "#{MISO_ios_version} (#{MISO_ios_revision[0,7]})"
+    if miso_ios_branch && miso_ios_revision
+        return "#{miso_ios_branch} (#{miso_ios_revision[0,7]})"
+    elsif miso_ios_revision && miso_ios_version
+        return "#{miso_ios_version} (#{miso_ios_revision[0,7]})"
     else
         raise error
     end
@@ -532,11 +542,11 @@ def MISO_swift_package_git_branch()
 
     package_resolved_content = File.read("../#{MISO_PACKAGE_RESOLVED_PATH}")
     package_resolved_json_content = JSON.parse(package_resolved_content)
-    MISO_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
-     MISO_ios_branch = MISO_ios_obj.dig("state", "branch")
+    miso_ios_obj = package_resolved_json_content['pins'].find { |pin| pin["identity"] == "miso-ios" }
+    miso_ios_branch = miso_ios_obj.dig("state", "branch")
 
-     if MISO_ios_branch
-        return "#{MISO_ios_branch}"
+    if miso_ios_branch
+        return "#{miso_ios_branch}"
     else
         raise error
     end

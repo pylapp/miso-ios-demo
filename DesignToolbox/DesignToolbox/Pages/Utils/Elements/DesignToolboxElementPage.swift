@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 /// Used to present the element in same layout with:
@@ -57,13 +48,13 @@ struct DesignToolboxElementPage: View {
         #elseif os(tvOS)
         // tvOS: no navigation bar chrome. Render a visible header with the page title
         // and the theme / color-scheme controls on top of the content, then post the
-        // accessibility screen-changed notification via `oudsScreenTitle`.
+        // accessibility screen-changed notification via `misoScreenTitle`.
         VStack(spacing: 0) {
             tvOSHeader
             elementPageBody
         }
         .background(theme.colors.bgPrimary)
-        .oudsScreenTitle(name)
+        .misoScreenTitle(name)
         #else // macOS, visionOS
         elementPageBody // Otherwise appears twice
         #endif
@@ -104,7 +95,7 @@ struct DesignToolboxElementPage: View {
                             .allowsTightening(true)
                     }
 
-                    OUDSBody(LocalizedStringKey(description), size: .large, weight: .default)
+                    MISOBody(LocalizedStringKey(description), size: .large, weight: .default)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .accessibilityFocused($requestFocus)
@@ -144,9 +135,9 @@ struct DesignToolboxElementPage: View {
                 }
             #endif
             #if !os(macOS) && !os(tvOS)
-            // OUDS `toolBarTop` modifier is not available on tvOS; on tvOS the top tab bar
+            // MISO `toolBarTop` modifier is not available on tvOS; on tvOS the top tab bar
             // is provided natively by SwiftUI's `TabView` and the navigation title is
-            // handled by `.oudsNavigationTitle` further up the hierarchy.
+            // handled by `.misoNavigationTitle` further up the hierarchy.
             .toolBarTop(name.localized())
             #endif
         }
@@ -155,10 +146,10 @@ struct DesignToolboxElementPage: View {
     @ViewBuilder
     private func versionView(_ version: String) -> some View {
         HStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
-            OUDSLabel("app_components_common_version_label", size: .large, weight: .strong)
+            MISOLabel("app_components_common_version_label", size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
 
-            OUDSTag(label: version,
+            MISOTag(label: version,
                     status: .info(leading: .none),
                     appearance: .muted,
                     shape: .rounded,

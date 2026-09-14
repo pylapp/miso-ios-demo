@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
@@ -59,12 +50,12 @@ struct RadiosItemView: View {
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
                 // Normal (isReversed: false)
-                OUDSRadioItem(
+                MISORadioItem(
                     "Label",
                     isOn: $isOn,
                     extraLabel: "Additional",
                     description: "Description",
-                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                    image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isOutlined: isOutlined,
                     isReversed: false,
                     isError: isError,
@@ -73,12 +64,12 @@ struct RadiosItemView: View {
                     .disabled(isDisabled)
 
                 // Reversed (isReversed: true)
-                OUDSRadioItem(
+                MISORadioItem(
                     "Label",
                     isOn: $isOn,
                     extraLabel: "Additional",
                     description: "Description",
-                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                    image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isOutlined: isOutlined,
                     isReversed: true,
                     isError: isError,
@@ -94,19 +85,19 @@ struct RadiosItemView: View {
     private func detailedView(withIcon: Bool) -> some View {
         Text("Enabled").font(.caption)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: false)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: false)
 
@@ -114,41 +105,41 @@ struct RadiosItemView: View {
 
         Text("Not outlined").font(.callout)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isError: true,
                       errorText: "Error")
 
         Text("Outlined").font(.callout)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isOutlined: true,
                       isReversed: false,
                       isError: true,
                       errorText: "Error")
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isOutlined: true,
                       isReversed: true,
                       isError: true,
@@ -156,39 +147,39 @@ struct RadiosItemView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: false)
             .disabled(true)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: false)
             .disabled(true)
 
         Text("Read only").font(.caption)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: false,
                       isReadOnly: true)
 
-        OUDSRadioItem("Label",
+        MISORadioItem("Label",
                       isOn: $isOn,
                       extraLabel: "Additional",
                       description: "Description",
-                      image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                      image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                       isReversed: true,
                       isReadOnly: true)
     }

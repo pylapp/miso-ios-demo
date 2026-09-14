@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // MARK: - About Page
@@ -23,12 +14,6 @@ import SwiftUI
 struct AboutPage: View {
 
     // MARK: Properties
-
-    private let privacyPolicyUrl: URL
-    private let legalInformationUrl: URL
-    private let appSourcesUrl: URL
-    private let bugReportUrl: URL
-    private let designSystemUrl: URL
 
     #if os(iOS)
     private let appSettingsUrl: URL
@@ -47,34 +32,9 @@ struct AboutPage: View {
     // MARK: Initializer
 
     init() {
-        guard let privacyNoticeUrl = Bundle.main.url(forResource: "about_privacy_policy", withExtension: "html") else {
-            OL.fatal("Unable to find about_privacy_policy.html in resources")
-        }
-
-        guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
-            OL.fatal("Unable to find about_legal_information.html in resources")
-        }
-
-        guard let appSourcesUrl = URL(string: "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox") else {
-            OL.fatal("Unable to forge app sources URL")
-        }
-
-        guard let bugReportUrl = URL(string: "https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose") else {
-            OL.fatal("Unable to forge bug report URL")
-        }
-
-        guard let designSystemUrl = URL(string: "https://unified-design-system.orange.com") else {
-            OL.fatal("Unable to forge design system URL")
-        }
-
-        privacyPolicyUrl = privacyNoticeUrl
-        self.legalInformationUrl = legalInformationUrl
-        self.appSourcesUrl = appSourcesUrl
-        self.bugReportUrl = bugReportUrl
-        self.designSystemUrl = designSystemUrl
         #if os(iOS)
         guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            OL.fatal("Unable to find app settings URL")
+            ML.fatal("Unable to find app settings URL")
         }
         self.appSettingsUrl = appSettingsUrl
         #endif
@@ -113,71 +73,25 @@ struct AboutPage: View {
 
     private var listBody: some View {
         List {
-            if theme.name != SoshTheme.name {
-                Section(header: OUDSHeading("app_about_legal_title", hasMarker: true)) {
-                    legalView
-                }
-                Section(header: OUDSHeading("app_about_versions_title", hasMarker: true)) {
-                    buildView
-                }
-                Section(header: OUDSHeading("app_about_links_title", hasMarker: true)) {
-                    linksView
-                }
-            } else {
-                Section(header: OUDSHeading("app_about_legal_title", coloredText: "légales")) {
-                    legalView
-                }
-                Section(header: OUDSHeading("app_about_versions_title", coloredText: "techniques")) {
-                    buildView
-                }
-                Section(header: OUDSHeading("app_about_links_title", coloredText: "utiles")) {
-                    linksView
-                }
+            Section(header: MISOHeading("app_about_versions_title", hasMarker: true)) {
+                buildView
+            }
+            Section(header: MISOHeading("app_about_links_title", hasMarker: true)) {
+                linksView
             }
             #if DEBUG
-            Section(header: OUDSHeading("app_about_debug_title", hasMarker: true)) {
+            Section(header: MISOHeading("app_about_debug_title", hasMarker: true)) {
                 debugSandboxView
-                OUDSButton("app_about_debug_clearCache_label", appearance: .negative) {
-                    OUDSAsyncImageCache.shared.clearCache()
+                MISOButton("app_about_debug_clearCache_label", appearance: .negative) {
+                    MISOAsyncImageCache.shared.clearCache()
                 }
             }
             #endif
         }
-        .oudsScreenTitle("app_bottomBar_about_label")
+        .misoScreenTitle("app_bottomBar_about_label")
     }
 
     // MARK: - Views
-
-    #if os(iOS) || os(macOS)
-    @ViewBuilder
-    private var legalView: some View {
-        Group {
-            OUDSNavigationLink("app_about_privacyPolicy_label", style: .item(divider: false, background: false)) {
-                WebView(from: privacyPolicyUrl)
-                    .navigationTitle("app_about_privacyPolicy_label")
-            }
-
-            OUDSNavigationLink("app_about_legalInformation_label", style: .item(divider: false, background: false)) {
-                WebView(from: legalInformationUrl)
-                    .navigationTitle("app_about_legalInformation_label")
-            }
-
-            #if !os(macOS)
-            OUDSNavigationLink("app_about_accessibilityStatement_label", style: .item(divider: false, background: false)) {
-                AccessibilityStatementPage()
-                    .navigationTitle("app_about_accessibilityStatement_label")
-            }
-            #endif
-        }
-        .oudsListItemStyle(divider: false)
-        .oudsListItemSize(.small)
-    }
-    #else
-    @ViewBuilder
-    private var legalView: some View {
-        EmptyView()
-    }
-    #endif
 
     @ViewBuilder
     private var buildView: some View {
@@ -194,28 +108,13 @@ struct AboutPage: View {
         LiquidGlassStateItem()
 
         VersionItem(title: "app_about_details_themeCoreVersion",
-                    version: OUDSVersions.themeCoreVersion)
+                    version: MISOVersions.themeCoreVersion)
 
-        VersionItem(title: "app_about_details_themeOrangeCoreVersion",
-                    version: OUDSVersions.themeOrangeCoreVersion)
+        VersionItem(title: "app_about_details_themeBlueCoatCoreVersion",
+                    version: MISOVersions.themeBlueCoatCoreVersion)
 
-        VersionItem(title: "app_about_details_themeSoshCoreVersion",
-                    version: OUDSVersions.themeSoshCoreVersion)
-
-        VersionItem(title: "app_about_details_themeWireframeCoreVersion",
-                    version: OUDSVersions.themeWireframeCoreVersion)
-
-        VersionItem(title: "app_about_details_themeOrangeBrandVersion",
-                    version: OUDSVersions.themeOrangeBrandVersion)
-
-        VersionItem(title: "app_about_details_themeSoshBrandVersion",
-                    version: OUDSVersions.themeSoshBrandVersion)
-
-        VersionItem(title: "app_about_details_themeOrangeCompactBrandVersion",
-                    version: OUDSVersions.themeOrangeCompactBrandVersion)
-
-        VersionItem(title: "app_about_details_themeWireframeBrandVersion",
-                    version: OUDSVersions.themeWireframeBrandVersion)
+        VersionItem(title: "app_about_details_themeBlueCoatBrandVersion",
+                    version: MISOVersions.themeBlueCoatBrandVersion)
 
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
@@ -236,16 +135,13 @@ struct AboutPage: View {
         if let changelogURL = Bundle.main.changelogURL {
             link(changelogURL, label: "app_about_changelog_label", hint: "app_about_changelog_hint_a11y")
         }
-        link(appSourcesUrl, label: "app_about_appSources_label", hint: "app_about_appSources_hint_a11y")
-        link(bugReportUrl, label: "app_about_bugReport_label", hint: "app_about_bugReport_hint_a11y")
-        link(designSystemUrl, label: "app_about_designSystem_label", hint: "app_about_designSystem_hint_a11y")
 
         #if os(iOS)
         Button {
             OSUtilities.open(url: appSettingsUrl)
         } label: {
             HStack {
-                OUDSLabel("app_about_appSettings_label", size: .large, weight: .strong)
+                MISOLabel("app_about_appSettings_label", size: .large, weight: .strong)
                 Spacer()
                 Image(systemName: "gear").accessibilityHidden(true)
             }
@@ -255,7 +151,7 @@ struct AboutPage: View {
 
     @ViewBuilder
     private func link(_ url: URL, label: String, hint: String) -> some View {
-        OUDSLink(text: label.localized(), indicator: .external, isFullWidth: true) {
+        MISOLink(text: label.localized(), indicator: .external, isFullWidth: true) {
             openURL.callAsFunction(url)
         }
         .accessibilityHint(hint.localized())
@@ -267,7 +163,7 @@ struct AboutPage: View {
     /// Enabling it makes ``MainView`` add a "Debug" tab in first position.
     @ViewBuilder
     private var debugSandboxView: some View {
-        OUDSSwitchItem("app_about_sandbox_label",
+        MISOSwitchItem("app_about_sandbox_label",
                        isOn: $sandboxEnabled,
                        description: "app_about_sandbox_description".localized(),
                        image: .init(asset: Image(systemName: "hammer")))
@@ -281,20 +177,20 @@ struct AboutPage: View {
 private struct LiquidGlassStateItem: View {
 
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-    @Environment(\.forceOUDSLegacyLayout) private var forceOUDSLegacyLayout
+    @Environment(\.forceMISOLegacyLayout) private var forceMISOLegacyLayout
 
-    private var status: OUDSTag.Status {
+    private var status: MISOTag.Status {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyLayout || isLiquidGlassDisabled { return .negative(leading: .none) }
+            if forceMISOLegacyLayout || isLiquidGlassDisabled { return .negative(leading: .none) }
             return .positive(leading: .none)
         } else {
             return .warning(leading: .none)
         }
     }
 
-    private var appearance: OUDSTag.Appearance {
+    private var appearance: MISOTag.Appearance {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyLayout || isLiquidGlassDisabled { return .emphasized }
+            if forceMISOLegacyLayout || isLiquidGlassDisabled { return .emphasized }
             return .muted
         } else {
             return .muted
@@ -303,7 +199,7 @@ private struct LiquidGlassStateItem: View {
 
     private var wording: String {
         if #available(iOS 26, *) {
-            if forceOUDSLegacyLayout { return "app_common_forced_tech".localized() + " " + "app_common_disabled_tech".localized() }
+            if forceMISOLegacyLayout { return "app_common_forced_tech".localized() + " " + "app_common_disabled_tech".localized() }
             if isLiquidGlassDisabled { return "app_common_disabled_tech".localized() }
             return "app_common_enabled_tech".localized()
         } else {
@@ -312,15 +208,15 @@ private struct LiquidGlassStateItem: View {
     }
 
     var body: some View {
-        let versionTag = OUDSTag(label: wording,
+        let versionTag = MISOTag(label: wording,
                                  status: status,
                                  appearance: appearance,
                                  shape: .rounded,
                                  size: .small)
 
-        OUDSStaticListItem(data: .init(label: "app_about_isLiquidGlass_disabled".localized()), trailing: .tag(versionTag))
-            .oudsListItemStyle(divider: false)
-            .oudsListItemSize(.small)
+        MISOStaticListItem(data: .init(label: "app_about_isLiquidGlass_disabled".localized()), trailing: .tag(versionTag))
+            .misoListItemStyle(divider: false)
+            .misoListItemSize(.small)
     }
 }
 
@@ -332,14 +228,14 @@ private struct VersionItem: View {
     let version: String
 
     var body: some View {
-        let versionTag = OUDSTag(label: version,
+        let versionTag = MISOTag(label: version,
                                  status: .info(leading: .none),
                                  appearance: .muted,
                                  shape: .rounded,
                                  size: .small)
-        OUDSStaticListItem(data: .init(label: title.localized()), trailing: .tag(versionTag))
-            .oudsListItemStyle(divider: false)
-            .oudsListItemSize(.small)
+        MISOStaticListItem(data: .init(label: title.localized()), trailing: .tag(versionTag))
+            .misoListItemStyle(divider: false)
+            .misoListItemSize(.small)
             .modifier(CopyableTextViewModifier(version))
     }
 }

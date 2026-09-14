@@ -13,28 +13,28 @@
   ·
   <a href="https://github.com/pylapp/miso-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
-  <a href="https://github.com/pylapp/miso-ios-design-system-toolbox" title="Design system toolbox GitHub project of MISO">Design system toolbox</a>
+  <a href="https://github.com/pylapp/miso-ios-demo" title="Design system toolbox GitHub project of MISO">Design system toolbox</a>
 </p>
 
 <p align="center">
-<a href="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/build-and-test.yml" title="Build and test status"><img src="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/build-and-test.yml/badge.svg" alt="Build and test status"></a>
+<a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/build-and-test.yml" title="Build and test status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/build-and-test.yml/badge.svg" alt="Build and test status"></a>
 &nbsp;
-<a href="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/gitleaks.yml" title="Gitleaks status"><img src="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
+<a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/gitleaks.yml" title="Gitleaks status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
 &nbsp;
-<a href="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
+<a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
-<a href="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/pylapp/miso-ios-design-system-toolbox/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
+<a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 &nbsp;
-<a href="https://scorecard.dev/viewer/?uri=github.com/pylapp/miso-ios-design-system-toolbox" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/pylapp/miso-ios-design-system-toolbox/badge" alt="OpenSSF Scorecard"></a>  
+<a href="https://scorecard.dev/viewer/?uri=github.com/pylapp/miso-ios-demo" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/pylapp/miso-ios-demo/badge" alt="OpenSSF Scorecard"></a>  
 &nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 </p>
 
 ## ⚙️ Status
 
-[![MIT license](https://img.shields.io/github/license/pylapp/miso-ios-design-system-toolbox?style=for-the-badge)](https://github.com/pylapp/miso-ios-design-system-toolbox/blob/main/LICENSE)
+[![MIT license](https://img.shields.io/github/license/pylapp/miso-ios-demo?style=for-the-badge)](https://github.com/pylapp/miso-ios-demo/blob/main/LICENSE)
 
-[![Versions](https://img.shields.io/github/v/release/pylapp/miso-ios-design-system-toolbox?label=Last%20version&style=for-the-badge)](https://github.com/pylapp/miso-ios-design-system-toolbox/releases)
+[![Versions](https://img.shields.io/github/v/release/pylapp/miso-ios-demo?label=Last%20version&style=for-the-badge)](https://github.com/pylapp/miso-ios-demo/releases)
 [![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
 [![Xcode 26.](https://img.shields.io/badge/Xcode-26.-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_-release-notes)
@@ -57,16 +57,16 @@ Source code of the app showcasing the design system for iOS, iPadOS, macOS, visi
 > Releases are immutable and in most of time cryptographically signed.
 > You can verify integrity of release and assets with commands below
 > using [GitHub CLI](https://cli.github.com/) 
-> and available [release tags](https://github.com/pylapp/miso-ios-design-system-toolbox/releases).
+> and available [release tags](https://github.com/pylapp/miso-ios-demo/releases).
 
 To verify integrity of a release *x.y.z*:
 ```shell
-gh release verify x.y.z --repo pylapp/miso-ios-design-system-toolbox
+gh release verify x.y.z --repo pylapp/miso-ios-demo
 ```
 
 To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
 ```shell
-gh release verify-asset x.y.z asset --repo pylapp/miso-ios-design-system-toolbox
+gh release verify-asset x.y.z asset --repo pylapp/miso-ios-demo
 ```
 
 For these commands a message should say release is verified or asset verification succeeded.
@@ -81,18 +81,19 @@ For these commands a message should say release is verified or asset verificatio
 
 ## 🤝 Contributing
 
-Please read through our [contributing guidelines](https://github.com/pylapp/miso-ios-design-system-toolbox/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/pylapp/miso-ios-design-system-toolbox/blob/main/.github/DEVELOP.md) file.
+Please read through our [contributing guidelines](https://github.com/pylapp/miso-ios-demo/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/pylapp/miso-ios-demo/blob/main/.github/DEVELOP.md) file.
 
 ## ⚖️ Copyright and license
 
 > [!IMPORTANT]
 > This project is a fork from [Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox),
-> but without Orange and Sosh brand themes,
-> with a renamed API to not use the "OUDS" acronym,
-> and with an opened Wireframe theme using other icons (here extracted from SF Symbols).
-> The architecture is the same as OUDS v3.0.0.
+> but with a lot of refactoring to make the product lighter and not locked
+> by proprietary or branded assets.
+> MISO does not replace OUDS, and does not belong to Orange Group, it's another project for other purposes.
+> The MIT license of MISO comes from OUDS MIT license.
 
-Code released under the [MIT License](https://github.com/pylapp/miso-ios/blob/main/LICENSE).
+Code released under the [MIT License](https://github.com/pylapp/miso-ios-demo/blob/main/LICENSES/LICENSE-MIT.txt).
+Assets are under [CC0 1.0 Universal](https://github.com/pylapp/miso-ios-demo/blob/main/LICENSES/LICENSE-CC0.txt).
 
 > [!NOTE]
 > Copyright Orange SA (for OUDS specific elements)

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 
 extension NamedColor {
 
@@ -21,7 +12,7 @@ extension NamedColor {
         case alwaysOnWhite
         case alwaysWhite
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: MISOTheme) -> ColorSemanticToken {
             switch self {
             case .alwaysBlack:
                 theme.colors.alwaysBlack

@@ -1,5 +1,5 @@
 {
-  "originHash" : "95b19fd196377295846f20261fbf4f0244100e58d2310be3dcdc72e547dd2239",
+  "originHash" : "28ac6a59f3ffce92cf49dab0e07914217245f822f200cdd0dd823aa61d80e4b0",
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/pylapp/miso-ios",
       "state" : {
         "branch" : "develop",
-        "revision" : "62f188f63c423a16c0027a965f562167bcc905ab"
+        "revision" : "c82e97278c32b7e8d113fc726be24fa2f0f4bae4"
       }
     },
     {

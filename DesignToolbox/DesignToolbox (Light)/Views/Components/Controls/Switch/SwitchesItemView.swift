@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
@@ -57,22 +48,22 @@ struct SwitchesItemView: View {
                 .foregroundColor(.primary)
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSSwitchItem(
+                MISOSwitchItem(
                     "Label",
                     isOn: $isOn,
                     description: "Description",
-                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                    image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isReversed: false,
                     isError: isError,
                     errorText: isError ? "Error" : nil,
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                OUDSSwitchItem(
+                MISOSwitchItem(
                     "Label",
                     isOn: $isOn,
                     description: "Description",
-                    image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                    image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isReversed: true,
                     isError: isError,
                     errorText: isError ? "Error" : nil,
@@ -87,69 +78,69 @@ struct SwitchesItemView: View {
     private func detailedView(withIcon: Bool) -> some View {
         Text("Enabled").font(.caption)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: false,
                        isReadOnly: false)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: true,
                        isReadOnly: false)
 
         Text("On error").font(.caption)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: false,
                        isError: true,
                        errorText: "Error")
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: true,
                        isError: true,
                        errorText: "Error")
 
         Text("Disabled").font(.caption)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: false,
                        isReadOnly: false)
             .disabled(true)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: true,
                        isReadOnly: false)
             .disabled(true)
 
         Text("Read only").font(.caption)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: false,
                        isReadOnly: true)
 
-        OUDSSwitchItem("Label",
+        MISOSwitchItem("Label",
                        isOn: $isOn,
                        description: "Description",
-                       image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                       image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: true,
                        isReadOnly: true)
     }

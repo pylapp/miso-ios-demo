@@ -1,0 +1,7 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="13" r="10" fill="black"/>
+<path d="M13 3A10 10 0 0 0 13 23V3Z" fill="white"/>
+<circle cx="13" cy="13" r="5" fill="white"/>
+<path d="M13 8A5 5 0 0 1 13 18V8Z" fill="black"/>
+</svg>

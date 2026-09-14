@@ -1,22 +1,13 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct LinearIndicatorsView: View {
 
-    private static let allIndicatorStatus: [OUDSProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allIndicatorStatus: [MISOProgressIndicatorStatus] = [.accent, .info, .negative, .positive, .neutral, .warning]
 
     var body: some View {
         WatchScrollLayoutView(title: "Linear Indicators",
@@ -29,10 +20,10 @@ struct LinearIndicatorsView: View {
         ForEach(Self.allIndicatorStatus, id: \.self) { status in
             Text("Status \(String(describing: status))").font(.subheadline)
             VStack {
-                OUDSLinearProgressIndicator(status: status, track: true, gapSize: .default)
-                OUDSLinearProgressIndicator(status: status, track: true, gapSize: .small)
-                OUDSLinearProgressIndicator(status: status, track: false, gapSize: .default)
-                OUDSLinearProgressIndicator(status: status, track: false, gapSize: .small)
+                MISOLinearProgressIndicator(status: status, track: true, gapSize: .default)
+                MISOLinearProgressIndicator(status: status, track: true, gapSize: .small)
+                MISOLinearProgressIndicator(status: status, track: false, gapSize: .default)
+                MISOLinearProgressIndicator(status: status, track: false, gapSize: .small)
             }
         }
 
@@ -40,15 +31,15 @@ struct LinearIndicatorsView: View {
         ForEach(Self.allIndicatorStatus, id: \.self) { status in
             Text("Status \(String(describing: status))").font(.subheadline)
             VStack {
-                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .default)
-                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .small)
-                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .default)
-                OUDSLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .small)
+                MISOLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .default)
+                MISOLinearProgressIndicator(progress: 0.50, status: status, track: true, gapSize: .small)
+                MISOLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .default)
+                MISOLinearProgressIndicator(progress: 0.50, status: status, track: false, gapSize: .small)
             }
         }
 
         Text("Determinate with helper text & stop indicator").font(.headline)
-        OUDSLinearProgressIndicator(progress: 0.50,
+        MISOLinearProgressIndicator(progress: 0.50,
                                     status: .accent,
                                     stopIndicator: true,
                                     helperText: .description("Uploading…", alignment: .center))

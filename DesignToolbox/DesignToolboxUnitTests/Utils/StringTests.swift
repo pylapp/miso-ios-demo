@@ -1,15 +1,6 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 import Foundation
 import Testing
@@ -18,34 +9,34 @@ import Testing
 struct StringTests {
 
     @Test func toGitHubRelease() {
-        #expect("".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases")
-        #expect("123".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases")
-        #expect("4.5.6".toGitHubRelease() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/4.5.6")
+        #expect("".toGitHubRelease() == "https://github.com/pylapp/miso-ios-demo/releases")
+        #expect("123".toGitHubRelease() == "https://github.com/pylapp/miso-ios-demo/releases")
+        #expect("4.5.6".toGitHubRelease() == "https://github.com/pylapp/miso-ios-demo/releases/tag/4.5.6")
     }
 
     @Test func toGitHubBuild() {
-        #expect("".toGitHubBuild() == "https://github.com/Orange-OpenSource/ouds-ios")
-        #expect("stable".toGitHubBuild() == "https://github.com/Orange-OpenSource/ouds-ios/tree/main")
-        #expect("beta (nightly) (abcdefg)".toGitHubBuild() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/commit/abcdefg")
-        #expect("alpha (abcdefg)".toGitHubBuild() == "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/commit/abcdefg")
+        #expect("".toGitHubBuild() == "https://github.com/pylapp/miso-ios")
+        #expect("stable".toGitHubBuild() == "https://github.com/pylapp/miso-ios/tree/main")
+        #expect("beta (nightly) (abcdefg)".toGitHubBuild() == "https://github.com/pylapp/miso-ios-demo/commit/abcdefg")
+        #expect("alpha (abcdefg)".toGitHubBuild() == "https://github.com/pylapp/miso-ios-demo/commit/abcdefg")
     }
 
     @Test func toGitHubIssues() {
-        #expect("123".toGitHubIssues()[0] == "https://github.com/Orange-OpenSource/ouds-ios/issues/123")
-        #expect("123, 456, 789".toGitHubIssues()[0] == "https://github.com/Orange-OpenSource/ouds-ios/issues/123")
-        #expect("123, 456, 789".toGitHubIssues()[1] == "https://github.com/Orange-OpenSource/ouds-ios/issues/456")
-        #expect("123, 456, 789".toGitHubIssues()[2] == "https://github.com/Orange-OpenSource/ouds-ios/issues/789")
+        #expect("123".toGitHubIssues()[0] == "https://github.com/pylapp/miso-ios/issues/123")
+        #expect("123, 456, 789".toGitHubIssues()[0] == "https://github.com/pylapp/miso-ios/issues/123")
+        #expect("123, 456, 789".toGitHubIssues()[1] == "https://github.com/pylapp/miso-ios/issues/456")
+        #expect("123, 456, 789".toGitHubIssues()[2] == "https://github.com/pylapp/miso-ios/issues/789")
     }
 
     @Test func toGitHubIssue() {
-        #expect("123".toGitHubIssue() == "https://github.com/Orange-OpenSource/ouds-ios/issues/123")
-        #expect("".toGitHubIssue() == "https://github.com/Orange-OpenSource/ouds-ios/issues/")
+        #expect("123".toGitHubIssue() == "https://github.com/pylapp/miso-ios/issues/123")
+        #expect("".toGitHubIssue() == "https://github.com/pylapp/miso-ios/issues/")
     }
 
     @Test func toGitHubVersion() {
-        #expect("407-foo-bar-wizz".toGitHubVersion() == "https://github.com/Orange-OpenSource/ouds-ios/tree/407-foo-bar-wizz")
-        #expect("develop".toGitHubVersion() == "https://github.com/Orange-OpenSource/ouds-ios/tree/develop")
-        #expect("some (abcdefg)".toGitHubVersion() == "https://github.com/Orange-OpenSource/ouds-ios/commit/abcdefg")
-        #expect("".toGitHubVersion() == "https://github.com/Orange-OpenSource/ouds-ios/tree/main")
+        #expect("407-foo-bar-wizz".toGitHubVersion() == "https://github.com/pylapp/miso-ios/tree/407-foo-bar-wizz")
+        #expect("develop".toGitHubVersion() == "https://github.com/pylapp/miso-ios/tree/develop")
+        #expect("some (abcdefg)".toGitHubVersion() == "https://github.com/pylapp/miso-ios/commit/abcdefg")
+        #expect("".toGitHubVersion() == "https://github.com/pylapp/miso-ios/tree/main")
     }
 }

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: View, SelectedColor: View {
@@ -28,14 +19,14 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
             }
         } label: {
             VStack(alignment: .leading) {
-                OUDSHeading("app_components_common_color_tech", size: .medium)
+                MISOHeading("app_components_common_color_tech", size: .medium)
                     .headingMedium(theme)
                     .foregroundColor(theme.colors.contentDefault)
 
                 selectedColor()
 
                 if isExpanded {
-                    OUDSHorizontalDivider()
+                    MISOHorizontalDivider()
                 }
             }
         }

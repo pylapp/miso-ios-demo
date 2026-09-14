@@ -1,0 +1,8 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <line x1="20" y1="15" x2="20" y2="65" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="60" y1="15" x2="60" y2="65" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="40" cy="25" r="4" fill="currentColor"/>
+  <circle cx="40" cy="40" r="4" fill="currentColor"/>
+  <circle cx="40" cy="55" r="4" fill="currentColor"/>
+</svg>

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct BorderTokenPage: View {
@@ -34,7 +25,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                OUDSHeading("app_tokens_border_width_tech", size: .large, hasMarker: true)
+                MISOHeading("app_tokens_border_width_tech", size: .large, hasMarker: true)
                     .foregroundStyle(theme.colors.contentDefault)
             }
 
@@ -46,7 +37,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                OUDSHeading("app_tokens_border_radius_tech", size: .large, hasMarker: true)
+                MISOHeading("app_tokens_border_radius_tech", size: .large, hasMarker: true)
                     .foregroundStyle(theme.colors.contentDefault)
             }
 
@@ -58,7 +49,7 @@ struct BorderTokenPage: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
-                OUDSHeading("app_tokens_border_style_tech", size: .large, hasMarker: true)
+                MISOHeading("app_tokens_border_style_tech", size: .large, hasMarker: true)
                     .foregroundStyle(theme.colors.contentDefault)
             }
         }

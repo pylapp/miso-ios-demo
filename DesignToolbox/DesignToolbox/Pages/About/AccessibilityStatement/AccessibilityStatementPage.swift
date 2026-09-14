@@ -1,23 +1,10 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
-// NOTE: Seen as unused but are used
-// This is a false positive in Periphy
-// See https://github.com/peripheryapp/periphery/issues/908
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 #if os(iOS)
 import DeclarationAccessibility
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct AccessibilityStatementPage: View {
@@ -27,7 +14,7 @@ struct AccessibilityStatementPage: View {
 
     init() {
         guard let detailsPageURL = Bundle.main.url(forResource: "accessibility_detail", withExtension: "html") else {
-            OL.fatal("Unable to find accessibility_detail.html in resources")
+            ML.fatal("Unable to find accessibility_detail.html in resources")
         }
 
         self.detailsPageURL = detailsPageURL

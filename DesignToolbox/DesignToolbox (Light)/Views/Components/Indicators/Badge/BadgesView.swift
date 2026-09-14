@@ -1,36 +1,27 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 struct BadgesView: View {
 
-    private static let allBadgeStandardStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
-    private static let allBadgeIconStatus: [OUDSBadgeIcon.Status]
+    private static let allBadgeStandardStatus: [MISOBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allBadgeIconStatus: [MISOBadgeIcon.Status]
         = [
-            .accent(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .accent(image: MISOImage(asset: Image(systemName: "sun.min.fill"))),
             .info,
             .negative,
             .positive,
-            .neutral(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+            .neutral(image: MISOImage(asset: Image(systemName: "sun.min.fill"))),
             .warning,
         ]
-    private static let allBadgeCountStatus: [OUDSBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
-    private static let allBadgeStandardSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
-    private static let allBadgeIconSizes: [OUDSBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
-    private static let allBadgeCountSizes: [OUDSBadgeCount.Size] = [.medium, .large]
+    private static let allBadgeCountStatus: [MISOBadgeStandard.Status] = [.accent, .info, .negative, .positive, .neutral, .warning]
+    private static let allBadgeStandardSizes: [MISOBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeIconSizes: [MISOBadgeStandard.Size] = [.extraSmall, .small, .medium, .large]
+    private static let allBadgeCountSizes: [MISOBadgeCount.Size] = [.medium, .large]
 
     @Environment(\.theme) private var theme
 
@@ -45,7 +36,7 @@ struct BadgesView: View {
         ForEach(Self.allBadgeStandardSizes, id: \.self) { size in
             Text("Standard size \(String(describing: size))").font(.subheadline)
             ForEach(Self.allBadgeStandardStatus, id: \.self) { status in
-                OUDSBadgeStandard(accessibilityLabel: "Foo", status: status, size: size)
+                MISOBadgeStandard(accessibilityLabel: "Foo", status: status, size: size)
             }
         }
 
@@ -54,7 +45,7 @@ struct BadgesView: View {
             Text("Icon size \(String(describing: size))").font(.subheadline)
             ForEach(0 ..< Self.allBadgeIconStatus.count, id: \.self) { index in
                 let status = Self.allBadgeIconStatus[index]
-                OUDSBadgeIcon(status: status, accessibilityLabel: "Foo", size: size)
+                MISOBadgeIcon(status: status, accessibilityLabel: "Foo", size: size)
             }
         }
 
@@ -62,7 +53,7 @@ struct BadgesView: View {
         ForEach(Self.allBadgeCountSizes, id: \.self) { size in
             Text("Count size \(String(describing: size))").font(.subheadline)
             ForEach(Self.allBadgeCountStatus, id: \.self) { status in
-                OUDSBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
+                MISOBadgeCount(100, accessibilityLabel: "Foo", status: status, size: size)
             }
         }
     }

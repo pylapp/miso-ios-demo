@@ -1,18 +1,9 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 #if DEBUG
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 /// Flags and constants used by the DEBUG-only sandbox mode.
@@ -41,7 +32,7 @@ let kSandboxContainsThings: Bool = false
 /// experimentations, debug helpers and prototypes without touching the
 /// scaffolding around it.
 ///
-/// Current experiment: a "call history" list built with `OUDSStaticListItem`,
+/// Current experiment: a "call history" list built with `MISOStaticListItem`,
 /// used to try out the new list item API (overline styling, custom trailing views).
 struct SandboxTestView: View {
 

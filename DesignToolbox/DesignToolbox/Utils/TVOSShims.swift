@@ -1,15 +1,6 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 import SwiftUI
 
@@ -44,10 +35,10 @@ extension View {
 
 // swiftlint:disable missing_docs
 
-// MARK: - tvOS shims for OUDS Pickers
+// MARK: - tvOS shims for MISO Pickers
 //
-// The OUDS SwiftUI library does not ship `OUDSChipPicker`, `OUDSChipPickerData`,
-// `OUDSCheckboxPickerPlacement` or `OUDSRadioPickerPlacement` on tvOS because
+// The MISO SwiftUI library does not ship `MISOChipPicker`, `MISOChipPickerData`,
+// `MISOCheckboxPickerPlacement` or `MISORadioPickerPlacement` on tvOS because
 // their underlying UI patterns (chip strips, custom picker placement) require
 // touch/pointer interactions.
 //
@@ -56,16 +47,16 @@ extension View {
 // `Picker` (segmented on tvOS) so users can still tweak the configuration
 // using the Siri Remote / focus engine.
 
-// MARK: - OUDSChipPickerData shim
+// MARK: - MISOChipPickerData shim
 
-/// Minimal API-compatible replacement for the `OUDSChipPickerData` value type on tvOS.
-public struct OUDSChipPickerData<Tag> where Tag: Hashable {
+/// Minimal API-compatible replacement for the `MISOChipPickerData` value type on tvOS.
+public struct MISOChipPickerData<Tag> where Tag: Hashable {
 
     public let tag: Tag
     public let layout: Layout
     public let accessibilityIdentifier: String?
 
-    /// Best-effort mirror of the OUDS layout cases used across the toolbox.
+    /// Best-effort mirror of the MISO layout cases used across the toolbox.
     public enum Layout {
         case text(text: String)
         case textAndIcon(String, image: Any)
@@ -90,14 +81,14 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
     }
 }
 
-// MARK: - OUDSChipPicker shim
+// MARK: - MISOChipPicker shim
 
-/// Minimal API-compatible replacement for the `OUDSChipPicker` view on tvOS.
+/// Minimal API-compatible replacement for the `MISOChipPicker` view on tvOS.
 /// Renders a native SwiftUI `Picker`.
-public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
+public struct MISOChipPicker<Tag>: View where Tag: Hashable {
 
     private let title: String
-    private let chips: [OUDSChipPickerData<Tag>]
+    private let chips: [MISOChipPickerData<Tag>]
     private let selectionMode: SelectionMode
 
     private enum SelectionMode {
@@ -107,11 +98,11 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         case multipleArray(Binding<[Tag]>)
     }
 
-    // MARK: Initializers matching the OUDS API surface used across the toolbox
+    // MARK: Initializers matching the MISO API surface used across the toolbox
 
     public init(title: String,
                 selection: Binding<Tag>,
-                chips: [OUDSChipPickerData<Tag>])
+                chips: [MISOChipPickerData<Tag>])
     {
         self.title = title
         self.chips = chips
@@ -120,7 +111,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public init(title: String,
                 selection: Binding<Tag?>,
-                chips: [OUDSChipPickerData<Tag>])
+                chips: [MISOChipPickerData<Tag>])
     {
         self.title = title
         self.chips = chips
@@ -129,7 +120,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public init(title: String,
                 selections: Binding<Set<Tag>>,
-                chips: [OUDSChipPickerData<Tag>])
+                chips: [MISOChipPickerData<Tag>])
     {
         self.title = title
         self.chips = chips
@@ -138,7 +129,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public init(title: String,
                 selections: Binding<[Tag]>,
-                chips: [OUDSChipPickerData<Tag>])
+                chips: [MISOChipPickerData<Tag>])
     {
         self.title = title
         self.chips = chips

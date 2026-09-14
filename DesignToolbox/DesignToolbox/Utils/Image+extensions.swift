@@ -1,3 +1,7 @@
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
+
 //
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
@@ -11,7 +15,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 extension Image {
@@ -20,28 +24,20 @@ extension Image {
 
     /// Returns a decorative `Image` with the given named loaded form the suitable workspace depending to the theme name
     static func decorativeImage(named: String, prefixedBy themeName: String) -> Image {
-        if themeName.contains(OrangeTheme.name) { // "Orange" and "Orange Compact" themes
-            Image(decorative: "\(OrangeTheme.name)/\(named)")
-        } else {
-            Image(decorative: "\(themeName)/\(named)")
-        }
+        Image(decorative: "\(themeName)/\(named)")
     }
 
     // MARK: - Default image
     // Note: Warning, seen as false positive by Periphery, this method is used in tests cases
     /// Returns a decorative default `Image` view with Orange asset
     static func defaultImage() -> Image {
-        Image(decorative: "\(OrangeTheme.name)/tips-and-tricks")
+        Image(decorative: "\(BlueCoatTheme.name)/tips-and-tricks")
     }
 
     /// Returns a decorative default `Image` view with a prefix in the name, supposed to be theme assets folder.
     /// Supposed tp have in the Design System Toolbox, in assets folder, folders with assets "providing namespaces".
     static func defaultImage(prefixedBy themeName: String) -> Image {
-        if themeName.contains(OrangeTheme.name) { // "Orange" and "Orange Compact" themes
-            Image(decorative: "\(OrangeTheme.name)/tips-and-tricks")
-        } else {
-            Image(decorative: "\(themeName)/tips-and-tricks")
-        }
+        Image(decorative: "\(themeName)/tips-and-tricks")
     }
 
     /// Returns a Swift sample code for design toolbox app faking the use of a default icon
