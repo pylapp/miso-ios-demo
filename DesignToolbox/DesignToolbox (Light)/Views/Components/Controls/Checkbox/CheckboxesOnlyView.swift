@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct CheckboxesOnlyView: View {
@@ -43,23 +34,23 @@ private struct TwoStatesCheckboxesOnlyView: View {
         Text("Two-states checkboxes").font(.headline)
 
         Text("Enabled, no error").font(.subheadline)
-        OUDSCheckbox(isOn: $isOn,
+        MISOCheckbox(isOn: $isOn,
                      accessibilityLabel: "Normal",
                      isError: false)
 
         Text("Enabled, on error").font(.subheadline)
-        OUDSCheckbox(isOn: $isOn,
+        MISOCheckbox(isOn: $isOn,
                      accessibilityLabel: "Error",
                      isError: true)
 
         Text("Disabled, no error").font(.subheadline)
-        OUDSCheckbox(isOn: $isOn,
+        MISOCheckbox(isOn: $isOn,
                      accessibilityLabel: "Disabled",
                      isError: false)
             .disabled(true)
 
         Text("Read only").font(.subheadline)
-        OUDSCheckbox(isOn: $isOn,
+        MISOCheckbox(isOn: $isOn,
                      accessibilityLabel: "Read only",
                      isReadOnly: true)
     }
@@ -69,7 +60,7 @@ private struct TwoStatesCheckboxesOnlyView: View {
 
 private struct ThreeStatesCheckboxesOnlyView: View {
 
-    @State private var state: OUDSCheckboxIndicatorState = .indeterminate
+    @State private var state: MISOCheckboxIndicatorState = .indeterminate
 
     var body: some View {
         WatchScrollLayoutView(layout: {
@@ -82,23 +73,23 @@ private struct ThreeStatesCheckboxesOnlyView: View {
         Text("Three-states checkboxes").font(.headline)
 
         Text("Enabled, no error").font(.subheadline)
-        OUDSCheckboxIndeterminate(selection: $state,
+        MISOCheckboxIndeterminate(selection: $state,
                                   accessibilityLabel: "Normal",
                                   isError: false)
 
         Text("Enabled, on error").font(.subheadline)
-        OUDSCheckboxIndeterminate(selection: $state,
+        MISOCheckboxIndeterminate(selection: $state,
                                   accessibilityLabel: "Error",
                                   isError: true)
 
         Text("Disabled, no error").font(.subheadline)
-        OUDSCheckboxIndeterminate(selection: $state,
+        MISOCheckboxIndeterminate(selection: $state,
                                   accessibilityLabel: "Disabled",
                                   isError: false)
             .disabled(true)
 
         Text("Read only").font(.subheadline)
-        OUDSCheckboxIndeterminate(selection: $state,
+        MISOCheckboxIndeterminate(selection: $state,
                                   accessibilityLabel: "Read only",
                                   isReadOnly: true)
     }

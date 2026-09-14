@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct InputTagView: View {
@@ -23,8 +14,8 @@ struct InputTagView: View {
     @ViewBuilder
     private var layout: some View {
         Text("Enabled").font(.headline)
-        OUDSInputTag(label: "Input") {}
+        MISOInputTag(label: "Input") {}
         Text("Disabled").font(.headline)
-        OUDSInputTag(label: "Input") {}.disabled(true)
+        MISOInputTag(label: "Input") {}.disabled(true)
     }
 }

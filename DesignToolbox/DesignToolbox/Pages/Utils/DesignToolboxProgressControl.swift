@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct DesignToolboxProgressControl: View {
@@ -23,14 +14,14 @@ struct DesignToolboxProgressControl: View {
 
         #if os(tvOS)
         // `Slider` is not available on tvOS: expose discrete steps via a chip picker.
-        OUDSChipPicker(title: progressLabel,
+        MISOChipPicker(title: progressLabel,
                        selection: $progress,
                        chips: Self.progressSteps.map { value in
-                           OUDSChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
+                           MISOChipPickerData(tag: value, layout: .text(text: "\(Int(value * 100)) %"))
                        })
         #else
         VStack(alignment: .leading, spacing: theme.spaces.fixedXsmall) {
-            OUDSLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
+            MISOLabel(LocalizedStringKey(progressLabel), size: .large, weight: .strong)
                 .foregroundColor(theme.colors.contentDefault)
             Slider(value: $progress, in: 0 ... 1)
         }

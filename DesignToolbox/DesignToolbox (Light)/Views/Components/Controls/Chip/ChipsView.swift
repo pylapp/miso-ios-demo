@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct ChipsView: View {
@@ -43,13 +34,13 @@ private struct FilterChipView: View {
     @ViewBuilder
     private var layout: some View {
         Text("Text only").font(.subheadline)
-        OUDSFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
+        MISOFilterChip(text: "Filter", selected: isSelected) { isSelected.toggle() }
 
         Text("Text + icon").font(.subheadline)
-        OUDSFilterChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), text: "Filter", selected: isSelected) { isSelected.toggle() }
+        MISOFilterChip(image: MISOImage(asset: Image(systemName: "sun.min.fill")), text: "Filter", selected: isSelected) { isSelected.toggle() }
 
         Text("Icon only").font(.subheadline)
-        OUDSFilterChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
+        MISOFilterChip(image: MISOImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Filter", selected: isSelected) { isSelected.toggle() }
     }
 }
 
@@ -69,13 +60,13 @@ private struct SuggestionChipView: View {
     @ViewBuilder
     private var layout: some View {
         Text("Text only").font(.subheadline)
-        OUDSSuggestionChip(text: "Suggestion") {}
+        MISOSuggestionChip(text: "Suggestion") {}
 
         Text("Text + icon").font(.subheadline)
-        OUDSSuggestionChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), text: "Suggestion") {}
+        MISOSuggestionChip(image: MISOImage(asset: Image(systemName: "sun.min.fill")), text: "Suggestion") {}
 
         Text("Icon only").font(.subheadline)
-        OUDSSuggestionChip(image: OUDSImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Suggestion") {}
+        MISOSuggestionChip(image: MISOImage(asset: Image(systemName: "sun.min.fill")), accessibilityLabel: "Suggestion") {}
     }
 }
 

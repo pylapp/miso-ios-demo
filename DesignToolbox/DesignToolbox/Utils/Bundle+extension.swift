@@ -1,19 +1,6 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
-
-// NOTE: Several items below are seen as unused but are used
-// This is a false positive in Periphy
-// See https://github.com/peripheryapp/periphery/issues/908
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 import Foundation
 
@@ -42,7 +29,7 @@ extension Bundle {
         #if DEBUG
         "debug"
         #else
-        string(forInfoDictionaryKey: "OUDSBuildType") ?? "NotFound"
+        string(forInfoDictionaryKey: "MISOBuildType") ?? "NotFound"
         #endif
     }
 
@@ -52,7 +39,7 @@ extension Bundle {
         #if DEBUG
         nil
         #else
-        string(forInfoDictionaryKey: "OUDSBuildTag")
+        string(forInfoDictionaryKey: "MISOBuildTag")
         #endif
     }
 
@@ -62,17 +49,17 @@ extension Bundle {
         #if DEBUG
         nil
         #else
-        string(forInfoDictionaryKey: "OUDSBuildDetails")
+        string(forInfoDictionaryKey: "MISOBuildDetails")
         #endif
     }
 
-    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the OUDS iOS Swift Package in use
+    /// A value filled outside the app (e.g. by the CI/CD chain) to indicate the version of the MISO iOS Swift Package in use
     /// For example, contains a tag or a branch or a commit hash
     var sdkVersion: String? {
         #if DEBUG
         nil
         #else
-        string(forInfoDictionaryKey: "OUDSSDKVersion")
+        string(forInfoDictionaryKey: "MISOSDKVersion")
         #endif
     }
 

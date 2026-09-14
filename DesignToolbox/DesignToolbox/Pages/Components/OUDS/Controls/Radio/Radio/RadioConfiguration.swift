@@ -1,0 +1,90 @@
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
+
+import MISOSwiftUI
+import SwiftUI
+
+// MARK: - Radio Configuration Model
+
+/// The model shared between `RadioConfiguration` view and `RadioPage` view.
+final class RadioConfigurationModel: ComponentConfiguration {
+
+    // MARK: - Properties
+
+    @Published var enabled: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var selection: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var isError: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var isReadOnly: Bool {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Initializer
+
+    override init() {
+        selection = false
+        enabled = true
+        isError = false
+        isReadOnly = false
+        super.init()
+    }
+
+    deinit {}
+
+    // MARK: - Component Configuration
+
+    override func updateCode() {
+        code =
+            """
+            MISORadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern)\(isReadOnlyPattern))
+            \(disableCodePattern)
+            """
+    }
+
+    private var disableCodePattern: String {
+        !enabled ? ".disabled(true)" : ""
+    }
+
+    private var isErrorPattern: String {
+        isError && enabled ? ", isError: true" : ""
+    }
+
+    private var isReadOnlyPattern: String {
+        isReadOnly ? ", isReadOnly: true" : ""
+    }
+}
+
+// MARK: - Radio Configuration View
+
+struct RadioConfiguration: View {
+
+    @ObservedObject var configurationModel: RadioConfigurationModel
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            MISOSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selection)
+                .accessibilityIdentifier(A11YIdentifiers.configurationSwitchSelection)
+                .disabled(!configurationModel.enabled || configurationModel.isError || configurationModel.isReadOnly)
+
+            MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
+                .disabled(configurationModel.isError || configurationModel.isReadOnly)
+
+            MISOSwitchItem("app_components_common_error_tech", isOn: $configurationModel.isError)
+                .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
+
+            MISOSwitchItem("app_components_common_readOnly_tech", isOn: $configurationModel.isReadOnly)
+                .disabled(!configurationModel.enabled || configurationModel.isError)
+        }
+    }
+}

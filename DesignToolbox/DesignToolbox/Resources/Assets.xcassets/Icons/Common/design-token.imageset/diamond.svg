@@ -1,0 +1,7 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 2L22 9L22 17L13 24L4 17L4 9L13 2Z" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M13 2V24" stroke="black" stroke-width="1"/>
+<path d="M4 9L13 16L22 9" stroke="black" stroke-width="1"/>
+<path d="M4 17L13 10L22 17" stroke="black" stroke-width="1"/>
+</svg>

@@ -1,28 +1,16 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
 #if os(iOS)
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
-
-// NOTE: Temporary hack until OUDS provide suitable init
-// See https://github.com/Orange-OpenSource/ouds-ios/issues/1452
 
 extension View {
 
-    /// Reproduces the OUDS `TabBarViewModifier` styling for the native iOS 26  native `TabView`.
-    /// Uses the same tokens and branching logic as the internal `TabBarViewModifier` in the OUDS library.
-    func applyOUDSTabBarAppearance(_ colorScheme: ColorScheme, _ theme: OUDSTheme) {
+    /// Reproduces the MISO `TabBarViewModifier` styling for the native iOS 26  native `TabView`.
+    /// Uses the same tokens and branching logic as the internal `TabBarViewModifier` in the MISO library.
+    func applyMISOTabBarAppearance(_ colorScheme: ColorScheme, _ theme: MISOTheme) {
 
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()

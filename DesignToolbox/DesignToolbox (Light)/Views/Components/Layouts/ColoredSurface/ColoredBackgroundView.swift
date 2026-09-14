@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct ColoredBackgroundView: View {
@@ -29,7 +20,7 @@ struct ColoredBackgroundView: View {
                 let themedColor = color.toSurfaceColor(from: theme)
                 if !themedColor.hasUndefinedValue() {
                     Text(String(describing: color)).font(.headline)
-                    OUDSColoredSurface(color: themedColor) {
+                    MISOColoredSurface(color: themedColor) {
                         ColoredSurfaceItems()
                     }.focusable()
                 }
@@ -45,8 +36,8 @@ private struct ColoredSurfaceItems: View {
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.scaledSmallMobile) {
             Text("Text").foregroundColor(theme.colors.contentDefault)
-            OUDSButton(text: "Button", appearance: .default, style: .default) {}
-            OUDSLink(text: "Link", indicator: .next) {}
+            MISOButton(text: "Button", appearance: .default, style: .default) {}
+            MISOLink(text: "Link", indicator: .next) {}
         }
         .frame(maxWidth: .infinity)
         .padding()

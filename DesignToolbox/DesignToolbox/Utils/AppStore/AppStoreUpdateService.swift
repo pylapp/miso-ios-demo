@@ -1,18 +1,11 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
+// SPDX-License-Identifier: MIT
 import Foundation
-import OUDSFoundations
+import MISOFoundations
 
 /// Fetches App Store metadata via the iTunes lookup API and compares it with the
 /// current bundle version to determine whether an update is available.
@@ -46,14 +39,14 @@ enum AppStoreUpdateService {
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200
             else {
-                OL.error("No data retrieved from iTunes lookup, impossible to check for updates")
+                ML.error("No data retrieved from iTunes lookup, impossible to check for updates")
                 return nil
             }
 
             return parse(data: data)
         } catch {
             // Network unavailable or any URLSession error → silent failure.
-            OL.error("No data retrieved from iTunes lookup, impossible to check for updates")
+            ML.error("No data retrieved from iTunes lookup, impossible to check for updates")
             return nil
         }
     }
@@ -67,14 +60,14 @@ enum AppStoreUpdateService {
             let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let results = json["results"] as? [[String: Any]]
         else {
-            OL.error("Failed to deserialise iTunes lookup response")
+            ML.error("Failed to deserialise iTunes lookup response")
             return nil
         }
 
         // Step 2 — An empty results array is a valid API response meaning the app
         // is not (yet) listed on the public App Store. This is not an error.
         guard !results.isEmpty, let first = results.first else {
-            OL.error("App not found on App Store, no update check possible")
+            ML.error("App not found on App Store, no update check possible")
             return nil
         }
 
@@ -84,7 +77,7 @@ enum AppStoreUpdateService {
             let trackViewURL = first["trackViewUrl"] as? String,
             let appStoreURL = URL(string: trackViewURL)
         else {
-            OL.error("Failed to parse App Store result fields (version or trackViewUrl missing)")
+            ML.error("Failed to parse App Store result fields (version or trackViewUrl missing)")
             return nil
         }
 
@@ -92,11 +85,11 @@ enum AppStoreUpdateService {
 
         // Only report an update if the store version is strictly newer.
         guard isNewer(storeVersion: storeVersion, than: Bundle.main.marketingVersion) else {
-            OL.log("No available update (\(Bundle.main.marketingVersion) > \(storeVersion))")
+            ML.log("No available update (\(Bundle.main.marketingVersion) > \(storeVersion))")
             return nil
         }
 
-        OL.log("Update available (current \(Bundle.main.marketingVersion), App Store \(storeVersion))")
+        ML.log("Update available (current \(Bundle.main.marketingVersion), App Store \(storeVersion))")
         return AppStoreUpdateInfo(
             version: storeVersion,
             releaseNotes: releaseNotes,

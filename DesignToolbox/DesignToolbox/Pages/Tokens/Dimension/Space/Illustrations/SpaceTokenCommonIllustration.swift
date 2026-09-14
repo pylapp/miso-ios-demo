@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // MARK: - Internal constants
@@ -309,28 +300,28 @@ struct SpaceHeaderDescription: View {
         switch orientation {
         case .horizontal:
             HStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-                OUDSBody(firstText, size: .medium, weight: .default)
+                MISOBody(firstText, size: .medium, weight: .default)
                     .foregroundStyle(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
-                    OUDSBody(secondText, size: .medium, weight: .default)
+                    MISOBody(secondText, size: .medium, weight: .default)
                         .foregroundStyle(theme.colors.contentDefault)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         case .verical:
             VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
-                OUDSBody(firstText, size: .medium, weight: .default)
+                MISOBody(firstText, size: .medium, weight: .default)
                     .foregroundStyle(theme.colors.contentDefault)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
-                    OUDSBody(secondText, size: .medium, weight: .default)
+                    MISOBody(secondText, size: .medium, weight: .default)
                         .foregroundStyle(theme.colors.contentDefault)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -344,7 +335,7 @@ struct SpaceHeaderDescription: View {
             VStack(spacing: 0) {
                 SpaceIllustrationRectangle(height: paddings.top)
 
-                OUDSBody(firstText, size: .medium, weight: .default)
+                MISOBody(firstText, size: .medium, weight: .default)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(theme.colors.contentDefault)
 

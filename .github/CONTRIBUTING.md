@@ -1,4 +1,4 @@
-# Contributing to OUDS iOS (Design System Toolboox)
+# Contributing to MISO iOS (demo app)
 
 - [Using the Issue Tracker](#using-the-issue-tracker)
 - [Using the Discussion Tracker](#using-the-issue-tracker)
@@ -15,7 +15,7 @@
 - [Guidance Regarding Use of Generative AI](#guidance-regarding-use-of-generative-ai)
 - [License](#license)
 
-Looking to contribute something OUDS iOS? **Here's how you can help.**
+Looking to contribute something MISO iOS? **Here's how you can help.**
 
 > [!TIP]
 > Please take a moment to review this document in order to make the contribution process easy for everyone involved.
@@ -24,15 +24,11 @@ Looking to contribute something OUDS iOS? **Here's how you can help.**
 > Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
 > In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
-You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions:
-- [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-- [The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
-
 ## Using the Issue Tracker
 
-The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
+The [issue tracker](https://github.com/pylapp/miso-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
 
-- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
+- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/pylapp/miso-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
 
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
@@ -40,18 +36,18 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 
 ## Cross repositories mentions
 
-The OUDS project contains two repositories: one for the [Swift Package library](https://github.com/Orange-OpenSource/ouds-ios), and [another (this one)](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) for the design system toolbox app showcasing the library.
+The MISO project contains two repositories: one for the [Swift Package library](https://github.com/pylapp/miso-ios), and [another (this one)](https://github.com/pylapp/miso-ios-demo) for the demo app showcasing the library.
 
-Because today we want to have [one board for both repositories](https://github.com/orgs/Orange-OpenSource/projects/40/views/4), there is no board no issues tracker for this app GitHub project, and anything is centralized in the library GitHub project.
+There is no board no issues tracker for this app GitHub project, and anything is centralized in the library GitHub project.
 
 Thus, if you want to refer to an issue in the other project in commits, CHANGELOG, issues, pull requests or discussions, you must use the [GitHub dedicated convention](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls) about issues references.
-In few words, if you are on an issue n°42 in [ouds-ios](https://github.com/Orange-OpenSource/ouds-ios), do not mention `#42` in your messages, but `Orange-OpenSource/ouds-iOS#42`.
+In few words, if you are on an issue n°42 in [miso-ios](https://github.com/pylapp/miso-ios), do not mention `#42` in your messages, but `pylapp/miso-ios#42`.
 
 ## Using the Discussion Tracker
 
-The GitHub project provides a [discussion tracker](https://github.com/Orange-OpenSource/ouds-ios/discussions) with several sections.
+The GitHub project provides a [discussion tracker](https://github.com/pylapp/miso-ios/discussions) with several sections.
 
-You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas) for discussions about technical things.
+You may need to refer to the [Q&A section](https://github.com/pylapp/miso-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/pylapp/miso-ios/discussions/categories/ideas) for discussions about technical things.
 
 If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
 
@@ -64,7 +60,7 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`) or a major version bump if public API broken (e.g., `v1.0.0` to `v2.0.0`)
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
-For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
+For a complete look at our labels, see the [project labels page](https://github.com/pylapp/miso-ios/labels).
 
 ## Bug Reports
 
@@ -119,11 +115,11 @@ Adhering to the following process is the best way to get your work included in t
 
    ```bash
    # Clone your fork of the repo into the current directory (use either SSH or HTTPS)
-   git clone https://github.com/<your-username>/ouds-ios-design-system-toolbox.git
+   git clone https://github.com/<your-username>/miso-ios-demo.git
    # Navigate to the newly cloned directory
    cd ouds-ios-design-system-toolbox
    # Assign the original repo to a remote called "upstream" (use either SSH or HTTPS)
-   git remote add upstream https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox.git
+   git remote add upstream https://github.com/pylapp/pylapp/miso-ios-demo.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -156,18 +152,18 @@ Adhering to the following process is the best way to get your work included in t
 
 7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `develop` branch.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/LICENSE).
+**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/pylapp/pylapp/miso-ios-demo/blob/develop/LICENSE).
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
-8. If your evolutions are bout the [Swift package](https://github.com/Orange-OpenSource/ouds-ios/), add in your pull request the details about it (branch to test, associated pull request, etc.). **Copy/paste the Swift package changelog line in the app changelog with cross-linked issues** ; thus for alpha, beta and stable builds the changelog of the app will mirror the changelog of the package.
+8. If your evolutions are bout the [Swift package](https://github.com/pylapp/miso-ios/), add in your pull request the details about it (branch to test, associated pull request, etc.). **Copy/paste the Swift package changelog line in the app changelog with cross-linked issues** ; thus for alpha, beta and stable builds the changelog of the app will mirror the changelog of the package.
 
 ## Code Guidelines
 
 Format your code before committing to ensure your changes follow our coding standards.
 Linters and formatters are configured for the project.
 Keep documentation and tests updated.
-Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture).
+Respect the architecture of the project.
 
 ## Commits Style
 
@@ -178,7 +174,7 @@ If your commits embed contributions for other people, do not forget to [add them
 For example, given a commit to fix the issue n°43, the commit should be like:
 
 ```text
-fix: title of your commit (Orange-OpenSource/ouds-ios#43)
+fix: title of your commit (pylapp/miso-ios#43)
 
 Some details about the fix you propose
 
@@ -189,7 +185,7 @@ Signed-off-by: Author firstname and lastname <first author email>
 If the commit embeds work of several authors, use the *Co-authored-by* tag (in use in GitHub):
 
 ```text
-fix: title of your commit (Orange-OpenSource/ouds-ios#43)
+fix: title of your commit (pylapp/miso-ios#43)
 
 Some details about the fix you propose
 
@@ -204,7 +200,7 @@ If the feature has been reviewed by the product owner, the designers and the acc
 It can help to find who reviewed, in alpha builds, the evolutions. Thus, the message for the merge commit should be like:
 
 ```text
-fix: title of your commit (Orange-OpenSource/ouds-ios#43)
+fix: title of your commit (pylapp/miso-ios#43)
 
 Some details about the fix you propose
 
@@ -218,7 +214,7 @@ Signed-off-by: Second author firstname and lastname <second author email>
 Do not forget also to add, in the merge commit, who reviewed the source code evolutions using the [*Reviewed-by*](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) tag, like:
 
 ```text
-fix: title of your commit (Orange-OpenSource/ouds-ios#43)
+fix: title of your commit (pylapp/miso-ios#43)
 
 Some details about the fix you propose
 
@@ -228,7 +224,7 @@ Signed-off-by: Author firstname and lastname <first author email>
 
 For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
-refactor: update some things colors and design of the demo app (Orange-OpenSource/ouds-ios#123) (#456)
+refactor: update some things colors and design of the demo app (pylapp/miso-ios#123) (#456)
 
 Some things have been refactored to make incredible things.
 
@@ -247,7 +243,7 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthesis some commercial name.
 
 ```text
-feat: add thousands of tokens (Orange-OpenSource/ouds-ios#123)
+feat: add thousands of tokens (pylapp/miso-ios#123)
 
 Add thousands of tokens and hundreds of tests.
 
@@ -296,13 +292,6 @@ flowchart TD
     K[Merge in develop branch] --> |Nightly build| L(Beta build on TestFlight)
     L --> M(Update GitHub issue with details of beta build)
 ```
-
-Pull requests will be merged if no conditions / prerequisites / checks are red (except DCO which is not - yet - mandatory, but we must at least outside contributors to apply it). Some _GitHub Actions_ workflows are defined:
-- [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled ;
-- another [workflow YAML](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
-- another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
-- the almost-optional-one checking [DCO is applied](https://probot.github.io/apps/dco/) ;
-- and the one [for the linter warnings](https://github.com/cirruslabs/swiftlint-action).
 
 ## LLMs, GitHub bot accounts, and AI agents
 

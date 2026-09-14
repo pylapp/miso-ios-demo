@@ -1,0 +1,36 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" fill="white"/>
+  <rect x="0" y="0" width="10" height="10" fill="black"/>
+  <rect x="20" y="0" width="10" height="10" fill="black"/>
+  <rect x="40" y="0" width="10" height="10" fill="black"/>
+  <rect x="60" y="0" width="10" height="10" fill="black"/>
+  <rect x="10" y="10" width="10" height="10" fill="black"/>
+  <rect x="30" y="10" width="10" height="10" fill="black"/>
+  <rect x="50" y="10" width="10" height="10" fill="black"/>
+  <rect x="70" y="10" width="10" height="10" fill="black"/>
+  <rect x="0" y="20" width="10" height="10" fill="black"/>
+  <rect x="20" y="20" width="10" height="10" fill="black"/>
+  <rect x="40" y="20" width="10" height="10" fill="black"/>
+  <rect x="60" y="20" width="10" height="10" fill="black"/>
+  <rect x="10" y="30" width="10" height="10" fill="black"/>
+  <rect x="30" y="30" width="10" height="10" fill="black"/>
+  <rect x="50" y="30" width="10" height="10" fill="black"/>
+  <rect x="70" y="30" width="10" height="10" fill="black"/>
+  <rect x="0" y="40" width="10" height="10" fill="black"/>
+  <rect x="20" y="40" width="10" height="10" fill="black"/>
+  <rect x="40" y="40" width="10" height="10" fill="black"/>
+  <rect x="60" y="40" width="10" height="10" fill="black"/>
+  <rect x="10" y="50" width="10" height="10" fill="black"/>
+  <rect x="30" y="50" width="10" height="10" fill="black"/>
+  <rect x="50" y="50" width="10" height="10" fill="black"/>
+  <rect x="70" y="50" width="10" height="10" fill="black"/>
+  <rect x="0" y="60" width="10" height="10" fill="black"/>
+  <rect x="20" y="60" width="10" height="10" fill="black"/>
+  <rect x="40" y="60" width="10" height="10" fill="black"/>
+  <rect x="60" y="60" width="10" height="10" fill="black"/>
+  <rect x="10" y="70" width="10" height="10" fill="black"/>
+  <rect x="30" y="70" width="10" height="10" fill="black"/>
+  <rect x="50" y="70" width="10" height="10" fill="black"/>
+  <rect x="70" y="70" width="10" height="10" fill="black"/>
+</svg>

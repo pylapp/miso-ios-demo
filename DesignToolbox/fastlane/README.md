@@ -80,7 +80,7 @@ Run Periphery to look for dead code in the code base. Avoid strict mode because 
 [bundle exec] fastlane ios test_snapshots
 ```
 
-Run snapshots tests in the demo app to look for visual regressions of components defined in OUDS package
+Run snapshots tests in the demo app to look for visual regressions of components defined in MISO package
 
 ### ios test_ui
 
@@ -105,30 +105,6 @@ Run Unit tests in the demo app to check some specific components behaviors
 ```
 
 Build locally the demo app in debug mode without upload
-
-### ios build_alpha
-
-```sh
-[bundle exec] fastlane ios build_alpha
-```
-
-Build the demo app in alpha mode and upload to TestFlight
-
-### ios build_beta
-
-```sh
-[bundle exec] fastlane ios build_beta
-```
-
-Build the demo app in beta mode and upload to TestFlight
-
-### ios build_stable
-
-```sh
-[bundle exec] fastlane ios build_stable
-```
-
-Build the demo app in stable mode and, if defined, upload to internal portal for App Store publication
 
 ----
 

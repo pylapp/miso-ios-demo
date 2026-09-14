@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 #if os(tvOS)
 import UIKit
@@ -23,7 +14,7 @@ extension View {
 
     /// Adds theme and color-scheme controls to the current screen.
     ///
-    /// - iOS / visionOS: rendered inside the OUDS `toolBarTop` navigation bar.
+    /// - iOS / visionOS: rendered inside the MISO `toolBarTop` navigation bar.
     /// - macOS: rendered via SwiftUI `.toolbar`.
     /// - tvOS: this is a no-op. The controls must be rendered explicitly by the
     ///   caller inside the page layout using `TVOSTopControlsBar`, because tvOS
@@ -39,10 +30,10 @@ extension View {
         }
         #else
         toolBarTop(title, trailingItems: {
-            OUDSToolBarItem {
+            MISOToolBarItem {
                 ThemeSelectionButton()
             }
-            OUDSToolBarItem {
+            MISOToolBarItem {
                 ColorSchemeSelectionButton()
             }
         })
@@ -51,20 +42,20 @@ extension View {
 
     /// Sets the screen title.
     ///
-    /// - Non-tvOS: forwards to `oudsNavigationTitle(_:)` so the OUDS navigation
+    /// - Non-tvOS: forwards to `misoNavigationTitle(_:)` so the MISO navigation
     ///   stack renders it in its navigation bar and posts the accessibility
     ///   screen-changed notification.
     /// - tvOS: does not render any visible title (the top `TabView` bar already
     ///   labels the current section) but still posts the accessibility
     ///   screen-changed notification so VoiceOver announces the destination.
     @ViewBuilder
-    func oudsScreenTitle(_ title: String) -> some View {
+    func misoScreenTitle(_ title: String) -> some View {
         #if os(tvOS)
         onAppear {
             UIAccessibility.post(notification: .screenChanged, argument: title.localized())
         }
         #else
-        oudsNavigationTitle(title, hasLargeTitle: false)
+        misoNavigationTitle(title, hasLargeTitle: false)
         #endif
     }
 }
@@ -75,7 +66,7 @@ extension View {
 
 /// Horizontal bar hosting the theme and color scheme selectors on tvOS.
 ///
-/// Rendered in place of an OUDS `toolBarTop` (unavailable on tvOS).
+/// Rendered in place of an MISO `toolBarTop` (unavailable on tvOS).
 /// It also declares itself as a focus section so the focus engine has a
 /// clear target above the scroll content, which prevents focus from getting
 /// stuck inside grids.

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 
 extension NamedSpace {
 
@@ -26,7 +17,7 @@ extension NamedSpace {
 
         var name: String { rawValue }
 
-        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
+        func token(from theme: MISOTheme) -> SpaceSemanticToken {
             switch self {
             case .rowGapNone:
                 theme.spaces.rowGapNone

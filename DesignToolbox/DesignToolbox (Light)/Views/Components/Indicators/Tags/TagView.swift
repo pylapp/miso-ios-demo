@@ -1,45 +1,36 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
 
 struct TagView: View {
 
-    private static let allTagAppearances: [OUDSTag.Appearance] = [.emphasized, .muted]
-    private static let allTagShapes: [OUDSTag.Shape] = [.rounded, .square]
-    private static let allBadgeSizes: [OUDSTag.Size] = [.default, .small]
-    private static let allTagStatus: [OUDSTag.Status] = [
-        OUDSTag.Status.positive(leading: .bullet),
-        OUDSTag.Status.positive(leading: .icon),
-        OUDSTag.Status.positive(leading: .none),
-        OUDSTag.Status.negative(leading: .bullet),
-        OUDSTag.Status.negative(leading: .icon),
-        OUDSTag.Status.negative(leading: .none),
-        OUDSTag.Status.warning(leading: .bullet),
-        OUDSTag.Status.warning(leading: .icon),
-        OUDSTag.Status.warning(leading: .none),
-        OUDSTag.Status.info(leading: .bullet),
-        OUDSTag.Status.info(leading: .icon),
-        OUDSTag.Status.info(leading: .none),
-        OUDSTag.Status.neutral(bullet: false),
-        OUDSTag.Status.neutral(bullet: true),
-        OUDSTag.Status.neutral(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
-        OUDSTag.Status.accent(bullet: false),
-        OUDSTag.Status.accent(bullet: true),
-        OUDSTag.Status.accent(image: OUDSImage(asset: Image(systemName: "sun.min.fill"))),
+    private static let allTagAppearances: [MISOTag.Appearance] = [.emphasized, .muted]
+    private static let allTagShapes: [MISOTag.Shape] = [.rounded, .square]
+    private static let allBadgeSizes: [MISOTag.Size] = [.default, .small]
+    private static let allTagStatus: [MISOTag.Status] = [
+        MISOTag.Status.positive(leading: .bullet),
+        MISOTag.Status.positive(leading: .icon),
+        MISOTag.Status.positive(leading: .none),
+        MISOTag.Status.negative(leading: .bullet),
+        MISOTag.Status.negative(leading: .icon),
+        MISOTag.Status.negative(leading: .none),
+        MISOTag.Status.warning(leading: .bullet),
+        MISOTag.Status.warning(leading: .icon),
+        MISOTag.Status.warning(leading: .none),
+        MISOTag.Status.info(leading: .bullet),
+        MISOTag.Status.info(leading: .icon),
+        MISOTag.Status.info(leading: .none),
+        MISOTag.Status.neutral(bullet: false),
+        MISOTag.Status.neutral(bullet: true),
+        MISOTag.Status.neutral(image: MISOImage(asset: Image(systemName: "sun.min.fill"))),
+        MISOTag.Status.accent(bullet: false),
+        MISOTag.Status.accent(bullet: true),
+        MISOTag.Status.accent(image: MISOImage(asset: Image(systemName: "sun.min.fill"))),
     ]
 
     @State private var isSelected: Bool = true
@@ -62,13 +53,13 @@ struct TagView: View {
                     ForEach(Self.allTagShapes, id: \.self) { shape in
                         Text("Shape \(String(describing: shape))").font(.callout)
                         ForEach(Self.allTagAppearances, id: \.self) { appearance in
-                            OUDSTag(label: "Tag",
+                            MISOTag(label: "Tag",
                                     status: status,
                                     appearance: appearance,
                                     shape: shape,
                                     size: size)
 
-                            OUDSTag(loadingLabel: "Tag",
+                            MISOTag(loadingLabel: "Tag",
                                     progress: nil,
                                     shape: shape,
                                     size: size)

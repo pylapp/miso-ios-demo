@@ -1,0 +1,198 @@
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
+
+#if !os(tvOS)
+
+import MISOSwiftUI
+import SwiftUI
+
+// MARK: - Pin Code Input Configuration Model
+
+/// The model shared between `PinCodeInputPageConfiguration` view and `PinCodeInputPageComponent` view.
+final class PinCodeInputConfigurationModel: ComponentConfiguration {
+
+    // MARK: Stored properties
+
+    private static let defaultHelperText = ""
+    private static let defaultErrorText = String(localized: "app_components_common_errorMessage_tech")
+
+    // MARK: Published properties
+
+    @Published var value: String {
+        didSet { updateCode() }
+    }
+
+    @Published var length: MISOPinCodeInput.Length {
+        didSet { updateCode() }
+    }
+
+    @Published var helperText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var isOutlined: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var statusKind: PinCodeInputStatusKind {
+        didSet { updateCode() }
+    }
+
+    @Published var errorText: String {
+        didSet { updateCode() }
+    }
+
+    @Published var textMode: TextualContentMode {
+        didSet { updateCode() }
+    }
+
+    // MARK: - Computed properties
+
+    /// The derived `MISOPinCodeInput.Status` from the current `statusKind` and `errorText`.
+    var status: MISOPinCodeInput.Status {
+        switch statusKind {
+        case .enabled:
+            .enabled
+        case .error:
+            .error(message: errorText)
+        case .richError:
+            .richError(message: richErrorText)
+        }
+    }
+
+    var richHelperText: AttributedString {
+        do {
+            return try AttributedString(markdown: helperText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    var richErrorText: AttributedString {
+        do {
+            return try AttributedString(markdown: errorText)
+        } catch {
+            return AttributedString("Supposed to be valid Markdown")
+        }
+    }
+
+    // MARK: Initializer
+
+    override init() {
+        value = ""
+        length = .six
+        helperText = Self.defaultHelperText
+        errorText = Self.defaultErrorText
+        isOutlined = false
+        statusKind = .enabled
+        textMode = .raw
+        super.init()
+    }
+
+    deinit {}
+
+    // MARK: Code illustration
+
+    override func updateCode() {
+        code =
+            """
+            // Current value is: '\(value)'
+            MISOPinCodeInput($value, \(lengthPattern)\(helperTextPattern)\(isOutlinedPattern)\(statusPattern))
+            """
+    }
+
+    private var lengthPattern: String {
+        "length: .\(length)"
+    }
+
+    private var helperTextPattern: String {
+        textMode == .rich ? ", helperText: yourAttributedString" : ", helperText: \"\(helperText)\""
+    }
+
+    private var isOutlinedPattern: String {
+        !isOutlined ? "" : ", isOutlined: true"
+    }
+
+    private var statusPattern: String {
+        switch statusKind {
+        case .enabled:
+            ""
+        case .error:
+            ", status: .error(message: \"\(errorText)\")"
+        case .richError:
+            ", status: .richError(message: yourAttributedString)"
+        }
+    }
+}
+
+// MARK: - Pin Code Input Configuration View
+
+struct PinCodeInputConfigurationView: View {
+
+    @StateObject var configurationModel: PinCodeInputConfigurationModel
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+
+                MISOSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
+
+                MISOChipPicker(title: "app_components_pinCodeInput_length_tech",
+                               selection: $configurationModel.length,
+                               chips: MISOPinCodeInput.Length.chips)
+
+                MISOChipPicker(title: "app_components_common_status_tech",
+                               selection: $configurationModel.statusKind,
+                               chips: PinCodeInputStatusKind.chips)
+
+                if configurationModel.statusKind != .error, configurationModel.statusKind != .richError {
+                    MISOChipPicker(title: "app_components_textMode_tech",
+                                   selection: $configurationModel.textMode,
+                                   chips: TextualContentMode.chips)
+                }
+
+                DesignToolboxEditContentDisclosure {
+                    switch configurationModel.statusKind {
+                    case .error, .richError:
+                        DesignToolboxTextField(text: $configurationModel.errorText, label: "app_components_pinCodeInput_errorDescription_label")
+                    default:
+                        DesignToolboxTextField(text: $configurationModel.helperText, label: "app_components_common_helperText_tech")
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - extension of MISO Pin Code Input Length
+
+extension MISOPinCodeInput.Length: @retroactive CaseIterable, DesignToolboxEnumRepresentable {
+
+    nonisolated(unsafe) public static var allCases: [MISOPinCodeInput.Length] =
+        [.four, .six, .eight]
+}
+
+// MARK: - Pin Code Input Status Kind
+
+/// A simple enum representing the kind of status for the pin code input picker,
+/// decoupled from the associated message in `MISOPinCodeInput.Status`.
+
+enum PinCodeInputStatusKind: DesignToolboxEnumLocalizedRepresentable {
+    case enabled, error, richError
+
+    var wordingKey: String {
+        switch self {
+        case .enabled:
+            "app_common_enabled_tech"
+        case .error:
+            "app_components_common_error_tech"
+        case .richError:
+            "app_components_common_richError_tech"
+        }
+    }
+}
+
+#endif

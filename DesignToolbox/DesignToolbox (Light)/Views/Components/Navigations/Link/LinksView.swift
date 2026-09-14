@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
@@ -32,34 +23,34 @@ struct LinksView: View {
             Text("Size default").font(.headline)
 
             Text("Enabled").font(.subheadline)
-            OUDSLink(text: "Link", size: .default) {}
-            OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .default) {}
-            OUDSLink(text: "Link", indicator: .previous, size: .default) {}
-            OUDSLink(text: "Link", indicator: .next, size: .default) {}
-            OUDSLink(text: "Link", indicator: .external, size: .default) {}
+            MISOLink(text: "Link", size: .default) {}
+            MISOLink(text: "Link", image: MISOImage(asset: Image(systemName: "sun.min.fill")), size: .default) {}
+            MISOLink(text: "Link", indicator: .previous, size: .default) {}
+            MISOLink(text: "Link", indicator: .next, size: .default) {}
+            MISOLink(text: "Link", indicator: .external, size: .default) {}
 
             Text("Disabled").font(.subheadline)
-            OUDSLink(text: "Link", size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .previous, size: .default) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .next, size: .default) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .external, size: .default) {}.disabled(true)
+            MISOLink(text: "Link", size: .small) {}.disabled(true)
+            MISOLink(text: "Link", image: MISOImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .previous, size: .default) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .next, size: .default) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .external, size: .default) {}.disabled(true)
 
             Text("Size small").font(.headline)
 
             Text("Enabled").font(.subheadline)
-            OUDSLink(text: "Link", size: .small) {}
-            OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}
-            OUDSLink(text: "Link", indicator: .previous, size: .small) {}
-            OUDSLink(text: "Link", indicator: .next, size: .small) {}
-            OUDSLink(text: "Link", indicator: .external, size: .small) {}
+            MISOLink(text: "Link", size: .small) {}
+            MISOLink(text: "Link", image: MISOImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}
+            MISOLink(text: "Link", indicator: .previous, size: .small) {}
+            MISOLink(text: "Link", indicator: .next, size: .small) {}
+            MISOLink(text: "Link", indicator: .external, size: .small) {}
 
             Text("Disabled").font(.subheadline)
-            OUDSLink(text: "Link", size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", image: OUDSImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .previous, size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .next, size: .small) {}.disabled(true)
-            OUDSLink(text: "Link", indicator: .external, size: .small) {}.disabled(true)
+            MISOLink(text: "Link", size: .small) {}.disabled(true)
+            MISOLink(text: "Link", image: MISOImage(asset: Image(systemName: "sun.min.fill")), size: .small) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .previous, size: .small) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .next, size: .small) {}.disabled(true)
+            MISOLink(text: "Link", indicator: .external, size: .small) {}.disabled(true)
         }
     }
 

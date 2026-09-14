@@ -1,23 +1,14 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // MARK: - Design Toolbox Enum Representable
 
 /// Defines the option of configuration as enum representable (i.e. formated) to be used
-/// in a `OUDSChipPicker`. By default the `OUDSChipPickerData` is built with
+/// in a `MISOChipPicker`. By default the `MISOChipPickerData` is built with
 /// a formatted string based on the enum description.
 ///
 /// The technical name is based on the desciption of the enum prefixed by a dot.
@@ -28,11 +19,11 @@ protocol DesignToolboxEnumRepresentable: CaseIterable, Hashable {
     /// The technical description
     var technicalDescription: String { get }
 
-    /// The chip data used by the `OUDSChipPicker`
-    var chipData: OUDSChipPickerData<Self> { get }
+    /// The chip data used by the `MISOChipPicker`
+    var chipData: MISOChipPickerData<Self> { get }
 
-    /// Set of chips used by `OUDSChipPicker`
-    static var chips: [OUDSChipPickerData<Self>] { get }
+    /// Set of chips used by `MISOChipPicker`
+    static var chips: [MISOChipPickerData<Self>] { get }
 }
 
 extension DesignToolboxEnumRepresentable {
@@ -52,13 +43,13 @@ extension DesignToolboxEnumRepresentable {
         ".\(String(describing: self))"
     }
 
-    /// The data used by ``OUDSChipPickerData`` based on formatted representation
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: formattedName))
+    /// The data used by ``MISOChipPickerData`` based on formatted representation
+    var chipData: MISOChipPickerData<Self> {
+        MISOChipPickerData(tag: self, layout: .text(text: formattedName))
     }
 
-    /// The data used by ``OUDSChipPicker`` based on formatted representation
-    static var chips: [OUDSChipPickerData<Self>] {
+    /// The data used by ``MISOChipPicker`` based on formatted representation
+    static var chips: [MISOChipPickerData<Self>] {
         allCases.map(\.chipData)
     }
 }
@@ -72,9 +63,9 @@ protocol DesignToolboxEnumLocalizedRepresentable: DesignToolboxEnumRepresentable
 
 extension DesignToolboxEnumLocalizedRepresentable {
 
-    /// Alternative implementation of the `OUDSChipPickerData` based on
+    /// Alternative implementation of the `MISOChipPickerData` based on
     /// description that represents a wording key.
-    var chipData: OUDSChipPickerData<Self> {
-        OUDSChipPickerData(tag: self, layout: .text(text: wordingKey.localized()))
+    var chipData: MISOChipPickerData<Self> {
+        MISOChipPickerData(tag: self, layout: .text(text: wordingKey.localized()))
     }
 }

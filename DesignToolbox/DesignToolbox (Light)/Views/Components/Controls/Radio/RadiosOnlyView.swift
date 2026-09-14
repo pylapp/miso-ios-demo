@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct RadiosOnlyView: View {
@@ -29,17 +20,17 @@ private struct RadioOnlyLayout: View {
 
     var body: some View {
         Text("Enabled, no error").font(.subheadline)
-        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
+        MISORadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
 
         Text("Enabled, on error").font(.subheadline)
-        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
+        MISORadio(isOn: $isOn, accessibilityLabel: "Radio", isError: true)
             .font(.subheadline)
 
         Text("Read only").font(.subheadline)
-        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isReadOnly: true)
+        MISORadio(isOn: $isOn, accessibilityLabel: "Radio", isReadOnly: true)
 
         Text("Disabled, no error")
-        OUDSRadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
+        MISORadio(isOn: $isOn, accessibilityLabel: "Radio", isError: false)
             .disabled(true)
     }
 }

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 #if os(iOS)
 import UIKit
@@ -122,7 +113,7 @@ struct MainView: View {
     private var liquidGlassSearchTabBar: some View {
         #if DEBUG
         if sandboxEnabled {
-            OUDSLiquidGlassTabView {
+            MISOLiquidGlassTabView {
                 Tab("app_bottomBar_debug_label", systemImage: "hammer") {
                     SandboxPage()
                 }
@@ -150,7 +141,7 @@ struct MainView: View {
 
     @available(iOS 26, *)
     private var defaultLiquidGlassSearchTabBar: some View {
-        OUDSLiquidGlassTabView {
+        MISOLiquidGlassTabView {
             Tab("app_bottomBar_tokens_label", image: "design-token") {
                 TokensPage()
             }
@@ -172,7 +163,7 @@ struct MainView: View {
     private var searchTabBar: some View {
         #if DEBUG
         if sandboxEnabled {
-            OUDSTabView(selectedTab: $selectedTab, count: 5) {
+            MISOTabView(selectedTab: $selectedTab, count: 5) {
                 Tab("app_bottomBar_debug_label", systemImage: "hammer", value: 0) {
                     SandboxPage()
                 }
@@ -200,7 +191,7 @@ struct MainView: View {
 
     @available(iOS 18, *)
     private var defaultSearchTabBar: some View {
-        OUDSTabView(selectedTab: $selectedTab, count: 4) {
+        MISOTabView(selectedTab: $selectedTab, count: 4) {
             Tab("app_bottomBar_tokens_label", image: "design-token", value: 0) {
                 TokensPage()
             }
@@ -224,7 +215,7 @@ struct MainView: View {
     private var tabBar: some View {
         #if DEBUG
         if sandboxEnabled {
-            OUDSTabBar(selectedTab: $selectedTab, count: 4) {
+            MISOTabBar(selectedTab: $selectedTab, count: 4) {
                 SandboxPage()
                     .tabItem {
                         Label("app_bottomBar_debug_label", systemImage: "hammer")
@@ -256,7 +247,7 @@ struct MainView: View {
     }
 
     private var defaultTabBar: some View {
-        OUDSTabBar(selectedTab: $selectedTab, count: 3) {
+        MISOTabBar(selectedTab: $selectedTab, count: 3) {
             TokensPage()
                 .tabItem {
                     Label("app_bottomBar_tokens_label", image: "design-token")

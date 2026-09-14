@@ -24,7 +24,7 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>OUDSBuildType</key>
+	<key>MISOBuildType</key>
 	<string>DEBUG</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

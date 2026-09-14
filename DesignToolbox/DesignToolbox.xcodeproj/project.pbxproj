@@ -69,7 +69,7 @@
 		0786A9DC2E0AAB4A00976098 /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
 		0786A9E22E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
 		0786A9E32E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
-		0786A9E42E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		0786A9E42E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */; };
 		078C4C372E01558B00598F75 /* ControlItemConfigurationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */; };
 		078C8C020FD6F3ED092B17FF /* DesignToolboxDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */; };
 		0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */; };
@@ -162,7 +162,6 @@
 		3CC952B7C75D0D109DDB5C3C /* BulletListConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1872F1A877300C9BD46 /* BulletListConfigurationView.swift */; };
 		3E6619E6218EBD334ACEA5B2 /* SuggestionChipConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE97F2E21329B00A60E96 /* SuggestionChipConfigurationView.swift */; };
 		3F179BE0001C28736356ED44 /* PinCodeInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E02422F7D3AE100550DD6 /* PinCodeInputPage.swift */; };
-		402C44C6C8D93071A1607FEC /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
 		43FA4976F0C73AD36427493D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		45E02168BD117ECAA2FC4262 /* FilterChipElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9782E21329B00A60E96 /* FilterChipElement.swift */; };
 		46BBE0D13670524F41D04706 /* SoshTheme+TypographySnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8981F1C13E02CCC3BBB5FDA2 /* SoshTheme+TypographySnapshotsTests.swift */; };
@@ -173,10 +172,8 @@
 		4B18B80D8CD0930ABEF821E5 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
 		4BE747770D2172B43FAC3973 /* CodeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC458A53CC1EA3BCBD60BF00 /* CodeConfigurationView.swift */; };
 		4FCC5A99078E3C09FA2C08C5 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
-		507A982D313DB7249A8274FC /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76172C466FCF0033365D /* about_privacy_policy.html */; };
-		50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
-		5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */; };
+		5115808A2E730E0600DFFE4E /* MISOTheme+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511580892E730E0100DFFE4E /* MISOTheme+Name.swift */; };
 		5122E02A2D65E7AC00CD2857 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */; };
@@ -194,8 +191,6 @@
 		515EE9A22E2133C800A60E96 /* ChipsSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A12E2133C800A60E96 /* ChipsSnapshotsTestsTestCase.swift */; };
 		515EE9A42E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A32E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift */; };
 		515EE9A62E21347200A60E96 /* OrangeTheme+ChipsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9A52E21347200A60E96 /* OrangeTheme+ChipsSnapshotsTests.swift */; };
-		5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
-		5180A3D32E95943300664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
 		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		518B26642DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */; };
 		518EC0752E1FF23800FC77E4 /* OrangeTheme+ButtonSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EC06F2E1FF23800FC77E4 /* OrangeTheme+ButtonSnapshotsTests.swift */; };
@@ -269,10 +264,8 @@
 		51ABCD2D2E183226006CD6C0 /* SoshTheme+TokensOpacitySnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacitySnapshotsTests.swift */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
-		51BD76252C466FCF0033365D /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
-		51D589902E8FCC350071E8BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51D5898F2E8FCC310071E8BF /* README.md */; };
 		51D6D5852D887E36009CD879 /* CheckboxIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */; };
 		51D6D58B2D887E94009CD879 /* CheckboxIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */; };
 		51D6D5912D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */; };
@@ -303,13 +296,6 @@
 		698C985F96EE8E0F95F68C49 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
 		6DA3832BEFD478A1821195F1 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398A842275CD226E6B5EC9D /* LabelView.swift */; };
-		6DFC208B2CDE669500F2EC33 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
-		6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
-		6DFC20B72CE3AF1500F2EC33 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
-		6DFC20B82CE3AF1500F2EC33 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
-		6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
-		6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
 		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
 		7B76C6A4CAA26E4BA89DC520 /* CircularProgressIndicatorSnapshotsTestsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316CB8F5AF042D9D5DBE9F8A /* CircularProgressIndicatorSnapshotsTestsTestCase.swift */; };
 		7DB4833704A5118A0E1CF2CD /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D5E0E3A6916585DAD47E0 /* HeadingView.swift */; };
@@ -535,15 +521,11 @@
 		953EDA34302FC3B90008FEA7 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		953EDA35302FC3B90008FEA7 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
 		953EDA36302FC3B90008FEA7 /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
-		953EDA42302FC41A0008FEA7 /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76172C466FCF0033365D /* about_privacy_policy.html */; };
-		953EDA43302FC4460008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
-		953EDA44302FC4460008FEA7 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
 		953EDA45302FC4460008FEA7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
 		953EDA46302FC4A20008FEA7 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
 		953EDA47302FC4A20008FEA7 /* ColorSchemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FF2E84282E003F3E0E /* ColorSchemeSelectionButton.swift */; };
 		953EDA48302FC4A20008FEA7 /* View+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FC2E8427C2003F3E0E /* View+NavigationBar.swift */; };
 		953EDA49302FC4A20008FEA7 /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
-		953EDA4A302FC4A20008FEA7 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
 		953EDA4B302FC4A20008FEA7 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		953EDA4C302FC4A20008FEA7 /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		953EDA4D302FC4A20008FEA7 /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
@@ -578,7 +560,7 @@
 		953EDA6D302FC4A20008FEA7 /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
 		953EDA6E302FC4A20008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		953EDA6F302FC4A20008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
-		953EDA70302FC4A20008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		953EDA70302FC4A20008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */; };
 		953EDA71302FC4A20008FEA7 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		953EDA72302FC4A20008FEA7 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
 		953EDA73302FC4A20008FEA7 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
@@ -775,25 +757,12 @@
 		953EDB30302FC4A20008FEA7 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		953EDB31302FC4A20008FEA7 /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		953EDB32302FC4A20008FEA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
-		953EDB33302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
-		953EDB34302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
-		953EDB35302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
-		953EDB36302FC4CA0008FEA7 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
-		953EDB37302FC4CA0008FEA7 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
-		953EDB38302FC4CA0008FEA7 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
-		953EDB39302FC4CA0008FEA7 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
-		953EDB3A302FC4CA0008FEA7 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		953EDB3B302FC4CA0008FEA7 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
-		953EDB3C302FC4CA0008FEA7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		953EDB3D302FC4CA0008FEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		953EDB3E302FC4CA0008FEA7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
-		953EDB3F302FC4CA0008FEA7 /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
-		953EDB40302FC4CA0008FEA7 /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76172C466FCF0033365D /* about_privacy_policy.html */; };
 		953EDB41302FC5A60008FEA7 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
 		953EDB42302FC5A60008FEA7 /* ColorSchemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FF2E84282E003F3E0E /* ColorSchemeSelectionButton.swift */; };
 		953EDB43302FC5A60008FEA7 /* View+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FC2E8427C2003F3E0E /* View+NavigationBar.swift */; };
 		953EDB44302FC5A60008FEA7 /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
-		953EDB45302FC5A60008FEA7 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
 		953EDB46302FC5A60008FEA7 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		953EDB47302FC5A60008FEA7 /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		953EDB48302FC5A60008FEA7 /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
@@ -831,7 +800,7 @@
 		953EDB68302FC5A60008FEA7 /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
 		953EDB69302FC5A60008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		953EDB6A302FC5A60008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
-		953EDB6B302FC5A60008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		953EDB6B302FC5A60008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */; };
 		953EDB6C302FC5A60008FEA7 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
 		953EDB6D302FC5A60008FEA7 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
 		953EDB6E302FC5A60008FEA7 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
@@ -1038,25 +1007,12 @@
 		953EDC35302FC5A60008FEA7 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
 		953EDC36302FC5A60008FEA7 /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		953EDC37302FC5A60008FEA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
-		953EDC38302FC5C60008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
-		953EDC39302FC5C60008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */; };
-		953EDC3A302FC5C60008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
-		953EDC3B302FC5C60008FEA7 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
-		953EDC3C302FC5C60008FEA7 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
-		953EDC3D302FC5C60008FEA7 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
-		953EDC3E302FC5C60008FEA7 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
-		953EDC3F302FC5C60008FEA7 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		953EDC40302FC5C60008FEA7 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
-		953EDC41302FC5C60008FEA7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		953EDC42302FC5C60008FEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		953EDC43302FC5C60008FEA7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
-		953EDC44302FC5C60008FEA7 /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
-		953EDC45302FC5C60008FEA7 /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76172C466FCF0033365D /* about_privacy_policy.html */; };
 		953EDC46302FC69E0008FEA7 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
 		953EDC47302FC69E0008FEA7 /* ColorSchemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FF2E84282E003F3E0E /* ColorSchemeSelectionButton.swift */; };
 		953EDC48302FC69E0008FEA7 /* View+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A905FC2E8427C2003F3E0E /* View+NavigationBar.swift */; };
 		953EDC49302FC69E0008FEA7 /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
-		953EDC4A302FC69E0008FEA7 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
 		953EDC4B302FC69E0008FEA7 /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		953EDC4C302FC69E0008FEA7 /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
 		953EDC4D302FC69E0008FEA7 /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
@@ -1076,7 +1032,7 @@
 		953EDC5B302FC69E0008FEA7 /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
 		953EDC5C302FC69E0008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		953EDC5D302FC69E0008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
-		953EDC5E302FC69E0008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		953EDC5E302FC69E0008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */; };
 		953EDC5F302FC69E0008FEA7 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		953EDC60302FC69E0008FEA7 /* CheckboxElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442052D75B880000B5DE4 /* CheckboxElements.swift */; };
 		953EDC61302FC69E0008FEA7 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE9752E21329B00A60E96 /* ChipLayout.swift */; };
@@ -1223,16 +1179,7 @@
 		953EDCEF302FC69E0008FEA7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		953EDCF0302FC69E0008FEA7 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
 		953EDCF1302FC69E0008FEA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
-		953EDCF2302FC7000008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */; };
-		953EDCF3302FC7000008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */; };
-		953EDCF4302FC7000008FEA7 /* accessibility_detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */; };
-		953EDCF5302FC7000008FEA7 /* accessibility_result.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */; };
-		953EDCF6302FC7000008FEA7 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
-		953EDCF7302FC7000008FEA7 /* orange-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */; };
-		953EDCF8302FC7000008FEA7 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
-		953EDCF9302FC7000008FEA7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B42CE3AF1500F2EC33 /* style.css */; };
 		953EDCFA302FC7000008FEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
-		953EDCFB302FC7000008FEA7 /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76152C466FCF0033365D /* about_legal_information.html */; };
 		953EDCFC302FC7420008FEA7 /* NamedGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE05562EC33FA600ACE41C /* NamedGrid.swift */; };
 		953EDCFF302FC7950008FEA7 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A52CC15C9D00E69359 /* NamedColor.swift */; };
 		953EDD00302FC7950008FEA7 /* NamedColor+Ai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C5E992FFBF1C900E12BFF /* NamedColor+Ai.swift */; };
@@ -1383,7 +1330,7 @@
 		953EDD91302FCCD40008FEA7 /* CheckboxItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */; };
 		953EDD92302FCCD40008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */; };
 		953EDD93302FCCD40008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */; };
-		953EDD94302FCCD40008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */; };
+		953EDD94302FCCD40008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */; };
 		953EDD95302FCCD40008FEA7 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
 		953EDD96302FCCD40008FEA7 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
 		953EDD97302FCCD40008FEA7 /* CheckboxElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442052D75B880000B5DE4 /* CheckboxElements.swift */; };
@@ -1516,6 +1463,11 @@
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
 		956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 956B94392FCF033A00471ADE /* OUDSSwiftUI */; };
+		957A175C305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
+		957A175D305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
+		957A175E305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
+		957A175F305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
+		957A1760305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
 		957D5EE12F2BB27D0055128A /* BulletListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE02F2BB2740055128A /* BulletListsView.swift */; };
 		957D5EE62F2BB29A0055128A /* ContentDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D5EE42F2BB2940055128A /* ContentDisplayView.swift */; };
 		9589F0402EB7D67B00134487 /* TagElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8491B2E9FF35700DBCE76 /* TagElements.swift */; };
@@ -1752,7 +1704,7 @@
 		0786A9DA2E0AAB4A00976098 /* CheckboxItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxItemPage.swift; sourceTree = "<group>"; };
 		0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxItemIndeterminateElement.swift; sourceTree = "<group>"; };
 		0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxItemIndeterminatePage.swift; sourceTree = "<group>"; };
-		0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSCheckboxIndicatorState+extension.swift"; sourceTree = "<group>"; };
+		0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MISOCheckboxIndicatorState+extension.swift"; sourceTree = "<group>"; };
 		078C4C362E01558B00598F75 /* ControlItemConfigurationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlItemConfigurationViews.swift; sourceTree = "<group>"; };
 		0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIUserInterfaceStyle+extension.swift"; sourceTree = "<group>"; };
 		079B4A122E49BFA20039FC26 /* TagSnapshotsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSnapshotsTestCase.swift; sourceTree = "<group>"; };
@@ -1812,7 +1764,6 @@
 		07FDCD912C296A500009AA13 /* Design System Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design System Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		07FDCDA82C296B7A0009AA13 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NOTICE.txt; path = ../NOTICE.txt; sourceTree = "<group>"; };
 		07FDCDA92C296B7A0009AA13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		07FDCDAA2C296B7A0009AA13 /* THIRD_PARTY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = THIRD_PARTY.md; path = ../THIRD_PARTY.md; sourceTree = "<group>"; };
 		07FDCDB02C296BAB0009AA13 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -1836,10 +1787,8 @@
 		49CB0810AE59C7B1672E9782 /* LabelElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LabelElement.swift; sourceTree = "<group>"; };
 		4D5BDE043E998024B485DBB5 /* CodePage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodePage.swift; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
-		511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OUDSTheme+Name.swift"; sourceTree = "<group>"; };
+		511580892E730E0100DFFE4E /* MISOTheme+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MISOTheme+Name.swift"; sourceTree = "<group>"; };
 		511C96B42E157D2C00F9D156 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
-		5122E0252D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_legal_information.html; sourceTree = "<group>"; };
-		5122E0262D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		5122E0292D65E7AC00CD2857 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		513441FD2D75B880000B5DE4 /* CheckboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxConfiguration.swift; sourceTree = "<group>"; };
@@ -1870,9 +1819,6 @@
 		515EE9A12E2133C800A60E96 /* ChipsSnapshotsTestsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsSnapshotsTestsTestCase.swift; sourceTree = "<group>"; };
 		515EE9A32E2133F200A60E96 /* SoshTheme+ChipsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+ChipsSnapshotsTests.swift"; sourceTree = "<group>"; };
 		515EE9A52E21347200A60E96 /* OrangeTheme+ChipsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrangeTheme+ChipsSnapshotsTests.swift"; sourceTree = "<group>"; };
-		5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
-		5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Roman.ttf"; sourceTree = "<group>"; };
-		5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "HelveticaNeueLTArabic-Light.ttf"; sourceTree = "<group>"; };
 		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
 		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
 		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
@@ -1942,18 +1888,13 @@
 		51ABCD232E183226006CD6C0 /* SoshTheme+TokensOpacitySnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensOpacitySnapshotsTests.swift"; sourceTree = "<group>"; };
 		51ABCD242E183226006CD6C0 /* SoshTheme+TokensColorSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensColorSnapshotsTests.swift"; sourceTree = "<group>"; };
 		51ABCD252E183226006CD6C0 /* SoshTheme+TokensFontSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoshTheme+TokensFontSnapshotsTests.swift"; sourceTree = "<group>"; };
-		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
-		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementsPage.swift; sourceTree = "<group>"; };
 		51BD76122C466FCF0033365D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		51BD76142C466FCF0033365D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about_legal_information.html; sourceTree = "<group>"; };
-		51BD76162C466FCF0033365D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51BD761C2C466FCF0033365D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		51BD761E2C466FCF0033365D /* DesignToolbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolbox.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		51D5898F2E8FCC310071E8BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51D6D5842D887E36009CD879 /* CheckboxIndeterminateElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateElement.swift; sourceTree = "<group>"; };
 		51D6D58A2D887E94009CD879 /* CheckboxIndeterminatePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminatePage.swift; sourceTree = "<group>"; };
 		51D6D5902D887FA9009CD879 /* CheckboxIndeterminateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIndeterminateConfiguration.swift; sourceTree = "<group>"; };
@@ -1986,14 +1927,6 @@
 		6AAF0F69289CD346C73E778E /* DisplayConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DisplayConfigurationView.swift; sourceTree = "<group>"; };
 		6B5101FC9EE9A61CEA41223D /* OrangeCompactTheme+LinearProgressIndicatorSnapshotsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+LinearProgressIndicatorSnapshotsTests.swift"; sourceTree = "<group>"; };
 		6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCode.swift; sourceTree = "<group>"; };
-		6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityStatementPage.swift; sourceTree = "<group>"; };
-		6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "boosted-grid.min.css"; sourceTree = "<group>"; };
-		6DFC20B12CE3AF1500F2EC33 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
-		6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "orange-logo.svg"; sourceTree = "<group>"; };
-		6DFC20B32CE3AF1500F2EC33 /* pie.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = pie.css; sourceTree = "<group>"; };
-		6DFC20B42CE3AF1500F2EC33 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = accessibility_detail.html; sourceTree = "<group>"; };
-		6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = accessibility_result.xml; sourceTree = "<group>"; };
 		6F1BB01DBFA2E5B3F36F868E /* OrangeCompactTheme+TypographySnapshotsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OrangeCompactTheme+TypographySnapshotsTests.swift"; sourceTree = "<group>"; };
 		72E7C3F99F8A8B76431EA0D0 /* CircularProgressIndicatorConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicatorConfigurationView.swift; sourceTree = "<group>"; };
 		771574AFDAC2C484CF3ACB9E /* SoshTheme+CircularProgressIndicatorSnapshotsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SoshTheme+CircularProgressIndicatorSnapshotsTests.swift"; sourceTree = "<group>"; };
@@ -2054,6 +1987,7 @@
 		9553683930239908007A83E0 /* CircularIndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularIndicatorsView.swift; sourceTree = "<group>"; };
 		955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+extensions Tests.swift"; sourceTree = "<group>"; };
 		9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIcons.swift; sourceTree = "<group>"; };
+		957A175B305996F000FAA291 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		957D5EE02F2BB2740055128A /* BulletListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListsView.swift; sourceTree = "<group>"; };
 		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2372,7 +2306,7 @@
 			children = (
 				51952A782D3FA0FB0068B807 /* __Snapshots__ */,
 				074008222C942810006B8729 /* XCTestCase+Snapshot.swift */,
-				511580892E730E0100DFFE4E /* OUDSTheme+Name.swift */,
+				511580892E730E0100DFFE4E /* MISOTheme+Name.swift */,
 				0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */,
 			);
 			path = DesignToolboxSnapshotsTests;
@@ -2524,7 +2458,7 @@
 			children = (
 				0786A9DF2E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift */,
 				0786A9E02E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift */,
-				0786A9E12E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift */,
+				0786A9E12E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift */,
 			);
 			path = Indeterminate;
 			sourceTree = "<group>";
@@ -2725,7 +2659,6 @@
 				07FDCDA42C296B220009AA13 /* Configuration */,
 				07FDCDB02C296BAB0009AA13 /* CHANGELOG.md */,
 				07FDCDA92C296B7A0009AA13 /* LICENSE */,
-				07FDCDA82C296B7A0009AA13 /* NOTICE.txt */,
 				07FDCDA72C296B7A0009AA13 /* README.md */,
 				07FDCDAA2C296B7A0009AA13 /* THIRD_PARTY.md */,
 			);
@@ -2792,17 +2725,6 @@
 				9DE7816042224234211499EE /* CodeView.swift */,
 			);
 			path = Typography;
-			sourceTree = "<group>";
-		};
-		5114F57B2E8EB10800BC2BDD /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				5180A3D22E95942D00664BD0 /* HelveticaNeueLTArabic-Roman.ttf */,
-				5180A3D42E95951E00664BD0 /* HelveticaNeueLTArabic-Light.ttf */,
-				5180A3CE2E95941900664BD0 /* HelveticaNeueLTArabic-Bold.ttf */,
-				51D5898F2E8FCC310071E8BF /* README.md */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		513442002D75B880000B5DE4 /* Checkbox */ = {
@@ -3057,7 +2979,6 @@
 		51BD760C2C466FCF0033365D /* About */ = {
 			isa = PBXGroup;
 			children = (
-				6DFC20892CDE664400F2EC33 /* AccessibilityStatement */,
 				51BD760B2C466FCF0033365D /* AboutPage.swift */,
 			);
 			path = About;
@@ -3066,16 +2987,8 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				51F49C812E57434900D50BC4 /* _ */,
-				FCEE0FDA2F3CBEC300ABD80E /* Dialogs */,
-				51F49C822E57435900D50BC4 /* Actions */,
-				FCEEB18A2F1A877300C9BD46 /* ContentDisplay */,
-				51F49C832E57437E00D50BC4 /* Controls */,
-				51F49C842E5743B800D50BC4 /* Indicators */,
-				51F49C852E5743D900D50BC4 /* Layouts */,
-				51F49C862E5743F600D50BC4 /* Navigations */,
-				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
-				5F615327A6C7C099C379562A /* Foundations */,
+				957A175A305996EA00FAA291 /* MISO */,
+				957A1759305996E000FAA291 /* OUDS */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3121,12 +3034,8 @@
 			isa = PBXGroup;
 			children = (
 				9526BC273048608E0037BBEB /* Animated Assets */,
-				5114F57B2E8EB10800BC2BDD /* Fonts */,
-				6DFC209B2CDF92D500F2EC33 /* accessibilityStatement */,
 				07CF42712CA31AC3000BD03E /* Assets.xcassets */,
 				FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */,
-				51BD76152C466FCF0033365D /* about_legal_information.html */,
-				51BD76172C466FCF0033365D /* about_privacy_policy.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -3710,28 +3619,6 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
-		6DFC20892CDE664400F2EC33 /* AccessibilityStatement */ = {
-			isa = PBXGroup;
-			children = (
-				6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */,
-			);
-			path = AccessibilityStatement;
-			sourceTree = "<group>";
-		};
-		6DFC209B2CDF92D500F2EC33 /* accessibilityStatement */ = {
-			isa = PBXGroup;
-			children = (
-				6DFC20BF2CE3D39D00F2EC33 /* accessibility_detail.html */,
-				6DFC20C02CE3D39D00F2EC33 /* accessibility_result.xml */,
-				6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */,
-				6DFC20B12CE3AF1500F2EC33 /* favicon.ico */,
-				6DFC20B22CE3AF1500F2EC33 /* orange-logo.svg */,
-				6DFC20B32CE3AF1500F2EC33 /* pie.css */,
-				6DFC20B42CE3AF1500F2EC33 /* style.css */,
-			);
-			path = accessibilityStatement;
-			sourceTree = "<group>";
-		};
 		8D39D2B30EECA05DA0CCAEDF /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
@@ -3865,6 +3752,31 @@
 				95536837302398AD007A83E0 /* ProgressIndicatorsView.swift */,
 			);
 			path = ProgressIndicators;
+			sourceTree = "<group>";
+		};
+		957A1759305996E000FAA291 /* OUDS */ = {
+			isa = PBXGroup;
+			children = (
+				51F49C812E57434900D50BC4 /* _ */,
+				FCEE0FDA2F3CBEC300ABD80E /* Dialogs */,
+				51F49C822E57435900D50BC4 /* Actions */,
+				FCEEB18A2F1A877300C9BD46 /* ContentDisplay */,
+				51F49C832E57437E00D50BC4 /* Controls */,
+				51F49C842E5743B800D50BC4 /* Indicators */,
+				51F49C852E5743D900D50BC4 /* Layouts */,
+				51F49C862E5743F600D50BC4 /* Navigations */,
+				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
+				5F615327A6C7C099C379562A /* Foundations */,
+			);
+			path = OUDS;
+			sourceTree = "<group>";
+		};
+		957A175A305996EA00FAA291 /* MISO */ = {
+			isa = PBXGroup;
+			children = (
+				957A175B305996F000FAA291 /* Dummy.swift */,
+			);
+			path = MISO;
 			sourceTree = "<group>";
 		};
 		957D5EDF2F2BB2660055128A /* ContentDisplay */ = {
@@ -4852,26 +4764,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953EDA43302FC4460008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
-				953EDA44302FC4460008FEA7 /* favicon.ico in Resources */,
 				9526BC2C3048609D0037BBEB /* Animation.webp in Resources */,
 				9526BC2D3048609D0037BBEB /* Animation.gif in Resources */,
 				953EDA45302FC4460008FEA7 /* Localizable.xcstrings in Resources */,
-				953EDA42302FC41A0008FEA7 /* about_privacy_policy.html in Resources */,
-				6DFC20C12CE3D39D00F2EC33 /* accessibility_detail.html in Resources */,
-				6DFC20C22CE3D39D00F2EC33 /* accessibility_result.xml in Resources */,
-				51D589902E8FCC350071E8BF /* README.md in Resources */,
 				51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */,
-				51BD76252C466FCF0033365D /* about_legal_information.html in Resources */,
-				5180A3CF2E95941D00664BD0 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
 				5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */,
 				07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */,
 				515439232DE734E600B25D13 /* Settings.bundle in Resources */,
-				6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */,
-				6DFC20B72CE3AF1500F2EC33 /* pie.css in Resources */,
-				6DFC20B82CE3AF1500F2EC33 /* style.css in Resources */,
-				5180A3D32E95943300664BD0 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
-				6DFC20B92CE3AF1500F2EC33 /* orange-logo.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4894,22 +4793,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953EDCF2302FC7000008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
-				953EDCF3302FC7000008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
-				953EDCF4302FC7000008FEA7 /* accessibility_detail.html in Resources */,
-				953EDCF5302FC7000008FEA7 /* accessibility_result.xml in Resources */,
-				953EDCF6302FC7000008FEA7 /* boosted-grid.min.css in Resources */,
-				953EDCF7302FC7000008FEA7 /* orange-logo.svg in Resources */,
-				953EDCF8302FC7000008FEA7 /* pie.css in Resources */,
-				953EDCF9302FC7000008FEA7 /* style.css in Resources */,
 				953EDCFA302FC7000008FEA7 /* Assets.xcassets in Resources */,
-				953EDCFB302FC7000008FEA7 /* about_legal_information.html in Resources */,
-				50B2ADF27679048DEB269510 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
 				9355F1EDDDF64C175B7F05A5 /* Localizable.xcstrings in Resources */,
 				9526BC303048609D0037BBEB /* Animation.webp in Resources */,
 				9526BC313048609D0037BBEB /* Animation.gif in Resources */,
-				507A982D313DB7249A8274FC /* about_privacy_policy.html in Resources */,
-				402C44C6C8D93071A1607FEC /* favicon.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4917,22 +4804,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953EDB33302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
-				953EDB34302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
-				953EDB35302FC4CA0008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
-				953EDB36302FC4CA0008FEA7 /* accessibility_detail.html in Resources */,
-				953EDB37302FC4CA0008FEA7 /* accessibility_result.xml in Resources */,
-				953EDB38302FC4CA0008FEA7 /* boosted-grid.min.css in Resources */,
-				953EDB39302FC4CA0008FEA7 /* favicon.ico in Resources */,
-				953EDB3A302FC4CA0008FEA7 /* orange-logo.svg in Resources */,
-				953EDB3B302FC4CA0008FEA7 /* pie.css in Resources */,
-				953EDB3C302FC4CA0008FEA7 /* style.css in Resources */,
 				953EDB3D302FC4CA0008FEA7 /* Assets.xcassets in Resources */,
 				953EDB3E302FC4CA0008FEA7 /* Localizable.xcstrings in Resources */,
 				9526BC2E3048609D0037BBEB /* Animation.webp in Resources */,
 				9526BC2F3048609D0037BBEB /* Animation.gif in Resources */,
-				953EDB3F302FC4CA0008FEA7 /* about_legal_information.html in Resources */,
-				953EDB40302FC4CA0008FEA7 /* about_privacy_policy.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4940,22 +4815,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953EDC38302FC5C60008FEA7 /* HelveticaNeueLTArabic-Roman.ttf in Resources */,
-				953EDC39302FC5C60008FEA7 /* HelveticaNeueLTArabic-Light.ttf in Resources */,
-				953EDC3A302FC5C60008FEA7 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
-				953EDC3B302FC5C60008FEA7 /* accessibility_detail.html in Resources */,
-				953EDC3C302FC5C60008FEA7 /* accessibility_result.xml in Resources */,
-				953EDC3D302FC5C60008FEA7 /* boosted-grid.min.css in Resources */,
-				953EDC3E302FC5C60008FEA7 /* favicon.ico in Resources */,
-				953EDC3F302FC5C60008FEA7 /* orange-logo.svg in Resources */,
-				953EDC40302FC5C60008FEA7 /* pie.css in Resources */,
-				953EDC41302FC5C60008FEA7 /* style.css in Resources */,
 				953EDC42302FC5C60008FEA7 /* Assets.xcassets in Resources */,
 				953EDC43302FC5C60008FEA7 /* Localizable.xcstrings in Resources */,
 				9526BC2A3048609D0037BBEB /* Animation.webp in Resources */,
 				9526BC2B3048609D0037BBEB /* Animation.gif in Resources */,
-				953EDC44302FC5C60008FEA7 /* about_legal_information.html in Resources */,
-				953EDC45302FC5C60008FEA7 /* about_privacy_policy.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5035,7 +4898,7 @@
 				953EDD91302FCCD40008FEA7 /* CheckboxItemPage.swift in Sources */,
 				953EDD92302FCCD40008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				953EDD93302FCCD40008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */,
-				953EDD94302FCCD40008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				953EDD94302FCCD40008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */,
 				953EDD95302FCCD40008FEA7 /* CheckboxPickerElement.swift in Sources */,
 				953EDD96302FCCD40008FEA7 /* CheckboxPickerPage.swift in Sources */,
 				953EDD97302FCCD40008FEA7 /* CheckboxElements.swift in Sources */,
@@ -5164,6 +5027,7 @@
 				953EDD5C302FCBF50008FEA7 /* ListItemTextsConfiguration.swift in Sources */,
 				953EDD5D302FCBF50008FEA7 /* ListItemTrailingConfiguration.swift in Sources */,
 				953EDD5E302FCBF50008FEA7 /* NavigationListItemConfiguration.swift in Sources */,
+				957A1760305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDD5F302FCBF50008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
 				953EDD70302FCBF50008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
 				953EDD71302FCBF50008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
@@ -5220,7 +5084,7 @@
 				95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */,
 				07AA1100FF0000000000AB14 /* WireframeTheme+TextAreaSnapshotsTests.swift in Sources */,
 				51A217622E325ED500562BE0 /* OrangeCompactTheme+SwitchSnapshotsTests.swift in Sources */,
-				5115808A2E730E0600DFFE4E /* OUDSTheme+Name.swift in Sources */,
+				5115808A2E730E0600DFFE4E /* MISOTheme+Name.swift in Sources */,
 				51A2177E2E325FE600562BE0 /* WireframeTheme+TokensColorSnapshotsTests.swift in Sources */,
 				515EE9A22E2133C800A60E96 /* ChipsSnapshotsTestsTestCase.swift in Sources */,
 				FC4799CB2F4854F2005F349B /* InlineAlertSnapshotsTestsTestCase.swift in Sources */,
@@ -5474,6 +5338,7 @@
 				953EDA03302FC3B90008FEA7 /* TabBarElement.swift in Sources */,
 				953EDA04302FC3B90008FEA7 /* TabBarPage.swift in Sources */,
 				953EDA05302FC3B90008FEA7 /* LinkConfiguration.swift in Sources */,
+				957A175D305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDA06302FC3B90008FEA7 /* LinkElement.swift in Sources */,
 				953EDA07302FC3B90008FEA7 /* LinkPage.swift in Sources */,
 				953EDA08302FC3B90008FEA7 /* DisplayPage.swift in Sources */,
@@ -5570,7 +5435,7 @@
 				0786A9E22E0AAB6600976098 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				51F676DB2E0D45FA00C15CB6 /* A11YIdentifiers.swift in Sources */,
 				0786A9E32E0AAB6600976098 /* CheckboxItemIndeterminateElement.swift in Sources */,
-				0786A9E42E0AAB6600976098 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				0786A9E42E0AAB6600976098 /* MISOCheckboxIndicatorState+extension.swift in Sources */,
 				07EB47022E1801D000B94EC2 /* BadgeCountConfigurationView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
@@ -5585,7 +5450,6 @@
 				077CCE582CB426090059CC28 /* SpaceTokenPage.swift in Sources */,
 				07F75A3F2CC653CD0004F1AD /* NameSpace+ColumnGap.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
-				6DFC208B2CDE669500F2EC33 /* AccessibilityStatementPage.swift in Sources */,
 				0745C1892D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				0765A6D62D09C5E2005DAB51 /* FontTokenElement.swift in Sources */,
 				0765A6D72D09C5E2005DAB51 /* NamedFont.swift in Sources */,
@@ -5672,7 +5536,6 @@
 				953EDC47302FC69E0008FEA7 /* ColorSchemeSelectionButton.swift in Sources */,
 				953EDC48302FC69E0008FEA7 /* View+NavigationBar.swift in Sources */,
 				953EDC49302FC69E0008FEA7 /* ThemeSelection.swift in Sources */,
-				953EDC4A302FC69E0008FEA7 /* AccessibilityStatementPage.swift in Sources */,
 				953EDC4B302FC69E0008FEA7 /* StatusIcons.swift in Sources */,
 				953EDC4C302FC69E0008FEA7 /* TextualContentMode.swift in Sources */,
 				953EDC4D302FC69E0008FEA7 /* ComponentPage.swift in Sources */,
@@ -5692,7 +5555,7 @@
 				953EDC5B302FC69E0008FEA7 /* CheckboxItemPage.swift in Sources */,
 				953EDC5C302FC69E0008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				953EDC5D302FC69E0008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */,
-				953EDC5E302FC69E0008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				953EDC5E302FC69E0008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */,
 				953EDC5F302FC69E0008FEA7 /* CheckboxPickerPage.swift in Sources */,
 				953EDC60302FC69E0008FEA7 /* CheckboxElements.swift in Sources */,
 				953EDC61302FC69E0008FEA7 /* ChipLayout.swift in Sources */,
@@ -5775,6 +5638,7 @@
 				953EDCAF302FC69E0008FEA7 /* View+Illustration.swift in Sources */,
 				953EDCB0302FC69E0008FEA7 /* NamedFont.swift in Sources */,
 				953EDCB1302FC69E0008FEA7 /* FontTokenElement.swift in Sources */,
+				957A175F305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDCB2302FC69E0008FEA7 /* FontTokenPage.swift in Sources */,
 				953EDCB3302FC69E0008FEA7 /* NamedBorders.swift in Sources */,
 				953EDCB4302FC69E0008FEA7 /* BorderIllustrations.swift in Sources */,
@@ -5940,7 +5804,6 @@
 				953EDA47302FC4A20008FEA7 /* ColorSchemeSelectionButton.swift in Sources */,
 				953EDA48302FC4A20008FEA7 /* View+NavigationBar.swift in Sources */,
 				953EDA49302FC4A20008FEA7 /* ThemeSelection.swift in Sources */,
-				953EDA4A302FC4A20008FEA7 /* AccessibilityStatementPage.swift in Sources */,
 				953EDA4B302FC4A20008FEA7 /* AboutPage.swift in Sources */,
 				953EDA4C302FC4A20008FEA7 /* StatusIcons.swift in Sources */,
 				953EDA4D302FC4A20008FEA7 /* TextualContentMode.swift in Sources */,
@@ -5976,7 +5839,7 @@
 				953EDA6D302FC4A20008FEA7 /* CheckboxItemPage.swift in Sources */,
 				953EDA6E302FC4A20008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				953EDA6F302FC4A20008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */,
-				953EDA70302FC4A20008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				953EDA70302FC4A20008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */,
 				953EDA71302FC4A20008FEA7 /* CheckboxPickerConfiguration.swift in Sources */,
 				953EDA72302FC4A20008FEA7 /* CheckboxPickerElement.swift in Sources */,
 				953EDA73302FC4A20008FEA7 /* CheckboxPickerPage.swift in Sources */,
@@ -5995,6 +5858,7 @@
 				953EDA80302FC4A20008FEA7 /* RadioConfiguration.swift in Sources */,
 				953EDA81302FC4A20008FEA7 /* RadioElement.swift in Sources */,
 				953EDA82302FC4A20008FEA7 /* RadioPage.swift in Sources */,
+				957A175E305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDA83302FC4A20008FEA7 /* RadioItemElement.swift in Sources */,
 				953EDA84302FC4A20008FEA7 /* RadioItemPage.swift in Sources */,
 				953EDA85302FC4A20008FEA7 /* RadioPickerConfiguration.swift in Sources */,
@@ -6205,7 +6069,6 @@
 				953EDB42302FC5A60008FEA7 /* ColorSchemeSelectionButton.swift in Sources */,
 				953EDB43302FC5A60008FEA7 /* View+NavigationBar.swift in Sources */,
 				953EDB44302FC5A60008FEA7 /* ThemeSelection.swift in Sources */,
-				953EDB45302FC5A60008FEA7 /* AccessibilityStatementPage.swift in Sources */,
 				953EDB46302FC5A60008FEA7 /* AboutPage.swift in Sources */,
 				953EDB47302FC5A60008FEA7 /* StatusIcons.swift in Sources */,
 				953EDB48302FC5A60008FEA7 /* TextualContentMode.swift in Sources */,
@@ -6243,7 +6106,7 @@
 				953EDB68302FC5A60008FEA7 /* CheckboxItemPage.swift in Sources */,
 				953EDB69302FC5A60008FEA7 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				953EDB6A302FC5A60008FEA7 /* CheckboxItemIndeterminatePage.swift in Sources */,
-				953EDB6B302FC5A60008FEA7 /* OUDSCheckboxIndicatorState+extension.swift in Sources */,
+				953EDB6B302FC5A60008FEA7 /* MISOCheckboxIndicatorState+extension.swift in Sources */,
 				953EDB6C302FC5A60008FEA7 /* CheckboxPickerConfiguration.swift in Sources */,
 				953EDB6D302FC5A60008FEA7 /* CheckboxPickerElement.swift in Sources */,
 				953EDB6E302FC5A60008FEA7 /* CheckboxPickerPage.swift in Sources */,
@@ -6308,6 +6171,7 @@
 				953EDBA9302FC5A60008FEA7 /* ColoredSurfaceConfiguration.swift in Sources */,
 				953EDBAA302FC5A60008FEA7 /* ColoredSurfaceElement.swift in Sources */,
 				953EDBAB302FC5A60008FEA7 /* ColoredSurfacePage.swift in Sources */,
+				957A175C305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDBAC302FC5A60008FEA7 /* DividerConfiguration.swift in Sources */,
 				953EDBAD302FC5A60008FEA7 /* DividerElement.swift in Sources */,
 				953EDBAE302FC5A60008FEA7 /* DividerPage.swift in Sources */,
@@ -6592,29 +6456,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		51BD76152C466FCF0033365D /* about_legal_information.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51BD76142C466FCF0033365D /* en */,
-				5122E0252D65D13400CD2857 /* fr */,
-				51B842BB2D93FF45000382F8 /* ar */,
-			);
-			name = about_legal_information.html;
-			sourceTree = "<group>";
-		};
-		51BD76172C466FCF0033365D /* about_privacy_policy.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51BD76162C466FCF0033365D /* en */,
-				5122E0262D65D13400CD2857 /* fr */,
-				51B842BC2D93FF45000382F8 /* ar */,
-			);
-			name = about_privacy_policy.html;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		0740A9962C9873500069D24A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -6718,6 +6559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -6779,6 +6621,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox";
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -6801,14 +6645,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6854,7 +6698,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6998,7 +6842,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7042,7 +6886,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7079,14 +6923,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -7131,7 +6975,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -7170,14 +7014,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -7223,7 +7067,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Design System Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -7260,11 +7104,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -7295,11 +7139,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "DesignToolbox (watchOS)";
+				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_WKWatchOnly = YES;

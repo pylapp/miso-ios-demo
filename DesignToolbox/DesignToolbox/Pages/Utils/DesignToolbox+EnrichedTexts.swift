@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // NOTE: Several items below are seen as unused but are used
@@ -83,22 +74,22 @@ struct OpenableText: View {
     // swiftlint:disable force_unwrapping
     var body: some View {
         if type != .githubIssue {
-            let tag = OUDSTag(label: anchor)
-            OUDSNavigationListItem(data: .init(label: rawText.replacingOccurrences(of: anchor, with: "")),
+            let tag = MISOTag(label: anchor)
+            MISONavigationListItem(data: .init(label: rawText.replacingOccurrences(of: anchor, with: "")),
                                    indicatorType: .external,
                                    trailing: .tag(tag))
             {
                 OSUtilities.open(url: type.destination(for: anchor).first!)
             }
-            .oudsListItemStyle(divider: false, background: false)
-            .oudsListItemSize(.small)
+            .misoListItemStyle(divider: false, background: false)
+            .misoListItemSize(.small)
         } else {
             HStack(spacing: theme.spaces.insetNone) {
                 Text(rawText.replacingOccurrences(of: anchor, with: ""))
                 let anchors = anchor.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
                 ForEach(anchors, id: \.self) { someAnchor in
                     if let url = urlFor(String(someAnchor)) {
-                        OUDSLink(text: someAnchor) {
+                        MISOLink(text: someAnchor) {
                             OSUtilities.open(url: url)
                         }
                     } else {

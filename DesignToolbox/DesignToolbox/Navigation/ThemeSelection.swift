@@ -1,42 +1,21 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
-// MARK: - Extensions of OUDSTheme
+// MARK: - Extensions of MISOTheme
 
-/// Extension of the `OUDSTheme` to add both `Identifiable` and `Hashable`.
-/// An `OUDSTheme` must be `Identifiable` to be enumerated like in `ForEach`(e.g. used to build the list of elements in picker).
+/// Extension of the `MISOTheme` to add both `Identifiable` and `Hashable`.
+/// An `MISOTheme` must be `Identifiable` to be enumerated like in `ForEach`(e.g. used to build the list of elements in picker).
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
-extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
+extension MISOTheme: @retroactive Identifiable, @retroactive Hashable {
 
     /// The text displayed in submenus of the theme selector
     var description: String {
-        if self is SoshTheme {
-            return SoshTheme.name
-        }
-        if self is WireframeTheme {
-            return WireframeTheme.name
-        }
-        if tuning == Tuning.OrangeFrance {
-            return "Orange France"
-        }
-        if tuning == Tuning.MaxIt {
-            return "Max it"
-        }
-        if tuning == Tuning.OrangeBusiness {
-            return "Orange Business"
+        if self is BlueCoatTheme {
+            return BlueCoatTheme.name
         }
         return "Default"
     }
@@ -46,26 +25,8 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     /// The unique identifier to store the selected theme
     public var id: String {
         var constructedId = String(describing: Self.self)
-        if self is OrangeTheme {
-            constructedId = OrangeTheme.name
-        }
-        if self is OrangeCompactTheme {
-            constructedId = OrangeCompactTheme.name
-        }
-        if self is SoshTheme {
-            constructedId = SoshTheme.name
-        }
-        if self is WireframeTheme {
-            constructedId = WireframeTheme.name
-        }
-        if tuning == Tuning.OrangeFrance {
-            constructedId += constructedId + " (Orange France)"
-        }
-        if tuning == Tuning.MaxIt {
-            constructedId += constructedId + " (Max It)"
-        }
-        if tuning == Tuning.OrangeBusiness {
-            constructedId += constructedId + " (Orange Business)"
+        if self is BlueCoatTheme {
+            constructedId = BlueCoatTheme.name
         }
         return constructedId
     }
@@ -83,18 +44,14 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 /// It also stores the current theme, selected by user.
 @MainActor final class ThemeProvider: ObservableObject {
 
-    let orangeThemes: [OUDSTheme]
-    let orangeCompactThemes: [OUDSTheme]
-    let otherThemes: [OUDSTheme]
-
-    let allThemes: [OUDSTheme]
+    let allThemes: [MISOTheme]
 
     var hotSwitchWarning: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.theme", defaultValue: OrangeTheme.name)
+    @UserDefaultsWrapper(key: "info.pylapp.miso.demoapp.theme", defaultValue: BlueCoatTheme.name)
     private static var currentTheme
 
-    @Published var currentTheme: OUDSTheme {
+    @Published var currentTheme: MISOTheme {
         didSet {
             ThemeProvider.currentTheme = currentTheme.id
             if currentTheme != oldValue {
@@ -106,26 +63,12 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
     init() {
 
         // Init all themes
+        let BlueCoatTheme = BlueCoatTheme()
 
-        let orangeFranceOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeTheme = OrangeTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
-
-        let orangeFranceOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeFrance)
-        let orangeBusinessOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.OrangeBusiness)
-        let maxItOrangeCompactTheme = OrangeCompactTheme(fontFamily: Self.localizedHelveticaFont(), tuning: Tuning.MaxIt)
-
-        let soshTheme = SoshTheme()
-        let wireframeTheme = WireframeTheme()
-
-        let defaultTheme = orangeFranceOrangeTheme
+        let defaultTheme = BlueCoatTheme
 
         // Fill arrays for menus
-
-        orangeThemes = [orangeFranceOrangeTheme, orangeBusinessOrangeTheme, maxItOrangeTheme]
-        orangeCompactThemes = [orangeFranceOrangeCompactTheme, orangeBusinessOrangeCompactTheme, maxItOrangeCompactTheme]
-        otherThemes = [soshTheme, wireframeTheme]
-        allThemes = orangeThemes + orangeCompactThemes + otherThemes
+        allThemes = [BlueCoatTheme]
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
@@ -134,41 +77,9 @@ extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
         }
 
         hotSwitchWarning = HotSwitchWarning()
-        #if USE_INTERNAL_FONTS
-        registerInternalFonts()
-        #endif
     }
 
     deinit {}
-
-    #if USE_INTERNAL_FONTS
-    private static var fontsAlreadyRegistered = false
-
-    /// Fonts are defined in Resources/Fonts in TTF files.
-    /// Needed for Helvetica Neue Arabic
-    private func registerInternalFonts() {
-        if !Self.fontsAlreadyRegistered {
-            let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
-            Self.fontsAlreadyRegistered = true
-        }
-    }
-
-    private static func localizedHelveticaFont() -> String {
-        guard let preferredLanguage = Locale.preferredLanguages.first else {
-            return "Helvetica Neue"
-        }
-        if preferredLanguage.hasPrefix("ar") || OSUtilities.languageCode() == "ar" {
-            return "Helvetica Neue Arabic"
-        } else {
-            return "Helvetica Neue"
-        }
-    }
-    #else
-    private static func localizedHelveticaFont() -> String {
-        "Helvetica Neue"
-    }
-    #endif
 }
 
 // MARK: - Theme Selection Button
@@ -208,30 +119,10 @@ struct ThemeSelectionButton: View {
     #if !os(tvOS)
     private var menuBody: some View {
         Menu {
-            // Orange theme and tunings
-            Menu(OrangeTheme.name) {
-                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                    ForEach(themeProvider.orangeThemes, id: \.id) { theme in
-                        Text(theme.description).tag(theme)
-                    }
-                }
-                .pickerStyle(.inline)
-            }
-
-            // Orange Compact theme and tunings
-            Menu(OrangeCompactTheme.name) {
-                Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                    ForEach(themeProvider.orangeCompactThemes, id: \.id) { theme in
-                        Text(theme.description).tag(theme)
-                    }
-                }
-                .pickerStyle(.inline)
-            }
-
             #if !os(macOS) && !os(tvOS)
-            // Sosh and Wireframe themes (which do not have tunings)
+            // Sosh and BlueCoat themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
-                ForEach(themeProvider.otherThemes, id: \.id) { theme in
+                ForEach(themeProvider.allThemes, id: \.id) { theme in
                     Text(theme.description).tag(theme)
                     Divider()
                 }
@@ -275,7 +166,7 @@ struct HotSwitchWarningModifier: ViewModifier {
 
     @ObservedObject var hotSwitchWarningIndicator: HotSwitchWarning
 
-    @UserDefaultsWrapper(key: "com.orange.ouds.demoapp.askToRestartIfThemeChanged", defaultValue: false) // Defined in Settings.bundle
+    @UserDefaultsWrapper(key: "info.pylapp.miso.demoapp.askToRestartIfThemeChanged", defaultValue: false) // Defined in Settings.bundle
     private var askToRestart: Bool
 
     @ViewBuilder
@@ -325,10 +216,8 @@ private struct TVOSThemePickerSheet: View {
                     .ignoresSafeArea()
 
                 List {
-                    themeSection(title: OrangeTheme.name, themes: themeProvider.orangeThemes)
-                    themeSection(title: OrangeCompactTheme.name, themes: themeProvider.orangeCompactThemes)
                     themeSection(title: "app_topBar_theme_picker_otherThemes_section".localized(),
-                                 themes: themeProvider.otherThemes)
+                                 themes: themeProvider.allThemes)
                 }
                 // Note: `.scrollContentBackground(.hidden)` is unavailable on tvOS.
                 // The opaque `Rectangle` behind the `List` is what actually masks
@@ -349,7 +238,7 @@ private struct TVOSThemePickerSheet: View {
     }
 
     @ViewBuilder
-    private func themeSection(title: String, themes: [OUDSTheme]) -> some View {
+    private func themeSection(title: String, themes: [MISOTheme]) -> some View {
         Section(title) {
             ForEach(themes, id: \.id) { candidate in
                 themeRow(for: candidate)
@@ -358,7 +247,7 @@ private struct TVOSThemePickerSheet: View {
     }
 
     @ViewBuilder
-    private func themeRow(for candidate: OUDSTheme) -> some View {
+    private func themeRow(for candidate: MISOTheme) -> some View {
         let isSelected = candidate.id == themeProvider.currentTheme.id
         Button {
             themeProvider.currentTheme = candidate

@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable accessibility_label_for_image
@@ -34,13 +25,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("No icons").font(.subheadline)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -48,14 +39,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -64,14 +55,14 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -80,13 +71,13 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
@@ -94,69 +85,69 @@ struct TwoStatesCheckboxesItemsView: View {
 
         Text("With icons").font(.subheadline)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: false,
                          isReadOnly: false)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: true,
                          isReadOnly: false)
 
         Text("On error").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: false,
                          isError: true,
                          errorText: "Error")
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: true,
                          isError: true,
                          errorText: "Error")
 
         Text("Disabled").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: false,
                          isReadOnly: false)
             .disabled(true)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: true,
                          isReadOnly: false)
             .disabled(true)
 
         Text("Read only").font(.caption)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: false,
                          isReadOnly: true)
 
-        OUDSCheckboxItem("Label",
+        MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
-                         image: OUDSImage(asset: Image(systemName: "flag.pattern.checkered")),
+                         image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: true,
                          isReadOnly: true)
     }
@@ -177,20 +168,20 @@ struct TwoStatesCheckboxesItemsView: View {
                 .foregroundColor(.primary)
 
             VStack(spacing: theme.spaces.scaledXsmallMobile) {
-                OUDSCheckboxItem("Label",
+                MISOCheckboxItem("Label",
                                  isOn: $isOn,
                                  description: "Description",
-                                 image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                                 image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                  isReversed: false,
                                  isError: isError,
                                  errorText: isError ? "Error" : nil,
                                  isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
-                OUDSCheckboxItem("Label",
+                MISOCheckboxItem("Label",
                                  isOn: $isOn,
                                  description: "Description",
-                                 image: withIcon ? OUDSImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
+                                 image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                  isReversed: true,
                                  isError: isError,
                                  errorText: isError ? "Error" : nil,
