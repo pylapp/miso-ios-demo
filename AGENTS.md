@@ -1,24 +1,24 @@
 ---
 type: ai-agent-guide
-project: OUDS iOS Design System Toolbox
+project: MISO iOS Design System Toolbox
 language: Swift
 ui-framework: SwiftUI
 platforms: [iOS, iPadOS, macOS, visionOS, watchOS, tvOS]
 min-deployment: iOS 15.0
 ---
 
-# OUDS iOS Design System Toolbox — AI Agent Guide
+# MISO iOS Design System Toolbox — AI Agent Guide
 
-This is the **demo application** for the [OUDS iOS Swift Package](https://github.com/Orange-OpenSource/ouds-ios).
+This is the **demo application** for the [MISO iOS Swift Package](https://github.com/pylapp/miso-ios).
 The package provides design tokens, themes, and SwiftUI components for Orange Group products across all Apple platforms.
 
-## OUDS Package: Load skills first
+## MISO Package: Load skills first
 
-When you write or review code that involves **OUDS tokens, themes, or components**, refer to the package's own [`AGENTS.md`](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/AGENTS.md) and load the relevant **skills** first:
+When you write or review code that involves **MISO tokens, themes, or components**, refer to the package's own [`AGENTS.md`](https://github.com/pylapp/miso-ios/blob/develop/AGENTS.md) and load the relevant **skills** first:
 
-- **`ouds-ios-framework-usage`** — setup, shared reference, imports, themes, token namespaces, view modifiers.
-- **`ouds-ios-components-<family>`** — specific component skill (`actions`, `content-display`, `controls`, `dialogs`, `indicators`, `layouts`, `navigations`).
-- **`ouds-ios-guide-*`** — vocabulary, Figma-to-Swift token mapping, migration, custom themes.
+- **`miso-ios-framework-usage`** — setup, shared reference, imports, themes, token namespaces, view modifiers.
+- **`miso-ios-components-<family>`** — specific component skill (`actions`, `content-display`, `controls`, `dialogs`, `indicators`, `layouts`, `navigations`).
+- **`miso-ios-guide-*`** — vocabulary, Figma-to-Swift token mapping, migration, custom themes.
 
 Do **not** duplicate this guidance here; always reference the package's `AGENTS.md` as the source of truth.
 
@@ -61,7 +61,7 @@ When a user asks to "try", "prototype", "visualize", "debug", or "generate a sma
 
 > *"I can drop this into `SandboxTestView` and enable the sandbox tab in the app — would you like that?"*
 
-**Example**: user wants to preview a custom `OUDSButton` variant → you edit `SandboxTestView.body` + set flag to `true` → user sees it in the sandbox tab.
+**Example**: user wants to preview a custom `MISOButton` variant → you edit `SandboxTestView.body` + set flag to `true` → user sees it in the sandbox tab.
 
 ---
 
@@ -123,7 +123,7 @@ The app **must compile on all 6 platforms** (iOS, iPadOS, macOS, visionOS, watch
 - ❌ **No UIKit** unless strictly required for accessibility.
 - ✅ **Commits** → follow [Conventional Commits](https://www.conventionalcommits.org/) + DCO sign-off.
 - ✅ **GenAI usage** → if you used an LLM (ChatGPT, Copilot, etc.), add to commit body: `Assisted-by: <LLM name> (<product>)`. See `.github/DEVELOP.md` §Use of GenAI for details.
-- ✅ **OUDS code** → load the package's `AGENTS.md` skills first; follow its rules for tokens, themes, and components.
+- ✅ **MISO code** → load the package's `AGENTS.md` skills first; follow its rules for tokens, themes, and components.
 
 ---
 
@@ -144,7 +144,5 @@ The app **must compile on all 6 platforms** (iOS, iPadOS, macOS, visionOS, watch
 
 ## External references
 
-- **OUDS iOS Swift Package**: https://github.com/Orange-OpenSource/ouds-ios
-- **OUDS iOS `AGENTS.md`** (package skills & rules): https://github.com/Orange-OpenSource/ouds-ios/blob/develop/AGENTS.md
-- **Orange Unified Design System** (global): https://unified-design-system.orange.com/
-- **Swift documentation** (OUDS components): https://ios.unified-design-system.orange.com/
+- **MISO iOS Swift Package**: https://github.com/pylapp/miso-ios
+- **MISO iOS `AGENTS.md`** (package skills & rules): https://github.com/pylapp/miso-ios/blob/develop/AGENTS.md

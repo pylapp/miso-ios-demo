@@ -18,29 +18,26 @@
 
 /.github/ @pylapp
 
-/DesignToolbox/ @pylapp @ludovic35
+/DesignToolbox/ @pylapp
 
 # Utility files
 
-.gitattributes @pylapp @ludovic35
-.gitignore @pylapp @ludovic35
+.gitattributes @pylapp
+.gitignore @pylapp
 
 .gitleaks.toml @pylapp
 .swiftformat @pylapp
 
-.swiftlint.yml @pylapp @ludovic35
+.swiftlint.yml @pylapp
 
 CHANGELOG.md @ludovic35 @pylapp
 
-Gemfile @pylapp @ludovic35
-Gemfile.lock @pylapp @ludovic35
+Gemfile @pylapp
+Gemfile.lock @pylapp
 
 LICENSE @pylapp
 
-NOTICE.txt @pylapp @ludovic35
-
-README.md @ludovic35 @pylapp
+README.md @pylapp
 
 AGENTS.md @pylapp
 THIRD_PARTY.md @pylapp
-renovate.json @pylapp

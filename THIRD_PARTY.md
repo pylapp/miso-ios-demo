@@ -24,12 +24,12 @@ Copyright (c) 2017 Masayuki Ono
 *LicensePlist* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/mono0926/LicensePlist).
 
-### ouds-ios
+### miso-ios
 
-Copyright Orange SA
+Copyright Pierre-Yves Lapersonne
 
-*OUDS* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/Orange-OpenSource/ouds-ios).
+*MISO* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/pylapp/miso-ios).
 
 ### swift-snapshot-testing
 
