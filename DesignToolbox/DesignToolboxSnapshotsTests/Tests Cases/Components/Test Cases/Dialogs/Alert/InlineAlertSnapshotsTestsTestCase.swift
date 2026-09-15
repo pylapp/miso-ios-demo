@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSInlineAlert` for each parameter
+/// Tests the UI rendering of the `MISOInlineAlert` for each parameter
 open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests some InlineAlert configuration for the given theme and color schemes on a standard surface.
@@ -35,7 +35,7 @@ open class InlineAlertSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests InlineAlert according to parameters of the configuration available on a `OUDSInlineAlert`
+    /// This function tests InlineAlert according to parameters of the configuration available on a `MISOInlineAlert`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters

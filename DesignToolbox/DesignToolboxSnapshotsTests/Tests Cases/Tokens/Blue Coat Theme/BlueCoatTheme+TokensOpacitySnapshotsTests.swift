@@ -6,7 +6,6 @@ import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// Tests the UI rendering of each **opacity token** using reference images for `BlueCoatTheme`.
 final class BlueCoatThemeTokensOpacitySnapshotsTests: TokensOpacitySnapshotsTestsTestCase {
@@ -37,4 +36,3 @@ final class BlueCoatThemeTokensOpacitySnapshotsTests: TokensOpacitySnapshotsTest
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

@@ -195,7 +195,7 @@ struct TestTextAreaView: View {
     }
 }
 
-// MARK: - Extension of OUDS Text Area Status
+// MARK: - Extension of MISO Text Area Status
 
 extension MISOTextArea.Status: @retroactive CaseIterable, @retroactive Hashable, DesignToolboxEnumLocalizedRepresentable {
 

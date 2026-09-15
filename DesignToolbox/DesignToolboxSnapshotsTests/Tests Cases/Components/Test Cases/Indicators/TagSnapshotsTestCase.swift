@@ -195,7 +195,7 @@ open class TagSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests `OUDSInputTag` according to all parameters of the configuration available for the given
+    /// This function tests `MISOInputTag` according to all parameters of the configuration available for the given
     /// theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameter.

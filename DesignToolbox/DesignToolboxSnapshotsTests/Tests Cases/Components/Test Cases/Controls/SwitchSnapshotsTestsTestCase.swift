@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSSwitch` and `OUDSSwitchItem` for each parameter
+/// Tests the UI rendering of the `MISOSwitch` and `MISOSwitchItem` for each parameter
 open class SwitchSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests all switches configuration for the given theme and color scheme on a standard surface.
@@ -69,8 +69,8 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests radio button according to all parameters of the configuration available on a `OUDSSwitch`
-    /// or `OUDSSwitchItem` for the given theme and color schemes and on a colored surface or not.
+    /// This function tests radio button according to all parameters of the configuration available on a `MISOSwitch`
+    /// or `MISOSwitchItem` for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
     ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<indicatorState>_<disabledPatern>"
@@ -172,7 +172,7 @@ open class SwitchSnapshotsTestsTestCase: XCTestCase {
 
 // MARK: - Switch Test
 
-/// The test object which will define the `OUDSSwitch` or `OUDSSwitchItem`object to test
+/// The test object which will define the `MISOSwitch` or `MISOSwitchItem`object to test
 struct SwitchTest: View {
 
     enum Layout { // ControlItemTextContainer.LayoutData is not accessible, need to fake it here
@@ -216,10 +216,10 @@ struct SwitchTest: View {
     var body: some View {
         switch layout {
         case let .indicatorOnly(isReadOnly):
-            OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!", isReadOnly: isReadOnly)
+            MISOSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!", isReadOnly: isReadOnly)
                 .disabled(isDisabled)
         case let .default(label, description, image, isError, errorText, hasDivider, isReadOnly):
-            OUDSSwitchItem(label,
+            MISOSwitchItem(label,
                            isOn: .constant(indicatorState),
                            description: description,
                            image: image,
@@ -230,7 +230,7 @@ struct SwitchTest: View {
                            hasDivider: hasDivider)
                 .disabled(isDisabled)
         case let .inverse(label, description, image, isError, errorText, hasDivider, isReadOnly):
-            OUDSSwitchItem(label,
+            MISOSwitchItem(label,
                            isOn: .constant(indicatorState),
                            description: description,
                            image: image,

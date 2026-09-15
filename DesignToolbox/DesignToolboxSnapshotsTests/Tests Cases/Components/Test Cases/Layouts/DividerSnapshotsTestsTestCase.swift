@@ -39,7 +39,7 @@ open class DividerSnapshotsTestsTestCase: XCTestCase {
     ///   - theme: The theme (MISOTheme)
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - dividerColor: the color of the divider
-    ///   - orientation; the oriention of the divider (i.e. OUDSHorizontalDivider or OUDSVerticalDivider)
+    ///   - orientation; the oriention of the divider (i.e. MISOHorizontalDivider or MISOVerticalDivider)
     @MainActor func testDivider(theme: MISOTheme,
                                 interfaceStyle: UIUserInterfaceStyle,
                                 dividerColor: MISODividerColor,

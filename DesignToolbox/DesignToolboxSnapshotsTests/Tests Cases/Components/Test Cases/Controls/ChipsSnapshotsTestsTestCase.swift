@@ -9,7 +9,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of the `OUDSFilterChip` and `OUDSSuggestionChip` for each parameter.
+/// Tests the UI rendering of the `MISOFilterChip` and `MISOSuggestionChip` for each parameter.
 open class ChipsSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests all chips (Filter and Suggestion) with all layouts, for the given theme and color scheme.
@@ -23,7 +23,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllChips(theme: MISOTheme, interfaceStyle: UIUserInterfaceStyle) {
 
-        // Test OUDSSuggestionChips
+        // Test MISOSuggestionChips
         for layout in ChipLayout.allCases {
             for enabled in [true, false] {
                 let imageModes: [DefinedStatusIcons] = layout == .textOnly ? [.tintedIcon] : DefinedStatusIcons.allCases
@@ -41,7 +41,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
             }
         }
 
-        // Test OUDSFilterChips
+        // Test MISOFilterChips
         for layout in ChipLayout.allCases {
             for selected in [true, false] {
                 for enabled in [true, false] {
@@ -63,7 +63,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests `OUDSFilterChip` according to all parameters of the configuration available
+    /// This function tests `MISOFilterChip` according to all parameters of the configuration available
     /// (Layout, enable state and selection) for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
@@ -104,7 +104,7 @@ open class ChipsSnapshotsTestsTestCase: XCTestCase {
                            testName: testName)
     }
 
-    /// This function tests `OUDSSuggestionChip` according to all parameters of the configuration available
+    /// This function tests `MISOSuggestionChip` according to all parameters of the configuration available
     /// (Layout, enable state) for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.

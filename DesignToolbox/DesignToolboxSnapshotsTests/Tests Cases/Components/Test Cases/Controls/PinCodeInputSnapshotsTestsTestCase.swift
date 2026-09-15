@@ -10,7 +10,7 @@ import XCTest
 // MARK: - Test Cases
 
 // swiftlint:disable required_deinit
-/// Tests the UI rendering of the `OUDSPinCodeInput` for each parameter
+/// Tests the UI rendering of the `MISOPinCodeInput` for each parameter
 open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests some pin code input configuration for the given theme and color schemes on a standard surface.
@@ -25,7 +25,7 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor func testAllPinCodeInputs(theme: MISOTheme, interfaceStyle: UIUserInterfaceStyle) {
         for outlined in [true, false] {
-            for length in OUDSPinCodeInput.Length.allCases {
+            for length in MISOPinCodeInput.Length.allCases {
                 for helperText in ["", "Helper text"] {
                     for isFull in [true, false] {
                         testPinCodeInput(theme: theme,
@@ -62,11 +62,11 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
     ///   - status: The status of the component
     @MainActor private func testPinCodeInput(theme: MISOTheme,
                                              interfaceStyle: UIUserInterfaceStyle,
-                                             length: OUDSPinCodeInput.Length,
+                                             length: MISOPinCodeInput.Length,
                                              isFull: Bool,
                                              helperText: String,
                                              outlined: Bool,
-                                             status: OUDSPinCodeInput.Status)
+                                             status: MISOPinCodeInput.Status)
     {
         // Generate the illustration for configuration elements
         let illustration = MISOThemeableView(theme: theme) {
@@ -111,16 +111,16 @@ open class PinCodeInputSnapshotsTestsTestCase: XCTestCase {
 
 struct TestPinCodeInputView: View {
 
-    let length: OUDSPinCodeInput.Length
+    let length: MISOPinCodeInput.Length
     let isFull: Bool
     let helperText: String
     let outlined: Bool
-    let status: OUDSPinCodeInput.Status
+    let status: MISOPinCodeInput.Status
 
     // MARK: - Body
 
     var body: some View {
-        OUDSPinCodeInput(.constant(mockData(isFull)),
+        MISOPinCodeInput(.constant(mockData(isFull)),
                          length: length,
                          helperText: helperText,
                          isOutlined: outlined,

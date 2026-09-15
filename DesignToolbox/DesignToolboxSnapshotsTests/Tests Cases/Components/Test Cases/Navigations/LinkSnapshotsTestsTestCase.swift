@@ -201,7 +201,7 @@ struct LinkTest: View {
     private var MISOImage: MISOImage {
         let asset: Image = iconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
         let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
-        return MISOImage(asset: asset, renderingMode: renderingMode)
+        return MISOComponents.MISOImage(asset: asset, renderingMode: renderingMode)
     }
 }
 

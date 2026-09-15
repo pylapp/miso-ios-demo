@@ -284,7 +284,7 @@ struct TestTextInputView: View {
     }
 }
 
-// MARK: - Extension of OUDS Text Input Status
+// MARK: - Extension of MISO Text Input Status
 
 extension MISOTextInput.Status: DesignToolboxEnumLocalizedRepresentable, @retroactive CaseIterable, @retroactive Hashable {
 

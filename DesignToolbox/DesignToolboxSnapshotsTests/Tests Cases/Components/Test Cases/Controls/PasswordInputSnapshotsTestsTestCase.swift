@@ -11,7 +11,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of the `OUDSPasswordInput` for each parameter
+/// Tests the UI rendering of the `MISOPasswordInput` for each parameter
 open class PasswordInputSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests some Password input configuration for the given theme and color schemes on a standard surface.
@@ -95,13 +95,13 @@ struct TestPasswordInputView: View {
 
     var body: some View {
         VStack {
-            OUDSPasswordInput(label: "Password",
+            MISOPasswordInput(label: "Password",
                               password: $password,
                               lockIcon: lockIcon,
                               isOutlined: outlined,
                               status: status)
 
-            OUDSPasswordInput(label: "Password",
+            MISOPasswordInput(label: "Password",
                               password: $password,
                               placeholder: "Placeholder",
                               prefix: "CORP-",

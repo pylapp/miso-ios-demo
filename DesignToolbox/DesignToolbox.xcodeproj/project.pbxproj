@@ -130,7 +130,6 @@
 		295B5D80501CE0B86BB76ECB /* LinearProgressIndicatorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E7BBBAA90AC3AAADB45035 /* LinearProgressIndicatorElement.swift */; };
 		2B4F2EADCF5F68415770E32B /* CircularProgressIndicatorConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E7C3F99F8A8B76431EA0D0 /* CircularProgressIndicatorConfigurationView.swift */; };
 		2DB5AAB2939141BE49003B2C /* ProgressIndicatorElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB709C20C2CD85AD45E6CF12 /* ProgressIndicatorElements.swift */; };
-		2FA8212B9D5B0324639F46C9 /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
 		2FE5EEDECB6AEE8B2D21ADCD /* AllElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF18A2F9A28DE008AD8C4 /* AllElements.swift */; };
 		308C4E7BF064F03BFBC9B5A2 /* DesignToolbox+EnrichedTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152DA1C2DE0BD3B0078B9F1 /* DesignToolbox+EnrichedTexts.swift */; };
 		31AF9C2198D266771DD68CD8 /* DisplayConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAF0F69289CD346C73E778E /* DisplayConfigurationView.swift */; };
@@ -145,7 +144,6 @@
 		49333F77B60A62F25995D045 /* DisplayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C184D57B1FA9DF91CB69AFA /* DisplayPage.swift */; };
 		49FDA9AAD0F1C778829FD19B /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		4A3C4C5F24263C7DCF81843E /* ToolBarTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA11662F57259000C8E30D /* ToolBarTopPage.swift */; };
-		4B18B80D8CD0930ABEF821E5 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
 		4BE747770D2172B43FAC3973 /* CodeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC458A53CC1EA3BCBD60BF00 /* CodeConfigurationView.swift */; };
 		4FCC5A99078E3C09FA2C08C5 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
@@ -209,7 +207,6 @@
 		9355F1EDDDF64C175B7F05A5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FCF02BAF2F30A77500F2013F /* Localizable.xcstrings */; };
 		950288A12EEC60CB00510C32 /* NamedSize+MaxWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */; };
 		950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */; };
-		95096A252FD310BC00746A5D /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
 		950EA6AE2EBCDF510009414A /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */; };
 		950EA6B02EBCE3A30009414A /* CheckboxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */; };
 		950EA6B22EBCEC2D0009414A /* CheckboxesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */; };
@@ -405,8 +402,6 @@
 		953EDA2B302FC3B90008FEA7 /* SandboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1015E6B2253F3774138DB39 /* SandboxConfiguration.swift */; };
 		953EDA2C302FC3B90008FEA7 /* SandboxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C4281EEF2FF5C50155D28 /* SandboxPage.swift */; };
 		953EDA2D302FC3B90008FEA7 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
-		953EDA2E302FC3B90008FEA7 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
-		953EDA2F302FC3B90008FEA7 /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
 		953EDA30302FC3B90008FEA7 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		953EDA31302FC3B90008FEA7 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		953EDA32302FC3B90008FEA7 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
@@ -638,9 +633,6 @@
 		953EDB24302FC4A20008FEA7 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		953EDB25302FC4A20008FEA7 /* SandboxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C4281EEF2FF5C50155D28 /* SandboxPage.swift */; };
 		953EDB26302FC4A20008FEA7 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
-		953EDB27302FC4A20008FEA7 /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
-		953EDB28302FC4A20008FEA7 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
-		953EDB29302FC4A20008FEA7 /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
 		953EDB2A302FC4A20008FEA7 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		953EDB2B302FC4A20008FEA7 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
 		953EDB2C302FC4A20008FEA7 /* A11YIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */; };
@@ -886,9 +878,6 @@
 		953EDC27302FC5A60008FEA7 /* SandboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1015E6B2253F3774138DB39 /* SandboxConfiguration.swift */; };
 		953EDC28302FC5A60008FEA7 /* SandboxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C4281EEF2FF5C50155D28 /* SandboxPage.swift */; };
 		953EDC29302FC5A60008FEA7 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
-		953EDC2A302FC5A60008FEA7 /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
-		953EDC2B302FC5A60008FEA7 /* AppStoreUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */; };
-		953EDC2C302FC5A60008FEA7 /* AppStoreUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */; };
 		953EDC2D302FC5A60008FEA7 /* Image+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EDFD162EC73BB4006DE593 /* Image+extensions.swift */; };
 		953EDC2E302FC5A60008FEA7 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		953EDC2F302FC5A60008FEA7 /* OSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */; };
@@ -1065,7 +1054,6 @@
 		953EDCE8302FC69E0008FEA7 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		953EDCE9302FC69E0008FEA7 /* SandboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1015E6B2253F3774138DB39 /* SandboxConfiguration.swift */; };
 		953EDCEA302FC69E0008FEA7 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
-		953EDCEB302FC69E0008FEA7 /* AppStoreUpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */; };
 		953EDCEC302FC69E0008FEA7 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD64F12EB3A371008FAB03 /* WindowManager.swift */; };
 		953EDCED302FC69E0008FEA7 /* A11YIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F676DA2E0D45F300C15CB6 /* A11YIdentifiers.swift */; };
 		953EDCEE302FC69E0008FEA7 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
@@ -1758,9 +1746,6 @@
 		9422A71FE76A21E82568B5AA /* CodeElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodeElement.swift; sourceTree = "<group>"; };
 		950288A02EEC60CB00510C32 /* NamedSize+MaxWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MaxWidth.swift"; sourceTree = "<group>"; };
 		950288A72EEC629300510C32 /* NamedSize+MinWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+MinWidth.swift"; sourceTree = "<group>"; };
-		95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateInfo.swift; sourceTree = "<group>"; };
-		95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateService.swift; sourceTree = "<group>"; };
-		95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreUpdateViewModel.swift; sourceTree = "<group>"; };
 		950EA6AD2EBCDF4B0009414A /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		950EA6AF2EBCE3A30009414A /* CheckboxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesView.swift; sourceTree = "<group>"; };
 		950EA6B12EBCEC2D0009414A /* CheckboxesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxesItemView.swift; sourceTree = "<group>"; };
@@ -2720,7 +2705,6 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				95096A282FD3110500746A5D /* AppStore */,
 				95EDFD162EC73BB4006DE593 /* Image+extensions.swift */,
 				95CD64F12EB3A371008FAB03 /* WindowManager.swift */,
 				95D713E92EB36B0400EBB7C2 /* OSUtilities.swift */,
@@ -2970,16 +2954,6 @@
 				6AAF0F69289CD346C73E778E /* DisplayConfigurationView.swift */,
 			);
 			path = Display;
-			sourceTree = "<group>";
-		};
-		95096A282FD3110500746A5D /* AppStore */ = {
-			isa = PBXGroup;
-			children = (
-				95096A222FD310BC00746A5D /* AppStoreUpdateInfo.swift */,
-				95096A232FD310BC00746A5D /* AppStoreUpdateService.swift */,
-				95096A242FD310BC00746A5D /* AppStoreUpdateViewModel.swift */,
-			);
-			path = AppStore;
 			sourceTree = "<group>";
 		};
 		950EA6C12EBCFA2F0009414A /* Layouts */ = {
@@ -4737,8 +4711,6 @@
 				953EDA2B302FC3B90008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDA2C302FC3B90008FEA7 /* SandboxPage.swift in Sources */,
 				953EDA2D302FC3B90008FEA7 /* SandboxTestView.swift in Sources */,
-				953EDA2E302FC3B90008FEA7 /* AppStoreUpdateService.swift in Sources */,
-				953EDA2F302FC3B90008FEA7 /* AppStoreUpdateViewModel.swift in Sources */,
 				953EDA30302FC3B90008FEA7 /* Image+extensions.swift in Sources */,
 				953EDA31302FC3B90008FEA7 /* WindowManager.swift in Sources */,
 				953EDA32302FC3B90008FEA7 /* OSUtilities.swift in Sources */,
@@ -4818,7 +4790,6 @@
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
-				95096A252FD310BC00746A5D /* AppStoreUpdateInfo.swift in Sources */,
 				9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				953ED997302FC3330008FEA7 /* UserDefaultsWrapper.swift in Sources */,
@@ -5054,7 +5025,6 @@
 				953EDCE8302FC69E0008FEA7 /* TokensPage.swift in Sources */,
 				953EDCE9302FC69E0008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDCEA302FC69E0008FEA7 /* SandboxTestView.swift in Sources */,
-				953EDCEB302FC69E0008FEA7 /* AppStoreUpdateInfo.swift in Sources */,
 				953EDCEC302FC69E0008FEA7 /* WindowManager.swift in Sources */,
 				953EDCED302FC69E0008FEA7 /* A11YIdentifiers.swift in Sources */,
 				953EDCEE302FC69E0008FEA7 /* String+extension.swift in Sources */,
@@ -5115,8 +5085,6 @@
 				BFD97D9DF841BB9C08E5E32F /* BulletListElement.swift in Sources */,
 				4FCC5A99078E3C09FA2C08C5 /* Bundle+extension.swift in Sources */,
 				698C985F96EE8E0F95F68C49 /* PasswordInputPage.swift in Sources */,
-				4B18B80D8CD0930ABEF821E5 /* AppStoreUpdateService.swift in Sources */,
-				2FA8212B9D5B0324639F46C9 /* AppStoreUpdateViewModel.swift in Sources */,
 				8775C06F0F5C5694E0DEDECC /* PasswordInputConfigurationView.swift in Sources */,
 				DF419BD28E52FD7C84B4226A /* PasswordInputElement.swift in Sources */,
 				3F179BE0001C28736356ED44 /* PinCodeInputPage.swift in Sources */,
@@ -5381,9 +5349,6 @@
 				953EDB24302FC4A20008FEA7 /* TokensPage.swift in Sources */,
 				953EDB25302FC4A20008FEA7 /* SandboxPage.swift in Sources */,
 				953EDB26302FC4A20008FEA7 /* SandboxTestView.swift in Sources */,
-				953EDB27302FC4A20008FEA7 /* AppStoreUpdateInfo.swift in Sources */,
-				953EDB28302FC4A20008FEA7 /* AppStoreUpdateService.swift in Sources */,
-				953EDB29302FC4A20008FEA7 /* AppStoreUpdateViewModel.swift in Sources */,
 				953EDB2A302FC4A20008FEA7 /* Image+extensions.swift in Sources */,
 				953EDB2B302FC4A20008FEA7 /* OSUtilities.swift in Sources */,
 				953EDB2C302FC4A20008FEA7 /* A11YIdentifiers.swift in Sources */,
@@ -5658,9 +5623,6 @@
 				953EDC27302FC5A60008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDC28302FC5A60008FEA7 /* SandboxPage.swift in Sources */,
 				953EDC29302FC5A60008FEA7 /* SandboxTestView.swift in Sources */,
-				953EDC2A302FC5A60008FEA7 /* AppStoreUpdateInfo.swift in Sources */,
-				953EDC2B302FC5A60008FEA7 /* AppStoreUpdateService.swift in Sources */,
-				953EDC2C302FC5A60008FEA7 /* AppStoreUpdateViewModel.swift in Sources */,
 				953EDC2D302FC5A60008FEA7 /* Image+extensions.swift in Sources */,
 				953EDC2E302FC5A60008FEA7 /* WindowManager.swift in Sources */,
 				953EDC2F302FC5A60008FEA7 /* OSUtilities.swift in Sources */,
@@ -5999,7 +5961,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
@@ -6019,7 +5981,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
 				PRODUCT_NAME = "Design System Toolbox";
@@ -6045,7 +6007,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -6065,7 +6027,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
@@ -6189,7 +6151,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
@@ -6205,7 +6167,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6233,7 +6195,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -6249,7 +6211,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6277,7 +6239,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
@@ -6297,7 +6259,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6322,7 +6284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -6342,7 +6304,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6368,7 +6330,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_APP_SANDBOX = YES;
@@ -6388,7 +6350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6414,7 +6376,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=xros*]" = "Apple Distribution: France Telecom (MG2LSJNJB6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -6434,7 +6396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6459,7 +6421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -6472,7 +6434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -6494,7 +6456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -6507,7 +6469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

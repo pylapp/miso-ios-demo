@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSBulletList` for each parameter
+/// Tests the UI rendering of the `MISOBulletList` for each parameter
 open class BulletListSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests all BulletList configuration for the given theme and color schemes on a standard surface.
@@ -73,7 +73,7 @@ open class BulletListSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests BulletList according to all parameters of the configuration available on a `OUDSBulletList`
+    /// This function tests BulletList according to all parameters of the configuration available on a `MISOBulletList`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters

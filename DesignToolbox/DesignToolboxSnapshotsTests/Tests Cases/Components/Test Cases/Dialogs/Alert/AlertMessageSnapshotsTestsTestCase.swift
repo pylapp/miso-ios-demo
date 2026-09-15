@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSAlertMessage` for each parameter
+/// Tests the UI rendering of the `MISOAlertMessage` for each parameter
 open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
 
     /// This function tests some AlertMessage configuration for the given theme and color schemes on a standard surface.
@@ -57,7 +57,7 @@ open class AlertMessageSnapshotsTestsTestCase: XCTestCase {
         }
     }
 
-    /// This function tests AlertMessage according to parameters of the configuration available on a `OUDSAlertMessage`
+    /// This function tests AlertMessage according to parameters of the configuration available on a `MISOAlertMessage`
     /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters

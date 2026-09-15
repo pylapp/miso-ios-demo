@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSRadio` and `OUDSRadioItem` for each parameter
+/// Tests the UI rendering of the `MISORadio` and `MISORadioItem` for each parameter
 open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
 
     // swiftlint:disable function_body_length
@@ -112,8 +112,8 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
 
     // swiftlint:enable function_body_length
 
-    /// This function tests radio button according to all parameters of the configuration available on a `OUDSRadio`
-    /// or `OUDSRadioItem` for the given theme and color schemes.
+    /// This function tests radio button according to all parameters of the configuration available on a `MISORadio`
+    /// or `MISORadioItem` for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
     ///
@@ -215,7 +215,7 @@ open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
 
 // MARK: - Radio Test
 
-/// The test object which will define the `OUDSRadio` or `OUDSRadioItem`object to test
+/// The test object which will define the `MISORadio` or `MISORadioItem`object to test
 struct RadioTest: View {
 
     enum Layout { // ControlItemTextContainer.LayoutData is not accessible, need to fake it here
@@ -263,13 +263,13 @@ struct RadioTest: View {
     func radioButton() -> some View {
         switch layout {
         case let .indicatorOnly(isError, isReadOnly):
-            OUDSRadio(isOn: .constant(indicatorState),
+            MISORadio(isOn: .constant(indicatorState),
                       accessibilityLabel: "Bazinga!",
                       isError: isError,
                       isReadOnly: isReadOnly)
                 .disabled(isDisabled)
         case let .default(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
-            OUDSRadioItem(labelText,
+            MISORadioItem(labelText,
                           isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
@@ -281,7 +281,7 @@ struct RadioTest: View {
                           hasDivider: hasDivider)
                 .disabled(isDisabled)
         case let .reversed(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
-            OUDSRadioItem(labelText,
+            MISORadioItem(labelText,
                           isOn: .constant(indicatorState),
                           extraLabel: extraLabelText,
                           description: descriptionText,
