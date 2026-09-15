@@ -2,8 +2,6 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
-// SPDX-License-Identifier: MIT
 #if canImport(UIKit)
 import UIKit
 #endif
