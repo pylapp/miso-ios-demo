@@ -63,12 +63,12 @@ extension MISOTheme: @retroactive Identifiable, @retroactive Hashable {
     init() {
 
         // Init all themes
-        let BlueCoatTheme = BlueCoatTheme()
+        let blueCoatTheme = BlueCoatTheme()
 
-        let defaultTheme = BlueCoatTheme
+        let defaultTheme = blueCoatTheme
 
         // Fill arrays for menus
-        allThemes = [BlueCoatTheme]
+        allThemes = [blueCoatTheme]
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
