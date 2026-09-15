@@ -63,11 +63,6 @@ lane :format do
     start_time = Time.now
     puts "👉 Run Swift Format to format sources"
 
-    template = '\\nSPDX-FileCopyrightText: Copyright (c) Orange, Pierre-Yves Lapersonne\\nSPDX-License-Identifier: MIT'
-    sh "cd .. && swiftformat . --header \"#{template}\""
-
-    puts "👉 Run Swift Format to format sources"
-
     # Format sources of fork, copyrighted Orange, modified by Pierre-Yves Lapersonne
     templateOUDSFork = 'Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)\\nSPDX-License-Identifier: MIT\\nSPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne'
     sh "cd .. && swiftformat . --header \"#{templateOUDSFork}\" && cd .."
