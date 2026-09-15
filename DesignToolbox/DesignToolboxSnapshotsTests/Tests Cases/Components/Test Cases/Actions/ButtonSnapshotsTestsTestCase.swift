@@ -1,0 +1,262 @@
+// Software: MISO iOS (demo app)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+
+import MISOSwiftUI
+import SnapshotTesting
+import SwiftUI
+import XCTest
+
+// swiftlint:disable required_deinit
+
+// MARK: - Test Cases
+
+/// Tests the UI rendering of the `MISOButton` for each parameter
+open class ButtonSnapshotsTestsTestCase: XCTestCase {
+
+    /// This function tests all buttons configuration for the given theme and color schemes on a standard surface.
+    ///
+    /// **/!\ It does not test the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// It iterates through all button `appearance`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
+    /// in enabled and disabled states.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testAllButtons(
+        theme: MISOTheme,
+        interfaceStyle: UIUserInterfaceStyle)
+    {
+        for size in MISOButton.Size.allCases {
+            for appearance in MISOButton.Appearance.allCases {
+                for layout in ButtonTest.Layout.allCases {
+                    for flipIcon in [true, false] {
+                        for imageMode in [
+                            Image.TemplateRenderingMode.original,
+                            Image.TemplateRenderingMode.template,
+                        ] {
+                            for disabled in [true, false] {
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .normal,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: false)
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .high,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: false)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// This function tests all buttons configuration for the given themen and color schemes on aa colored surface (the `surfaceBrandPrimary` token)
+    ///
+    /// **/!\ It does not test the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// It iterates through all button `appearance`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
+    /// in enabled and disabled state.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor func testAllButtonsOnColoredSurface(
+        theme: MISOTheme,
+        interfaceStyle: UIUserInterfaceStyle)
+    {
+        // Skip test for negative and brand appearance because it is not allowed on colored surface
+        for size in MISOButton.Size.allCases {
+            for appearance in MISOButton.Appearance.allCases
+                where appearance != .negative && appearance != .brand
+            {
+                for layout in ButtonTest.Layout.allCases {
+                    for flipIcon in [true, false] {
+                        for imageMode in [
+                            Image.TemplateRenderingMode.original,
+                            Image.TemplateRenderingMode.template,
+                        ] {
+                            for disabled in [true, false] {
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .normal,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: true)
+                                testButton(
+                                    theme: theme,
+                                    interfaceStyle: interfaceStyle,
+                                    a11yContrast: .high,
+                                    layout: layout,
+                                    flipIcon: flipIcon,
+                                    imageMode: imageMode,
+                                    appearance: appearance,
+                                    size: size,
+                                    disabled: disabled,
+                                    onColoredSurface: true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // swiftlint:disable function_parameter_count
+    // swiftlint:disable line_length
+    /// This function tests button according to all parameters of the configuration available on a `OUDButton`
+    /// for the given theme and color schemes and on a colored surface or not.
+    ///
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    ///
+    /// **/!\ It does not text the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (MISOTheme)
+    ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - a11yContrast:Contrast mode (high or not)
+    ///   - layout: the layout of the button
+    ///   - flipIcon: flip the icon of the button or not
+    ///   - imageMode: The rendering mode for the image in the button
+    ///   - appearance; the appearance of the button
+    ///   - size: the size of the button
+    ///   - disabled: the disabled flag
+    ///   - onColoredSurface: a flag to know if button is on a colored surface or not
+    @MainActor private func testButton(
+        theme: MISOTheme,
+        interfaceStyle: UIUserInterfaceStyle,
+        a11yContrast: UIAccessibilityContrast,
+        layout: ButtonTest.Layout,
+        flipIcon: Bool,
+        imageMode: Image.TemplateRenderingMode,
+        appearance: MISOButton.Appearance,
+        size: MISOButton.Size,
+        disabled: Bool,
+        onColoredSurface: Bool = false)
+    {
+        // Generate the illustration for the specified configuration
+        let illustration = MISOThemeableView(theme: theme) {
+            ButtonTest(
+                layout: layout,
+                flipIcon: flipIcon,
+                imageMode: imageMode,
+                appearance: appearance,
+                style: .default,
+                size: size,
+                onColoredSurface: onColoredSurface)
+                .background(
+                    theme.colors.bgPrimary.color(
+                        for: interfaceStyle == .light ? .light : .dark))
+                .disabled(disabled)
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName =
+            "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
+        let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
+        let flipIconPattern = flipIcon ? "_FlipIcon" : ""
+        let imageModePattern =
+            imageMode == .original ? "_OriginalImage" : "_TemplateImage"
+        let disabledPatern = disabled ? "_Disabled" : ""
+        let roundedPattern = theme.tuning.hasRoundedButtons ? "_Rounded" : ""
+        let sizePattern = size == .small ? "_Small" : ""
+        let name =
+            "\(coloredSurfacePatern)\(flipIconPattern)\(imageModePattern)\(layout.rawValue.camelCase)_\(appearance.formattedName)_\(ButtonStyle.default.formattedName)\(sizePattern)\(disabledPatern)\(roundedPattern)"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(
+            illustration,
+            on: interfaceStyle,
+            a11yContrast: a11yContrast,
+            named: name,
+            testName: testName)
+    }
+    // swiftlint:enable function_parameter_count
+    // swiftlint:enable line_length
+}
+
+// MARK: - Button Test
+
+struct ButtonTest: View {
+
+    enum Layout: String, CaseIterable {
+        case text
+        case textAndIcon
+        case icon
+    }
+
+    let layout: Layout
+    let flipIcon: Bool
+    let imageMode: Image.TemplateRenderingMode
+    let appearance: MISOButton.Appearance
+    let style: MISOButton.Style
+    let size: MISOButton.Size
+    let onColoredSurface: Bool
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        if onColoredSurface {
+            MISOColoredSurface(
+                color: theme.colorModes.onBrandPrimary,
+                content: button)
+        } else {
+            button()
+        }
+    }
+
+    func button() -> some View {
+        switch layout {
+        case .text:
+            MISOButton(text: "Button", appearance: appearance, style: style, size: size) {}
+        case .textAndIcon:
+            MISOButton(
+                text: "Button",
+                image: MISOImage,
+                appearance: appearance,
+                style: style,
+                size: size) {}
+        case .icon:
+            MISOButton(
+                image: MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                                 flipped: flipIcon,
+                                 accessibilityLabel: "Icon",
+                                 renderingMode: imageMode),
+                appearance: appearance,
+                style: style,
+                size: size) {}
+        }
+    }
+
+    private var MISOImage: MISOImage {
+        MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                  flipped: flipIcon,
+                  renderingMode: imageMode)
+    }
+}
+
+// swiftlint:enable required_deinit

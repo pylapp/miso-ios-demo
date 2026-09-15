@@ -1,0 +1,297 @@
+// Software: MISO iOS (demo app)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+
+import MISOSwiftUI
+import SnapshotTesting
+import SwiftUI
+import XCTest
+
+// swiftlint:disable required_deinit
+
+// MARK: - Test Cases
+
+/// Tests the UI rendering of the `OUDSRadio` and `OUDSRadioItem` for each parameter
+open class RadioButtonSnapshotsTestsTestCase: XCTestCase {
+
+    // swiftlint:disable function_body_length
+    /// This function tests all radio buttons configuration for the given theme and color scheme on a standard surface.
+    ///
+    /// **/!\ It does not test the hover and pressed states.**
+    ///
+    /// It iterates through all combinations of layouts in enabled and disabled state.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor func testAllRadioButtons(theme: MISOTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for indicatorState in [true, false] {
+            for someLayout in availableLayouts(isError: false, isReadOnly: false) {
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: true)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: true)
+            }
+        }
+
+        for indicatorState in [true, false] {
+            for someLayout in availableLayouts(isError: true, isReadOnly: false) {
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+            }
+
+            for someLayout in availableLayouts(isError: true, errorText: "Error text", isReadOnly: false) {
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+            }
+        }
+
+        for indicatorState in [true, false] {
+            for someLayout in availableLayouts(isError: false, isReadOnly: true) {
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .normal,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+
+                testRadioButton(theme: theme,
+                                interfaceStyle: interfaceStyle,
+                                a11yContrast: .high,
+                                layout: someLayout,
+                                indicatorState: indicatorState,
+                                isDisabled: false)
+            }
+        }
+    }
+
+    // swiftlint:enable function_body_length
+
+    /// This function tests radio button according to all parameters of the configuration available on a `OUDSRadio`
+    /// or `OUDSRadioItem` for the given theme and color schemes.
+    ///
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters.
+    ///
+    /// **/!\ It does not test the hover and pressed states.**
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (MISOTheme)
+    ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - a11yContrast:Contrast mode (high or not)
+    ///   - layout: the layout of the radio button
+    ///   - indicatorState: the indicator state of the radio button (`true` if selected, `false` if not)
+    ///   - isDisabled: the disabled flag
+    @MainActor func testRadioButton(theme: MISOTheme,
+                                    interfaceStyle: UIUserInterfaceStyle,
+                                    a11yContrast: UIAccessibilityContrast,
+                                    layout: RadioTest.Layout,
+                                    indicatorState: Bool,
+                                    isDisabled: Bool)
+    {
+        // Generate the illustration for the specified configuration
+        let illustration = MISOThemeableView(theme: theme) {
+            RadioTest(layout: layout,
+                      indicatorState: indicatorState,
+                      isDisabled: isDisabled)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+        }
+
+        // Create a unique snapshot name based on the current configuration
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")_\(a11yContrast == .high ? "HighContrast" : "")"
+        let disabledPatern = isDisabled ? "_Disabled" : ""
+        let name = "\(layout.description.camelCase)_\(indicatorState ? "on" : "off")_\(disabledPatern)"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           a11yContrast: a11yContrast,
+                           named: name,
+                           testName: testName)
+    }
+
+    // swiftlint:disable line_length
+    // swiftlint:disable function_default_parameter_at_end
+    @MainActor private func availableLayouts(isError: Bool, errorText: String? = nil, isReadOnly: Bool) -> [RadioTest.Layout] {
+        [
+            RadioTest.Layout.indicatorOnly(isError: isError, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.default(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Takoyaki", extraLabelText: nil, helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: nil, image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: nil, isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage()), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Kammthaar", extraLabelText: nil, helperText: nil, image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: nil, helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: false, isReadOnly: isReadOnly),
+            RadioTest.Layout.reversed(labelText: "Patatas", extraLabelText: "Patatata-patatata-patatas", helperText: "Bravas", image: MISOImage(asset: Image.defaultImage(), flipped: true), isError: isError, errorText: errorText, hasDivider: true, isReadOnly: isReadOnly),
+        ]
+    }
+    // swiftlint:enable line_length
+    // swiftlint:enable function_default_parameter_at_end
+}
+
+// swiftlint:enable required_deinit
+
+// MARK: - Radio Test
+
+/// The test object which will define the `OUDSRadio` or `OUDSRadioItem`object to test
+struct RadioTest: View {
+
+    enum Layout { // ControlItemTextContainer.LayoutData is not accessible, need to fake it here
+        case indicatorOnly(isError: Bool, isReadOnly: Bool)
+        case `default`(labelText: String,
+                       extraLabelText: String?,
+                       helperText: String?,
+                       image: MISOImage?,
+                       isError: Bool,
+                       errorText: String? = nil,
+                       hasDivider: Bool,
+                       isReadOnly: Bool)
+        case reversed(labelText: String,
+                      extraLabelText: String?,
+                      helperText: String?,
+                      image: MISOImage?,
+                      isError: Bool,
+                      errorText: String? = nil,
+                      hasDivider: Bool,
+                      isReadOnly: Bool)
+
+        // swiftlint:disable line_length
+        @MainActor var description: String {
+            switch self {
+            case let .indicatorOnly(isError, isReadOnly):
+                "layout-indicatorOnly-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")"
+            case let .default(_, extraLabelText, helperText, icon, isError, errorText, hasDivider, isReadOnly):
+                "layout-default-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(icon?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .reversed(_, extraLabelText, helperText, icon, isError, errorText, hasDivider, isReadOnly):
+                "layout-inverse-label-\(extraLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(icon?.flipped == true ? "flipIcon" : "")-\(isError ? "error-\(errorText != nil ? "withText" : "")" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+            }
+        }
+        // swiftlint:enable line_length
+    }
+
+    let layout: Layout
+    let indicatorState: Bool
+    let isDisabled: Bool
+
+    var body: some View {
+        radioButton()
+    }
+
+    @ViewBuilder
+    func radioButton() -> some View {
+        switch layout {
+        case let .indicatorOnly(isError, isReadOnly):
+            OUDSRadio(isOn: .constant(indicatorState),
+                      accessibilityLabel: "Bazinga!",
+                      isError: isError,
+                      isReadOnly: isReadOnly)
+                .disabled(isDisabled)
+        case let .default(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
+            OUDSRadioItem(labelText,
+                          isOn: .constant(indicatorState),
+                          extraLabel: extraLabelText,
+                          description: descriptionText,
+                          image: icon,
+                          isReversed: false,
+                          isError: isError,
+                          errorText: errorText,
+                          isReadOnly: isReadOnly,
+                          hasDivider: hasDivider)
+                .disabled(isDisabled)
+        case let .reversed(labelText, extraLabelText, descriptionText, icon, isError, errorText, hasDivider, isReadOnly):
+            OUDSRadioItem(labelText,
+                          isOn: .constant(indicatorState),
+                          extraLabel: extraLabelText,
+                          description: descriptionText,
+                          image: icon,
+                          isReversed: true,
+                          isError: isError,
+                          errorText: errorText,
+                          isReadOnly: isReadOnly,
+                          hasDivider: hasDivider)
+                .disabled(isDisabled)
+        }
+    }
+}

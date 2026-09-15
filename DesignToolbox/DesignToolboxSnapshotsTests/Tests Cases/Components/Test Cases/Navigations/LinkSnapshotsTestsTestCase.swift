@@ -1,0 +1,234 @@
+// Software: MISO iOS (demo app)
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+
+import MISOSwiftUI
+import SnapshotTesting
+import SwiftUI
+import XCTest
+
+// swiftlint:disable required_deinit
+
+// MARK: - Test Cases
+
+/// Tests the UI rendering of the `MISOLink` for each parameter
+open class LinkSnapshotsTestsTestCase: XCTestCase {
+
+    /// This function tests all link configuration for the given theme and color schemes on a standard surface.
+    ///
+    /// **/!\ It does not test the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// It iterates through all link `layouts`, for all `sizes`
+    /// in enabled and disabled states.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`).
+    ///   - interfaceStyle: The user interface style (light or dark).
+    @MainActor func testAllLinks(theme: MISOTheme, interfaceStyle: UIUserInterfaceStyle) {
+        for layout in LinkLayout.allCases {
+            for size in MISOLink.Size.allCases {
+                for density in MISOLink.Density.allCases {
+                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
+                    for iconType in iconTypes {
+                        for isFullWidth in fullWidths {
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: false,
+                                     onColoredSurface: false,
+                                     isFullWidth: isFullWidth)
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: true,
+                                     onColoredSurface: false,
+                                     isFullWidth: isFullWidth)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// This function tests all link configuration for the given theme and color schemes on a colored surface (the `surfaceBrandPrimary` token)
+    ///
+    /// **/!\ It does not text the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// It iterates through all link `layout`, for all `size`
+    /// in enabled and disbled state.
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor func testAllLinksOnColoredSurface(theme: MISOTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Skip test for negative hierarchy because it is not allowed on colored surface
+        for layout in LinkLayout.allCases {
+            for size in MISOLink.Size.allCases {
+                for density in MISOLink.Density.allCases {
+                    let iconTypes: [DefinedStatusIcons] = layout == .textAndIcon ? DefinedStatusIcons.allCases : [.tintedIcon]
+                    let fullWidths: [Bool] = (layout == .indicatorNext || layout == .indicatorPrevious) ? [false, true] : [false]
+                    for iconType in iconTypes {
+                        for isFullWidth in fullWidths {
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: false,
+                                     onColoredSurface: true,
+                                     isFullWidth: isFullWidth)
+                            testLink(theme: theme,
+                                     interfaceStyle: interfaceStyle,
+                                     layout: layout,
+                                     size: size,
+                                     density: density,
+                                     iconType: iconType,
+                                     disabled: true,
+                                     onColoredSurface: true,
+                                     isFullWidth: isFullWidth)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// This function tests link according to all parameters of the configuration available on a `OUDLink`
+    /// for the given theme and color schemes and on a colored surface or not.
+    ///
+    /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
+    ///    test_<themeName>_<colorScheme>.<coloreSurface>_<layout>_<size>_<disabled>
+    ///
+    /// **/!\ It does not text the hover and pressed states.**
+    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
+    ///
+    /// - Parameters:
+    ///   - theme: The theme (`MISOTheme`)
+    ///   - interfaceStyle: The user interface style (light or dark)
+    ///   - layout: the layout of the link
+    ///   - size: the size of the link
+    ///   - density: the sidensityze of the link
+    ///   - disabled: the disabled flag
+    ///   - onColoredSurface: a flag to know if link is on a colored surface or not
+    @MainActor private func testLink(theme: MISOTheme,
+                                     interfaceStyle: UIUserInterfaceStyle,
+                                     layout: LinkLayout,
+                                     size: MISOLink.Size,
+                                     density: MISOLink.Density,
+                                     iconType: DefinedStatusIcons = .tintedIcon,
+                                     disabled: Bool,
+                                     onColoredSurface: Bool = false,
+                                     isFullWidth: Bool = false)
+    {
+        // Generate the illustration for the specified configuration
+        let illustration = MISOThemeableView(theme: theme) {
+            LinkTest(layout: layout, size: size, density: density, iconType: iconType, onColoredSurface: onColoredSurface, isFullWidth: isFullWidth)
+                .background(theme.colors.bgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .disabled(disabled)
+        }
+
+        // Create a unique snapshot name based on the current configuration :
+        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<imageMode>_<size><fullWidthPattern><disabledPatern> where:
+        // - `coloredSurfacePatern` is empty if not on colored surface
+        // - `imageModePattern` is empty if not textAndIcon layout
+        // - `fullWidthPattern` is empty if not full width (only relevant for indicatorNext and indicatorPrevious layouts)
+        // - `disabledPatern` is empty if not disabled
+        let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+        let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
+        let imageModePattern = layout == .textAndIcon ? (iconType == .image ? "_OriginalImage" : "_TemplateImage") : ""
+        let fullWidthPattern = isFullWidth ? "_FullWidth" : ""
+        let disabledPatern = disabled ? "_Disabled" : ""
+        let name = "\(coloredSurfacePatern)\(layout.debugDescription)\(imageModePattern)_\(size.formattedName)_\(density.formattedName)\(fullWidthPattern)\(disabledPatern)"
+
+        // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
+    }
+    // swiftlint:enable function_default_parameter_at_end
+}
+
+// swiftlint:enable required_deinit
+
+// MARK: - Link Test
+
+struct LinkTest: View {
+
+    let layout: LinkLayout
+    let size: MISOLink.Size
+    let density: MISOLink.Density
+    let iconType: DefinedStatusIcons
+    let onColoredSurface: Bool
+    let isFullWidth: Bool
+
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        if onColoredSurface {
+            MISOColoredSurface(color: theme.colorModes.onBrandPrimary, content: link)
+        } else {
+            link()
+        }
+    }
+
+    func link() -> some View {
+        switch layout {
+        case .textOnly:
+            MISOLink(text: "Link", size: size, density: density) {}
+        case .textAndIcon:
+            MISOLink(text: "Link", image: MISOImage, size: size, density: density) {}
+        case .indicatorNext:
+            MISOLink(text: "Next", indicator: .next, size: size, density: density, isFullWidth: isFullWidth) {}
+        case .indicatorPrevious:
+            MISOLink(text: "Back", indicator: .previous, size: size, density: density, isFullWidth: isFullWidth) {}
+        case .indicatorExternal:
+            MISOLink(text: "External", indicator: .external, size: size, density: density, isFullWidth: isFullWidth) {}
+        }
+    }
+
+    private var MISOImage: MISOImage {
+        let asset: Image = iconType == .tintedIcon ? Image(decorative: "ic_heart") : Image.placeholderImage()
+        let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
+        return MISOImage(asset: asset, renderingMode: renderingMode)
+    }
+}
+
+extension MISOLink.Size: @retroactive CustomDebugStringConvertible {
+    public var debugDescription: String {
+        switch self {
+        case .small:
+            "Small"
+        case .default:
+            "Medium"
+        }
+    }
+}
+
+extension LinkLayout: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        switch self {
+        case .textOnly:
+            "TextOnly"
+        case .textAndIcon:
+            "IconAndText"
+        case .indicatorPrevious:
+            "IndicatorPrevious"
+        case .indicatorNext:
+            "IndicatorNext"
+        case .indicatorExternal:
+            "IndicatorExternal"
+        }
+    }
+}

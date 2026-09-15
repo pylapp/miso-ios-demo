@@ -1,6 +1,6 @@
-// Software: MISO iOS (demo app) (fork of OUDS iOS Design System Toolbox)
+// Software: MISO iOS (demo app)
 // SPDX-License-Identifier: MIT
-// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
+// SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
 
 import SnapshotTesting
 import SwiftUI

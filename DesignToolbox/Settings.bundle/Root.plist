@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Restart app on theme switch</string>
 			<key>Key</key>
-			<string>com.orange.ouds.demoapp.askToRestartIfThemeChanged</string>
+			<string>info.pylapp.miso.demo.askToRestartIfThemeChanged</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
