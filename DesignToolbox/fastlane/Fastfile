@@ -75,6 +75,7 @@ lane :format do
     # Format sources of MISO, not related to the fork, copyrighted Pierre-Yves Lapersonne only
     templateMISO = 'Software: MISO iOS (demo app)\\nSPDX-License-Identifier: MIT\\nSPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne'
     sh "cd .. && swiftformat DesignToolbox/Pages/Components/MISO/ --header \"#{templateMISO}\" && cd .."
+    sh "cd .. && swiftformat DesignToolboxSnapshotsTests/ --header \"#{templateMISO}\" && cd .."
 
     puts "⏱ Done in #{format_elapsed_time(Time.now - start_time)}"
 end
