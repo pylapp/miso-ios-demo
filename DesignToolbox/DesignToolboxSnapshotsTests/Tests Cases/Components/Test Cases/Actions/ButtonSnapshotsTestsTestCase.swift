@@ -242,10 +242,10 @@ struct ButtonTest: View {
                 size: size) {}
         case .icon:
             MISOButton(
-                image: MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
-                                 flipped: flipIcon,
-                                 accessibilityLabel: "Icon",
-                                 renderingMode: imageMode),
+                image: MISOComponents.MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                                                flipped: flipIcon,
+                                                accessibilityLabel: "Icon",
+                                                renderingMode: imageMode),
                 appearance: appearance,
                 style: style,
                 size: size) {}
@@ -253,9 +253,9 @@ struct ButtonTest: View {
     }
 
     private var MISOImage: MISOImage {
-        MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
-                  flipped: flipIcon,
-                  renderingMode: imageMode)
+        MISOComponents.MISOImage(asset: imageMode == .original ? Image.placeholderImage() : Image.defaultImage(),
+                                 flipped: flipIcon,
+                                 renderingMode: imageMode)
     }
 }
 

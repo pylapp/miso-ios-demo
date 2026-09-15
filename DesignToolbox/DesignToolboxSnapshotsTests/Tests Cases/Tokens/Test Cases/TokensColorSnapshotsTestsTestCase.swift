@@ -31,7 +31,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Bacgkround cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Bacgkround cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -73,7 +73,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Action cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Action cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -115,7 +115,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Always cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Always cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -157,7 +157,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Content cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Content cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -199,7 +199,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Border cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Border cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -241,7 +241,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Chart cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Chart cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -320,7 +320,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Opacity cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Opacity cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -362,7 +362,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.isForbiddenValueColor() {
-                OL.debug("For NamedColor.Repository cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Repository cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
@@ -404,7 +404,7 @@ open class TokensColorSnapshotsTestsTestCase: XCTestCase {
             let token = color.token(from: theme)
 
             if token.hasForbiddenColorValue() {
-                OL.debug("For NamedColor.Surface cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
+                ML.debug("For NamedColor.Surface cases and theme \(theme.name) a forbidden value has been skipped (\(color))")
                 continue
             }
 
