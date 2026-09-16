@@ -28,7 +28,7 @@ Looking to contribute something MISO iOS? **Here's how you can help.**
 
 The [issue tracker](https://github.com/pylapp/miso-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
 
-- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/pylapp/miso-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
+- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/pylapp/miso-ios/discussions/categories/q-a).
 
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
@@ -36,7 +36,7 @@ The [issue tracker](https://github.com/pylapp/miso-ios/issues) is the preferred 
 
 ## Cross repositories mentions
 
-The MISO project contains two repositories: one for the [Swift Package library](https://github.com/pylapp/miso-ios), and [another (this one)](https://github.com/pylapp/miso-ios-demo) for the demo app showcasing the library.
+The MISO project contains three repositories: one for the [Swift Package library](https://github.com/pylapp/miso-ios), and [another (this one)](https://github.com/pylapp/miso-ios-demo) for the demo app showcasing the library, and a last ine for [documentation](https://github.com/pylapp/miso-ios-documentation).
 
 There is no board no issues tracker for this app GitHub project, and anything is centralized in the library GitHub project.
 
@@ -117,7 +117,7 @@ Adhering to the following process is the best way to get your work included in t
    # Clone your fork of the repo into the current directory (use either SSH or HTTPS)
    git clone https://github.com/<your-username>/miso-ios-demo.git
    # Navigate to the newly cloned directory
-   cd ouds-ios-design-system-toolbox
+   cd miso-ios-demo
    # Assign the original repo to a remote called "upstream" (use either SSH or HTTPS)
    git remote add upstream https://github.com/pylapp/pylapp/miso-ios-demo.git
    ```
@@ -247,7 +247,7 @@ feat: add thousands of tokens (pylapp/miso-ios#123)
 
 Add thousands of tokens and hundreds of tests.
 
-Assisted-by: GPT-4o-mini (Orange Dinootoo)
+Assisted-by: GPT-4o-mini (OpenCode, GitHub Copilot)
 ```
 
 If bot accounts reviewed your pull requests or add code in your commits, add this information, for example depending to your case:
@@ -261,7 +261,6 @@ Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
 
 You may notice in the previous section the commits are signed-off.
 For external contributors the DCO (i.e. [Developer Certificate of Origin of Linux Foundation in its version 1.1](https://developercertificate.org/)) is required.
-For Orange contributors it is highly recommended and will be mandatory soon.
 You can refer to the documentation about [-s / --signoff](https://git-scm.com/docs/git-commit) options for your Git commands.
 
 ## Review workflow

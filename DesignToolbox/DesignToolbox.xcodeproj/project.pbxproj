@@ -195,7 +195,6 @@
 		698C985F96EE8E0F95F68C49 /* PasswordInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDDFBB52F2B69E700389D8D /* PasswordInputPage.swift */; };
 		6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
 		6DA3832BEFD478A1821195F1 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398A842275CD226E6B5EC9D /* LabelView.swift */; };
-		6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */; };
 		7DB4833704A5118A0E1CF2CD /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D5E0E3A6916585DAD47E0 /* HeadingView.swift */; };
 		7DC17D4858E987ED5F3A8318 /* BulletListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB1892F1A877300C9BD46 /* BulletListPage.swift */; };
 		7ED25061D591A6D08FE83653 /* BadgeStandardConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA20312FC70BEF00431097 /* BadgeStandardConfigurationView.swift */; };
@@ -1334,6 +1333,7 @@
 		953EDE0D302FCD250008FEA7 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D713EB2EB36B0B00EBB7C2 /* View+extensions.swift */; };
 		953EDE0E302FCD380008FEA7 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+extension.swift */; };
 		953EDE0F302FCD490008FEA7 /* TVOSShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9691F6689982BA5065E71DD /* TVOSShims.swift */; };
+		953EF0A5305ABF4400A21752 /* MISOSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 953EF0A4305ABF4400A21752 /* MISOSwiftUI */; };
 		9548A580305842550049F17A /* MISOSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9548A57F305842550049F17A /* MISOSwiftUI */; };
 		9548A582305842650049F17A /* MISOSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9548A581305842650049F17A /* MISOSwiftUI */; };
 		9548A5843058426E0049F17A /* MISOSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9548A5833058426E0049F17A /* MISOSwiftUI */; };
@@ -1397,7 +1397,6 @@
 		9553683A30239908007A83E0 /* CircularIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553683930239908007A83E0 /* CircularIndicatorsView.swift */; };
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
-		956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 956B94392FCF033A00471ADE /* OUDSSwiftUI */; };
 		957A175C305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
 		957A175D305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
 		957A175E305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
@@ -1410,8 +1409,6 @@
 		9589F0882EB7D67B00134487 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		9589F0892EB7D67B00134487 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
-		9589F0C12EB7D67B00134487 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 9589F0112EB7D67B00134487 /* DeclarationAccessibility */; };
-		9589F19B2EB7D67E00134487 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 9589F0EB2EB7D67E00134487 /* DeclarationAccessibility */; };
 		958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
 		9593900A2EC125C3000DBE95 /* WatchScrollLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */; };
 		9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
@@ -1426,7 +1423,6 @@
 		959800702EBCC714007BE0EA /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006C2EBCC714007BE0EA /* ComponentsView.swift */; };
 		959800712EBCC714007BE0EA /* DesignToolbox_Light_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598006D2EBCC714007BE0EA /* DesignToolbox_Light_App.swift */; };
 		9598008A2EBCCCAD007BE0EA /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959800892EBCCCAB007BE0EA /* BadgesView.swift */; };
-		9599CE322EB9040300CFCF3F /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9599CE312EB9040300CFCF3F /* OUDSSwiftUI */; };
 		959C5E9A2FFBF1C900E12BFF /* NamedColor+Ai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C5E992FFBF1C900E12BFF /* NamedColor+Ai.swift */; };
 		95B2953030138CC000CEB567 /* SandboxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2952F30138CBB00CEB567 /* SandboxTestView.swift */; };
 		95C5A7D42F978289002F6D8A /* TextualContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5A7D32F978284002F6D8A /* TextualContentMode.swift */; };
@@ -1445,7 +1441,6 @@
 		95CEF1862F9A2726008AD8C4 /* View+TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEF1852F9A271C008AD8C4 /* View+TabBarAppearance.swift */; };
 		95D5BA362F4706E000CB10FE /* DialogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5BA312F4706E000CB10FE /* DialogsView.swift */; };
 		95D6AAD12F9BC59C00A0F83A /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6AAD02F9BC59C00A0F83A /* NamedColor+Decorative.swift */; };
-		95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */; };
 		97690312C5A835761CF9B87F /* AlertMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE0FD62F3CBEC300ABD80E /* AlertMessagePage.swift */; };
 		99A65EBB9967AC0BD633488C /* InlineAlertConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4799BB2F4852A9005F349B /* InlineAlertConfigurationView.swift */; };
 		A1A56F609A601DC9820F2362 /* ToolBarBottomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AFD3A2F850344004615AF /* ToolBarBottomPage.swift */; };
@@ -1966,7 +1961,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */,
-				9599CE322EB9040300CFCF3F /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1975,7 +1969,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9548A580305842550049F17A /* MISOSwiftUI in Frameworks */,
-				6DFC20C52CE3D9AE00F2EC33 /* DeclarationAccessibility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1983,7 +1976,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956B943A2FCF033A00471ADE /* OUDSSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1991,7 +1983,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F840D32EB8FAA200CE1FE6 /* OUDSSwiftUI in Frameworks */,
+				953EF0A5305ABF4400A21752 /* MISOSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,7 +2000,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9548A582305842650049F17A /* MISOSwiftUI in Frameworks */,
-				9589F0C12EB7D67B00134487 /* DeclarationAccessibility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2017,7 +2008,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9548A5843058426E0049F17A /* MISOSwiftUI in Frameworks */,
-				9589F19B2EB7D67E00134487 /* DeclarationAccessibility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3951,7 +3941,6 @@
 			name = DesignToolboxSnapshotsTests;
 			packageProductDependencies = (
 				0740A9992C9874670069D24A /* SnapshotTesting */,
-				9599CE312EB9040300CFCF3F /* OUDSSwiftUI */,
 			);
 			productName = DesignToolboxTests;
 			productReference = 0740A98F2C9873500069D24A /* DesignToolboxSnapshotsTests.xctest */;
@@ -3972,7 +3961,6 @@
 			);
 			name = "DesignToolbox (iOS)";
 			packageProductDependencies = (
-				6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */,
 				9548A57F305842550049F17A /* MISOSwiftUI */,
 			);
 			productName = DemoApp;
@@ -4012,7 +4000,7 @@
 			);
 			name = DesignToolboxUITests;
 			packageProductDependencies = (
-				95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */,
+				953EF0A4305ABF4400A21752 /* MISOSwiftUI */,
 			);
 			productName = DesignToolboxUITests;
 			productReference = 51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */;
@@ -4053,7 +4041,6 @@
 			);
 			name = "DesignToolbox (macOS)";
 			packageProductDependencies = (
-				9589F0112EB7D67B00134487 /* DeclarationAccessibility */,
 				9548A581305842650049F17A /* MISOSwiftUI */,
 			);
 			productName = DemoApp;
@@ -4074,7 +4061,6 @@
 			);
 			name = "DesignToolbox (visionOS)";
 			packageProductDependencies = (
-				9589F0EB2EB7D67E00134487 /* DeclarationAccessibility */,
 				9548A5833058426E0049F17A /* MISOSwiftUI */,
 			);
 			productName = DemoApp;
@@ -4144,7 +4130,6 @@
 			mainGroup = 07FDCD882C296A500009AA13;
 			packageReferences = (
 				0740080F2C94256C006B8729 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
-				6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */,
 				9548A57E305842550049F17A /* XCRemoteSwiftPackageReference "miso-ios" */,
 			);
 			productRefGroup = 07FDCD922C296A500009AA13 /* Products */;
@@ -5781,7 +5766,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -5805,7 +5790,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -6009,10 +5994,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
@@ -6032,9 +6013,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "Design System Toolbox";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS iOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "OUDS macOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS visionOS app (development)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -6052,7 +6030,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -6076,7 +6054,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -6099,7 +6077,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -6124,7 +6102,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MG2LSJNJB6;
+				DEVELOPMENT_TEAM = 9363PZ22AY;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -6198,9 +6176,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
@@ -6216,9 +6191,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS iOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "OUDS macOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS visionOS app (development)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -6287,9 +6259,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
@@ -6309,9 +6278,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS iOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "OUDS macOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS visionOS app (development)";
 				SUPPORTED_PLATFORMS = macosx;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -6379,9 +6345,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignToolbox/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = MG2LSJNJB6;
-				"DEVELOPMENT_TEAM[sdk=xros*]" = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
@@ -6401,9 +6364,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "OUDS iOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "OUDS macOS app (release)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]" = "OUDS iOS app (release)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -6580,36 +6540,12 @@
 				version = 1.18.7;
 			};
 		};
-		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.4.0;
-			};
-		};
 		9548A57E305842550049F17A /* XCRemoteSwiftPackageReference "miso-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pylapp/miso-ios";
 			requirement = {
 				branch = develop;
 				kind = branch;
-			};
-		};
-		9589F0122EB7D67B00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.3.0;
-			};
-		};
-		9589F0EC2EB7D67E00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -6620,10 +6556,10 @@
 			package = 0740080F2C94256C006B8729 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
-		6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */ = {
+		953EF0A4305ABF4400A21752 /* MISOSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */;
-			productName = DeclarationAccessibility;
+			package = 9548A57E305842550049F17A /* XCRemoteSwiftPackageReference "miso-ios" */;
+			productName = MISOSwiftUI;
 		};
 		9548A57F305842550049F17A /* MISOSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -6649,28 +6585,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9548A57E305842550049F17A /* XCRemoteSwiftPackageReference "miso-ios" */;
 			productName = MISOSwiftUI;
-		};
-		956B94392FCF033A00471ADE /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSSwiftUI;
-		};
-		9589F0112EB7D67B00134487 /* DeclarationAccessibility */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9589F0122EB7D67B00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */;
-			productName = DeclarationAccessibility;
-		};
-		9589F0EB2EB7D67E00134487 /* DeclarationAccessibility */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9589F0EC2EB7D67E00134487 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */;
-			productName = DeclarationAccessibility;
-		};
-		9599CE312EB9040300CFCF3F /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSSwiftUI;
-		};
-		95F840D22EB8FAA200CE1FE6 /* OUDSSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

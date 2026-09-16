@@ -130,7 +130,7 @@ struct ThemeSelectionButton: View {
             .pickerStyle(.automatic)
             #else
             Divider() // with macOS/tvOS at least there are troubles with menus and pickers inside
-            ForEach(themeProvider.otherThemes, id: \.id) { theme in
+            ForEach(themeProvider.allThemes, id: \.id) { theme in
                 Button(theme.description) {
                     themeProvider.currentTheme = theme
                 }

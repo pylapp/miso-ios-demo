@@ -13,9 +13,9 @@ struct DesignToolboxVariantElement: View {
     @Environment(\.layoutDirection) private var layoutDirection
 
     #if os(macOS)
-    @AppStorage("info.pylapp.misso.demoAPp.colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+    @AppStorage("info.pylapp.misso.demoApp.colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
     @EnvironmentObject private var windowManager: WindowManager
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    @EnvironmentObject private var lowPowerModeObserver: MISOLowPowerModeObserver
 
     private var colorScheme: ColorScheme? {
         if mode == ColorSchemeMode.light.rawValue {

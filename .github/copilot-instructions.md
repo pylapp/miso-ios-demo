@@ -5,15 +5,14 @@ It covers contributor and maintainer guidelines: code formatting, architecture, 
 
 ## 1. Project Overview
 
-MISO means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
-It provides a Swift Package and a demo application (this repository) called Design System Tooblox which embeds the Swift Package to expose its public API.
-The project is open source under MIT license and hosted on GitHub in Orange-OpenSource organization.
+MISO is a library providing themes, components, and tools for iOS apps developers to make develoment faster.
+It provides a Swift Package and a demo application (this repository) called Design Tooblox which embeds the Swift Package to expose its public API.
+The project is open source under MIT license.
 The products support iOS 15, iPadOS 15, macOS 15, visionOS 1, watchOS 11 and tvOS 16.
 The products are written in Swift with SwiftUI as UI framework and Swift 6 (format, grammar and concurrency).
 
 ## 2. Vocabulary
 
-- *tokenator*: an internal tool which uses Figma specifications exported as JSON to convert them and send through pull requests the Swift code for tokens
 - *token*: variable containing a value in most of cases defined by *tokenator*
 - *raw token*: a family of tokens which have for value a raw type value like String, Int, or CGFloat
 - *semantic token*: a family of tokens which point to raw tokens and bring meanings in their name, used inside components
@@ -31,7 +30,7 @@ The source code is formatted for Swift 6.3. Configuration of formater is in `.sw
 
 ### 4.1 DesignToolbox
 
-Contains the sources of the Design System Toolbox app for iOS, iPadOS, macOS and visionOS.
+Contains the sources of the Design Toolbox app for iOS, iPadOS, macOS and visionOS.
 
 ### 4.2 DesignToolboxUITests
 
@@ -121,7 +120,7 @@ Here are assets, images, HTML files like legal notices and fonts.
 
 ## 10. Building commands
 
-### 10.1 Building Design System Toolbox app
+### 10.1 Building Design Toolbox app
 
 To build the Design System Toolbox app for iOS and iPadOS:
 ```shell

@@ -49,7 +49,7 @@ enum ColorSchemeMode: String, CustomStringConvertible {
 // MARK: - Color Scheme Selection Button
 
 struct ColorSchemeSelectionButton: View {
-    @AppStorage("info.pylapp.misso.demoAPp.colorSchemeMode") private var mode = ColorSchemeMode.auto
+    @AppStorage("info.pylapp.misso.demoApp.colorSchemeMode") private var mode = ColorSchemeMode.auto
 
     var body: some View {
         Button(action: {

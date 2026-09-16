@@ -1,16 +1,16 @@
 ---
 type: ai-agent-guide
-project: MISO iOS Design System Toolbox
+project: MISO iOS Design Toolbox (demo app)
 language: Swift
 ui-framework: SwiftUI
 platforms: [iOS, iPadOS, macOS, visionOS, watchOS, tvOS]
 min-deployment: iOS 15.0
 ---
 
-# MISO iOS Design System Toolbox — AI Agent Guide
+# MISO iOS Design Toolbox — AI Agent Guide
 
 This is the **demo application** for the [MISO iOS Swift Package](https://github.com/pylapp/miso-ios).
-The package provides design tokens, themes, and SwiftUI components for Orange Group products across all Apple platforms.
+The package provides design tokens, themes, SwiftUI components and tools to ease iOS apps development across all Apple platforms.
 
 ## MISO Package: Load skills first
 
@@ -18,7 +18,7 @@ When you write or review code that involves **MISO tokens, themes, or components
 
 - **`miso-ios-framework-usage`** — setup, shared reference, imports, themes, token namespaces, view modifiers.
 - **`miso-ios-components-<family>`** — specific component skill (`actions`, `content-display`, `controls`, `dialogs`, `indicators`, `layouts`, `navigations`).
-- **`miso-ios-guide-*`** — vocabulary, Figma-to-Swift token mapping, migration, custom themes.
+- **`miso-ios-guide-*`** — vocabulary, migration, custom themes.
 
 Do **not** duplicate this guidance here; always reference the package's `AGENTS.md` as the source of truth.
 
@@ -98,8 +98,8 @@ All commands below run from the `DesignToolbox/` folder (contains `fastlane/`).
 
 - **Snapshot & UI tests** target **iPhone 17 Pro simulator (iOS 26.4.1)** in portrait mode, English, 100% text size, no a11y.
 - **New snapshot tests fail on first run** (tool generates the reference image) → re-run to confirm success.
-- **Periphery**: use a **real device**, not a simulator; avoid local Swift Package references (causes false positives).
-- **Prerequisites**: Xcode 26.4, Ruby ≥ 3.4, Fastlane ≥ 2.228, SwiftLint ≥ 0.62.2, SwiftFormat ≥ 0.58.5, Periphery ≥ 3.1.0, gitleaks ≥ 8.24.3. See `.github/DEVELOP.md` for full setup.
+- **Periphery**: avoid local Swift Package references (causes false positives).
+- **Prerequisites**: Xcode 26.5, Ruby ≥ 3.4, Fastlane ≥ 2.228, SwiftLint ≥ 0.62.2, SwiftFormat ≥ 0.58.5, Periphery ≥ 3.1.0, gitleaks ≥ 8.24.3. See `.github/DEVELOP.md` for full setup.
 
 ---
 

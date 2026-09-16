@@ -7,15 +7,8 @@ requirements of the relevant license of the Third Party Software they are using.
 
 For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift* and *Package.resolved* files.
 
-## In Design System Toolbox
+## In Design Toolbox
 <!-- Inside application and for tests -->
-
-### DeclarationAccessibility
-
-Copyright 2021-2023 Orange SA
-
-*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](https://opensource.org/license/apache-2-0).
-You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
 
 ### LicensePlist
 
@@ -57,13 +50,6 @@ Copyright 2018 Pavel Procházka
 *fastlane-plugin-changelog* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/pajapro/fastlane-plugin-changelog).
 
-#### fastlane-plugin-mattermost
-
-Copyright 2020 cpfriend1721994
-
-*fastlane-plugin-mattermost* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/cpfriend1721994/fastlane-plugin-mattermost).
-
 #### net-http
 
 *net-http* is distributed under the terms and conditions of the [Ruby License](https://github.com/flori/json/blob/master/LICENSE).
@@ -80,14 +66,6 @@ Copyright (c) 2015 Boris Bügling
 You may download the source code on the [following website](https://github.com/xcpretty/xcode-install).
 
 ### Other tools
-
-#### GitHub Task List Completed
-<!-- GitHub PR tool -->
-
-Copyright (c) 2023 Andrew Stilliard
-
-*github-task-list-completed* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/stilliard/github-task-list-completed).
 
 #### Gitleaks
 <!-- GitHub Action workflow -->

@@ -16,7 +16,6 @@
   * [Manual tests using demo app](#manual-tests-using-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
-- [Internal assets](#internal-assets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
 - [Update dependencies with Renovate](#update-dependencies-with-renovate)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
@@ -172,14 +171,10 @@ To build the demo application follow those steps:
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
-the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/pylapp/miso-ios/tree/gh-pages).
-
 ### Illustrations
 
 The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/pylapp/miso-ios/).
-They are made manually with iPhone 17 Pro, in english, portrait, light mode (combined with dark mode) without icreased size text.
-Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
+They are made manually with iPhone 17 Pro, in english, portrait, light mode (combined with dark mode) without increased size text.
 
 To update the illustrations, you have to:
 - have such iPhone (e.g. simulator or real device)
@@ -188,15 +183,11 @@ To update the illustrations, you have to:
 
 Repeat this process for the other themes if needed.
 
-For *App Store* illustrations, you need to make screenshots using simulators or devices in light mode, portrait and english:
-- iPad Air 13" (iOS 26)
-- iPhone 11 Pro Max (iOS 26)
-
 ## Run tests 
 
 ### Unit tests for MISO Swift package
 
-You can, from the design system toolbox project, if you referenced the MISO package with a local repository reference before, run the unit tests of the MISO package. Or you can run them from Xcode if you opened only the package?
+You can, from the design system toolbox project, if you referenced the MISO package with a local repository reference before, run the unit tests of the MISO package. Or you can run them from Xcode if you opened only the package.
 To do that, select the scheme *MISO-Package* scheme, which is also the current package test plan, and in the tests navigator run the tests.
 
 ### Snapshots tests in demo app
@@ -228,58 +219,7 @@ Any interface modifications require regenerating the illustrations using the too
 
 #### How to use to use swift-snapshot-testing library
 
-1. Locate where are the reference images:
-    - In the Package directory, you will find the reference screenshots for the Orange theme (Light/Dark), which will serve as comparison baselines.
-    ```text
-    MISO -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
-    ```
-2. Navigate to the project :
-    - Open your project in Xcode and go to a directory containing tests (e.g. here *MISOTokensOpacityUITests*):
-    ```shell
-    DesignToolbox -> DesignToolboxSnapshotsTests -> MISOTokensOpacityUITests -> MISOTokensOpacityUITests.swift
-    ```
-3. Open a test file (e.g. here *MISOTokensOpacityUITests*):
-    - Open the file `MISOTokensOpacityUITests.swift`.
-4. Run the snapshot test (success):
-    - Locate and execute some function like `testAllOpacitiesOrangeThemeLight()`.
-
-      <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
- 
-The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
-
-5. Run the snapshot test (failure):
-    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityInvisible` in class `OpacityTokenPage.swift`
-
-      <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
-    - Test result failure :
-
-    <img width="897" alt="IntentionalUITestError" src="https://github.com/user-attachments/assets/0a6bb578-adba-42f1-abe8-e2f50ddba2a7">
-
-   The *swift-snapshot-testing tool* indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
-
-7. Verify the output:
-    - It is recommended to use the `Show the Report Navigator` tool in Xcode :
-
-    <img width="512" alt="ShowReportNavigator_Xcode" src="https://github.com/user-attachments/assets/8d866d79-5dfc-46c7-934e-8d03ec1fc667">
-
-    - In Xcode go to :
-
-    ```text
-    DesignToolboxSnapshotsTests -> DesignToolboxSnapshotsTests/DesignToolboxSnapshotsTests
-    ```
-
-    <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
-
-8. Comparison (reference and failure):
-   
-   **Reference:**
-
-    <img width="1307" alt="OpacityReferenceImage" src="https://github.com/user-attachments/assets/493dabde-4139-468f-a57b-10ee5a5269c1">
-
-
-   **Failure:**
-
-   <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
+Use the _DesignToolboxSnapshotsTests_ schemes and runs the tests.
 
 ### UI tests in demo app
 
@@ -373,17 +313,11 @@ The Xcode project contains two targets:
 2. _Periphery_ to look for dead code in the source code
 3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
 
-## Internal assets
-
-Some assets must not be versioned in this external public repository. 
-For example, the license terms of the *Helvetica Neue* font family forbid to save fonts files in repositories.
-Thus, for *Helvetica Neue Arabic* font, these assets are not available in the repository.
-If you want to get them, download them from the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography) and add them in *Resources/Fonts*
- 
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device. You may need to be part of our team if you want to build in debug mode.
-Note the bundle identifier here for local builds is **com.orange.miso.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.miso.demoapp** identifiers.
+
+This is no release build defined. Indeed the project is a fork of [ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) and we do not want to parasite the app or have apps considered as copycats or with the same look as the ones of OUDS on TestFlight and overall on the AppStore.
 
 However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.miso.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
 

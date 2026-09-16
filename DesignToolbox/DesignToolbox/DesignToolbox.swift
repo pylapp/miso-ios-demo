@@ -25,7 +25,7 @@ struct DesignToolbox: App {
 
 struct ContentView: View {
 
-    @AppStorage("info.pylapp.misso.demoAPp.colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
+    @AppStorage("info.pylapp.misso.demoApp.colorSchemeMode") private var mode: String = ColorSchemeMode.auto.rawValue
     @StateObject private var themeProvider = ThemeProvider()
 
     #if os(macOS)
