@@ -1,8 +1,0 @@
-<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
-<svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
-  <mask id="i-mask">
-    <rect width="26" height="26" fill="white"/>
-    <path d="M10 7h6v4h-6v-4zm0 5h6v9h-6v-9z" fill="black"/>
-  </mask>
-  <circle cx="13" cy="13" r="13" fill="currentColor" mask="url(#i-mask)"/>
-</svg>

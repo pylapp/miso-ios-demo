@@ -1,5 +1,0 @@
-<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
-<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-  <path d="M6 6v68M6 6h68" stroke="currentColor" stroke-width="6" fill="none"/>
-  <path d="M6 74h68M74 6v68" stroke="currentColor" stroke-width="6" stroke-dasharray="8 6" fill="none"/>
-</svg>

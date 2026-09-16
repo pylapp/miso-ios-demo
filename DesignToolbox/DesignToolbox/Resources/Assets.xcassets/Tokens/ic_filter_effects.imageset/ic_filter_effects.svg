@@ -1,0 +1,11 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Carré avec bordure épaisse -->
+  <rect x="5" y="5" width="70" height="70" fill="none" stroke="#2c3e50" stroke-width="4"/>
+
+  <!-- Carré vide (gauche) -->
+  <rect x="18" y="25" width="18" height="30" fill="none" stroke="#2055E5" stroke-width="4"/>
+
+  <!-- Carré plein (droite) -->
+  <rect x="44" y="25" width="18" height="30" fill="#2055E5"/>
+</svg>
