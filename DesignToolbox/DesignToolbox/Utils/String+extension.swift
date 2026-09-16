@@ -77,29 +77,29 @@ extension String {
         let regex = try? NSRegularExpression(pattern: pattern)
         let range = NSRange(location: 0, length: utf16.count)
         guard regex?.firstMatch(in: self, options: [], range: range) != nil else {
-            return "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases" // Default fallback
+            return "https://github.com/pylapp/miso-ios-demo/releases" // Default fallback
         }
-        return "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/releases/tag/\(self)"
+        return "https://github.com/pylapp/miso-ios-demo/releases/tag/\(self)"
     }
 
     /// - Returns: The URL for the given GitHub build
     public func toGitHubBuild() -> String {
         if self == "stable" {
-            return "https://github.com/Orange-OpenSource/ouds-ios/tree/main"
+            return "https://github.com/pylapp/miso-ios/tree/main"
         }
 
         if contains("beta (nightly)") || contains("alpha"), let parts = components(separatedBy: "(").last {
             let commitHash = parts.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
-            return "https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/commit/\(commitHash)"
+            return "https://github.com/pylapp/miso-ios-demo/commit/\(commitHash)"
         }
 
-        return "https://github.com/Orange-OpenSource/ouds-ios"
+        return "https://github.com/pylapp/miso-ios"
     }
 
     /// - Returns: An array of URL of GitHub issues
     public func toGitHubIssues() -> [String] {
         if !contains(",") { // Supposing here the CI/CD defined in Info.plist one issue number
-            return ["https://github.com/Orange-OpenSource/ouds-ios/issues/\(self)"]
+            return ["https://github.com/pylapp/miso-ios/issues/\(self)"]
         }
         let issues = components(separatedBy: ",")
         return issues.compactMap {
@@ -109,29 +109,29 @@ extension String {
 
     /// - Returns: The URL for the given GitHub issue
     public func toGitHubIssue() -> String {
-        "https://github.com/Orange-OpenSource/ouds-ios/issues/\(self)"
+        "https://github.com/pylapp/miso-ios/issues/\(self)"
     }
 
     /// - Returns: The URL for the given GitHub version
     public func toGitHubVersion() -> String {
         if isEmpty {
-            return "https://github.com/Orange-OpenSource/ouds-ios/tree/main"
+            return "https://github.com/pylapp/miso-ios/tree/main"
         }
         // Version is based on a feature branch, i.e. alpha builds
         let versionBranchRegexp = #"^\d+-"#
         if range(of: versionBranchRegexp, options: .regularExpression) != nil {
             let branch = components(separatedBy: " ").first ?? ""
-            return "https://github.com/Orange-OpenSource/ouds-ios/tree/\(branch)"
+            return "https://github.com/pylapp/miso-ios/tree/\(branch)"
         }
         // Version is based on develop branch, i.e. beta builds
         if starts(with: "develop") {
-            return "https://github.com/Orange-OpenSource/ouds-ios/tree/develop"
+            return "https://github.com/pylapp/miso-ios/tree/develop"
         }
         // Version is stable, i.e. tag
         if let part = components(separatedBy: "(").last {
             let commitHash = part.trimmingCharacters(in: CharacterSet(charactersIn: ")"))
-            return "https://github.com/Orange-OpenSource/ouds-ios/commit/\(commitHash)"
+            return "https://github.com/pylapp/miso-ios/commit/\(commitHash)"
         }
-        return "https://github.com/Orange-OpenSource/ouds-ios/tree/main"
+        return "https://github.com/pylapp/miso-ios/tree/main"
     }
 }

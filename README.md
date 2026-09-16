@@ -5,7 +5,7 @@
 <h1 align="center">MISO iOS</h1>
 
 <p align="center">
-  🍜 MISO is a library of SwiftUI components, themes and tools for iOS app development.
+  🍜 MISO iOS demo is a local dmeo app to test [MISO library](https://github.com/pylapp/miso-ios)
   <br>
   🐙 Miso Is So {Open | Obvious | Original}
   <br>
@@ -13,7 +13,9 @@
   ·
   <a href="https://github.com/pylapp/miso-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
-  <a href="https://github.com/pylapp/miso-ios-demo" title="Design system toolbox GitHub project of MISO">Design system toolbox</a>
+  <a href="https://github.com/pylapp/miso-ios" title="MISO iOS Swift Package">MISO Swift Package</a>
+  ·
+  <a href="https://github.com/pylapp/miso-ios-documentation" title="MISO iOS Swift Package Documentation">Documentation</a>  
 </p>
 
 <p align="center">
@@ -24,10 +26,6 @@
 <a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
 <a href="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/pylapp/miso-ios-demo/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
-&nbsp;
-<a href="https://scorecard.dev/viewer/?uri=github.com/pylapp/miso-ios-demo" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/pylapp/miso-ios-demo/badge" alt="OpenSSF Scorecard"></a>  
-&nbsp;
-<a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 </p>
 
 ## ⚙️ Status
@@ -37,7 +35,7 @@
 [![Versions](https://img.shields.io/github/v/release/pylapp/miso-ios-demo?label=Last%20version&style=for-the-badge)](https://github.com/pylapp/miso-ios-demo/releases)
 [![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
-[![Xcode 26.](https://img.shields.io/badge/Xcode-26.-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_-release-notes)
+[![Xcode 26.5](https://img.shields.io/badge/Xcode-26.5-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_5-release-notes)
 
 ![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
@@ -48,7 +46,7 @@
 
 ## 📦 Content
 
-Source code of the app showcasing the design system for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
+Source code of the app showcasing the MISO library for iOS, iPadOS, macOS, visionOS, watchOS and tvOS.
 
 > [!NOTE]
 > The source code of the [Swift Package is on pylapp/miso-ios](https://github.com/pylapp/miso-ios).
@@ -74,8 +72,8 @@ For these commands a message should say release is verified or asset verificatio
 ## 🪲 Bugs, feature requests and discussions
 
 > [!CAUTION]
-> So as to help management team and have in one board all issues related to OUDS iOS, 
-> and because the design system toolbox app is just a mirror of the library, 
+> So as to help management team and have in one board all issues related to MISO iOS, 
+> and because the demo app is just a mirror of the library, 
 > any discussions and issues about this app, and in the end, content of this repository, 
 > must remain in the [library project](https://github.com/pylapp/miso-ios).
 

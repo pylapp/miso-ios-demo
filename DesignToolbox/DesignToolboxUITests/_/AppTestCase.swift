@@ -25,7 +25,7 @@ open class AppTestCase: XCTestCase {
         if wording != key {
             return wording
         } else { // If wording and key are the same, possible to have a key and not a wording, check the other bundle
-            return key.localized(bundle: Bundle.OUDSComponents)
+            return key.localized(bundle: Bundle.MISOComponents)
         }
     }
 
