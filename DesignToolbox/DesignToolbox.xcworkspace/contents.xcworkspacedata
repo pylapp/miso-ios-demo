@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "absolute:/Volumes/PERSONNEL/3_projets/miso-ios">
-   </FileRef>
-   <FileRef
       location = "container:DesignToolbox.xcodeproj">
    </FileRef>
 </Workspace>

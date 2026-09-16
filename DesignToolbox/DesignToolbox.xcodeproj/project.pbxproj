@@ -6544,8 +6544,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pylapp/miso-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
