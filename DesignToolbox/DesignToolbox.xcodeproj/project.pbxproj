@@ -1648,7 +1648,7 @@
 		07FB2A2D2E454D7900361ECA /* TagConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfigurationView.swift; sourceTree = "<group>"; };
 		07FB2A2E2E454D7900361ECA /* TagElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagElement.swift; sourceTree = "<group>"; };
 		07FB2A2F2E454D7900361ECA /* TagPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPage.swift; sourceTree = "<group>"; };
-		07FDCD912C296A500009AA13 /* Design System Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design System Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07FDCD912C296A500009AA13 /* MISO demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MISO demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		07FDCDA92C296B7A0009AA13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -2445,7 +2445,7 @@
 		07FDCD922C296A500009AA13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07FDCD912C296A500009AA13 /* Design System Toolbox.app */,
+				07FDCD912C296A500009AA13 /* MISO demo.app */,
 				0740A98F2C9873500069D24A /* DesignToolboxSnapshotsTests.xctest */,
 				51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */,
 				51E599A72E27ED5F002BCB27 /* DesignToolboxUnitTests.xctest */,
@@ -3964,7 +3964,7 @@
 				9548A57F305842550049F17A /* MISOSwiftUI */,
 			);
 			productName = DemoApp;
-			productReference = 07FDCD912C296A500009AA13 /* Design System Toolbox.app */;
+			productReference = 07FDCD912C296A500009AA13 /* MISO demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		51E599A62E27ED5F002BCB27 /* DesignToolboxUnitTests */ = {
@@ -5955,7 +5955,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -5969,7 +5969,7 @@
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
-				PRODUCT_NAME = "Design System Toolbox";
+				PRODUCT_NAME = "MISO demo";
 				REGISTER_APP_GROUPS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -5997,7 +5997,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6011,7 +6011,7 @@
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DUSE_INTERNAL_FONTS";
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
-				PRODUCT_NAME = "Design System Toolbox";
+				PRODUCT_NAME = "MISO demo";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -6138,7 +6138,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6179,7 +6179,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "DesignToolbox/Info-tvOS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6220,7 +6220,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6262,7 +6262,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6305,7 +6305,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6348,7 +6348,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DesignToolbox/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -6386,7 +6386,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -6421,7 +6421,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "MISO Design Toolbox (DEBUG)";
+				INFOPLIST_KEY_CFBundleDisplayName = MISO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -6544,8 +6544,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pylapp/miso-ios";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

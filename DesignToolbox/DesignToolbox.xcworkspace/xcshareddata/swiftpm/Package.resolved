@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pylapp/miso-ios",
       "state" : {
-        "branch" : "develop",
-        "revision" : "e681f12fb8a7f9c95b415a3efd6d367de33ffc8b"
+        "revision" : "0fa1269100ca9c8d15871a80f6aaa65c6b10be66",
+        "version" : "1.0.0"
       }
     },
     {

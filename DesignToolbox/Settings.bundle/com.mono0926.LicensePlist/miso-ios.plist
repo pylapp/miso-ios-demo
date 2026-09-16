@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>DefaultValue</key>
-			<string>https://github.com/Orange-OpenSource/ouds-ios</string>
+			<string>https://github.com/pylapp/miso-ios</string>
 			<key>Key</key>
-			<string>ouds-ios-source</string>
+			<string>miso-ios-source</string>
 			<key>Title</key>
 			<string>Source</string>
 			<key>Type</key>
@@ -17,8 +17,6 @@
 		<dict>
 			<key>FooterText</key>
 			<string>MIT License
-
-Copyright (c) Orange SA
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +39,7 @@ SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Source</key>
-			<string>https://github.com/Orange-OpenSource/ouds-ios</string>
+			<string>https://github.com/pylapp/miso-ios</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
