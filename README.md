@@ -5,15 +5,15 @@
 <h1 align="center">MISO iOS</h1>
 
 <p align="center">
-  🍜 MISO iOS demo is a local dmeo app to test [MISO library](https://github.com/pylapp/miso-ios)
+  🍜 MISO iOS demo is a local debug app to test pylapp/miso-ios library
   <br>
-  🐙 Miso Is So {Open | Obvious | Original}
+  🐙 Miso Is So {Open | Obvious | Original | Or not!}
   <br>
   <a href="https://github.com/pylapp/miso-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
   <a href="https://github.com/pylapp/miso-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
-  <a href="https://github.com/pylapp/miso-ios" title="MISO iOS Swift Package">MISO Swift Package</a>
+  <a href="https://github.com/pylapp/miso-ios" title="MISO iOS Swift Package">Swift Package</a>
   ·
   <a href="https://github.com/pylapp/miso-ios-documentation" title="MISO iOS Swift Package Documentation">Documentation</a>  
 </p>
