@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07FDCD902C296A500009AA13"
-               BuildableName = "Design System Toolbox.app"
+               BuildableName = "MISO demo.app"
                BlueprintName = "DesignToolbox (iOS)"
                ReferencedContainer = "container:DesignToolbox.xcodeproj">
             </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "Design System Toolbox.app"
+            BuildableName = "MISO demo.app"
             BlueprintName = "DesignToolbox (iOS)"
             ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "Design System Toolbox.app"
+            BuildableName = "MISO demo.app"
             BlueprintName = "DesignToolbox (iOS)"
             ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>

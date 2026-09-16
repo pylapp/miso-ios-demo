@@ -5780,7 +5780,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MISO demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MISO demo";
 			};
 			name = Debug;
 		};
@@ -5804,7 +5804,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MISO demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MISO demo";
 			};
 			name = Release;
 		};
@@ -6044,7 +6044,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MISO demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MISO demo";
 			};
 			name = Debug;
 		};
@@ -6068,7 +6068,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design System Toolbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Design System Toolbox";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MISO demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MISO demo";
 			};
 			name = Release;
 		};
