@@ -5,7 +5,7 @@
 <h1 align="center">MISO iOS</h1>
 
 <p align="center">
-  🍜 MISO is a library of SwiftUI components (forked from ouds-ios), themes and tools for iOS app development.
+  🍜 MISO is a library of SwiftUI components, themes and tools for iOS app development.
   <br>
   🐙 Miso Is So {Open | Obvious | Original}
   <br>
