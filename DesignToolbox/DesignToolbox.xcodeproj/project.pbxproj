@@ -1409,6 +1409,33 @@
 		9589F0882EB7D67B00134487 /* InputTagElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849122E9FF00500DBCE76 /* InputTagElement.swift */; };
 		9589F0892EB7D67B00134487 /* InputTagConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849112E9FF00500DBCE76 /* InputTagConfigurationView.swift */; };
 		9589F08A2EB7D67B00134487 /* InputTagPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA849132E9FF00500DBCE76 /* InputTagPage.swift */; };
+		958AE417305C1ACB00B61F94 /* FoxyRoughTheme+TypographySnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE40A305C1ACB00B61F94 /* FoxyRoughTheme+TypographySnapshotsTests.swift */; };
+		958AE418305C1ACB00B61F94 /* FoxyRoughtTheme+DividerSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE411305C1ACB00B61F94 /* FoxyRoughtTheme+DividerSnapshotsTests.swift */; };
+		958AE419305C1ACB00B61F94 /* FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE40D305C1ACB00B61F94 /* FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift */; };
+		958AE41A305C1ACB00B61F94 /* FoxyRoughTheme+TextInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE404305C1ACB00B61F94 /* FoxyRoughTheme+TextInputSnapshotsTests.swift */; };
+		958AE41B305C1ACB00B61F94 /* FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE40E305C1ACB00B61F94 /* FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift */; };
+		958AE41C305C1ACB00B61F94 /* FoxyRoughTheme+InlineAlertSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE407305C1ACB00B61F94 /* FoxyRoughTheme+InlineAlertSnapshotsTests.swift */; };
+		958AE41D305C1ACB00B61F94 /* FoxyRoughTheme+ButtonSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE3F9305C1ACB00B61F94 /* FoxyRoughTheme+ButtonSnapshotsTests.swift */; };
+		958AE41E305C1ACB00B61F94 /* FoxyRoughTheme+BulletListSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE3FB305C1ACB00B61F94 /* FoxyRoughTheme+BulletListSnapshotsTests.swift */; };
+		958AE41F305C1ACB00B61F94 /* FoxyRoughTheme+TagSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE40F305C1ACB00B61F94 /* FoxyRoughTheme+TagSnapshotsTests.swift */; };
+		958AE420305C1ACB00B61F94 /* FoxyRoughTheme+TextAreaSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE403305C1ACB00B61F94 /* FoxyRoughTheme+TextAreaSnapshotsTests.swift */; };
+		958AE421305C1ACB00B61F94 /* FoxyRoughTheme+PinCodeInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE400305C1ACB00B61F94 /* FoxyRoughTheme+PinCodeInputSnapshotsTests.swift */; };
+		958AE422305C1ACB00B61F94 /* FoxyRoughTheme+LinkSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE413305C1ACB00B61F94 /* FoxyRoughTheme+LinkSnapshotsTests.swift */; };
+		958AE423305C1ACB00B61F94 /* FoxyRoughTheme+CheckboxSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE3FD305C1ACB00B61F94 /* FoxyRoughTheme+CheckboxSnapshotsTests.swift */; };
+		958AE424305C1ACB00B61F94 /* FoxyRoughTheme+RadioButtonSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE401305C1ACB00B61F94 /* FoxyRoughTheme+RadioButtonSnapshotsTests.swift */; };
+		958AE425305C1ACB00B61F94 /* FoxyRoughTheme+PasswordInputSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE3FF305C1ACB00B61F94 /* FoxyRoughTheme+PasswordInputSnapshotsTests.swift */; };
+		958AE426305C1ACB00B61F94 /* FoxyRoughTheme+BadgeSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE40C305C1ACB00B61F94 /* FoxyRoughTheme+BadgeSnapshotsTests.swift */; };
+		958AE427305C1ACB00B61F94 /* FoxyRoughTheme+ListItemSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE414305C1ACB00B61F94 /* FoxyRoughTheme+ListItemSnapshotsTests.swift */; };
+		958AE428305C1ACB00B61F94 /* FoxyRoughTheme+ChipsSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE3FE305C1ACB00B61F94 /* FoxyRoughTheme+ChipsSnapshotsTests.swift */; };
+		958AE429305C1ACB00B61F94 /* FoxyRoughTheme+SwitchSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE402305C1ACB00B61F94 /* FoxyRoughTheme+SwitchSnapshotsTests.swift */; };
+		958AE42A305C1ACB00B61F94 /* FoxyRoughTheme+AlertMessageSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE406305C1ACB00B61F94 /* FoxyRoughTheme+AlertMessageSnapshotsTests.swift */; };
+		958AE433305C1B9D00B61F94 /* FoxyRoughTheme+TokensOpacitySnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE42F305C1B9D00B61F94 /* FoxyRoughTheme+TokensOpacitySnapshotsTests.swift */; };
+		958AE434305C1B9D00B61F94 /* FoxyRoughTheme+TokensSizeSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE430305C1B9D00B61F94 /* FoxyRoughTheme+TokensSizeSnapshotsTests.swift */; };
+		958AE435305C1B9D00B61F94 /* FoxyRoughTheme+TokensFontSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE42E305C1B9D00B61F94 /* FoxyRoughTheme+TokensFontSnapshotsTests.swift */; };
+		958AE437305C1B9D00B61F94 /* FoxyRoughTheme+TokensElevationSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE42D305C1B9D00B61F94 /* FoxyRoughTheme+TokensElevationSnapshotsTests.swift */; };
+		958AE438305C1B9D00B61F94 /* FoxyRoughTheme+TokensColorSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE42C305C1B9D00B61F94 /* FoxyRoughTheme+TokensColorSnapshotsTests.swift */; };
+		958AE439305C1B9D00B61F94 /* FoxyRoughTheme+TokensSpaceSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE431305C1B9D00B61F94 /* FoxyRoughTheme+TokensSpaceSnapshotsTests.swift */; };
+		958AE43D305C1BB400B61F94 /* FoxyRoughTheme+TokensBorderSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958AE43C305C1BB400B61F94 /* FoxyRoughTheme+TokensBorderSnapshotsTests.swift */; };
 		958CA1FB2F48C407001F45E8 /* InlineAlertMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */; };
 		9593900A2EC125C3000DBE95 /* WatchScrollLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */; };
 		9593900D2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */; };
@@ -1841,6 +1868,33 @@
 		957D5EE42F2BB2940055128A /* ContentDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDisplayView.swift; sourceTree = "<group>"; };
 		9589F0E22EB7D67B00134487 /* DesignToolbox (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9589F1BC2EB7D67E00134487 /* DesignToolbox (visionOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DesignToolbox (visionOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		958AE3F9305C1ACB00B61F94 /* FoxyRoughTheme+ButtonSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+ButtonSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE3FB305C1ACB00B61F94 /* FoxyRoughTheme+BulletListSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+BulletListSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE3FD305C1ACB00B61F94 /* FoxyRoughTheme+CheckboxSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+CheckboxSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE3FE305C1ACB00B61F94 /* FoxyRoughTheme+ChipsSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+ChipsSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE3FF305C1ACB00B61F94 /* FoxyRoughTheme+PasswordInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+PasswordInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE400305C1ACB00B61F94 /* FoxyRoughTheme+PinCodeInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+PinCodeInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE401305C1ACB00B61F94 /* FoxyRoughTheme+RadioButtonSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+RadioButtonSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE402305C1ACB00B61F94 /* FoxyRoughTheme+SwitchSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+SwitchSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE403305C1ACB00B61F94 /* FoxyRoughTheme+TextAreaSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TextAreaSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE404305C1ACB00B61F94 /* FoxyRoughTheme+TextInputSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TextInputSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE406305C1ACB00B61F94 /* FoxyRoughTheme+AlertMessageSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+AlertMessageSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE407305C1ACB00B61F94 /* FoxyRoughTheme+InlineAlertSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+InlineAlertSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE40A305C1ACB00B61F94 /* FoxyRoughTheme+TypographySnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TypographySnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE40C305C1ACB00B61F94 /* FoxyRoughTheme+BadgeSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+BadgeSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE40D305C1ACB00B61F94 /* FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE40E305C1ACB00B61F94 /* FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE40F305C1ACB00B61F94 /* FoxyRoughTheme+TagSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TagSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE411305C1ACB00B61F94 /* FoxyRoughtTheme+DividerSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughtTheme+DividerSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE413305C1ACB00B61F94 /* FoxyRoughTheme+LinkSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+LinkSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE414305C1ACB00B61F94 /* FoxyRoughTheme+ListItemSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+ListItemSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE42C305C1B9D00B61F94 /* FoxyRoughTheme+TokensColorSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensColorSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE42D305C1B9D00B61F94 /* FoxyRoughTheme+TokensElevationSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensElevationSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE42E305C1B9D00B61F94 /* FoxyRoughTheme+TokensFontSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensFontSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE42F305C1B9D00B61F94 /* FoxyRoughTheme+TokensOpacitySnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensOpacitySnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE430305C1B9D00B61F94 /* FoxyRoughTheme+TokensSizeSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensSizeSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE431305C1B9D00B61F94 /* FoxyRoughTheme+TokensSpaceSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensSpaceSnapshotsTests.swift"; sourceTree = "<group>"; };
+		958AE43C305C1BB400B61F94 /* FoxyRoughTheme+TokensBorderSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoxyRoughTheme+TokensBorderSnapshotsTests.swift"; sourceTree = "<group>"; };
 		958CA1F92F48C407001F45E8 /* InlineAlertMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineAlertMessageView.swift; sourceTree = "<group>"; };
 		959390082EC125B5000DBE95 /* WatchScrollLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScrollLayoutView.swift; sourceTree = "<group>"; };
 		9593900B2EC1D9C5000DBE95 /* WatchVerticalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVerticalLayoutView.swift; sourceTree = "<group>"; };
@@ -3235,6 +3289,7 @@
 			isa = PBXGroup;
 			children = (
 				954F9B4C3059A94100EDB828 /* Blue Coat Theme */,
+				958AE416305C1ACB00B61F94 /* Foxy Rough Theme */,
 				954F9B6A3059A94100EDB828 /* Test Cases */,
 			);
 			path = Components;
@@ -3272,6 +3327,7 @@
 			isa = PBXGroup;
 			children = (
 				954F9B733059A94100EDB828 /* Blue Coat Theme */,
+				958AE432305C1B9D00B61F94 /* Foxy Rough Theme */,
 				954F9B7B3059A94100EDB828 /* Test Cases */,
 			);
 			path = Tokens;
@@ -3336,6 +3392,119 @@
 				957D5EE02F2BB2740055128A /* BulletListsView.swift */,
 			);
 			path = BulletLists;
+			sourceTree = "<group>";
+		};
+		958AE3FA305C1ACB00B61F94 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				958AE3F9305C1ACB00B61F94 /* FoxyRoughTheme+ButtonSnapshotsTests.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		958AE3FC305C1ACB00B61F94 /* ContentDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				958AE3FB305C1ACB00B61F94 /* FoxyRoughTheme+BulletListSnapshotsTests.swift */,
+			);
+			path = ContentDisplay;
+			sourceTree = "<group>";
+		};
+		958AE405305C1ACB00B61F94 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				958AE3FD305C1ACB00B61F94 /* FoxyRoughTheme+CheckboxSnapshotsTests.swift */,
+				958AE3FE305C1ACB00B61F94 /* FoxyRoughTheme+ChipsSnapshotsTests.swift */,
+				958AE3FF305C1ACB00B61F94 /* FoxyRoughTheme+PasswordInputSnapshotsTests.swift */,
+				958AE400305C1ACB00B61F94 /* FoxyRoughTheme+PinCodeInputSnapshotsTests.swift */,
+				958AE401305C1ACB00B61F94 /* FoxyRoughTheme+RadioButtonSnapshotsTests.swift */,
+				958AE402305C1ACB00B61F94 /* FoxyRoughTheme+SwitchSnapshotsTests.swift */,
+				958AE403305C1ACB00B61F94 /* FoxyRoughTheme+TextAreaSnapshotsTests.swift */,
+				958AE404305C1ACB00B61F94 /* FoxyRoughTheme+TextInputSnapshotsTests.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		958AE408305C1ACB00B61F94 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				958AE406305C1ACB00B61F94 /* FoxyRoughTheme+AlertMessageSnapshotsTests.swift */,
+				958AE407305C1ACB00B61F94 /* FoxyRoughTheme+InlineAlertSnapshotsTests.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		958AE409305C1ACB00B61F94 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				958AE408305C1ACB00B61F94 /* Alert */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		958AE40B305C1ACB00B61F94 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				958AE40A305C1ACB00B61F94 /* FoxyRoughTheme+TypographySnapshotsTests.swift */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		958AE410305C1ACB00B61F94 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				958AE40C305C1ACB00B61F94 /* FoxyRoughTheme+BadgeSnapshotsTests.swift */,
+				958AE40D305C1ACB00B61F94 /* FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift */,
+				958AE40E305C1ACB00B61F94 /* FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift */,
+				958AE40F305C1ACB00B61F94 /* FoxyRoughTheme+TagSnapshotsTests.swift */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		958AE412305C1ACB00B61F94 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				958AE411305C1ACB00B61F94 /* FoxyRoughtTheme+DividerSnapshotsTests.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		958AE415305C1ACB00B61F94 /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				958AE413305C1ACB00B61F94 /* FoxyRoughTheme+LinkSnapshotsTests.swift */,
+				958AE414305C1ACB00B61F94 /* FoxyRoughTheme+ListItemSnapshotsTests.swift */,
+			);
+			path = Navigations;
+			sourceTree = "<group>";
+		};
+		958AE416305C1ACB00B61F94 /* Foxy Rough Theme */ = {
+			isa = PBXGroup;
+			children = (
+				958AE3FA305C1ACB00B61F94 /* Actions */,
+				958AE3FC305C1ACB00B61F94 /* ContentDisplay */,
+				958AE405305C1ACB00B61F94 /* Controls */,
+				958AE409305C1ACB00B61F94 /* Dialogs */,
+				958AE40B305C1ACB00B61F94 /* Foundations */,
+				958AE410305C1ACB00B61F94 /* Indicators */,
+				958AE412305C1ACB00B61F94 /* Layouts */,
+				958AE415305C1ACB00B61F94 /* Navigations */,
+			);
+			path = "Foxy Rough Theme";
+			sourceTree = "<group>";
+		};
+		958AE432305C1B9D00B61F94 /* Foxy Rough Theme */ = {
+			isa = PBXGroup;
+			children = (
+				958AE43C305C1BB400B61F94 /* FoxyRoughTheme+TokensBorderSnapshotsTests.swift */,
+				958AE42C305C1B9D00B61F94 /* FoxyRoughTheme+TokensColorSnapshotsTests.swift */,
+				958AE42D305C1B9D00B61F94 /* FoxyRoughTheme+TokensElevationSnapshotsTests.swift */,
+				958AE42E305C1B9D00B61F94 /* FoxyRoughTheme+TokensFontSnapshotsTests.swift */,
+				958AE42F305C1B9D00B61F94 /* FoxyRoughTheme+TokensOpacitySnapshotsTests.swift */,
+				958AE430305C1B9D00B61F94 /* FoxyRoughTheme+TokensSizeSnapshotsTests.swift */,
+				958AE431305C1B9D00B61F94 /* FoxyRoughTheme+TokensSpaceSnapshotsTests.swift */,
+			);
+			path = "Foxy Rough Theme";
 			sourceTree = "<group>";
 		};
 		959390072EC125A6000DBE95 /* _ */ = {
@@ -4237,6 +4406,7 @@
 				953EDE0E302FCD380008FEA7 /* String+extension.swift in Sources */,
 				953EDE0D302FCD250008FEA7 /* View+extensions.swift in Sources */,
 				953EDE0C302FCCFE0008FEA7 /* Image+extensions.swift in Sources */,
+				958AE422305C1ACB00B61F94 /* FoxyRoughTheme+LinkSnapshotsTests.swift in Sources */,
 				953EDE0B302FCCF90008FEA7 /* OSUtilities.swift in Sources */,
 				953EDE0A302FCCF10008FEA7 /* A11YIdentifiers.swift in Sources */,
 				953EDDE8302FCCE10008FEA7 /* SearchPage.swift in Sources */,
@@ -4257,6 +4427,7 @@
 				953EDDF7302FCCE10008FEA7 /* NameSpace+RowGap.swift in Sources */,
 				953EDDF8302FCCE10008FEA7 /* NameSpace+PaddingInline.swift in Sources */,
 				953EDDF9302FCCE10008FEA7 /* NameSpace+PaddingInset.swift in Sources */,
+				958AE428305C1ACB00B61F94 /* FoxyRoughTheme+ChipsSnapshotsTests.swift in Sources */,
 				953EDDFA302FCCE10008FEA7 /* NameSpace+PaddingBlock.swift in Sources */,
 				953EDDFB302FCCE10008FEA7 /* SpaceTokenElement.swift in Sources */,
 				953EDDFC302FCCE10008FEA7 /* SpaceTokenPage.swift in Sources */,
@@ -4309,15 +4480,18 @@
 				954F9B833059A94100EDB828 /* BlueCoatTheme+DividerSnapshotsTests.swift in Sources */,
 				954F9B843059A94100EDB828 /* BadgeSnapshotsTestsTestCase.swift in Sources */,
 				954F9B853059A94100EDB828 /* BlueCoatTheme+CircularProgressIndicatorSnapshotsTests.swift in Sources */,
+				958AE429305C1ACB00B61F94 /* FoxyRoughTheme+SwitchSnapshotsTests.swift in Sources */,
 				954F9B863059A94100EDB828 /* BlueCoatTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				954F9B873059A94100EDB828 /* BlueCoatTheme+TextInputSnapshotsTests.swift in Sources */,
 				954F9B883059A94100EDB828 /* BlueCoatTheme+TokensFontSnapshotsTests.swift in Sources */,
+				958AE425305C1ACB00B61F94 /* FoxyRoughTheme+PasswordInputSnapshotsTests.swift in Sources */,
 				954F9B893059A94100EDB828 /* CheckboxSnapshotsTestsTestCase.swift in Sources */,
 				954F9B8A3059A94100EDB828 /* TokensFontSnapshotsTestsTestCase.swift in Sources */,
 				954F9B8B3059A94100EDB828 /* BlueCoatTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				954F9B8C3059A94100EDB828 /* BlueCoatTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				954F9B8D3059A94100EDB828 /* BlueCoatTheme+LinearProgressIndicatorSnapshotsTests.swift in Sources */,
 				954F9B8E3059A94100EDB828 /* SwitchSnapshotsTestsTestCase.swift in Sources */,
+				958AE417305C1ACB00B61F94 /* FoxyRoughTheme+TypographySnapshotsTests.swift in Sources */,
 				954F9B8F3059A94100EDB828 /* LinearProgressIndicatorSnapshotsTestsTestCase.swift in Sources */,
 				954F9B903059A94100EDB828 /* TokensSpaceSnapshotsTestsTestCase.swift in Sources */,
 				954F9B913059A94100EDB828 /* BlueCoatTheme+InlineAlertSnapshotsTests.swift in Sources */,
@@ -4330,10 +4504,13 @@
 				954F9B983059A94100EDB828 /* CircularProgressIndicatorSnapshotsTestsTestCase.swift in Sources */,
 				954F9B993059A94100EDB828 /* TokensBorderSnapshotsTestsTestCase.swift in Sources */,
 				954F9B9A3059A94100EDB828 /* BlueCoatTheme+BulletListSnapshotsTests.swift in Sources */,
+				958AE43D305C1BB400B61F94 /* FoxyRoughTheme+TokensBorderSnapshotsTests.swift in Sources */,
 				954F9B9B3059A94100EDB828 /* TokensColorSnapshotsTestsTestCase.swift in Sources */,
 				954F9B9C3059A94100EDB828 /* BlueCoatTheme+TagSnapshotsTests.swift in Sources */,
 				954F9B9D3059A94100EDB828 /* RadioButtonSnapshotsTestsTestCase.swift in Sources */,
 				954F9B9E3059A94100EDB828 /* TokensOpacitySnapshotsTestsTestCase.swift in Sources */,
+				958AE433305C1B9D00B61F94 /* FoxyRoughTheme+TokensOpacitySnapshotsTests.swift in Sources */,
+				958AE41E305C1ACB00B61F94 /* FoxyRoughTheme+BulletListSnapshotsTests.swift in Sources */,
 				954F9B9F3059A94100EDB828 /* BlueCoatTheme+TextAreaSnapshotsTests.swift in Sources */,
 				954F9BA03059A94100EDB828 /* BlueCoatTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				954F9BA13059A94100EDB828 /* ListItemSnapshotsTestsTestCase.swift in Sources */,
@@ -4341,6 +4518,7 @@
 				954F9BA33059A94100EDB828 /* BlueCoatTheme+TokensSpaceSnapshotsTests.swift in Sources */,
 				954F9BA43059A94100EDB828 /* ButtonSnapshotsTestsTestCase.swift in Sources */,
 				954F9BA53059A94100EDB828 /* ChipsSnapshotsTestsTestCase.swift in Sources */,
+				958AE423305C1ACB00B61F94 /* FoxyRoughTheme+CheckboxSnapshotsTests.swift in Sources */,
 				954F9BA63059A94100EDB828 /* BlueCoatTheme+LinkSnapshotsTests.swift in Sources */,
 				954F9BA73059A94100EDB828 /* TokensSizeSnapshotsTestsTestCase.swift in Sources */,
 				954F9BA83059A94100EDB828 /* BlueCoatTheme+CheckboxSnapshotsTests.swift in Sources */,
@@ -4352,9 +4530,11 @@
 				954F9BAE3059A94100EDB828 /* BlueCoatTheme+ListItemSnapshotsTests.swift in Sources */,
 				954F9BAF3059A94100EDB828 /* BlueCoatTheme+ChipsSnapshotsTests.swift in Sources */,
 				954F9BB03059A94100EDB828 /* BlueCoatTheme+SwitchSnapshotsTests.swift in Sources */,
+				958AE419305C1ACB00B61F94 /* FoxyRoughTheme+CircularProgressIndicatorSnapshotsTests.swift in Sources */,
 				954F9BB13059A94100EDB828 /* TokensElevationSnapshotsTestsTestCase.swift in Sources */,
 				954F9BB23059A94100EDB828 /* BlueCoatTheme+AlertMessageSnapshotsTests.swift in Sources */,
 				954F9BB33059A94100EDB828 /* TextAreaSnapshotsTestsTestCase.swift in Sources */,
+				958AE434305C1B9D00B61F94 /* FoxyRoughTheme+TokensSizeSnapshotsTests.swift in Sources */,
 				953EDD9B302FCCD40008FEA7 /* ChipPickerPage.swift in Sources */,
 				953EDD9C302FCCD40008FEA7 /* SuggestionChipElement.swift in Sources */,
 				953EDD9D302FCCD40008FEA7 /* SuggestionChipPage.swift in Sources */,
@@ -4363,10 +4543,12 @@
 				953EDDA0302FCCD40008FEA7 /* RadioPage.swift in Sources */,
 				953EDDA1302FCCD40008FEA7 /* RadioItemElement.swift in Sources */,
 				953EDDA2302FCCD40008FEA7 /* RadioItemPage.swift in Sources */,
+				958AE420305C1ACB00B61F94 /* FoxyRoughTheme+TextAreaSnapshotsTests.swift in Sources */,
 				953EDDA3302FCCD40008FEA7 /* RadioPickerElement.swift in Sources */,
 				953EDDA4302FCCD40008FEA7 /* RadioPickerPage.swift in Sources */,
 				953EDDA5302FCCD40008FEA7 /* RadioElements.swift in Sources */,
 				953EDDA6302FCCD40008FEA7 /* SwitchElement.swift in Sources */,
+				958AE41A305C1ACB00B61F94 /* FoxyRoughTheme+TextInputSnapshotsTests.swift in Sources */,
 				953EDDA7302FCCD40008FEA7 /* SwitchPage.swift in Sources */,
 				953EDDA8302FCCD40008FEA7 /* SwitchItemPage.swift in Sources */,
 				953EDDA9302FCCD40008FEA7 /* SwitchItemElement.swift in Sources */,
@@ -4386,6 +4568,7 @@
 				953EDDB7302FCCD40008FEA7 /* InputTagPage.swift in Sources */,
 				953EDDB8302FCCD40008FEA7 /* TagElement.swift in Sources */,
 				953EDDB9302FCCD40008FEA7 /* TagPage.swift in Sources */,
+				958AE438305C1B9D00B61F94 /* FoxyRoughTheme+TokensColorSnapshotsTests.swift in Sources */,
 				953EDDBA302FCCD40008FEA7 /* TagElements.swift in Sources */,
 				953EDDBB302FCCD40008FEA7 /* CircularProgressIndicatorElement.swift in Sources */,
 				953EDDBC302FCCD40008FEA7 /* LinearProgressIndicatorElement.swift in Sources */,
@@ -4395,10 +4578,12 @@
 				953EDDC0302FCCD40008FEA7 /* DividerElement.swift in Sources */,
 				953EDDC1302FCCD40008FEA7 /* DividerPage.swift in Sources */,
 				953EDDC2302FCCD40008FEA7 /* DividerElements.swift in Sources */,
+				958AE41C305C1ACB00B61F94 /* FoxyRoughTheme+InlineAlertSnapshotsTests.swift in Sources */,
 				953EDDC3302FCCD40008FEA7 /* NavigationListItemElement.swift in Sources */,
 				953EDDC4302FCCD40008FEA7 /* NavigationListItemPage.swift in Sources */,
 				953EDDC5302FCCD40008FEA7 /* StaticListItemElement.swift in Sources */,
 				953EDDC6302FCCD40008FEA7 /* StaticListItemPage.swift in Sources */,
+				958AE41D305C1ACB00B61F94 /* FoxyRoughTheme+ButtonSnapshotsTests.swift in Sources */,
 				953EDDC7302FCCD40008FEA7 /* ListItemElements.swift in Sources */,
 				953EDDC8302FCCD40008FEA7 /* ToolBarCommonContent.swift in Sources */,
 				953EDDC9302FCCD40008FEA7 /* ToolBarTopElement.swift in Sources */,
@@ -4429,6 +4614,7 @@
 				953EDDE2302FCCD40008FEA7 /* DesignToolboxElementsPage.swift in Sources */,
 				953EDDE3302FCCD40008FEA7 /* DesignToolboxVariantElement.swift in Sources */,
 				953EDDE4302FCCD40008FEA7 /* ElementsGridView.swift in Sources */,
+				958AE439305C1B9D00B61F94 /* FoxyRoughTheme+TokensSpaceSnapshotsTests.swift in Sources */,
 				953EDDE5302FCCD40008FEA7 /* DesignToolbox+EnrichedTexts.swift in Sources */,
 				953EDDE7302FCCD40008FEA7 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				953EDD67302FCC9E0008FEA7 /* NamedColorMode.swift in Sources */,
@@ -4437,6 +4623,7 @@
 				953EDD6A302FCC9E0008FEA7 /* NamedColor.swift in Sources */,
 				953EDD6B302FCC9E0008FEA7 /* NamedColor+Ai.swift in Sources */,
 				953EDD6C302FCC9E0008FEA7 /* NamedColor+Action.swift in Sources */,
+				958AE426305C1ACB00B61F94 /* FoxyRoughTheme+BadgeSnapshotsTests.swift in Sources */,
 				953EDD6D302FCC9E0008FEA7 /* NamedColor+Always.swift in Sources */,
 				953EDD6E302FCC9E0008FEA7 /* NamedColor+Background.swift in Sources */,
 				953EDD6F302FCC9E0008FEA7 /* NamedColor+Border.swift in Sources */,
@@ -4465,12 +4652,15 @@
 				953EDD50302FCBF50008FEA7 /* CheckboxIndeterminateConfiguration.swift in Sources */,
 				953EDD51302FCBF50008FEA7 /* CheckboxPickerConfiguration.swift in Sources */,
 				953EDD52302FCBF50008FEA7 /* RadioConfiguration.swift in Sources */,
+				958AE427305C1ACB00B61F94 /* FoxyRoughTheme+ListItemSnapshotsTests.swift in Sources */,
 				953EDD53302FCBF50008FEA7 /* RadioPickerConfiguration.swift in Sources */,
 				953EDD54302FCBF50008FEA7 /* ListItemAvatarConfiguration.swift in Sources */,
 				953EDD55302FCBF50008FEA7 /* ListItemBadgeConfiguration.swift in Sources */,
 				953EDD56302FCBF50008FEA7 /* ListItemFlagConfiguration.swift in Sources */,
 				953EDD57302FCBF50008FEA7 /* ListItemIconConfiguration.swift in Sources */,
+				958AE41F305C1ACB00B61F94 /* FoxyRoughTheme+TagSnapshotsTests.swift in Sources */,
 				953EDD58302FCBF50008FEA7 /* ListItemImageConfiguration.swift in Sources */,
+				958AE435305C1B9D00B61F94 /* FoxyRoughTheme+TokensFontSnapshotsTests.swift in Sources */,
 				953EDD59302FCBF50008FEA7 /* ListItemConfigurationModel.swift in Sources */,
 				953EDD5A302FCBF50008FEA7 /* ListItemGlobalConfiguration.swift in Sources */,
 				953EDD5B302FCBF50008FEA7 /* ListItemLeadingConfiguration.swift in Sources */,
@@ -4479,15 +4669,18 @@
 				953EDD5E302FCBF50008FEA7 /* NavigationListItemConfiguration.swift in Sources */,
 				957A1760305996F200FAA291 /* Dummy.swift in Sources */,
 				953EDD5F302FCBF50008FEA7 /* ToolBarCommonConfiguration.swift in Sources */,
+				958AE424305C1ACB00B61F94 /* FoxyRoughTheme+RadioButtonSnapshotsTests.swift in Sources */,
 				953EDD70302FCBF50008FEA8 /* ToolBarPrincipalConfiguration.swift in Sources */,
 				953EDD71302FCBF50008FEA9 /* ToolBarTrailingConfiguration.swift in Sources */,
 				953EDD72302FCBF50008FEA0 /* ToolBarItemStyle.swift in Sources */,
+				958AE41B305C1ACB00B61F94 /* FoxyRoughTheme+LinearProgressIndicatorSnapshotsTests.swift in Sources */,
 				953EDD60302FCBF50008FEA7 /* SandboxConfiguration.swift in Sources */,
 				953EDD4E302FCBDD0008FEA7 /* ComponentPage.swift in Sources */,
 				953EDD4D302FCB8B0008FEA7 /* TextualContentMode.swift in Sources */,
 				953EDD32302FCB520008FEA7 /* ControlItemConfigurationViews.swift in Sources */,
 				953EDD33302FCB520008FEA7 /* InlineAlertConfigurationView.swift in Sources */,
 				953EDD34302FCB520008FEA7 /* AlertMessageConfigurationView.swift in Sources */,
+				958AE418305C1ACB00B61F94 /* FoxyRoughtTheme+DividerSnapshotsTests.swift in Sources */,
 				953EDD35302FCB520008FEA7 /* ButtonConfigurationView.swift in Sources */,
 				953EDD36302FCB520008FEA7 /* BulletListConfigurationView.swift in Sources */,
 				953EDD37302FCB520008FEA7 /* PasswordInputConfigurationView.swift in Sources */,
@@ -4517,6 +4710,7 @@
 				07523E7E2E00173D00A7C87C /* ControlItemConfigurationModel.swift in Sources */,
 				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */,
+				958AE421305C1ACB00B61F94 /* FoxyRoughTheme+PinCodeInputSnapshotsTests.swift in Sources */,
 				950288A82EEC629300510C32 /* NamedSize+MinWidth.swift in Sources */,
 				953E02452F7D3AE100550DD6 /* PinCodeInputConfigurationView.swift in Sources */,
 				07F0AFE82CFE0FBD00D334DD /* DesignToolboxConfiguration.swift in Sources */,
@@ -4539,6 +4733,8 @@
 				51A905FD2E8427C6003F3E0E /* View+NavigationBar.swift in Sources */,
 				0762276C2DA93D62009C3632 /* DesignToolboxColorPicker.swift in Sources */,
 				FCDECD8F303ED7A40069D50A /* ProgressIndicator+extension.swift in Sources */,
+				958AE42A305C1ACB00B61F94 /* FoxyRoughTheme+AlertMessageSnapshotsTests.swift in Sources */,
+				958AE437305C1B9D00B61F94 /* FoxyRoughTheme+TokensElevationSnapshotsTests.swift in Sources */,
 				4BE747770D2172B43FAC3973 /* CodeConfigurationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

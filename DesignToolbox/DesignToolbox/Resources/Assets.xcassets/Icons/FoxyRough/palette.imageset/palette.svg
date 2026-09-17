@@ -1,0 +1,18 @@
+<!-- Copyright Pierre-Yves Lapersonne, licensed under Creative Commons Zero -->
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Carré avec bordure épaisse -->
+  <rect x="5" y="5" width="70" height="70" fill="none" stroke="#2c3e50" stroke-width="4"/>
+
+  <!-- Disque plein au centre -->
+  <circle cx="40" cy="40" r="18" fill="#2055E5FF"/>
+
+  <!-- Cercles qui orbitent -->
+  <circle cx="40" cy="18" r="4" fill="#2055E5FF"/>
+  <circle cx="58" cy="28" r="4" fill="#2055E5FF"/>
+  <circle cx="62" cy="48" r="4" fill="#2055E5FF"/>
+  <circle cx="50" cy="62" r="4" fill="#2055E5FF"/>
+  <circle cx="30" cy="62" r="4" fill="#2055E5FF"/>
+  <circle cx="18" cy="48" r="4" fill="#2055E5FF"/>
+  <circle cx="22" cy="28" r="4" fill="#2055E5FF"/>
+  <circle cx="40" cy="66" r="4" fill="#2055E5FF"/>
+</svg>
