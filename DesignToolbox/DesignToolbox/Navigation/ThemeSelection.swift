@@ -14,6 +14,9 @@ extension MISOTheme: @retroactive Identifiable, @retroactive Hashable {
 
     /// The text displayed in submenus of the theme selector
     var description: String {
+        if self is FoxyRoughTheme {
+            return FoxyRoughTheme.themeName
+        }
         if self is BlueCoatTheme {
             return BlueCoatTheme.name
         }
@@ -24,11 +27,14 @@ extension MISOTheme: @retroactive Identifiable, @retroactive Hashable {
 
     /// The unique identifier to store the selected theme
     public var id: String {
-        var constructedId = String(describing: Self.self)
-        if self is BlueCoatTheme {
-            constructedId = BlueCoatTheme.name
+        if self is FoxyRoughTheme {
+            return FoxyRoughTheme.themeName
         }
-        return constructedId
+
+        if self is BlueCoatTheme {
+            return BlueCoatTheme.name
+        }
+        return String(describing: Self.self)
     }
 
     // MARK: Hashable
@@ -64,11 +70,12 @@ extension MISOTheme: @retroactive Identifiable, @retroactive Hashable {
 
         // Init all themes
         let blueCoatTheme = BlueCoatTheme()
+        let foxyRoughTheme = FoxyRoughTheme()
 
         let defaultTheme = blueCoatTheme
 
         // Fill arrays for menus
-        allThemes = [blueCoatTheme]
+        allThemes = [blueCoatTheme, foxyRoughTheme]
 
         if let theme = allThemes.first(where: { $0.id == ThemeProvider.currentTheme }) {
             currentTheme = theme
