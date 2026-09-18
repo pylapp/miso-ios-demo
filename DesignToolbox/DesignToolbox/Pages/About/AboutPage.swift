@@ -107,15 +107,6 @@ struct AboutPage: View {
 
         LiquidGlassStateItem()
 
-        VersionItem(title: "app_about_details_themeCoreVersion",
-                    version: MISOVersions.themeCoreVersion)
-
-        VersionItem(title: "app_about_details_themeBlueCoatCoreVersion",
-                    version: MISOVersions.themeBlueCoatCoreVersion)
-
-        VersionItem(title: "app_about_details_themeBlueCoatBrandVersion",
-                    version: MISOVersions.themeBlueCoatBrandVersion)
-
         OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
             .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
 
