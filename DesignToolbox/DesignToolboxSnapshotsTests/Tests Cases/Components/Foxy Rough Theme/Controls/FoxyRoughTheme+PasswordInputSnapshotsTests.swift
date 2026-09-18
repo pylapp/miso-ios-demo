@@ -1,11 +1,13 @@
 // Software: MISO iOS (demo app)
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
 import MISOSwiftUI
 import SwiftUI
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 // MARK: - Test Cases
 
@@ -34,3 +36,4 @@ final class FoxyRoughThemePasswordInputSnapshotsTests: PasswordInputSnapshotsTes
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name
