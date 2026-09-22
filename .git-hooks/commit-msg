@@ -9,13 +9,13 @@
 # All these prefixes must of course match the rules define for commits parsers in some the cliff.toml files
 # for CHANGELOG / RELEASE NOTE generation
 # See https://www.conventionalcommits.org/en/v1.0.0/
-PATTERN_SECTION_ADDED="feat:|chore: add"
-PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete"
+PATTERN_SECTION_ADDED="feat:|chore: add|feat(OUDS):|chore(OUDS): add"
+PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete|refactor(OUDS): remove|refactor(OUDS): delete|chore(OUDS): remove|chore(OUDS): delete"
 PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
-PATTERN_SECTION_FIXED="fix:"
+PATTERN_SECTION_FIXED="fix:|fix(OUDS):"
 PATTERN_SECTION_SECURITY="fix\(security\):"
-PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:"
-PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|ci:|docs:|style:|refactor:|perf:|test:"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(@pylapp\)!:feat(OUDS)!:|chore(OUDS)!:|refactor(OUDS)!:|fix(OUDS)!:"
+PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(@pylapp\):|chore(OUDS):|ci:|docs:|style:|refactor:|refactor\(@pylapp\):|refactor(OUDS):|perf:|test:"
 
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"
