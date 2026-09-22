@@ -1,6 +1,7 @@
 // Software: MISO iOS (demo app)
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: Copyright (c) Pierre-Yves Lapersonne
+// ✿✿✿✿ ʕ •ᴥ•ʔ/ ︻デ═一
 
 import MISOSwiftUI
 
@@ -8,8 +9,11 @@ extension MISOTheme {
 
     /// The name of the theme used in snapshots files names
     var name: String {
+        if self is FoxyRoughTheme {
+            return "FoxyRough"
+        }
         if self is BlueCoatTheme {
-            return BlueCoatTheme.name
+            return "BlueCoat"
         }
         return String(describing: Self.self)
     }
