@@ -29,15 +29,11 @@ final class BlueCoatThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTes
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        // Wireframe theme does not have yet color charts branded for it
-        // If the provider is defined that's unexpected, it should be nil
         if theme.colorsCharts != nil {
-            XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
+            XCTFail("The theme does not have yet color charts, that's unexpected")
         }
-        // Wireframe theme does not have yet color decorative branded for it
-        // If the provider is defined that's unexpected, it should be nil
         if theme.colorsDecorative != nil {
-            XCTFail("The Wireframe theme does not have yet color decorative, that's unexpected")
+            XCTFail("The theme does not have yet color decorative, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
@@ -55,24 +51,16 @@ final class BlueCoatThemeTokensColorSnapshotsTests: TokensColorSnapshotsTestsTes
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        // Wireframe theme does not have yet color charts branded for it
-        // If the provider is defined that's unexpected, it should be nil
+
         if theme.colorsCharts != nil {
-            XCTFail("The Wireframe theme does not have yet color charts, that's unexpected")
+            XCTFail("The theme does not have yet color charts, that's unexpected")
         }
-        // Wireframe theme does not have yet color decorative branded for it
-        // If the provider is defined that's unexpected, it should be nil
         if theme.colorsDecorative != nil {
-            XCTFail("The Wireframe theme does not have yet color decorative, that's unexpected")
+            XCTFail("The theme does not have yet color decorative, that's unexpected")
         }
         testContentColors(theme: theme, interfaceStyle: interfaceStyle)
         testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
         testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
-        /*
-         There are some failures with two tokens, even if the snapshots are fresh:
-         - Wireframe Theme, dark mode --> repositoryOpacityBlackHighest
-         - Wireframe Theme, dark mode --> surfaceInverseHigh
-         */
         testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
         testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle, precision: 0.94, perceptualPrecision: 0.96)
     }

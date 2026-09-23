@@ -127,7 +127,6 @@ struct ThemeSelectionButton: View {
     private var menuBody: some View {
         Menu {
             #if !os(macOS) && !os(tvOS)
-            // Sosh and BlueCoat themes (which do not have tunings)
             Picker(selection: $themeProvider.currentTheme, label: EmptyView()) {
                 ForEach(themeProvider.allThemes, id: \.id) { theme in
                     Text(theme.description).tag(theme)
@@ -203,7 +202,7 @@ struct HotSwitchWarningModifier: ViewModifier {
 ///
 /// SwiftUI's `Menu` API requires tvOS 17+ and behaves poorly with nested
 /// pickers, so on tvOS the theme selection is presented as a `List` grouped by
-/// theme family (Orange / Orange Compact / Other). Each row is a focusable
+/// theme family. Each row is a focusable
 /// button and the currently active theme is marked with a checkmark.
 private struct TVOSThemePickerSheet: View {
 

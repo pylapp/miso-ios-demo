@@ -19,25 +19,25 @@ final class FoxyRoughThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
         theme = FoxyRoughTheme()
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `light` color scheme.
+    /// Tests all tags configuration in the `FoxyRough` with the `light` color scheme.
     @MainActor func testAllTagsFoxyRoughThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `dark` color scheme.
+    /// Tests all tags configuration in the `FoxyRough` with the `dark` color scheme.
     @MainActor func testAllTagsFoxyRoughThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `light` color scheme.
+    /// Tests all tags configuration in the `FoxyRough` with the `light` color scheme.
     @MainActor func testAllInputTagsFoxyRoughThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `dark` color scheme.
+    /// Tests all tags configuration in the `FoxyRough` with the `dark` color scheme.
     @MainActor func testAllInputTagsFoxyRoughThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)

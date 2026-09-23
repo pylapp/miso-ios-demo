@@ -362,150 +362,6 @@
         }
       }
     },
-    "app_about_details_themeCoreVersion" : {
-      "comment" : "About screen - Tokens library version (Core)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة رموز MISO الأساسية"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MISO core tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens core MISO"
-          }
-        }
-      }
-    },
-    "app_about_details_themeOrangeBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Orange)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Orange"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orange brand tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens brand Orange"
-          }
-        }
-      }
-    },
-    "app_about_details_themeOrangeCompactBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Orange Compact)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة الرموز المميزة للعلامة التجارية Orange Compact"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orange Compact brand tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens brand Orange Compact"
-          }
-        }
-      }
-    },
-    "app_about_details_themeOrangeCoreVersion" : {
-      "comment" : "About screen - Tokens library version (Orange)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة رموز Orange core"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orange core tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens core Orange"
-          }
-        }
-      }
-    },
-    "app_about_details_themeSoshBrandVersion" : {
-      "comment" : "About screen - Tokens library version (Sosh)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة رموز العلامة التجارية Sosh"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sosh brand tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens brand Sosh"
-          }
-        }
-      }
-    },
-    "app_about_details_themeSoshCoreVersion" : {
-      "comment" : "About screen - Tokens library version (Sosh)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار مكتبة رموز Sosh الأساسية"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sosh core tokens library version"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version des tokens core Sosh"
-          }
-        }
-      }
-    },
     "app_about_details_themeBlueCoatBrandVersion" : {
       "comment" : "About screen - Tokens library version (BlueCoat)",
       "extractionState" : "manual",
@@ -550,6 +406,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version des tokens core BlueCoat"
+          }
+        }
+      }
+    },
+    "app_about_details_themeCoreVersion" : {
+      "comment" : "About screen - Tokens library version (Core)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار مكتبة رموز MISO الأساسية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MISO core tokens library version"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version des tokens core MISO"
           }
         }
       }
@@ -10152,10 +10032,6 @@
           }
         }
       },
-      "shouldTranslate" : false
-    },
-    "Orange Compact" : {
-      "extractionState" : "manual",
       "shouldTranslate" : false
     }
   },

@@ -21,11 +21,11 @@ struct ColorTokenPage: View {
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForBorder() } header: { header("Border") }
-            if theme.colorsCharts != nil { // Some themes like Sosh do not have color charts
+            if theme.colorsCharts != nil {
                 Section { illustrationForChart() } header: { header("Chart") }
             }
             Section { illustrationForContent() } header: { header("Content") }
-            if theme.colorsDecorative != nil { // Some themes like Sosh do not have decorative charts
+            if theme.colorsDecorative != nil {
                 Section { illustrationForDecorative() } header: { header("Decorative") }
             }
             Section { illustrationForOpacity() } header: { header("Opacity") }

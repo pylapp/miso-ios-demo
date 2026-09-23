@@ -19,25 +19,25 @@ final class BlueCoatThemeTagSnapshotsTests: TagSnapshotsTestsTestCase {
         theme = BlueCoatTheme()
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `light` color scheme.
+    /// Tests all tags configuration in the `BlueCoat` with the `light` color scheme.
     @MainActor func testAllTagsBlueCoatThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `dark` color scheme.
+    /// Tests all tags configuration in the `BlueCoat` with the `dark` color scheme.
     @MainActor func testAllTagsBlueCoatThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `light` color scheme.
+    /// Tests all tags configuration in the `BlueCoat` with the `light` color scheme.
     @MainActor func testAllInputTagsBlueCoatThemeLight() {
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all tags configuration in the `Wireframe` with the `dark` color scheme.
+    /// Tests all tags configuration in the `BlueCoat` with the `dark` color scheme.
     @MainActor func testAllInputTagsBlueCoatThemeDark() {
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllInputTags(theme: theme, interfaceStyle: interfaceStyle)
