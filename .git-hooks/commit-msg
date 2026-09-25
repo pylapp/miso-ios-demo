@@ -9,13 +9,13 @@
 # All these prefixes must of course match the rules define for commits parsers in some the cliff.toml files
 # for CHANGELOG / RELEASE NOTE generation
 # See https://www.conventionalcommits.org/en/v1.0.0/
-PATTERN_SECTION_ADDED="feat:|chore: add|feat(OUDS):|chore(OUDS): add"
-PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete|refactor(OUDS): remove|refactor(OUDS): delete|chore(OUDS): remove|chore(OUDS): delete"
+PATTERN_SECTION_ADDED="feat:|chore: add|feat\(OUDS\):|chore\(OUDS\): add"
+PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete|refactor\(OUDS\): remove|refactor\(OUDS\): delete|chore\(OUDS\): remove|chore\(OUDS)\: delete"
 PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
-PATTERN_SECTION_FIXED="fix:|fix(OUDS):"
+PATTERN_SECTION_FIXED="fix:|fix\(OUDS\):"
 PATTERN_SECTION_SECURITY="fix\(security\):"
-PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|refactor\(@pylapp\)!:feat(OUDS)!:|chore(OUDS)!:|refactor(OUDS)!:|fix(OUDS)!:"
-PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(@pylapp\):|chore(OUDS):|ci:|docs:|style:|refactor:|refactor\(@pylapp\):|refactor(OUDS):|perf:|test:"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|feat\(OUDS\)!:|chore(OUDS)!:|refactor\(OUDS\)!:|fix\(OUDS\)!:"
+PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(OUDS\):|ci:|docs:|style:|refactor:|refactor\(OUDS\):|perf:|test:"
 
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"
@@ -162,8 +162,8 @@ if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
     echo -e "\tTo deprecate things......: 'refactor(deprecated)' \t 'chore(deprecated)'"
     echo -e "\tTo fix things............: 'fix:"
     echo -e "\tFor security fixes.......: 'fix(security)'"
-    echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t 'fix!:'"
-    echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'ci:' \t 'docs:' \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
+    echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'refactor(OUDS)!:' \t \t 'fix!:'"
+    echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'chore(OUDS)' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
     echo "Your commit message: '$COMMIT_MESSAGE'"
     exit 1
 fi
