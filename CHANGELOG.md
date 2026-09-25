@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Code samples for `alert message` component (Orange-OpenSource/ouds-ios#1775)
 - [Library] **BREAKING**: missing `maxWidthBoxedText` token in `SizeMultipleSemanticTokens` (Orange-OpenSource/ouds-ios#1714)
 
 ## [1.1.0](https://github.com/pylapp/miso-ios-demo/releases/compare/1.0.0..1.1.0) - 2026-09-22
