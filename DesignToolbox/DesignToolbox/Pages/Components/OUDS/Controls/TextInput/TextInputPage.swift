@@ -45,7 +45,7 @@ struct TextInputDemo: View {
         case .raw:
             MISOTextInput(label: configurationModel.label,
                           text: $configurationModel.text,
-                          placeholder: configurationModel.placeholderText,
+                          placeholder: configurationModel.placeholderTextValue,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
                           leadingImage: leadingImage,
@@ -60,7 +60,7 @@ struct TextInputDemo: View {
         case .rich:
             MISOTextInput(label: configurationModel.label,
                           text: $configurationModel.text,
-                          placeholder: configurationModel.placeholderText,
+                          placeholder: configurationModel.placeholderTextValue,
                           prefix: configurationModel.prefixText,
                           suffix: configurationModel.suffixText,
                           leadingImage: leadingImage,
