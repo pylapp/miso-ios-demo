@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of MISO iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 // MARK: - Categorical Tag Layout
@@ -35,6 +26,10 @@ enum CategoricalTagLayout: DesignToolboxEnumLocalizedRepresentable, CaseIterable
 
 final class CategoricalTagConfigurationModel: ComponentConfiguration {
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
@@ -43,7 +38,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var category: OUDSCategoricalTag.Category {
+    @Published var category: MISOCategoricalTag.Category {
         didSet { updateCode() }
     }
 
@@ -59,11 +54,11 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var shape: OUDSTag.Shape {
+    @Published var shape: MISOTag.Shape {
         didSet { updateCode() }
     }
 
-    @Published var size: OUDSTag.Size {
+    @Published var size: MISOTag.Size {
         didSet { updateCode() }
     }
 
@@ -80,6 +75,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
     }
 
     override init() {
+        showSkeleton = false
         enabled = true
         label = String(localized: "app_components_common_label_label")
         category = .category1
@@ -111,7 +107,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
         !isLoading && layout == .textAndIcon
     }
 
-    @MainActor func leading(from theme: OUDSTheme) -> OUDSCategoricalTag.Leading {
+    @MainActor func leading(from theme: MISOTheme) -> MISOCategoricalTag.Leading {
         switch layout {
         case .textOnly:
             return .none
@@ -122,23 +118,31 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
                 ? Image.defaultImage(prefixedBy: theme.name)
                 : Image.placeholderImage()
             let renderingMode: Image.TemplateRenderingMode = iconType == .tintedIcon ? .template : .original
-            return .icon(OUDSImage(asset: asset, flipped: flipIcon, renderingMode: renderingMode))
+            return .icon(MISOImage(asset: asset, flipped: flipIcon, renderingMode: renderingMode))
         }
     }
 
     // swiftlint:disable line_length
     override func updateCode() {
         if isLoading {
-            code = "OUDSCategoricalTag(loadingLabel: \"\(label)\"\(progressPattern)\(categoryPattern)\(shapePattern)\(sizePattern))"
+            code = """
+            MISOCategoricalTag(loadingLabel: \"\(label)\"\(progressPattern)\(categoryPattern)\(shapePattern)\(sizePattern))
+            \(skeletonPattern)
+            """
         } else {
             code = """
-            OUDSCategoricalTag(label: "\(label)", category: \(category.technicalDescription), leading: \(leadingPattern), shape: \(shape.technicalDescription), size: \(size.technicalDescription))
+            MISOCategoricalTag(label: "\(label)", category: \(category.technicalDescription), leading: \(leadingPattern), shape: \(shape.technicalDescription), size: \(size.technicalDescription))
+            \(skeletonPattern)
             \(disablePattern)
             """
         }
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var disablePattern: String {
         !isLoading && !enabled ? ".disabled(true)" : ""
@@ -173,7 +177,7 @@ final class CategoricalTagConfigurationModel: ComponentConfiguration {
             let iconAssetSample = iconType == .tintedIcon ? Image.defaultImageSample() : "Image(decorative: \"il_placeholder\")"
             let flipIconPattern = flipIcon ? ", flipped: true" : ""
             let renderingModeCode = iconType == .image ? ", renderingMode: .original" : ""
-            return ".icon(OUDSImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
+            return ".icon(MISOImage(asset: \(iconAssetSample)\(flipIconPattern)\(renderingModeCode)))"
         }
     }
 }
@@ -187,39 +191,41 @@ struct CategoricalTagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            OUDSSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
+            MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
+            MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isLoading)
 
-            OUDSSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
+            MISOSwitchItem("app_components_common_flipIcon_tech", isOn: $configurationModel.flipIcon)
                 .disabled(!configurationModel.enableFlipIcon)
 
-            OUDSChipPicker(title: "app_components_common_category_tech",
+            MISOChipPicker(title: "app_components_common_category_tech",
                            selection: $configurationModel.category,
-                           chips: OUDSCategoricalTag.Category.chips)
+                           chips: MISOCategoricalTag.Category.chips)
 
-            OUDSChipPicker(title: "app_components_common_layout_tech",
+            MISOChipPicker(title: "app_components_common_layout_tech",
                            selection: $configurationModel.layout,
                            chips: CategoricalTagLayout.chips)
 
             if configurationModel.layout == .textAndIcon {
-                OUDSChipPicker(title: "app_components_common_statusIcon_tech",
+                MISOChipPicker(title: "app_components_common_statusIcon_tech",
                                selection: $configurationModel.iconType,
                                chips: DefinedStatusIcons.chips)
             }
 
-            OUDSChipPicker(title: "app_components_tag_shape_tech",
+            MISOChipPicker(title: "app_components_tag_shape_tech",
                            selection: $configurationModel.shape,
-                           chips: OUDSTag.Shape.chips)
+                           chips: MISOTag.Shape.chips)
 
-            OUDSChipPicker(title: "app_components_common_size_tech",
+            MISOChipPicker(title: "app_components_common_size_tech",
                            selection: $configurationModel.size,
-                           chips: OUDSTag.Size.chips)
+                           chips: MISOTag.Size.chips)
 
-            OUDSSwitchItem("app_components_common_loader_tech", isOn: $configurationModel.isLoading)
+            MISOSwitchItem("app_components_common_loader_tech", isOn: $configurationModel.isLoading)
                 .disabled(!configurationModel.enabled)
 
             if configurationModel.isLoading {
-                OUDSChipPicker(title: "app_components_progressIndicator_variant_tech",
+                MISOChipPicker(title: "app_components_progressIndicator_variant_tech",
                                selection: $configurationModel.progressVariant,
                                chips: CircularProgressIndicatorConfigurationModel.Variant.chips)
 
@@ -235,6 +241,6 @@ struct CategoricalTagConfigurationView: View {
     }
 }
 
-// MARK: - OUDSCategoricalTag.Category DesignToolboxEnumRepresentable
+// MARK: - MISOCategoricalTag.Category DesignToolboxEnumRepresentable
 
-extension OUDSCategoricalTag.Category: DesignToolboxEnumRepresentable {}
+extension MISOCategoricalTag.Category: DesignToolboxEnumRepresentable {}

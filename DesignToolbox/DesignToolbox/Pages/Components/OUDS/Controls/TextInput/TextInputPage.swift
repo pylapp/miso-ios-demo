@@ -41,38 +41,43 @@ struct TextInputDemo: View {
 
     var body: some View {
         // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            MISOTextInput(label: configurationModel.label,
-                          text: $configurationModel.text,
-                          placeholder: configurationModel.placeholderTextValue,
-                          prefix: configurationModel.prefixText,
-                          suffix: configurationModel.suffixText,
-                          leadingImage: leadingImage,
-                          trailingAction: trailingAction,
-                          helperText: configurationModel.helperText,
-                          helperLink: helperLink,
-                          isOutlined: configurationModel.isOutlined,
-                          constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                          status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
-        case .rich:
-            MISOTextInput(label: configurationModel.label,
-                          text: $configurationModel.text,
-                          placeholder: configurationModel.placeholderTextValue,
-                          prefix: configurationModel.prefixText,
-                          suffix: configurationModel.suffixText,
-                          leadingImage: leadingImage,
-                          trailingAction: trailingAction,
-                          helperText: configurationModel.richHelperText,
-                          helperLink: helperLink,
-                          isOutlined: configurationModel.isOutlined,
-                          constrainedMaxWidth: configurationModel.constrainedMaxWidth,
-                          status: configurationModel.computedStatus)
-                .autocorrectionDisabled()
-                .textInputDisableAutocapitalization()
+        Group {
+            switch configurationModel.textMode {
+            case .raw:
+                MISOTextInput(label: configurationModel.label,
+                              text: $configurationModel.text,
+                              placeholder: configurationModel.placeholderTextValue,
+                              prefix: configurationModel.prefixText,
+                              suffix: configurationModel.suffixText,
+                              leadingImage: leadingImage,
+                              trailingAction: trailingAction,
+                              helperText: configurationModel.helperText,
+                              helperLink: helperLink,
+                              isOutlined: configurationModel.isOutlined,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                              status: configurationModel.computedStatus)
+                    .autocorrectionDisabled()
+                    .textInputDisableAutocapitalization()
+            case .rich:
+                MISOTextInput(label: configurationModel.label,
+                              text: $configurationModel.text,
+                              placeholder: configurationModel.placeholderTextValue,
+                              prefix: configurationModel.prefixText,
+                              suffix: configurationModel.suffixText,
+                              leadingImage: leadingImage,
+                              trailingAction: trailingAction,
+                              helperText: configurationModel.richHelperText,
+                              helperLink: helperLink,
+                              isOutlined: configurationModel.isOutlined,
+                              constrainedMaxWidth: configurationModel.constrainedMaxWidth,
+                              status: configurationModel.computedStatus)
+                    .autocorrectionDisabled()
+                    .textInputDisableAutocapitalization()
+            }
         }
+        .autocorrectionDisabled()
+        .textInputDisableAutocapitalization()
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var leadingImage: MISOImage? {

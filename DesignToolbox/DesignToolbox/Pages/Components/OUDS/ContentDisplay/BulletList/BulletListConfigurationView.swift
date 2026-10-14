@@ -44,6 +44,10 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Computed properties
 
     var richLabel: AttributedString {
@@ -65,6 +69,7 @@ final class BulletListConfigurationModel: ComponentConfiguration {
         textStyle = .bodyLarge
         isBold = true
         textMode = .raw
+        showSkeleton = false
 
         super.init()
     }
@@ -161,7 +166,12 @@ final class BulletListConfigurationModel: ComponentConfiguration {
             """
             MISOBulletList(\(typePattern)\(textStylePattern)\(isBoldPattern))
             \(itemsPattern)
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 }
 
@@ -176,6 +186,8 @@ struct BulletListConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 MISOChipPicker(title: "app_components_common_type_tech",
                                selection: $configurationModel.bulletType,
                                chips: BulletListType.chips)

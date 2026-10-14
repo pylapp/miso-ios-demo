@@ -60,6 +60,10 @@ final class TagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -77,6 +81,7 @@ final class TagConfigurationModel: ComponentConfiguration {
         statusCategory = .neutral
         shape = .rounded
         appearance = .emphasized
+        showSkeleton = false
         super.init()
     }
 
@@ -138,13 +143,21 @@ final class TagConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         if isLoading {
-            code = "MISOTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))"
+            code = """
+            MISOTag(loadingLabel: \"\(label)\"\(progressPattern)\(shapePattern)\(sizePattern))"
+            \(skeletonPattern)
+            """
         } else {
             code = """
             MISOTag(label: \"\(label)\"\(statusPattern)\(appearancePattern)\(shapePattern)\(sizePattern))
             \(disablePattern)
+            \(skeletonPattern)
             """
         }
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var disablePattern: String {
@@ -207,6 +220,8 @@ struct TagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
                 .disabled(configurationModel.isLoading)
 

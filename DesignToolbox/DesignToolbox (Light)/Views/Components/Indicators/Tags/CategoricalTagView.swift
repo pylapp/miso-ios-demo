@@ -1,17 +1,8 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// Software: MISO iOS (demo app) (fork of MISO iOS Design System Toolbox)
 // SPDX-License-Identifier: MIT
-//
-// This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
-// or see the "LICENSE" file for more details.
-//
-// Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct CategoricalTagView: View {
@@ -40,24 +31,24 @@ struct CategoricalTagView: View {
 
     // swiftlint:disable accessibility_label_for_image
     @ViewBuilder
-    private func tags(with label: String, category: OUDSCategoricalTag.Category) -> some View {
+    private func tags(with label: String, category: MISOCategoricalTag.Category) -> some View {
         Text("None").font(.subheadline)
-        OUDSCategoricalTag(label: label, category: category, leading: .none, shape: .rounded, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .none, shape: .rounded, size: .small)
-        OUDSCategoricalTag(label: label, category: category, leading: .none, shape: .square, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .none, shape: .square, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .none, shape: .rounded, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .none, shape: .rounded, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .none, shape: .square, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .none, shape: .square, size: .small)
 
         Text("Bullet").font(.subheadline)
-        OUDSCategoricalTag(label: label, category: category, leading: .bullet, shape: .rounded, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .bullet, shape: .rounded, size: .small)
-        OUDSCategoricalTag(label: label, category: category, leading: .bullet, shape: .square, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .bullet, shape: .square, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .bullet, shape: .rounded, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .bullet, shape: .rounded, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .bullet, shape: .square, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .bullet, shape: .square, size: .small)
 
         Text("Image").font(.subheadline)
-        OUDSCategoricalTag(label: label, category: category, leading: .icon(OUDSImage(asset: Image(systemName: "sun.min.fill"))), shape: .rounded, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .icon(OUDSImage(asset: Image(systemName: "sun.min.fill"))), shape: .rounded, size: .small)
-        OUDSCategoricalTag(label: label, category: category, leading: .icon(OUDSImage(asset: Image(systemName: "sun.min.fill"))), shape: .square, size: .default)
-        OUDSCategoricalTag(label: label, category: category, leading: .icon(OUDSImage(asset: Image(systemName: "sun.min.fill"))), shape: .square, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .icon(MISOImage(asset: Image(systemName: "sun.min.fill"))), shape: .rounded, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .icon(MISOImage(asset: Image(systemName: "sun.min.fill"))), shape: .rounded, size: .small)
+        MISOCategoricalTag(label: label, category: category, leading: .icon(MISOImage(asset: Image(systemName: "sun.min.fill"))), shape: .square, size: .default)
+        MISOCategoricalTag(label: label, category: category, leading: .icon(MISOImage(asset: Image(systemName: "sun.min.fill"))), shape: .square, size: .small)
     }
     // swiftlint:enable accessibility_label_for_image
 }

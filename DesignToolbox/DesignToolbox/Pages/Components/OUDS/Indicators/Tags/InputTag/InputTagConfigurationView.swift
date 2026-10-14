@@ -18,9 +18,14 @@ final class InputTagConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     override init() {
         enabled = true
         label = String(localized: "app_components_common_label_label")
+        showSkeleton = false
         super.init()
     }
 
@@ -30,11 +35,16 @@ final class InputTagConfigurationModel: ComponentConfiguration {
         code = """
         MISOInputTag(label: \"\(label)\") {}
         \(disabledPattern)
+        \(skeletonPattern)
         """
     }
 
     private var disabledPattern: String {
         enabled ? "" : ".disabled(true)"
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 }
 
@@ -48,6 +58,8 @@ struct InputTagConfigurationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
             DesignToolboxEditContentDisclosure {

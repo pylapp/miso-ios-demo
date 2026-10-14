@@ -52,6 +52,7 @@ private struct NavigationListItemDemo: View {
         .misoListItemRoundedMedia(configurationModel.roundedMedia)
         .misoListItemSize(configurationModel.itemSize)
         .disabled(!configurationModel.enabled)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var rowGap: CGFloat {

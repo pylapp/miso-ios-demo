@@ -36,5 +36,6 @@ struct InlineAlertDemo: View {
             MISOInlineAlert(label: configurationModel.text, status: configurationModel.status(from: theme))
         }
         .padding(.all, theme.spaces.fixedMedium)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

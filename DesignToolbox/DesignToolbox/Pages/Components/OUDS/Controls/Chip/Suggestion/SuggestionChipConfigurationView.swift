@@ -28,6 +28,10 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -35,6 +39,7 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
         text = "app_components_chip_suggestionChip_chipContent_label".localized()
         layout = .textOnly
         iconType = .tintedIcon
+        showSkeleton = false
         super.init()
     }
 
@@ -42,7 +47,11 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
-    private var disabledCode: String {
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
+
+    private var disabledPattern: String {
         !enabled ? ".disabled(true)" : ""
     }
 
@@ -64,19 +73,22 @@ final class SuggestionChipConfigurationModel: ComponentConfiguration {
             code =
                 """
                 MISOSuggestionChip(text: \"\(text)\") {}
-                \(disabledCode)
+                \(disabledPattern)
+                \(skeletonPattern)
                 """
         case .iconOnly:
             code =
                 """
                 MISOSuggestionChip(image: MISOImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), accessibilityLabel: \"\(accessibilityLabelValue)\") {}
-                \(disabledCode)
+                \(disabledPattern)
+                \(skeletonPattern)
                 """
         case .textAndIcon:
             code =
                 """
                 MISOSuggestionChip(image: MISOImage(asset: Image(\"\(iconAssetName)\")\(renderingModeCode)), text: \"\(text)\") {}
-                \(disabledCode)
+                \(disabledPattern)
+                \(skeletonPattern)
                 """
         }
     }
@@ -93,6 +105,8 @@ struct SuggestionChipConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 MISOChipPicker(title: "app_components_common_layout_tech",

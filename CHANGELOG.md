@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/3.1.0...develop)
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/3.1.0...develop)
+
+### Added
+
+- [Library] `skeleton` on components (Orange-OpenSource/ouds-ios#1651)
+- [Library] `categorical tag` component (Orange-OpenSource/ouds-ios#1782)
 
 ### Changed
 

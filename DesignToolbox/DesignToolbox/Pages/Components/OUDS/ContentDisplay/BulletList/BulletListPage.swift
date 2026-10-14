@@ -33,19 +33,22 @@ struct BulletListDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        // To keep things simple, assuming the rich/raw mode is for all parameters
-        switch configurationModel.textMode {
-        case .raw:
-            MISOBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: rawItems)
-        case .rich:
-            MISOBulletList(type: bulletType,
-                           textStyle: configurationModel.textStyle,
-                           isBold: configurationModel.isBold,
-                           items: richItems)
+        Group {
+            // To keep things simple, assuming the rich/raw mode is for all parameters
+            switch configurationModel.textMode {
+            case .raw:
+                MISOBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: rawItems)
+            case .rich:
+                MISOBulletList(type: bulletType,
+                               textStyle: configurationModel.textStyle,
+                               isBold: configurationModel.isBold,
+                               items: richItems)
+            }
         }
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     @MISOBulletListItemBuilder

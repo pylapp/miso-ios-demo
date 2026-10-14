@@ -24,6 +24,10 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     /// The type of selection
     enum SelectionType: String, DesignToolboxEnumRepresentable {
         /// Single selection with tag of the selected chip, or none
@@ -50,12 +54,17 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         layout = .textAndIcon
         titleText = "Select a drink"
         selectionType = .single
+        showSkeleton = false
         super.init()
     }
 
     deinit {}
 
     // MARK: Component Configuration
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var disableCodePattern: String {
         !enabled ? ".disabled(true)" : ""
@@ -88,6 +97,7 @@ final class ChipPickerConfigurationModel: ComponentConfiguration {
         \(selectedValuePattern)
         MISOChipPicker(title: \"\(titleText)\", \(selectionTypePattern), chips: someChipsData)
         \(disableCodePattern)
+        \(skeletonPattern)
         """
     }
 
@@ -150,6 +160,8 @@ struct ChipPickerConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.enabled)
 
                 MISOChipPicker(title: "app_components_common_layout_tech",

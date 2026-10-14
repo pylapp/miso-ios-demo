@@ -235,7 +235,7 @@ struct LinearProgressIndicatorConfigurationView: View {
                                chips: MISOProgressIndicatorGapSize.chips)
 
                 if configurationModel.variant == .determinate {
-                    MISOSwitchItem("app_components_animated_tech",
+                    MISOSwitchItem("app_components_common_animated_tech",
                                    isOn: $configurationModel.animated)
 
                     MISOSwitchItem("app_components_progressIndicator_stopIndicator_tech",
@@ -262,11 +262,11 @@ struct LinearProgressIndicatorConfigurationView: View {
                     ((configurationModel.determinateHelperTextType == .percent && configurationModel.helperTextAlignment != .center)
                         || configurationModel.determinateHelperTextType == .description))
             {
-                DesignToolboxEditContentDisclosure(isContentVisible: true) {
-                    DesignToolboxTextField(text: $configurationModel.helperText,
-                                           label: "app_components_progressIndicator_helperText_tech")
-                }
+                DesignToolboxTextField(text: $configurationModel.helperText,
+                                       label: "app_components_progressIndicator_helperText_tech")
             }
+
+            MISOHorizontalDivider()
 
             DesignToolboxEditContentDisclosure(isContentVisible: true) {
                 VStack(spacing: theme.spaces.fixedSmall) {

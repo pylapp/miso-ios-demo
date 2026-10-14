@@ -204,7 +204,7 @@ struct CircularProgressIndicatorConfigurationView: View {
             if configurationModel.variant == .determinate {
                 DesignToolboxProgressControl(progress: $configurationModel.progress)
 
-                MISOSwitchItem("app_components_animated_tech",
+                MISOSwitchItem("app_components_common_animated_tech",
                                isOn: $configurationModel.animated)
             }
 

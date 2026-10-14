@@ -42,6 +42,7 @@ private struct CheckboxPickerDemo: View {
                            isReadOnly: configurationModel.isReadOnly,
                            hasDivider: configurationModel.hasDivider)
             .disabled(!configurationModel.isEnabled)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
 

@@ -32,36 +32,42 @@ private struct CheckboxItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        switch configurationModel.textMode {
-        case .raw:
-            MISOCheckboxItem(configurationModel.labelText,
-                             isOn: $configurationModel.isOn,
-                             description: configurationModel.descriptionText,
-                             image: image,
-                             isReversed: configurationModel.isReversed,
-                             isError: configurationModel.isError,
-                             errorText: configurationModel.errorText,
-                             isReadOnly: configurationModel.isReadOnly,
-                             hasDivider: configurationModel.hasDivider,
-                             constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-                .disabled(!configurationModel.enabled)
-                .designToolboxColoredSurface(false)
-                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
-        case .rich:
-            MISOCheckboxItem(configurationModel.labelText,
-                             isOn: $configurationModel.isOn,
-                             description: configurationModel.descriptionText,
-                             image: image,
-                             isReversed: configurationModel.isReversed,
-                             isError: configurationModel.isError,
-                             errorText: configurationModel.richErrorText,
-                             isReadOnly: configurationModel.isReadOnly,
-                             hasDivider: configurationModel.hasDivider,
-                             constrainedMaxWidth: configurationModel.constrainedMaxWidth)
-                .disabled(!configurationModel.enabled)
-                .designToolboxColoredSurface(false)
-                .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+        Group {
+            switch configurationModel.textMode {
+            case .raw:
+                MISOCheckboxItem(configurationModel.labelText,
+                                 isOn: $configurationModel.isOn,
+                                 description: configurationModel.descriptionText,
+                                 image: image,
+                                 isReversed: configurationModel.isReversed,
+                                 isError: configurationModel.isError,
+                                 errorText: configurationModel.errorText,
+                                 isReadOnly: configurationModel.isReadOnly,
+                                 hasDivider: configurationModel.hasDivider,
+                                 constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+                    .disabled(!configurationModel.enabled)
+                    .designToolboxColoredSurface(false)
+                    .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+            case .rich:
+                MISOCheckboxItem(configurationModel.labelText,
+                                 isOn: $configurationModel.isOn,
+                                 description: configurationModel.descriptionText,
+                                 image: image,
+                                 isReversed: configurationModel.isReversed,
+                                 isError: configurationModel.isError,
+                                 errorText: configurationModel.richErrorText,
+                                 isReadOnly: configurationModel.isReadOnly,
+                                 hasDivider: configurationModel.hasDivider,
+                                 constrainedMaxWidth: configurationModel.constrainedMaxWidth)
+                    .disabled(!configurationModel.enabled)
+                    .designToolboxColoredSurface(false)
+                    .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
+            }
         }
+        .disabled(!configurationModel.enabled)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
+        .designToolboxColoredSurface(false)
+        .accessibilityIdentifier(A11YIdentifiers.componentCheckboxItem)
     }
 
     private var image: MISOImage? {

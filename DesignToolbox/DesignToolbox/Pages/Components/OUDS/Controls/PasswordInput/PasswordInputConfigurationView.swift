@@ -76,6 +76,10 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -94,6 +98,8 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
 
         progressVariant = .indeterminate
         progressValue = 0.0
+
+        showSkeleton = false
 
         super.init()
     }
@@ -143,8 +149,13 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         code =
             """
             MISOPasswordInput(\(labelPattern)\(passwordPattern)\(isHiddenPasswordPattern)\(placeholderPattern)\(prefixPattern)\(lockIconPattern)\(helperTextPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
+            \(skeletonPattern)
             """
         // swiftlint:enable line_length
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var labelPattern: String {
@@ -216,6 +227,8 @@ struct PasswordInputConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
                 MISOSwitchItem("app_components_passwordInput_passwordHidden_tech", isOn: $configurationModel.isHiddenPassword)
 
                 MISOSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)

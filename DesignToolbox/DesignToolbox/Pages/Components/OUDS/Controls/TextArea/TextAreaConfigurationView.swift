@@ -123,6 +123,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -141,6 +145,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         status = .enabled
         progressVariant = .indeterminate
         progressValue = 0.0
+        showSkeleton = false
         super.init()
     }
 
@@ -205,10 +210,15 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         code =
             """
             MISOTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(constrainedMaxHeightPattern)\(statusPattern))
+            \(skeletonPattern)
             """
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var labelPattern: String {
         "label: \"\(label)\""
@@ -284,6 +294,7 @@ struct TextAreaConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 MISOSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 
