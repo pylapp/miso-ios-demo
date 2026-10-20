@@ -54,6 +54,7 @@ struct PinCodeInputDemo: View {
                 ScrollView(.horizontal) {
                     MISOPinCodeInput($configurationModel.value,
                                      length: length,
+                                     hiddenCharacters: configurationModel.hiddenCharacters,
                                      helperText: configurationModel.richHelperText,
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
@@ -61,6 +62,7 @@ struct PinCodeInputDemo: View {
             } else {
                 MISOPinCodeInput($configurationModel.value,
                                  length: length,
+                                 hiddenCharacters: configurationModel.hiddenCharacters,
                                  helperText: configurationModel.richHelperText,
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
@@ -70,6 +72,7 @@ struct PinCodeInputDemo: View {
                 ScrollView(.horizontal) {
                     MISOPinCodeInput($configurationModel.value,
                                      length: length,
+                                     hiddenCharacters: configurationModel.hiddenCharacters,
                                      helperText: configurationModel.helperText,
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
@@ -77,6 +80,7 @@ struct PinCodeInputDemo: View {
             } else {
                 MISOPinCodeInput($configurationModel.value,
                                  length: length,
+                                 hiddenCharacters: configurationModel.hiddenCharacters,
                                  helperText: configurationModel.helperText,
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
