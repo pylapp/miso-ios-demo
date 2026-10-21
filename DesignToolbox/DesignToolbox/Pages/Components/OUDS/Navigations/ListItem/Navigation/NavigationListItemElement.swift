@@ -31,7 +31,7 @@ struct NavigationListItemIllustration: View {
 
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
-            let data = MISOListItemData(label: "Label",
+            let data = MISOListItemData(label: .textual("Label"),
                                         description: "A description of the item to show in the list item view.")
             MISONavigationListItem(data: data, indicatorType: .next)
                 .misoListItemStyle(divider: false, background: false)

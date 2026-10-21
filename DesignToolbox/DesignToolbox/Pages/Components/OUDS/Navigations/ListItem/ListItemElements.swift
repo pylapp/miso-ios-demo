@@ -32,7 +32,7 @@ struct ListItemIllustration: View {
     var body: some View {
         VStack(spacing: theme.spaces.fixedSmall) {
             let data = MISOListItemData(label: .textual(.localized("app_components_common_label_label")),
-                                        description: .raw("app_components_listItemHelperText_label".localized()))
+                                        description: .localized("app_components_listItemHelperText_label"))
             MISOStaticListItem(data: data)
                 .misoListItemStyle(divider: false, background: true)
         }

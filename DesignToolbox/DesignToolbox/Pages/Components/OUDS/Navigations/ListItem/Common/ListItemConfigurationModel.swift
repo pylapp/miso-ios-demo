@@ -129,36 +129,35 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
         let slot: MISOListItemData.Slot? = textsModel.hasSlot ? .init { textsModel.textSlot() } : nil
         let bottomSlot: MISOListItemData.Slot? = textsModel.hasBottomSlot ? .init { textsModel.bottomSlot() } : nil
-
-        if textsModel.overlineTextMode == .rich {
-            let richOverline: AttributedString? = textsModel.overlineText.isEmpty ? nil : (try? AttributedString(markdown: textsModel.overlineText))
-            return buildDataItemWithRichOverline(currentLabel: currentLabel, overline: richOverline, slot: slot, bottomSlot: bottomSlot)
-        } else {
-            let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
-            return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
-        }
+        let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
+        return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
     }
 
     @MainActor
     private func buildDataItemWithRawOverline(currentLabel: String, overline: String?, slot: MISOListItemData.Slot?, bottomSlot: MISOListItemData.Slot?) -> MISOListItemData {
+        let description: MISOTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let overlineContent: MISOTextualContent? = overline.map { .raw($0) }
+        let extraLabel: MISOTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: MISOTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
-            MISOListItemData(
+            return MISOListItemData(
                 label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
-                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
-                overline: overline.map { .raw($0) },
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
-                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
-            MISOListItemData(
+            return MISOListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
-                overline: overline.map { .raw($0) },
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
-                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
@@ -172,24 +171,28 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         bottomSlot: MISOListItemData.Slot?) -> MISOListItemData
     {
         let safeOverline = overline ?? AttributedString("")
+        let description: MISOTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let extraLabel: MISOTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: MISOTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
+
         switch textsModel.labelContentType {
         case .text:
             return MISOListItemData(
                 label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
-                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                description: description,
                 overline: .rich(safeOverline),
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
-                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return MISOListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                description: description,
                 overline: .rich(safeOverline),
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
-                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
