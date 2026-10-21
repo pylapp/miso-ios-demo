@@ -55,7 +55,7 @@ struct SwitchesItemView: View {
                     image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isReversed: false,
                     isError: isError,
-                    errorText: isError ? "Error" : nil,
+                    errorText: isError ? .raw("Error") : nil,
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
@@ -66,7 +66,7 @@ struct SwitchesItemView: View {
                     image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                     isReversed: true,
                     isError: isError,
-                    errorText: isError ? "Error" : nil,
+                    errorText: isError ? .raw("Error") : nil,
                     isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }
@@ -100,7 +100,7 @@ struct SwitchesItemView: View {
                        image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: false,
                        isError: true,
-                       errorText: "Error")
+                       errorText: .raw("Error"))
 
         MISOSwitchItem("Label",
                        isOn: $isOn,
@@ -108,7 +108,7 @@ struct SwitchesItemView: View {
                        image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                        isReversed: true,
                        isError: true,
-                       errorText: "Error")
+                       errorText: .raw("Error"))
 
         Text("Disabled").font(.caption)
 

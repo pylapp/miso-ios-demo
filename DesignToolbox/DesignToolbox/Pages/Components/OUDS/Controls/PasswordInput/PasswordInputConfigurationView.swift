@@ -183,7 +183,13 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPattern: String {
-        helperText.isEmpty ? "" : ", helperText: \"\(helperText)\""
+        if helperText.isEmpty {
+            ""
+        } else if textMode == .rich {
+            ", helperText: .rich(yourAttributedString)"
+        } else {
+            ", helperText: .raw(\"\(helperText)\")"
+        }
     }
 
     private var outlinedPattern: String {
@@ -199,9 +205,9 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: .raw(\"\(errorText)\"))"
         case .richError:
-            ", status: .richError(message: yourAttributedString)"
+            ", status: .textualError(message: .rich(yourAttributedString))"
         case .loading:
             if progressVariant == .indeterminate {
                 ", status: .loading"

@@ -273,9 +273,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         if helperText.isEmpty {
             ""
         } else if textMode == .rich {
-            ", helperText: yourAttributedString"
+            ", helperText: .rich(yourAttributedString)"
         } else {
-            ", helperText: \"\(helperText)\""
+            ", helperText: .raw(\"\(helperText)\")"
         }
     }
 
@@ -296,9 +296,9 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .textualError(message: \"\(errorText)\")"
+            ", status: .textualError(message: .raw(\"\(errorText)\"))"
         case .richError:
-            ", status: .richError(message: yourAttributedString)"
+            ", status: .textualError(message: .rich(yourAttributedString))"
         case .loading:
             if progressVariant == .indeterminate {
                 ", status: .loading"

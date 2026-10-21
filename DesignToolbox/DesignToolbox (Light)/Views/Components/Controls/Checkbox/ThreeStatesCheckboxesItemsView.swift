@@ -60,14 +60,14 @@ struct ThreeStatesCheckboxesItemsView: View {
                                       description: "Description",
                                       isReversed: false,
                                       isError: true,
-                                      errorText: "Error")
+                                      errorText: .raw("Error"))
 
         MISOCheckboxItemIndeterminate("Label",
                                       selection: $state,
                                       description: "Description",
                                       isReversed: true,
                                       isError: true,
-                                      errorText: "Error")
+                                      errorText: .raw("Error"))
 
         Text("Read only").font(.subheadline)
 
@@ -107,7 +107,7 @@ struct ThreeStatesCheckboxesItemsView: View {
                                       image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                                       isReversed: false,
                                       isError: true,
-                                      errorText: "Error")
+                                      errorText: .raw("Error"))
 
         MISOCheckboxItemIndeterminate("Label",
                                       selection: $state,
@@ -115,7 +115,7 @@ struct ThreeStatesCheckboxesItemsView: View {
                                       image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                                       isReversed: true,
                                       isError: true,
-                                      errorText: "Error")
+                                      errorText: .raw("Error"))
 
         Text("Disabled").font(.caption)
 
@@ -174,7 +174,7 @@ struct ThreeStatesCheckboxesItemsView: View {
                                               image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                               isReversed: false,
                                               isError: isError,
-                                              errorText: isError ? "Error" : nil,
+                                              errorText: isError ? .raw("Error") : nil,
                                               isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
@@ -184,7 +184,7 @@ struct ThreeStatesCheckboxesItemsView: View {
                                               image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                               isReversed: true,
                                               isError: isError,
-                                              errorText: isError ? "Error" : nil,
+                                              errorText: isError ? .raw("Error") : nil,
                                               isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }
