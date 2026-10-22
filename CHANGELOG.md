@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/3.1.0...develop)
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/compare/3.1.0...develop)
+- [DesignToolbox] Lsit of colors for `colored surface` component
+- [LIBRARY] **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
+- [Library] **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
+
+## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 
 ### Added
 
