@@ -14,6 +14,7 @@ import SwiftUI
 
     private let themes: [MISOTheme] = [
         BlueCoatTheme(),
+        FoxyRoughTheme(),
     ]
 
     var body: some Scene {

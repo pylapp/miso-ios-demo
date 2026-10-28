@@ -20,12 +20,12 @@ struct StaticListItemView: View {
         WatchVerticalLayout {
             Text("Label only").font(.headline)
 
-            MISOStaticListItem(data: MISOListItemData(label: "Label"))
+            MISOStaticListItem(data: MISOListItemData(label: .textual("Label")))
 
             Text("More textual").font(.headline)
 
             let data = MISOListItemData(
-                label: "Label",
+                label: .textual("Label"),
                 description: "Description",
                 overline: "Overline",
                 extraLabel: "Extra Label")
@@ -37,7 +37,7 @@ struct StaticListItemView: View {
             let badge = MISOBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
             MISOStaticListItem(
-                data: MISOListItemData(label: "Label"),
+                data: MISOListItemData(label: .textual("Label")),
                 leading: .icon(icon),
                 trailing: .badge(.count(badge)))
 
@@ -46,7 +46,7 @@ struct StaticListItemView: View {
             let avatar = MISOListItemAvatar(type: .icon, size: .medium)
 
             MISOStaticListItem(
-                data: MISOListItemData(label: "Label", description: "Description"),
+                data: MISOListItemData(label: .textual("Label"), description: "Description"),
                 leading: .avatar(avatar),
                 trailing: .text(.label("Info")))
         }
