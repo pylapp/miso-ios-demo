@@ -56,18 +56,18 @@ struct BulletListDemo: View {
         let label = configurationModel.label
         switch configurationModel.levelCount {
         case .one:
-            MISOBulletList.Item(label)
-            MISOBulletList.Item(label)
-            MISOBulletList.Item(label)
+            MISOBulletList.Item(.raw(label))
+            MISOBulletList.Item(.raw(label))
+            MISOBulletList.Item(.raw(label))
         case .two:
-            MISOBulletList.Item(label) {
-                MISOBulletList.Item(label)
-                MISOBulletList.Item(label)
+            MISOBulletList.Item(.raw(label)) {
+                MISOBulletList.Item(.raw(label))
+                MISOBulletList.Item(.raw(label))
             }
         case .three:
-            MISOBulletList.Item(label) {
-                MISOBulletList.Item(label) {
-                    MISOBulletList.Item(label)
+            MISOBulletList.Item(.raw(label)) {
+                MISOBulletList.Item(.raw(label)) {
+                    MISOBulletList.Item(.raw(label))
                 }
             }
         }
@@ -78,18 +78,18 @@ struct BulletListDemo: View {
         let richLabel = configurationModel.richLabel
         switch configurationModel.levelCount {
         case .one:
-            MISOBulletList.Item(richLabel)
-            MISOBulletList.Item(richLabel)
-            MISOBulletList.Item(richLabel)
+            MISOBulletList.Item(.rich(richLabel))
+            MISOBulletList.Item(.rich(richLabel))
+            MISOBulletList.Item(.rich(richLabel))
         case .two:
-            MISOBulletList.Item(richLabel) {
-                MISOBulletList.Item(richLabel)
-                MISOBulletList.Item(richLabel)
+            MISOBulletList.Item(.rich(richLabel)) {
+                MISOBulletList.Item(.rich(richLabel))
+                MISOBulletList.Item(.rich(richLabel))
             }
         case .three:
-            MISOBulletList.Item(richLabel) {
-                MISOBulletList.Item(richLabel) {
-                    MISOBulletList.Item(richLabel)
+            MISOBulletList.Item(.rich(richLabel)) {
+                MISOBulletList.Item(.rich(richLabel)) {
+                    MISOBulletList.Item(.rich(richLabel))
                 }
             }
         }

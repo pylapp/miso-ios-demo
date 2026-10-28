@@ -75,7 +75,7 @@ struct OpenableText: View {
     var body: some View {
         if type != .githubIssue {
             let tag = MISOTag(label: anchor)
-            MISONavigationListItem(data: .init(label: rawText.replacingOccurrences(of: anchor, with: "")),
+            MISONavigationListItem(data: .init(label: .textual(.raw(rawText.replacingOccurrences(of: anchor, with: "")))),
                                    indicatorType: .external,
                                    trailing: .tag(tag))
             {

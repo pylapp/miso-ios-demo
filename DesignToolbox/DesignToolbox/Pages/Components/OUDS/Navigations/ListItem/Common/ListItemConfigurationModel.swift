@@ -144,22 +144,21 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             MISOListItemData(
-                label: currentLabel,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                overline: overline.map { .raw($0) },
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
+                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             MISOListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                overline: overline.map { .raw($0) },
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
+                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
@@ -176,22 +175,21 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         switch textsModel.labelContentType {
         case .text:
             return MISOListItemData(
-                label: currentLabel,
-                overline: safeOverline,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                overline: .rich(safeOverline),
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
+                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return MISOListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                overline: safeOverline,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText),
+                overline: .rich(safeOverline),
+                extraLabel: textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText),
+                helperText: textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText),
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }

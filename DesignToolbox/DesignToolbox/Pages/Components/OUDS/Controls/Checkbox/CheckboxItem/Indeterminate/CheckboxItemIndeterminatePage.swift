@@ -38,7 +38,7 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       image: image,
                                       isReversed: configurationModel.isReversed,
                                       isError: configurationModel.isError,
-                                      errorText: configurationModel.errorText,
+                                      errorText: .raw(configurationModel.errorText),
                                       isReadOnly: configurationModel.isReadOnly,
                                       hasDivider: configurationModel.hasDivider,
                                       constrainedMaxWidth: configurationModel.constrainedMaxWidth)

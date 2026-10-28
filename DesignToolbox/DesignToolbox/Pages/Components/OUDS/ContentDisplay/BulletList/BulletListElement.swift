@@ -32,8 +32,8 @@ private struct BulletListIllustration: View {
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaces.fixedNone) {
             MISOBulletList {
-                MISOBulletList.Item(LocalizedStringKey("app_components_common_label_label"))
-                MISOBulletList.Item(LocalizedStringKey("app_components_common_label_label"))
+                MISOBulletList.Item(.localized("app_components_common_label_label"))
+                MISOBulletList.Item(.localized("app_components_common_label_label"))
             }
         }
         .padding(.leading, 120)

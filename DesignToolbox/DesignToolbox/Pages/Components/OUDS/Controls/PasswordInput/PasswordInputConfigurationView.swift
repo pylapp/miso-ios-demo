@@ -122,9 +122,9 @@ final class PasswordInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         case .loading:
             .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:

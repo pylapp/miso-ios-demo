@@ -30,7 +30,7 @@ private struct TextAreaIllustration: View {
     var body: some View {
         MISOTextArea("app_components_common_label_label",
                      text: $text,
-                     helperText: .plain(String(localized: "app_components_textAreaHelperText_label")))
+                     helperText: .textual(.raw(String(localized: "app_components_textAreaHelperText_label"))))
             .padding()
     }
 }

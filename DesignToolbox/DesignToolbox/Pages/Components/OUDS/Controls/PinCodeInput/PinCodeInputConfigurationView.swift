@@ -59,9 +59,9 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         }
     }
 
@@ -128,7 +128,7 @@ final class PinCodeInputConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: \"\(errorText)\")"
         case .richError:
             ", status: .richError(message: yourAttributedString)"
         }

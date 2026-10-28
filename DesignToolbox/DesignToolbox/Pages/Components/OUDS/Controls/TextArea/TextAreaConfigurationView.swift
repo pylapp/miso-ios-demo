@@ -159,9 +159,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .plain:
-            helperText.isEmpty ? nil : .plain(helperText)
+            helperText.isEmpty ? nil : .textual(.raw(helperText))
         case .rich:
-            helperText.isEmpty ? nil : .rich(richHelperText)
+            helperText.isEmpty ? nil : .textual(.rich(richHelperText))
         case .charactersMaxCount:
             .charactersMaxCount(UInt16(maxCharacters))
         }
@@ -183,9 +183,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         case .loading:
             .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:
@@ -266,7 +266,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: \"\(errorText)\")"
         case .richError:
             ", status: .richError(message: yourAttributedString)"
         case .loading:
