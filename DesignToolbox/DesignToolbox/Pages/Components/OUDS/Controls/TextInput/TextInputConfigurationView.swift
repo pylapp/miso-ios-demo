@@ -207,7 +207,7 @@ final class TextInputConfigurationModel: ComponentConfiguration {
         code =
             """
             MISOTextInput(\(labelPattern)\(textPattern)\(placeholderPattern)\(prefixPattern)\(suffixPattern)\(leadingIconPattern)\(trailingActionPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(statusPattern))
-            \(skeletonPattern)            
+            \(skeletonPattern)
             """
         // swiftlint:enable line_length
     }

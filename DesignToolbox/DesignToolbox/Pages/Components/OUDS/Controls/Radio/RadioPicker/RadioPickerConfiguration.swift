@@ -69,7 +69,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         code =
             """
             MISORadioPicker(selection: $selection, radios: someRadiosData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern)\(isOutlinedPattern))\(isEnabledPattern)
-                \(skeletonPattern)            
+                \(skeletonPattern)
             """
     }
 

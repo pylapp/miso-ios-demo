@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "filename" : "app-icon-release.png",
-=======
-      "filename" : "UDSDemo-DEBUG_SQR.png",
->>>>>>> 56040a87b (refactor: use of `AttributedString` type for `list item` components for rich text (Orange-OpenSource/ouds-ios#1812) (#331))
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
