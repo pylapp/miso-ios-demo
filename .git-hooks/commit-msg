@@ -10,11 +10,11 @@
 # for CHANGELOG / RELEASE NOTE generation
 # See https://www.conventionalcommits.org/en/v1.0.0/
 PATTERN_SECTION_ADDED="feat:|chore: add|feat\(OUDS\):|chore\(OUDS\): add"
-PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete|refactor\(OUDS\): remove|refactor\(OUDS\): delete|chore\(OUDS\): remove|chore\(OUDS)\: delete"
+PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete|refactor\(OUDS\): remove|refactor\(OUDS\): delete|chore\(OUDS\): remove|chore\(OUDS\): delete"
 PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
 PATTERN_SECTION_FIXED="fix:|fix\(OUDS\):"
 PATTERN_SECTION_SECURITY="fix\(security\):"
-PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|feat\(OUDS\)!:|chore(OUDS)!:|refactor\(OUDS\)!:|fix\(OUDS\)!:"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:|feat\(OUDS\)!:|chore\(OUDS\)!:|refactor\(OUDS\)!:|fix\(OUDS\)!:"
 PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(OUDS\):|ci:|docs:|style:|refactor:|refactor\(OUDS\):|perf:|test:"
 
 # All acceptable patterns
