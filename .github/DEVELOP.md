@@ -34,6 +34,7 @@
 - [CI/CD](#cicd)
 - [Use of GenAI](#use-of-genai)
 - [Use of robots](#use-of-robots)
+- [Sync with OUDS](#sync-with-ouds)
 
 ## Technical preconditions
 
@@ -689,4 +690,34 @@ Co-authored-by: StepSecurity Bot <bot@stepsecurity.io>
 Co-authored-by: Copilot <198982749+Copilot@users.noreply.github.com>
 Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
 Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
+```
+
+## Sync with OUDS
+
+*MISO iOS* is an hard fork of [OUDS iOS](https://github.com/Orange-OpenSource/ouds-ios). It means this fork is not for contributions to upstream, but is a plain new project.
+However, *MISO iOS* is always related to  *OUDS iOS*, and some evolutions of *OUDS iOS* can be added to *MISO iOS*.
+
+To sync *MISO iOS*. with *OUDS iOS*, several steps mut be applied:
+1. Never bring to MISO content of Orange and Sosh brands: they must remain in OUDS side
+2. Never keep assets from OUDS to MISO if such assets are proprietary or not under FLOSS license
+3. Evolutions of OUDS must be place in suitable locations wiht one of the OUDS folders in the root of the hierarchy
+4. Copyrights must be clear (SPDX license identifiers, copyright owners)
+
+Add OUDS iOS as remote, named "upstream", through SSH:
+```shell
+git remote add upstream git@github.com:Orange-OpenSource/ouds-ios-design-system-toolbox
+```
+
+To fetch with OUDS iOS:
+```shell
+git config remote.upstream.tagOpt --no-tags
+git fetch usptream
+```
+
+OUDS is older than MISO, thus fetching with OUDS to sync MISO can bring useless tags.
+To get tags and keep only origin ones:
+```shell
+git tag -l | xargs -r git tag -d
+git fetch origin --tags
+git push origin --tags
 ```
