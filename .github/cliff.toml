@@ -10,12 +10,11 @@
 header = """
 # What's new\n
 """
-
 # Template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
 body = """
 {% for group, commits in commits | group_by(attribute="group") %}
-    ## {{ group | upper_first }}
+    ## {{ group | striptags | trim | upper_first }}
     {% for commit in commits %}
         - {{ commit.message | upper_first }} ({{ commit.id }})\
     {% endfor %}
@@ -39,21 +38,11 @@ split_commits = false
 # Regex for parsing and grouping commits
 # We assume commits of build (build:) and style (style:) should not appear in generate release note
 commit_parsers = [
-  { message = "^feat:", group = "🚀 Features" },
-  { message = "^fix:", group = "🐛 Fixes" },
-  { message = "^docs:", group = "📖 Docs" },
-  { message = "^chore:", group = "🧰 Chore" },
-  { message = "^chore\\(deps\\):", group = "🧰 Chore" },
-  { message = "^refactor:", group = "🧰 Chore" },
-  { message = "^test:", group = "🧰 Chore" },
-  { message = "^ci:", group = "🧰 Chore" },
-  { message = "^feat!:", group = "💥 Breaking changes" },
-  { message = "^fix!:", group = "💥 Breaking changes" },
-  { message = "^docs!:", group = "💥 Breaking changes" },
-  { message = "^chore!:", group = "💥 Breaking changes" },
-  { message = "^refactor!:", group = "💥 Breaking changes" },
-  { message = "^test!:", group = "💥 Breaking changes" },
-  { message = "^ci!:", group = "💥 Breaking changes" },
+  { message = "^(feat|fix|docs|chore|refactor|test|ci)(\\([^)]*\\))?!:", group = "<!-- 0 -->💥 Breaking changes" },
+  { message = "^feat(\\([^)]*\\))?:", group = "<!-- 1 -->🚀 Features" },
+  { message = "^fix(\\([^)]*\\))?:", group = "<!-- 2 -->🐛 Fixes" },
+  { message = "^docs(\\([^)]*\\))?:", group = "<!-- 4 -->📖 Docs" },
+  { message = "^(chore|refactor|test|ci)(\\([^)]*\\))?:", group = "<!-- 3 -->🧰 Chore" },
 ]
 commit_preprocessors = [
     { pattern = '.*', replace_command = 'git show -s --format=%B $COMMIT_SHA' }
@@ -66,13 +55,13 @@ protect_breaking_commits = false
 filter_commits = true
 
 # Regex for matching git tags
-tag_pattern = "v[0-9].*"
+tag_pattern = "[0-9].*"
 
 # Regex for skipping tags
 skip_tags = "v0.1.0-beta.1"
 
 # Regex for ignoring tags
-ignore_tags = ""
+ignore_tags = ".*-(rc|beta|alpha)\\..*"
 
 # Sorts the tags topologically
 topo_order = false
