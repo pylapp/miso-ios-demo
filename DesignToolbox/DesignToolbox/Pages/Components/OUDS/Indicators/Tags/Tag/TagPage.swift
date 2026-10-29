@@ -33,18 +33,21 @@ struct TagDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        if configurationModel.isLoading {
-            MISOTag(loadingLabel: configurationModel.label,
-                    progress: configurationModel.progress,
-                    shape: configurationModel.shape,
-                    size: configurationModel.size)
-        } else {
-            MISOTag(label: configurationModel.label,
-                    status: configurationModel.status(from: theme),
-                    appearance: configurationModel.appearance,
-                    shape: configurationModel.shape,
-                    size: configurationModel.size)
-                .disabled(!configurationModel.enabled)
+        Group {
+            if configurationModel.isLoading {
+                MISOTag(loadingLabel: configurationModel.label,
+                        progress: configurationModel.progress,
+                        shape: configurationModel.shape,
+                        size: configurationModel.size)
+            } else {
+                MISOTag(label: configurationModel.label,
+                        status: configurationModel.status(from: theme),
+                        appearance: configurationModel.appearance,
+                        shape: configurationModel.shape,
+                        size: configurationModel.size)
+                    .disabled(!configurationModel.enabled)
+            }
         }
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

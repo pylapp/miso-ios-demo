@@ -28,7 +28,7 @@ private struct PinCodeInputIllustration: View {
     @State private var pinCode: String = "123"
 
     var body: some View {
-        MISOPinCodeInput($pinCode, length: .six, helperText: String(localized: "app_components_pinCodeInputHelperText_label"))
+        MISOPinCodeInput($pinCode, length: .six, helperText: .localized("app_components_pinCodeInputHelperText_label"))
     }
 }
 

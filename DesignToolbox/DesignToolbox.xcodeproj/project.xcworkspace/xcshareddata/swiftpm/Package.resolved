@@ -1,22 +1,13 @@
 {
-  "originHash" : "6ea3d37f1306824a57aceca4318954b015df152cccfd354b173dfe326870c15b",
+  "originHash" : "079426dfcbc0ad98ec22309b87ed7a8b77408bbfd14e60d1e72c5a5f2fa8dc2c",
   "pins" : [
     {
-      "identity" : "accessibility-statement-lib-ios",
+      "identity" : "miso-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
-      "state" : {
-        "revision" : "6b51e344f1d58b8c575c86d5bb729db28e8d60c0",
-        "version" : "2.4.0-beta.2"
-      }
-    },
-    {
-      "identity" : "ouds-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Orange-OpenSource/ouds-ios",
+      "location" : "https://github.com/pylapp/miso-ios",
       "state" : {
         "branch" : "develop",
-        "revision" : "b039946136068071b618aad4488ac164a34e2fdc"
+        "revision" : "2d250a96e19a46b0b718f65e5330f476ff2f2609"
       }
     },
     {

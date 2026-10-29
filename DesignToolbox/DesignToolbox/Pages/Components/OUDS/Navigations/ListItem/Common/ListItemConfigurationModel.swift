@@ -54,6 +54,10 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Properties
 
     var textsModel: ListItemTextsConfigurationModel
@@ -92,6 +96,8 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         // Item interaction
         enabled = true
 
+        showSkeleton = false
+
         // Nested elements
         textsModel = ListItemTextsConfigurationModel(itemSize: .default)
         trailingModel = ListItemTrailingConfigurationModel(itemSize: .default)
@@ -123,69 +129,35 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         let currentLabel = index == 0 ? textsModel.labelText : "\(textsModel.labelText) \(index + 1)"
         let slot: MISOListItemData.Slot? = textsModel.hasSlot ? .init { textsModel.textSlot() } : nil
         let bottomSlot: MISOListItemData.Slot? = textsModel.hasBottomSlot ? .init { textsModel.bottomSlot() } : nil
-
-        if textsModel.overlineTextMode == .rich {
-            let richOverline: AttributedString? = textsModel.overlineText.isEmpty ? nil : (try? AttributedString(markdown: textsModel.overlineText))
-            return buildDataItemWithRichOverline(currentLabel: currentLabel, overline: richOverline, slot: slot, bottomSlot: bottomSlot)
-        } else {
-            let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
-            return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
-        }
+        let rawOverline: String? = textsModel.overlineText.isEmpty ? nil : textsModel.overlineText
+        return buildDataItemWithRawOverline(currentLabel: currentLabel, overline: rawOverline, slot: slot, bottomSlot: bottomSlot)
     }
 
     @MainActor
     private func buildDataItemWithRawOverline(currentLabel: String, overline: String?, slot: MISOListItemData.Slot?, bottomSlot: MISOListItemData.Slot?) -> MISOListItemData {
-        switch textsModel.labelContentType {
-        case .text:
-            MISOListItemData(
-                label: currentLabel,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        case .customView:
-            MISOListItemData(
-                label: textsModel.customLabelView,
-                accessibilityLabel: "Custom view label",
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                overline: overline,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
-                textSlot: slot,
-                bottomSlot: bottomSlot)
-        }
-    }
+        let description: MISOTextualContent? = textsModel.descriptionText.isEmpty ? nil : .raw(textsModel.descriptionText)
+        let overlineContent: MISOTextualContent? = overline.map { .raw($0) }
+        let extraLabel: MISOTextualContent? = textsModel.extraLabelText.isEmpty ? nil : .raw(textsModel.extraLabelText)
+        let helperText: MISOTextualContent? = textsModel.helperText.isEmpty ? nil : .raw(textsModel.helperText)
 
-    @MainActor
-    private func buildDataItemWithRichOverline(
-        currentLabel: String,
-        overline: AttributedString?,
-        slot: MISOListItemData.Slot?,
-        bottomSlot: MISOListItemData.Slot?) -> MISOListItemData
-    {
-        let safeOverline = overline ?? AttributedString("")
         switch textsModel.labelContentType {
         case .text:
             return MISOListItemData(
-                label: currentLabel,
-                overline: safeOverline,
-                hasBoldLabel: textsModel.hasBoldLabel,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                label: .textual(.raw(currentLabel), isBold: textsModel.hasBoldLabel),
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         case .customView:
             return MISOListItemData(
                 label: textsModel.customLabelView,
                 accessibilityLabel: "Custom view label",
-                overline: safeOverline,
-                description: textsModel.descriptionText.isEmpty ? nil : textsModel.descriptionText,
-                extraLabel: textsModel.extraLabelText.isEmpty ? nil : textsModel.extraLabelText,
-                helperText: textsModel.helperText.isEmpty ? nil : textsModel.helperText,
+                description: description,
+                overline: overlineContent,
+                extraLabel: extraLabel,
+                helperText: helperText,
                 textSlot: slot,
                 bottomSlot: bottomSlot)
         }
@@ -221,7 +193,12 @@ open class ListItemConfigurationModel: ComponentConfiguration {
         \(componentInitCode)(data: data\(slotPattern)\(leadingPart)\(trailingPart))
         \(styleModifierPattern)\(sizeModifierPattern)\(containersAlignmentPattern)\(roundedMediaPattern)
         \(disableCodePattern)
+        \(skeletonPattern)
         """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     var disableCodePattern: String {

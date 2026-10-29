@@ -42,6 +42,10 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Initializer
 
     override init() {
@@ -52,6 +56,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         isReversed = false
         isOutlined = false
         isEnabled = true
+        showSkeleton = false
         super.init()
     }
 
@@ -64,10 +69,15 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         code =
             """
             MISORadioPicker(selection: $selection, radios: someRadiosData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern)\(isOutlinedPattern))\(isEnabledPattern)
+                \(skeletonPattern)
             """
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
@@ -141,6 +151,8 @@ struct RadioPickerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             MISOSwitchItem("app_common_enabled_tech", isOn: $configurationModel.isEnabled)
                 .disabled(configurationModel.isError || configurationModel.isReadOnly)
 

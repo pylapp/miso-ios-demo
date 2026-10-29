@@ -24,12 +24,17 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: - Initializer
 
     override init() {
         selection = true
         enabled = true
         isReadOnly = false
+        showSkeleton = false
         super.init()
     }
 
@@ -42,7 +47,12 @@ final class SwitchConfigurationModel: ComponentConfiguration {
             """
             MISOSwitch(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isReadOnlyPattern))
             \(disableCodePattern)
+            \(skeletonPattern)
             """
+    }
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
     }
 
     private var disableCodePattern: String {
@@ -64,6 +74,8 @@ struct SwitchConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
+
             MISOSwitchItem("app_components_common_selection_tech", isOn: $configurationModel.selection)
                 .disabled(!configurationModel.enabled || configurationModel.isReadOnly)
 

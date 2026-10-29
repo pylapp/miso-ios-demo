@@ -123,6 +123,10 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var showSkeleton: Bool {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -141,6 +145,7 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         status = .enabled
         progressVariant = .indeterminate
         progressValue = 0.0
+        showSkeleton = false
         super.init()
     }
 
@@ -154,9 +159,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .none:
             nil
         case .plain:
-            helperText.isEmpty ? nil : .plain(helperText)
+            helperText.isEmpty ? nil : .textual(.raw(helperText))
         case .rich:
-            helperText.isEmpty ? nil : .rich(richHelperText)
+            helperText.isEmpty ? nil : .textual(.rich(richHelperText))
         case .charactersMaxCount:
             .charactersMaxCount(UInt16(maxCharacters))
         }
@@ -178,9 +183,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .enabled:
             .enabled
         case .error:
-            .error(message: errorText)
+            .textualError(message: .raw(errorText))
         case .richError:
-            .richError(message: richErrorText)
+            .textualError(message: .rich(richErrorText))
         case .loading:
             .loading(progress: progressVariant == .indeterminate ? nil : progressValue)
         case .readOnly:
@@ -205,10 +210,15 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         code =
             """
             MISOTextArea(\(labelPattern)\(textPattern)\(placeholderPattern)\(helperTextPattern)\(helperLinkPattern)\(outlinedPattern)\(constrainedMaxWidthPattern)\(constrainedMaxHeightPattern)\(statusPattern))
+            \(skeletonPattern)
             """
     }
 
     // swiftlint:enable line_length
+
+    private var skeletonPattern: String {
+        showSkeleton ? ".showSkeleton(isVisible: true)" : ""
+    }
 
     private var labelPattern: String {
         "label: \"\(label)\""
@@ -227,9 +237,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .none:
             ""
         case .plain:
-            helperText.isEmpty ? "" : ", helperText: .plain(\"\(helperText)\")"
+            helperText.isEmpty ? "" : ", helperText: .textual(.raw(\"\(helperText)\"))"
         case .rich:
-            helperText.isEmpty ? "" : ", helperText: .rich(yourAttributedString)"
+            helperText.isEmpty ? "" : ", helperText: .textual(.rich(yourAttributedString))"
         case .charactersMaxCount:
             ", helperText: .charactersMaxCount(\(maxCharacters))"
         }
@@ -256,9 +266,9 @@ final class TextAreaConfigurationModel: ComponentConfiguration {
         case .enabled:
             ""
         case .error:
-            ", status: .error(message: \"\(errorText)\")"
+            ", status: .textualError(message: .raw(\"\(errorText)\"))"
         case .richError:
-            ", status: .richError(message: yourAttributedString)"
+            ", status: .textualError(message: .rich(yourAttributedString))"
         case .loading:
             if progressVariant == .indeterminate {
                 ", status: .loading"
@@ -284,6 +294,7 @@ struct TextAreaConfigurationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                MISOSwitchItem("app_components_common_skeleton_tech", isOn: $configurationModel.showSkeleton)
 
                 MISOSwitchItem("app_components_common_outlined_tech", isOn: $configurationModel.isOutlined)
 

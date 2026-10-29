@@ -205,7 +205,7 @@ private struct LiquidGlassStateItem: View {
                                  shape: .rounded,
                                  size: .small)
 
-        MISOStaticListItem(data: .init(label: "app_about_isLiquidGlass_disabled".localized()), trailing: .tag(versionTag))
+        MISOStaticListItem(data: .init(label: .textual(.localized("app_about_isLiquidGlass_disabled"))), trailing: .tag(versionTag))
             .misoListItemStyle(divider: false)
             .misoListItemSize(.small)
     }
@@ -224,7 +224,7 @@ private struct VersionItem: View {
                                  appearance: .muted,
                                  shape: .rounded,
                                  size: .small)
-        MISOStaticListItem(data: .init(label: title.localized()), trailing: .tag(versionTag))
+        MISOStaticListItem(data: .init(label: .textual(.raw(title.localized()))), trailing: .tag(versionTag))
             .misoListItemStyle(divider: false)
             .misoListItemSize(.small)
             .modifier(CopyableTextViewModifier(version))

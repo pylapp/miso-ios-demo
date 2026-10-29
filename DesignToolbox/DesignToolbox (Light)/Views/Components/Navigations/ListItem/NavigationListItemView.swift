@@ -20,12 +20,12 @@ struct NavigationListItemView: View {
         WatchVerticalLayout {
             Text("Label only").font(.headline)
 
-            MISONavigationListItem(data: MISOListItemData(label: "Label"))
+            MISONavigationListItem(data: MISOListItemData(label: .textual("Label")))
 
             Text("More textual").font(.headline)
 
             let data = MISOListItemData(
-                label: "Label",
+                label: .textual("Label"),
                 description: "Description",
                 overline: "Overline",
                 extraLabel: "Extra Label")
@@ -37,7 +37,7 @@ struct NavigationListItemView: View {
             let badge = MISOBadgeCount(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
             MISONavigationListItem(
-                data: MISOListItemData(label: "Label"),
+                data: MISOListItemData(label: .textual("Label")),
                 indicatorType: .next,
                 leading: .icon(icon),
                 trailing: .badge(.count(badge)))
@@ -47,7 +47,7 @@ struct NavigationListItemView: View {
             let avatar = MISOListItemAvatar(type: .icon, size: .medium)
 
             MISONavigationListItem(
-                data: MISOListItemData(label: "Label", description: "Description"),
+                data: MISOListItemData(label: .textual("Label"), description: "Description"),
                 indicatorType: .previous,
                 leading: .avatar(avatar),
                 trailing: .text(.label("Info")))

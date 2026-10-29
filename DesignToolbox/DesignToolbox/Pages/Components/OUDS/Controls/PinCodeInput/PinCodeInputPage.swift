@@ -54,14 +54,16 @@ struct PinCodeInputDemo: View {
                 ScrollView(.horizontal) {
                     MISOPinCodeInput($configurationModel.value,
                                      length: length,
-                                     helperText: configurationModel.richHelperText,
+                                     hiddenCharacters: configurationModel.hiddenCharacters,
+                                     helperText: .rich(configurationModel.richHelperText),
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
                 }
             } else {
                 MISOPinCodeInput($configurationModel.value,
                                  length: length,
-                                 helperText: configurationModel.richHelperText,
+                                 hiddenCharacters: configurationModel.hiddenCharacters,
+                                 helperText: .rich(configurationModel.richHelperText),
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
             }
@@ -70,14 +72,16 @@ struct PinCodeInputDemo: View {
                 ScrollView(.horizontal) {
                     MISOPinCodeInput($configurationModel.value,
                                      length: length,
-                                     helperText: configurationModel.helperText,
+                                     hiddenCharacters: configurationModel.hiddenCharacters,
+                                     helperText: .raw(configurationModel.helperText),
                                      isOutlined: configurationModel.isOutlined,
                                      status: configurationModel.status)
                 }
             } else {
                 MISOPinCodeInput($configurationModel.value,
                                  length: length,
-                                 helperText: configurationModel.helperText,
+                                 hiddenCharacters: configurationModel.hiddenCharacters,
+                                 helperText: .raw(configurationModel.helperText),
                                  isOutlined: configurationModel.isOutlined,
                                  status: configurationModel.status)
             }

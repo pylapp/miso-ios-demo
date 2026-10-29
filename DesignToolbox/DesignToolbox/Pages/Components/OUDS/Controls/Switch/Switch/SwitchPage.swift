@@ -36,5 +36,6 @@ private struct SwitchDemo: View {
                    isReadOnly: configurationModel.isReadOnly)
             .disabled(!configurationModel.enabled)
             .accessibilityIdentifier(A11YIdentifiers.componentSwitch)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }

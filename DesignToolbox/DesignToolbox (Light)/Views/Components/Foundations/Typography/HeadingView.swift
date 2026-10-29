@@ -22,14 +22,14 @@ struct HeadingView: View {
             }
 
             // The marker is only rendered by `MISOHeading` when the theme supports it
-            // (e.g. Orange, Orange Compact, BlueCoat, but not Sosh).
+
             Text("Large with marker").font(.subheadline)
             MISOHeading(text: "Aa", size: .large, hasMarker: true)
 
             // Only meaningful for `size == .large`; ignored (with a warning) by themes
-            // that do not provide a valid `contentBrandSecondary` color (e.g. Orange, Orange Compact).
+            // that do not provide a valid `contentBrandSecondary` color
             Text("Colored substring").font(.subheadline)
-            MISOHeading(text: "Welcome to Sosh", coloredText: "Sosh")
+            MISOHeading(text: "Welcome to MISO", coloredText: "MISO")
         }
     }
 }

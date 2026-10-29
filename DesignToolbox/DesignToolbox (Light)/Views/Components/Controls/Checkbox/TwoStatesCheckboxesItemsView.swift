@@ -60,14 +60,14 @@ struct TwoStatesCheckboxesItemsView: View {
                          description: "Description",
                          isReversed: false,
                          isError: true,
-                         errorText: "Error")
+                         errorText: .raw("Error"))
 
         MISOCheckboxItem("Label",
                          isOn: $isOn,
                          description: "Description",
                          isReversed: true,
                          isError: true,
-                         errorText: "Error")
+                         errorText: .raw("Error"))
 
         Text("Read only").font(.caption)
 
@@ -107,7 +107,7 @@ struct TwoStatesCheckboxesItemsView: View {
                          image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: false,
                          isError: true,
-                         errorText: "Error")
+                         errorText: .raw("Error"))
 
         MISOCheckboxItem("Label",
                          isOn: $isOn,
@@ -115,7 +115,7 @@ struct TwoStatesCheckboxesItemsView: View {
                          image: MISOImage(asset: Image(systemName: "flag.pattern.checkered")),
                          isReversed: true,
                          isError: true,
-                         errorText: "Error")
+                         errorText: .raw("Error"))
 
         Text("Disabled").font(.caption)
 
@@ -174,7 +174,7 @@ struct TwoStatesCheckboxesItemsView: View {
                                  image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                  isReversed: false,
                                  isError: isError,
-                                 errorText: isError ? "Error" : nil,
+                                 errorText: isError ? .raw("Error") : nil,
                                  isReadOnly: isReadOnly)
                     .disabled(isDisabled)
 
@@ -184,7 +184,7 @@ struct TwoStatesCheckboxesItemsView: View {
                                  image: withIcon ? MISOImage(asset: Image(systemName: "flag.pattern.checkered")) : nil,
                                  isReversed: true,
                                  isError: isError,
-                                 errorText: isError ? "Error" : nil,
+                                 errorText: isError ? .raw("Error") : nil,
                                  isReadOnly: isReadOnly)
                     .disabled(isDisabled)
             }

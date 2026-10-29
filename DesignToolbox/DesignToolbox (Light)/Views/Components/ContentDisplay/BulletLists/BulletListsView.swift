@@ -22,18 +22,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             MISOBulletList(type: .bare) {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             MISOBulletList(type: .bare, textStyle: .bodyMedium) {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }
@@ -42,18 +42,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             MISOBulletList(type: .ordered) {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             MISOBulletList(type: .ordered, textStyle: .bodyMedium) {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }
@@ -62,18 +62,18 @@ struct BulletListsView: View {
 
             Text("Body Large").font(.subheadline)
             MISOBulletList {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }
 
             Text("Body Medium").font(.subheadline)
             MISOBulletList(textStyle: .bodyMedium) {
-                MISOBulletList.Item("Label") {
-                    MISOBulletList.Item("Label") {
-                        MISOBulletList.Item("Label")
+                MISOBulletList.Item(.raw("Label")) {
+                    MISOBulletList.Item(.raw("Label")) {
+                        MISOBulletList.Item(.raw("Label"))
                     }
                 }
             }

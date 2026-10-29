@@ -43,6 +43,7 @@ struct SuggestionChipDemo: View {
             }
         }
         .disabled(!configurationModel.enabled)
+        .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 
     private var oudsImage: MISOImage {

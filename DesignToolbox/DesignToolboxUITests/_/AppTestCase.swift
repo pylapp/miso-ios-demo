@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import MISOSwiftUI
 import XCTest
 
 // swiftlint:disable nslocalizedstring_key
@@ -16,16 +15,24 @@ open class AppTestCase: XCTestCase {
 
     private let testBundle = Bundle(for: AppTestCase.self)
 
+    /// The resource bundle of the MISO components, copied in the test bundle.
+    /// `Bundle.module` cannot be used here as it crashes in the UI tests runner process.
+    private lazy var componentsBundle: Bundle? = testBundle
+        .url(forResource: "MISO_MISOComponents", withExtension: "bundle")
+        .flatMap(Bundle.init(url:))
+
     /// Loads the suitable wording from the `testBundle`.
-    /// If wording not found loads drom `OUDSComponents` bundle.
+    /// If wording not found loads from the `MISOComponents` bundle.
     /// - Parameter key: The wording key or text
     /// - Returns String: The localized string or text if not wording found
     func wording(for key: String) -> String {
         let wording = key.localized(bundle: testBundle)
         if wording != key {
             return wording
-        } else { // If wording and key are the same, possible to have a key and not a wording, check the other bundle
-            return key.localized(bundle: Bundle.MISOComponents)
+        } else if let componentsBundle { // If wording and key are the same, possible to have a key and not a wording, check the other bundle
+            return key.localized(bundle: componentsBundle)
+        } else {
+            return key
         }
     }
 

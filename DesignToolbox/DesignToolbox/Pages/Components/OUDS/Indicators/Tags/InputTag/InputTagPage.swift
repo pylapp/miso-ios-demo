@@ -33,5 +33,6 @@ struct InputTagDemo: View {
     var body: some View {
         MISOInputTag(label: configurationModel.label) {}
             .disabled(!configurationModel.enabled)
+            .showSkeleton(isVisible: configurationModel.showSkeleton)
     }
 }
