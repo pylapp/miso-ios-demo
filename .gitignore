@@ -37,3 +37,6 @@
 
 # Produced by .gitlab-ci.yml
 /.cache/
+
+# Other files
+/SBOM.json
