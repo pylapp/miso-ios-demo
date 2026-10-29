@@ -1410,6 +1410,7 @@
 		9553683A30239908007A83E0 /* CircularIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553683930239908007A83E0 /* CircularIndicatorsView.swift */; };
 		955A40DB2EC788CE001D7F84 /* Image+extensions Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A40DA2EC788C7001D7F84 /* Image+extensions Tests.swift */; };
 		9564DF5A2FE92A3400E2BC7D /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564DF592FE92A2E00E2BC7D /* StatusIcons.swift */; };
+		956F672A30934410005C3720 /* MISOSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9548A57F305842550049F17A /* MISOSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		957A175C305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
 		957A175D305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
 		957A175E305996F200FAA291 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A175B305996F000FAA291 /* Dummy.swift */; };
@@ -1599,6 +1600,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				956F672A30934410005C3720 /* MISOSwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6316,6 +6318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "info.pylapp.miso.demoapp-debug";
 				PRODUCT_NAME = "MISO demo";
 				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -6358,6 +6361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.pylapp.miso.demoapp;
 				PRODUCT_NAME = "MISO demo";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
