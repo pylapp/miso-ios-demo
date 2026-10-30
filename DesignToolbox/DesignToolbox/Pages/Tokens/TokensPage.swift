@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: Copyright (c) Orange SA, Pierre-Yves Lapersonne
 
-import OUDSSwiftUI
+import MISOSwiftUI
 import SwiftUI
 
 struct TokensPage: View {

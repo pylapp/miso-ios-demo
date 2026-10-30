@@ -22,11 +22,8 @@ struct AboutPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.openURL) private var openURL
 
-    #if DEBUG
-    /// DEBUG-only flag persisting whether the sandbox tab must be displayed.
-    /// Toggled by the "Bac à sable" switch item at the bottom of the About page
-    /// and observed by ``MainView`` to conditionally insert the Debug tab.
-    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     #endif
 
     // MARK: Initializer
@@ -44,12 +41,53 @@ struct AboutPage: View {
 
     var body: some View {
         #if os(iOS)
-        NavigationView {
-            listBody
+        if #available(iOS 27.1, *) {
+            NavigationStack {
+                GeometryReader { geometry in
+                    // If e.g. iPhone Duo unfolded in landscape mode
+                    if horizontalSizeClass == .regular, geometry.size.width > geometry.size.height {
+                        ArrangementView {
+                            List {
+                                AboutSection("app_about_versions_title", coloredText: "techniques") {
+                                    AboutTechnicalDetails()
+                                }
+                            }
+                            .scrollContentBackground(.hidden)
+                            .background(theme.colors.bgPrimary)
+                            .padding(.trailing, theme.spaces.fixedMedium)
+                        } secondary: {
+                            List {
+
+                                AboutSection("app_about_links_title", coloredText: "utiles") {
+                                    linksView
+                                }
+                                #if DEBUG
+                                AboutDebugSection()
+                                #endif
+                            }
+                            .scrollContentBackground(.hidden)
+                            .background(theme.colors.bgPrimary)
+                            .padding(.leading, theme.spaces.fixedMedium)
+                        }
+                        .arrangementViewStyle(.split.axes(.horizontal))
+                        .background(theme.colors.bgPrimary)
+                        .misoScreenTitle("app_bottomBar_about_label")
+                    } else {
+                        listBody
+                    }
+                }
                 .navigationBarTitleDisplayMode(.inline)
                 .accentColor(theme.bar.colorAccent)
+            }
+            .misoNavigationBarAppearance()
+        } else { // iOS < 27.1
+            NavigationView {
+                listBody
+                    .navigationBarTitleDisplayMode(.inline)
+                    .accentColor(theme.bar.colorAccent)
+            }
+            .navigationViewStyle(.stack)
         }
-        .navigationViewStyle(.stack)
         #elseif os(tvOS)
         // tvOS: use `NavigationStack` for consistency with the rest of the app and
         // render the theme / color-scheme controls in a visible focusable header
@@ -80,12 +118,7 @@ struct AboutPage: View {
                 linksView
             }
             #if DEBUG
-            Section(header: MISOHeading("app_about_debug_title", hasMarker: true)) {
-                debugSandboxView
-                MISOButton("app_about_debug_clearCache_label", appearance: .negative) {
-                    MISOAsyncImageCache.shared.clearCache()
-                }
-            }
+            AboutDebugSection()
             #endif
         }
         .misoScreenTitle("app_bottomBar_about_label")
@@ -147,23 +180,89 @@ struct AboutPage: View {
         }
         .accessibilityHint(hint.localized())
     }
-
-    #if DEBUG
-    // swiftlint:disable accessibility_label_for_image
-    /// DEBUG-only switch item displayed at the very bottom of the About list.
-    /// Enabling it makes ``MainView`` add a "Debug" tab in first position.
-    @ViewBuilder
-    private var debugSandboxView: some View {
-        MISOSwitchItem("app_about_sandbox_label",
-                       isOn: $sandboxEnabled,
-                       description: "app_about_sandbox_description".localized(),
-                       image: .init(asset: Image(systemName: "hammer")))
-    }
-    // swiftlint:enable accessibility_label_for_image
-    #endif
 }
 
-// MARK: - State Item
+// MARK: - About Section View
+
+private struct AboutSection<Content: View>: View {
+
+    let title: LocalizedStringKey
+    let coloredText: String
+    @ViewBuilder let content: () -> Content
+
+    @Environment(\.theme) private var theme
+
+    init(_ title: LocalizedStringKey, coloredText: String, @ViewBuilder content: @escaping () -> Content) {
+        self.title = title
+        self.coloredText = coloredText
+        self.content = content
+    }
+
+    var body: some View {
+        Section {
+            content()
+        } header: {
+            MISOHeading(title, hasMarker: true)
+        }
+    }
+}
+
+// MARK: - About Technical Details View
+
+private struct AboutTechnicalDetails: View {
+
+    var body: some View {
+        if Bundle.main.fullBuildType == "stable" {
+            OpenableText("app_about_details_appVersion_stable" <- Bundle.main.marketingVersion, anchor: Bundle.main.marketingVersion, type: .githubRelease)
+                .modifier(CopyableTextViewModifier(Bundle.main.marketingVersion))
+        } else {
+            VersionItem(title: "app_about_details_appVersion", version: Bundle.main.marketingVersion)
+        }
+
+        VersionItem(title: "app_about_details_buildNumber", version: Bundle.main.buildNumber)
+
+        OpenableText("app_about_details_buildType" <- Bundle.main.fullBuildType, anchor: Bundle.main.fullBuildType, type: .githubBuild)
+            .modifier(CopyableTextViewModifier(Bundle.main.fullBuildType))
+
+        if let buildDetails = Bundle.main.buildDetails {
+            OpenableText("app_about_details_githubBuildDetails" <- buildDetails, anchor: buildDetails, type: .githubIssue)
+                .modifier(CopyableTextViewModifier(buildDetails.leadingColumnFragment))
+        }
+
+        if let sdkVersion = Bundle.main.sdkVersion, !sdkVersion.isEmpty {
+            OpenableText("app_about_details_sdkVersion" <- sdkVersion, anchor: sdkVersion, type: .githubVersion)
+                .modifier(CopyableTextViewModifier(sdkVersion))
+        }
+
+        LiquidGlassStateItem()
+    }
+}
+
+#if DEBUG
+// MARK: - About Debug Section View
+
+private struct AboutDebugSection: View {
+
+    /// Also observed by MainView to conditionally insert the sandbox tab.
+    @AppStorage(SandboxUserDefaultsKeys.sandboxEnabled) private var sandboxEnabled: Bool = false
+
+    var body: some View {
+        Section(header: MISOHeading("app_about_debug_title", hasMarker: true)) {
+            // swiftlint:disable accessibility_label_for_image
+            MISOSwitchItem("app_about_sandbox_label",
+                           isOn: $sandboxEnabled,
+                           description: "app_about_sandbox_description".localized(),
+                           image: .init(asset: Image(systemName: "hammer")))
+            // swiftlint:enable accessibility_label_for_image
+            MISOButton("app_about_debug_clearCache_label", appearance: .negative) {
+                MISOAsyncImageCache.shared.clearCache()
+            }
+        }
+    }
+}
+#endif
+
+// MARK: - Liquid Glass State Item
 
 private struct LiquidGlassStateItem: View {
 
@@ -211,7 +310,7 @@ private struct LiquidGlassStateItem: View {
     }
 }
 
-// MARK: - Version Item
+// MARK: - Version Item View
 
 private struct VersionItem: View {
 
