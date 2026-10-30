@@ -35,7 +35,7 @@
 [![Versions](https://img.shields.io/github/v/release/pylapp/miso-ios-demo?label=Last%20version&style=for-the-badge)](https://github.com/pylapp/miso-ios-demo/releases)
 [![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
-[![Xcode 26.5](https://img.shields.io/badge/Xcode-26.5-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_5-release-notes)
+[![Xcode 27.1](https://img.shields.io/badge/Xcode-27.1-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes)
 
 ![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
 ![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)

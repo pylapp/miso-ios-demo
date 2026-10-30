@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.2.0](https://github.com/pylapp/miso-ios-demo/releases/tag/1.2.0) - 2026-10-29
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/3.2.0...develop)
+
+### Changed
+
+- [DesignToolbox] Move to Xcode 27.1 (Orange-OpenSource/ouds-ios#1558)
+- [DesignToolbox] List of colors for `colored surface` component
+- [Library] **BREAKING**: Update protocol `ColorModeMultipleSemanticTokens` with missing tokens
+- [Library] **BREAKING**: No more `tuning` possible for `White Label` and `Wireframe` themes (Orange-OpenSource/ouds-ios#1829)
+
+## [3.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/3.1.0...3.2.0) - 2026-10-21
 
 ### Added
 
